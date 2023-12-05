@@ -1,13 +1,21 @@
-﻿/*
-  AssemblyInfo.cs
-  
-  Copyright (C), 2018-2021 by ScaleOut Software, Inc.
+﻿#region Copyright notice and license
 
-  PROPRIETARY TRADE SECRET INFORMATION OF SCALEOUT SOFTWARE, INC.
+// Copyright 2023 ScaleOut Software, Inc.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
 
-  The information contained in this file is a trade secret of ScaleOut Software, Inc.
-  and is not to be disclosed or copied in any form without written permission.
-*/
+#endregion
+
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("ScaleOut.Streaming.DigitalTwin.Processor, PublicKey=0024000004800000940000000602000000240000525341310004000001000100c70af477696713602a9d83c81c9ce9c7fc194f1f9b7ebcfdb3ed7086da360d39a41acd2f3a5dbe462576798309e6ccf6afe8004e8214e4c1f1cd01ceae1859ccf82f328a951fea7f94da2a1b7209a77f6c2a50adaa304cbe170d296bdf585692650d46d50967c5980adebb93b66985e84b4c55326b732beb0c8bc3bc49d221a2")]
