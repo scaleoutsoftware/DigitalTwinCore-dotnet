@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <Authors>scaleoutsoftware</Authors>
+    <Company>ScaleOut Software, Inc.</Company>
+    <Product>ScaleOut Digital Twin Workbench</Product>
+    <Description>A lightweight, in-process environment that can be used for debugging and testing your ScaleOut Digital Twin projects.</Description>
+    <Copyright>Copyright © 2023 by ScaleOut Software, Inc.</Copyright>
+    <PackageProjectUrl>https://static.scaleoutsoftware.com/docs/digital_twin_user_guide/software_toolkit/dt_builder/dotnetcore_api/dotnetcore_workbench.html</PackageProjectUrl>
+    <PackageIcon>ScaleOut-Logo-Vertical-RGB-72dpi.png</PackageIcon>
+    <RepositoryUrl>https://static.scaleoutsoftware.com/docs/digital_twin_user_guide/software_toolkit/toc.html</RepositoryUrl>
+    <PackageTags>scaleout dt digitaltwin digital twin workbench</PackageTags>
+    <PackageReleaseNotes>Initial public release.</PackageReleaseNotes>
+    <!--<LangVersion>9.0</LangVersion>-->
+    <Version>3.10.0</Version>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="NuGet\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\nuget\ScaleOut-Logo-Vertical-RGB-72dpi.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="3.1.31" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\ScaleOut.Streaming.DigitalTwin.Core.csproj" />
+  </ItemGroup>
+
+
+</Project>
