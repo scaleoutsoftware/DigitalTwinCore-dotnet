@@ -11,7 +11,7 @@
     <Copyright>Copyright © 2023 by ScaleOut Software, Inc.</Copyright>
     <PackageProjectUrl>https://static.scaleoutsoftware.com/docs/digital_twin_user_guide/software_toolkit/dt_builder/dotnetcore_api/dotnetcore_workbench.html</PackageProjectUrl>
     <PackageIcon>ScaleOut-Logo-Vertical-RGB-72dpi.png</PackageIcon>
-    <RepositoryUrl>https://static.scaleoutsoftware.com/docs/digital_twin_user_guide/software_toolkit/toc.html</RepositoryUrl>
+    <RepositoryUrl>https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet</RepositoryUrl>
     <PackageTags>scaleout dt digitaltwin digital twin workbench</PackageTags>
     <PackageReleaseNotes>Initial open source release.</PackageReleaseNotes>
     <!--<LangVersion>9.0</LangVersion>-->
