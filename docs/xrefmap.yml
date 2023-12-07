@@ -1,0 +1,2139 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: Scaleout.DigitalTwin.Workbench
+  name: Scaleout.DigitalTwin.Workbench
+  href: api/Scaleout.DigitalTwin.Workbench.html
+  commentId: N:Scaleout.DigitalTwin.Workbench
+  fullName: Scaleout.DigitalTwin.Workbench
+  nameWithType: Scaleout.DigitalTwin.Workbench
+- uid: Scaleout.DigitalTwin.Workbench.PostedAlert
+  name: PostedAlert
+  href: api/Scaleout.DigitalTwin.Workbench.PostedAlert.html
+  commentId: T:Scaleout.DigitalTwin.Workbench.PostedAlert
+  fullName: Scaleout.DigitalTwin.Workbench.PostedAlert
+  nameWithType: PostedAlert
+- uid: Scaleout.DigitalTwin.Workbench.PostedAlert.AlertMessage
+  name: AlertMessage
+  href: api/Scaleout.DigitalTwin.Workbench.PostedAlert.html#Scaleout_DigitalTwin_Workbench_PostedAlert_AlertMessage
+  commentId: P:Scaleout.DigitalTwin.Workbench.PostedAlert.AlertMessage
+  fullName: Scaleout.DigitalTwin.Workbench.PostedAlert.AlertMessage
+  nameWithType: PostedAlert.AlertMessage
+- uid: Scaleout.DigitalTwin.Workbench.PostedAlert.AlertMessage*
+  name: AlertMessage
+  href: api/Scaleout.DigitalTwin.Workbench.PostedAlert.html#Scaleout_DigitalTwin_Workbench_PostedAlert_AlertMessage_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.PostedAlert.AlertMessage
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.PostedAlert.AlertMessage
+  nameWithType: PostedAlert.AlertMessage
+- uid: Scaleout.DigitalTwin.Workbench.PostedAlert.AlertProviderName
+  name: AlertProviderName
+  href: api/Scaleout.DigitalTwin.Workbench.PostedAlert.html#Scaleout_DigitalTwin_Workbench_PostedAlert_AlertProviderName
+  commentId: P:Scaleout.DigitalTwin.Workbench.PostedAlert.AlertProviderName
+  fullName: Scaleout.DigitalTwin.Workbench.PostedAlert.AlertProviderName
+  nameWithType: PostedAlert.AlertProviderName
+- uid: Scaleout.DigitalTwin.Workbench.PostedAlert.AlertProviderName*
+  name: AlertProviderName
+  href: api/Scaleout.DigitalTwin.Workbench.PostedAlert.html#Scaleout_DigitalTwin_Workbench_PostedAlert_AlertProviderName_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.PostedAlert.AlertProviderName
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.PostedAlert.AlertProviderName
+  nameWithType: PostedAlert.AlertProviderName
+- uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench
+  name: RealTimeWorkbench
+  href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html
+  commentId: T:Scaleout.DigitalTwin.Workbench.RealTimeWorkbench
+  fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench
+  nameWithType: RealTimeWorkbench
+- uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.#ctor(Microsoft.Extensions.Logging.ILogger)
+  name: RealTimeWorkbench(ILogger?)
+  href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench__ctor_Microsoft_Extensions_Logging_ILogger_
+  commentId: M:Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.#ctor(Microsoft.Extensions.Logging.ILogger)
+  name.vb: New(ILogger)
+  fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.RealTimeWorkbench(Microsoft.Extensions.Logging.ILogger?)
+  fullName.vb: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.New(Microsoft.Extensions.Logging.ILogger)
+  nameWithType: RealTimeWorkbench.RealTimeWorkbench(ILogger?)
+  nameWithType.vb: RealTimeWorkbench.New(ILogger)
+- uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.#ctor*
+  name: RealTimeWorkbench
+  href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench__ctor_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.RealTimeWorkbench
+  fullName.vb: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.New
+  nameWithType: RealTimeWorkbench.RealTimeWorkbench
+  nameWithType.vb: RealTimeWorkbench.New
+- uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.AddRealTimeModel*
+  name: AddRealTimeModel
+  href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_AddRealTimeModel_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.AddRealTimeModel
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.AddRealTimeModel
+  nameWithType: RealTimeWorkbench.AddRealTimeModel
+- uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.AddRealTimeModel``2(System.String,Scaleout.Streaming.DigitalTwin.Core.MessageProcessor{``0,``1})
+  name: AddRealTimeModel<TDigitalTwin, TMessage>(string, MessageProcessor<TDigitalTwin, TMessage>)
+  href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_AddRealTimeModel__2_System_String_Scaleout_Streaming_DigitalTwin_Core_MessageProcessor___0___1__
+  commentId: M:Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.AddRealTimeModel``2(System.String,Scaleout.Streaming.DigitalTwin.Core.MessageProcessor{``0,``1})
+  name.vb: AddRealTimeModel(Of TDigitalTwin, TMessage)(String, MessageProcessor(Of TDigitalTwin, TMessage))
+  fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.AddRealTimeModel<TDigitalTwin, TMessage>(string, Scaleout.Streaming.DigitalTwin.Core.MessageProcessor<TDigitalTwin, TMessage>)
+  fullName.vb: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.AddRealTimeModel(Of TDigitalTwin, TMessage)(String, Scaleout.Streaming.DigitalTwin.Core.MessageProcessor(Of TDigitalTwin, TMessage))
+  nameWithType: RealTimeWorkbench.AddRealTimeModel<TDigitalTwin, TMessage>(string, MessageProcessor<TDigitalTwin, TMessage>)
+  nameWithType.vb: RealTimeWorkbench.AddRealTimeModel(Of TDigitalTwin, TMessage)(String, MessageProcessor(Of TDigitalTwin, TMessage))
+- uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.Dispose
+  name: Dispose()
+  href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_Dispose
+  commentId: M:Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.Dispose
+  fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.Dispose()
+  nameWithType: RealTimeWorkbench.Dispose()
+- uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.Dispose(System.Boolean)
+  name: Dispose(bool)
+  href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_Dispose_System_Boolean_
+  commentId: M:Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.Dispose(System.Boolean)
+  name.vb: Dispose(Boolean)
+  fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.Dispose(bool)
+  fullName.vb: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.Dispose(Boolean)
+  nameWithType: RealTimeWorkbench.Dispose(bool)
+  nameWithType.vb: RealTimeWorkbench.Dispose(Boolean)
+- uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.Dispose*
+  name: Dispose
+  href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_Dispose_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.Dispose
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.Dispose
+  nameWithType: RealTimeWorkbench.Dispose
+- uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.GetInstances*
+  name: GetInstances
+  href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_GetInstances_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.GetInstances
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.GetInstances
+  nameWithType: RealTimeWorkbench.GetInstances
+- uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.GetInstances``1(System.String)
+  name: GetInstances<TDigitalTwin>(string)
+  href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_GetInstances__1_System_String_
+  commentId: M:Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.GetInstances``1(System.String)
+  name.vb: GetInstances(Of TDigitalTwin)(String)
+  fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.GetInstances<TDigitalTwin>(string)
+  fullName.vb: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.GetInstances(Of TDigitalTwin)(String)
+  nameWithType: RealTimeWorkbench.GetInstances<TDigitalTwin>(string)
+  nameWithType.vb: RealTimeWorkbench.GetInstances(Of TDigitalTwin)(String)
+- uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.PostedAlerts
+  name: PostedAlerts
+  href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_PostedAlerts
+  commentId: P:Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.PostedAlerts
+  fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.PostedAlerts
+  nameWithType: RealTimeWorkbench.PostedAlerts
+- uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.PostedAlerts*
+  name: PostedAlerts
+  href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_PostedAlerts_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.PostedAlerts
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.PostedAlerts
+  nameWithType: RealTimeWorkbench.PostedAlerts
+- uid: Scaleout.DigitalTwin.Workbench.SimulationStatus
+  name: SimulationStatus
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationStatus.html
+  commentId: T:Scaleout.DigitalTwin.Workbench.SimulationStatus
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationStatus
+  nameWithType: SimulationStatus
+- uid: Scaleout.DigitalTwin.Workbench.SimulationStatus.EndTimeReached
+  name: EndTimeReached
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationStatus.html#Scaleout_DigitalTwin_Workbench_SimulationStatus_EndTimeReached
+  commentId: F:Scaleout.DigitalTwin.Workbench.SimulationStatus.EndTimeReached
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationStatus.EndTimeReached
+  nameWithType: SimulationStatus.EndTimeReached
+- uid: Scaleout.DigitalTwin.Workbench.SimulationStatus.NoRemainingWork
+  name: NoRemainingWork
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationStatus.html#Scaleout_DigitalTwin_Workbench_SimulationStatus_NoRemainingWork
+  commentId: F:Scaleout.DigitalTwin.Workbench.SimulationStatus.NoRemainingWork
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationStatus.NoRemainingWork
+  nameWithType: SimulationStatus.NoRemainingWork
+- uid: Scaleout.DigitalTwin.Workbench.SimulationStatus.Running
+  name: Running
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationStatus.html#Scaleout_DigitalTwin_Workbench_SimulationStatus_Running
+  commentId: F:Scaleout.DigitalTwin.Workbench.SimulationStatus.Running
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationStatus.Running
+  nameWithType: SimulationStatus.Running
+- uid: Scaleout.DigitalTwin.Workbench.SimulationStatus.StopRequested
+  name: StopRequested
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationStatus.html#Scaleout_DigitalTwin_Workbench_SimulationStatus_StopRequested
+  commentId: F:Scaleout.DigitalTwin.Workbench.SimulationStatus.StopRequested
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationStatus.StopRequested
+  nameWithType: SimulationStatus.StopRequested
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench
+  name: SimulationWorkbench
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html
+  commentId: T:Scaleout.DigitalTwin.Workbench.SimulationWorkbench
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench
+  nameWithType: SimulationWorkbench
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.#ctor(Microsoft.Extensions.Logging.ILogger)
+  name: SimulationWorkbench(ILogger?)
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench__ctor_Microsoft_Extensions_Logging_ILogger_
+  commentId: M:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.#ctor(Microsoft.Extensions.Logging.ILogger)
+  name.vb: New(ILogger)
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.SimulationWorkbench(Microsoft.Extensions.Logging.ILogger?)
+  fullName.vb: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.New(Microsoft.Extensions.Logging.ILogger)
+  nameWithType: SimulationWorkbench.SimulationWorkbench(ILogger?)
+  nameWithType.vb: SimulationWorkbench.New(ILogger)
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.#ctor*
+  name: SimulationWorkbench
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench__ctor_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.SimulationWorkbench
+  fullName.vb: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.New
+  nameWithType: SimulationWorkbench.SimulationWorkbench
+  nameWithType.vb: SimulationWorkbench.New
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddInstance(System.String,System.String,Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase)
+  name: AddInstance(string, string, DigitalTwinBase)
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_AddInstance_System_String_System_String_Scaleout_Streaming_DigitalTwin_Core_DigitalTwinBase_
+  commentId: M:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddInstance(System.String,System.String,Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase)
+  name.vb: AddInstance(String, String, DigitalTwinBase)
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddInstance(string, string, Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase)
+  fullName.vb: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddInstance(String, String, Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase)
+  nameWithType: SimulationWorkbench.AddInstance(string, string, DigitalTwinBase)
+  nameWithType.vb: SimulationWorkbench.AddInstance(String, String, DigitalTwinBase)
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddInstance*
+  name: AddInstance
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_AddInstance_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddInstance
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddInstance
+  nameWithType: SimulationWorkbench.AddInstance
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddRealTimeModel*
+  name: AddRealTimeModel
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_AddRealTimeModel_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddRealTimeModel
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddRealTimeModel
+  nameWithType: SimulationWorkbench.AddRealTimeModel
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddRealTimeModel``2(System.String,Scaleout.Streaming.DigitalTwin.Core.MessageProcessor{``0,``1})
+  name: AddRealTimeModel<TDigitalTwin, TMessage>(string, MessageProcessor<TDigitalTwin, TMessage>)
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_AddRealTimeModel__2_System_String_Scaleout_Streaming_DigitalTwin_Core_MessageProcessor___0___1__
+  commentId: M:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddRealTimeModel``2(System.String,Scaleout.Streaming.DigitalTwin.Core.MessageProcessor{``0,``1})
+  name.vb: AddRealTimeModel(Of TDigitalTwin, TMessage)(String, MessageProcessor(Of TDigitalTwin, TMessage))
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddRealTimeModel<TDigitalTwin, TMessage>(string, Scaleout.Streaming.DigitalTwin.Core.MessageProcessor<TDigitalTwin, TMessage>)
+  fullName.vb: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddRealTimeModel(Of TDigitalTwin, TMessage)(String, Scaleout.Streaming.DigitalTwin.Core.MessageProcessor(Of TDigitalTwin, TMessage))
+  nameWithType: SimulationWorkbench.AddRealTimeModel<TDigitalTwin, TMessage>(string, MessageProcessor<TDigitalTwin, TMessage>)
+  nameWithType.vb: SimulationWorkbench.AddRealTimeModel(Of TDigitalTwin, TMessage)(String, MessageProcessor(Of TDigitalTwin, TMessage))
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddSimulationModel*
+  name: AddSimulationModel
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_AddSimulationModel_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddSimulationModel
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddSimulationModel
+  nameWithType: SimulationWorkbench.AddSimulationModel
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddSimulationModel``1(System.String,Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor{``0})
+  name: AddSimulationModel<TDigitalTwin>(string, SimulationProcessor<TDigitalTwin>)
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_AddSimulationModel__1_System_String_Scaleout_Streaming_DigitalTwin_Core_SimulationProcessor___0__
+  commentId: M:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddSimulationModel``1(System.String,Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor{``0})
+  name.vb: AddSimulationModel(Of TDigitalTwin)(String, SimulationProcessor(Of TDigitalTwin))
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddSimulationModel<TDigitalTwin>(string, Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor<TDigitalTwin>)
+  fullName.vb: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddSimulationModel(Of TDigitalTwin)(String, Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor(Of TDigitalTwin))
+  nameWithType: SimulationWorkbench.AddSimulationModel<TDigitalTwin>(string, SimulationProcessor<TDigitalTwin>)
+  nameWithType.vb: SimulationWorkbench.AddSimulationModel(Of TDigitalTwin)(String, SimulationProcessor(Of TDigitalTwin))
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddSimulationModel``2(System.String,Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor{``0},Scaleout.Streaming.DigitalTwin.Core.MessageProcessor{``0,``1})
+  name: AddSimulationModel<TDigitalTwin, TMessage>(string, SimulationProcessor<TDigitalTwin>, MessageProcessor<TDigitalTwin, TMessage>)
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_AddSimulationModel__2_System_String_Scaleout_Streaming_DigitalTwin_Core_SimulationProcessor___0__Scaleout_Streaming_DigitalTwin_Core_MessageProcessor___0___1__
+  commentId: M:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddSimulationModel``2(System.String,Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor{``0},Scaleout.Streaming.DigitalTwin.Core.MessageProcessor{``0,``1})
+  name.vb: AddSimulationModel(Of TDigitalTwin, TMessage)(String, SimulationProcessor(Of TDigitalTwin), MessageProcessor(Of TDigitalTwin, TMessage))
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddSimulationModel<TDigitalTwin, TMessage>(string, Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor<TDigitalTwin>, Scaleout.Streaming.DigitalTwin.Core.MessageProcessor<TDigitalTwin, TMessage>)
+  fullName.vb: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddSimulationModel(Of TDigitalTwin, TMessage)(String, Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor(Of TDigitalTwin), Scaleout.Streaming.DigitalTwin.Core.MessageProcessor(Of TDigitalTwin, TMessage))
+  nameWithType: SimulationWorkbench.AddSimulationModel<TDigitalTwin, TMessage>(string, SimulationProcessor<TDigitalTwin>, MessageProcessor<TDigitalTwin, TMessage>)
+  nameWithType.vb: SimulationWorkbench.AddSimulationModel(Of TDigitalTwin, TMessage)(String, SimulationProcessor(Of TDigitalTwin), MessageProcessor(Of TDigitalTwin, TMessage))
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.CurrentTime
+  name: CurrentTime
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_CurrentTime
+  commentId: P:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.CurrentTime
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.CurrentTime
+  nameWithType: SimulationWorkbench.CurrentTime
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.CurrentTime*
+  name: CurrentTime
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_CurrentTime_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.CurrentTime
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.CurrentTime
+  nameWithType: SimulationWorkbench.CurrentTime
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetInstance*
+  name: GetInstance
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_GetInstance_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetInstance
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetInstance
+  nameWithType: SimulationWorkbench.GetInstance
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetInstance``1(System.String,System.String)
+  name: GetInstance<TDigitalTwin>(string, string)
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_GetInstance__1_System_String_System_String_
+  commentId: M:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetInstance``1(System.String,System.String)
+  name.vb: GetInstance(Of TDigitalTwin)(String, String)
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetInstance<TDigitalTwin>(string, string)
+  fullName.vb: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetInstance(Of TDigitalTwin)(String, String)
+  nameWithType: SimulationWorkbench.GetInstance<TDigitalTwin>(string, string)
+  nameWithType.vb: SimulationWorkbench.GetInstance(Of TDigitalTwin)(String, String)
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetInstances*
+  name: GetInstances
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_GetInstances_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetInstances
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetInstances
+  nameWithType: SimulationWorkbench.GetInstances
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetInstances``1(System.String)
+  name: GetInstances<TDigitalTwin>(string)
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_GetInstances__1_System_String_
+  commentId: M:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetInstances``1(System.String)
+  name.vb: GetInstances(Of TDigitalTwin)(String)
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetInstances<TDigitalTwin>(string)
+  fullName.vb: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetInstances(Of TDigitalTwin)(String)
+  nameWithType: SimulationWorkbench.GetInstances<TDigitalTwin>(string)
+  nameWithType.vb: SimulationWorkbench.GetInstances(Of TDigitalTwin)(String)
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.InitializeSimulation(System.DateTimeOffset,System.DateTimeOffset,System.TimeSpan)
+  name: InitializeSimulation(DateTimeOffset, DateTimeOffset, TimeSpan)
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_InitializeSimulation_System_DateTimeOffset_System_DateTimeOffset_System_TimeSpan_
+  commentId: M:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.InitializeSimulation(System.DateTimeOffset,System.DateTimeOffset,System.TimeSpan)
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.InitializeSimulation(System.DateTimeOffset, System.DateTimeOffset, System.TimeSpan)
+  nameWithType: SimulationWorkbench.InitializeSimulation(DateTimeOffset, DateTimeOffset, TimeSpan)
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.InitializeSimulation*
+  name: InitializeSimulation
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_InitializeSimulation_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.InitializeSimulation
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.InitializeSimulation
+  nameWithType: SimulationWorkbench.InitializeSimulation
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.PeekNextTimeStep
+  name: PeekNextTimeStep()
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_PeekNextTimeStep
+  commentId: M:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.PeekNextTimeStep
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.PeekNextTimeStep()
+  nameWithType: SimulationWorkbench.PeekNextTimeStep()
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.PeekNextTimeStep*
+  name: PeekNextTimeStep
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_PeekNextTimeStep_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.PeekNextTimeStep
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.PeekNextTimeStep
+  nameWithType: SimulationWorkbench.PeekNextTimeStep
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.RunSimulation(System.DateTimeOffset,System.DateTimeOffset,System.TimeSpan,System.TimeSpan)
+  name: RunSimulation(DateTimeOffset, DateTimeOffset, TimeSpan, TimeSpan)
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_RunSimulation_System_DateTimeOffset_System_DateTimeOffset_System_TimeSpan_System_TimeSpan_
+  commentId: M:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.RunSimulation(System.DateTimeOffset,System.DateTimeOffset,System.TimeSpan,System.TimeSpan)
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.RunSimulation(System.DateTimeOffset, System.DateTimeOffset, System.TimeSpan, System.TimeSpan)
+  nameWithType: SimulationWorkbench.RunSimulation(DateTimeOffset, DateTimeOffset, TimeSpan, TimeSpan)
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.RunSimulation*
+  name: RunSimulation
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_RunSimulation_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.RunSimulation
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.RunSimulation
+  nameWithType: SimulationWorkbench.RunSimulation
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.Step
+  name: Step()
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_Step
+  commentId: M:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.Step
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.Step()
+  nameWithType: SimulationWorkbench.Step()
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.Step*
+  name: Step
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_Step_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.Step
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.Step
+  nameWithType: SimulationWorkbench.Step
+- uid: Scaleout.DigitalTwin.Workbench.StepResult
+  name: StepResult
+  href: api/Scaleout.DigitalTwin.Workbench.StepResult.html
+  commentId: T:Scaleout.DigitalTwin.Workbench.StepResult
+  fullName: Scaleout.DigitalTwin.Workbench.StepResult
+  nameWithType: StepResult
+- uid: Scaleout.DigitalTwin.Workbench.StepResult.NextSimulationTime
+  name: NextSimulationTime
+  href: api/Scaleout.DigitalTwin.Workbench.StepResult.html#Scaleout_DigitalTwin_Workbench_StepResult_NextSimulationTime
+  commentId: P:Scaleout.DigitalTwin.Workbench.StepResult.NextSimulationTime
+  fullName: Scaleout.DigitalTwin.Workbench.StepResult.NextSimulationTime
+  nameWithType: StepResult.NextSimulationTime
+- uid: Scaleout.DigitalTwin.Workbench.StepResult.NextSimulationTime*
+  name: NextSimulationTime
+  href: api/Scaleout.DigitalTwin.Workbench.StepResult.html#Scaleout_DigitalTwin_Workbench_StepResult_NextSimulationTime_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.StepResult.NextSimulationTime
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.StepResult.NextSimulationTime
+  nameWithType: StepResult.NextSimulationTime
+- uid: Scaleout.DigitalTwin.Workbench.StepResult.SimulationStatus
+  name: SimulationStatus
+  href: api/Scaleout.DigitalTwin.Workbench.StepResult.html#Scaleout_DigitalTwin_Workbench_StepResult_SimulationStatus
+  commentId: P:Scaleout.DigitalTwin.Workbench.StepResult.SimulationStatus
+  fullName: Scaleout.DigitalTwin.Workbench.StepResult.SimulationStatus
+  nameWithType: StepResult.SimulationStatus
+- uid: Scaleout.DigitalTwin.Workbench.StepResult.SimulationStatus*
+  name: SimulationStatus
+  href: api/Scaleout.DigitalTwin.Workbench.StepResult.html#Scaleout_DigitalTwin_Workbench_StepResult_SimulationStatus_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.StepResult.SimulationStatus
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.StepResult.SimulationStatus
+  nameWithType: StepResult.SimulationStatus
+- uid: Scaleout.Streaming.DigitalTwin.Core
+  name: Scaleout.Streaming.DigitalTwin.Core
+  href: api/Scaleout.Streaming.DigitalTwin.Core.html
+  commentId: N:Scaleout.Streaming.DigitalTwin.Core
+  fullName: Scaleout.Streaming.DigitalTwin.Core
+  nameWithType: Scaleout.Streaming.DigitalTwin.Core
+- uid: Scaleout.Streaming.DigitalTwin.Core.AlertMessage
+  name: AlertMessage
+  href: api/Scaleout.Streaming.DigitalTwin.Core.AlertMessage.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.AlertMessage
+  fullName: Scaleout.Streaming.DigitalTwin.Core.AlertMessage
+  nameWithType: AlertMessage
+- uid: Scaleout.Streaming.DigitalTwin.Core.AlertMessage.Message
+  name: Message
+  href: api/Scaleout.Streaming.DigitalTwin.Core.AlertMessage.html#Scaleout_Streaming_DigitalTwin_Core_AlertMessage_Message
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.AlertMessage.Message
+  fullName: Scaleout.Streaming.DigitalTwin.Core.AlertMessage.Message
+  nameWithType: AlertMessage.Message
+- uid: Scaleout.Streaming.DigitalTwin.Core.AlertMessage.Message*
+  name: Message
+  href: api/Scaleout.Streaming.DigitalTwin.Core.AlertMessage.html#Scaleout_Streaming_DigitalTwin_Core_AlertMessage_Message_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.AlertMessage.Message
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.AlertMessage.Message
+  nameWithType: AlertMessage.Message
+- uid: Scaleout.Streaming.DigitalTwin.Core.AlertMessage.OptionalTwinInstanceProperties
+  name: OptionalTwinInstanceProperties
+  href: api/Scaleout.Streaming.DigitalTwin.Core.AlertMessage.html#Scaleout_Streaming_DigitalTwin_Core_AlertMessage_OptionalTwinInstanceProperties
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.AlertMessage.OptionalTwinInstanceProperties
+  fullName: Scaleout.Streaming.DigitalTwin.Core.AlertMessage.OptionalTwinInstanceProperties
+  nameWithType: AlertMessage.OptionalTwinInstanceProperties
+- uid: Scaleout.Streaming.DigitalTwin.Core.AlertMessage.OptionalTwinInstanceProperties*
+  name: OptionalTwinInstanceProperties
+  href: api/Scaleout.Streaming.DigitalTwin.Core.AlertMessage.html#Scaleout_Streaming_DigitalTwin_Core_AlertMessage_OptionalTwinInstanceProperties_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.AlertMessage.OptionalTwinInstanceProperties
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.AlertMessage.OptionalTwinInstanceProperties
+  nameWithType: AlertMessage.OptionalTwinInstanceProperties
+- uid: Scaleout.Streaming.DigitalTwin.Core.AlertMessage.Severity
+  name: Severity
+  href: api/Scaleout.Streaming.DigitalTwin.Core.AlertMessage.html#Scaleout_Streaming_DigitalTwin_Core_AlertMessage_Severity
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.AlertMessage.Severity
+  fullName: Scaleout.Streaming.DigitalTwin.Core.AlertMessage.Severity
+  nameWithType: AlertMessage.Severity
+- uid: Scaleout.Streaming.DigitalTwin.Core.AlertMessage.Severity*
+  name: Severity
+  href: api/Scaleout.Streaming.DigitalTwin.Core.AlertMessage.html#Scaleout_Streaming_DigitalTwin_Core_AlertMessage_Severity_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.AlertMessage.Severity
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.AlertMessage.Severity
+  nameWithType: AlertMessage.Severity
+- uid: Scaleout.Streaming.DigitalTwin.Core.AlertMessage.Title
+  name: Title
+  href: api/Scaleout.Streaming.DigitalTwin.Core.AlertMessage.html#Scaleout_Streaming_DigitalTwin_Core_AlertMessage_Title
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.AlertMessage.Title
+  fullName: Scaleout.Streaming.DigitalTwin.Core.AlertMessage.Title
+  nameWithType: AlertMessage.Title
+- uid: Scaleout.Streaming.DigitalTwin.Core.AlertMessage.Title*
+  name: Title
+  href: api/Scaleout.Streaming.DigitalTwin.Core.AlertMessage.html#Scaleout_Streaming_DigitalTwin_Core_AlertMessage_Title_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.AlertMessage.Title
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.AlertMessage.Title
+  nameWithType: AlertMessage.Title
+- uid: Scaleout.Streaming.DigitalTwin.Core.AlertProviderType
+  name: AlertProviderType
+  href: api/Scaleout.Streaming.DigitalTwin.Core.AlertProviderType.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.AlertProviderType
+  fullName: Scaleout.Streaming.DigitalTwin.Core.AlertProviderType
+  nameWithType: AlertProviderType
+- uid: Scaleout.Streaming.DigitalTwin.Core.AlertProviderType.PagerDuty
+  name: PagerDuty
+  href: api/Scaleout.Streaming.DigitalTwin.Core.AlertProviderType.html#Scaleout_Streaming_DigitalTwin_Core_AlertProviderType_PagerDuty
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.AlertProviderType.PagerDuty
+  fullName: Scaleout.Streaming.DigitalTwin.Core.AlertProviderType.PagerDuty
+  nameWithType: AlertProviderType.PagerDuty
+- uid: Scaleout.Streaming.DigitalTwin.Core.AlertProviderType.Slack
+  name: Slack
+  href: api/Scaleout.Streaming.DigitalTwin.Core.AlertProviderType.html#Scaleout_Streaming_DigitalTwin_Core_AlertProviderType_Slack
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.AlertProviderType.Slack
+  fullName: Scaleout.Streaming.DigitalTwin.Core.AlertProviderType.Slack
+  nameWithType: AlertProviderType.Slack
+- uid: Scaleout.Streaming.DigitalTwin.Core.AlertProviderType.Splunk
+  name: Splunk
+  href: api/Scaleout.Streaming.DigitalTwin.Core.AlertProviderType.html#Scaleout_Streaming_DigitalTwin_Core_AlertProviderType_Splunk
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.AlertProviderType.Splunk
+  fullName: Scaleout.Streaming.DigitalTwin.Core.AlertProviderType.Splunk
+  nameWithType: AlertProviderType.Splunk
+- uid: Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter
+  name: DelegateSerializationConverter
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter
+  nameWithType: DelegateSerializationConverter
+- uid: Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Collections.Generic.Dictionary{System.String,Scaleout.Streaming.DigitalTwin.Core.TimerMetadata},System.Boolean,Newtonsoft.Json.JsonSerializer)
+  name: ReadJson(JsonReader, Type, Dictionary<string, TimerMetadata>, bool, JsonSerializer)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter.html#Scaleout_Streaming_DigitalTwin_Core_DelegateSerializationConverter_ReadJson_Newtonsoft_Json_JsonReader_System_Type_System_Collections_Generic_Dictionary_System_String_Scaleout_Streaming_DigitalTwin_Core_TimerMetadata__System_Boolean_Newtonsoft_Json_JsonSerializer_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter.ReadJson(Newtonsoft.Json.JsonReader,System.Type,System.Collections.Generic.Dictionary{System.String,Scaleout.Streaming.DigitalTwin.Core.TimerMetadata},System.Boolean,Newtonsoft.Json.JsonSerializer)
+  name.vb: ReadJson(JsonReader, Type, Dictionary(Of String, TimerMetadata), Boolean, JsonSerializer)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter.ReadJson(Newtonsoft.Json.JsonReader, System.Type, System.Collections.Generic.Dictionary<string, Scaleout.Streaming.DigitalTwin.Core.TimerMetadata>, bool, Newtonsoft.Json.JsonSerializer)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter.ReadJson(Newtonsoft.Json.JsonReader, System.Type, System.Collections.Generic.Dictionary(Of String, Scaleout.Streaming.DigitalTwin.Core.TimerMetadata), Boolean, Newtonsoft.Json.JsonSerializer)
+  nameWithType: DelegateSerializationConverter.ReadJson(JsonReader, Type, Dictionary<string, TimerMetadata>, bool, JsonSerializer)
+  nameWithType.vb: DelegateSerializationConverter.ReadJson(JsonReader, Type, Dictionary(Of String, TimerMetadata), Boolean, JsonSerializer)
+- uid: Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter.ReadJson*
+  name: ReadJson
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter.html#Scaleout_Streaming_DigitalTwin_Core_DelegateSerializationConverter_ReadJson_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter.ReadJson
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter.ReadJson
+  nameWithType: DelegateSerializationConverter.ReadJson
+- uid: Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Collections.Generic.Dictionary{System.String,Scaleout.Streaming.DigitalTwin.Core.TimerMetadata},Newtonsoft.Json.JsonSerializer)
+  name: WriteJson(JsonWriter, Dictionary<string, TimerMetadata>, JsonSerializer)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter.html#Scaleout_Streaming_DigitalTwin_Core_DelegateSerializationConverter_WriteJson_Newtonsoft_Json_JsonWriter_System_Collections_Generic_Dictionary_System_String_Scaleout_Streaming_DigitalTwin_Core_TimerMetadata__Newtonsoft_Json_JsonSerializer_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter.WriteJson(Newtonsoft.Json.JsonWriter,System.Collections.Generic.Dictionary{System.String,Scaleout.Streaming.DigitalTwin.Core.TimerMetadata},Newtonsoft.Json.JsonSerializer)
+  name.vb: WriteJson(JsonWriter, Dictionary(Of String, TimerMetadata), JsonSerializer)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter.WriteJson(Newtonsoft.Json.JsonWriter, System.Collections.Generic.Dictionary<string, Scaleout.Streaming.DigitalTwin.Core.TimerMetadata>, Newtonsoft.Json.JsonSerializer)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter.WriteJson(Newtonsoft.Json.JsonWriter, System.Collections.Generic.Dictionary(Of String, Scaleout.Streaming.DigitalTwin.Core.TimerMetadata), Newtonsoft.Json.JsonSerializer)
+  nameWithType: DelegateSerializationConverter.WriteJson(JsonWriter, Dictionary<string, TimerMetadata>, JsonSerializer)
+  nameWithType.vb: DelegateSerializationConverter.WriteJson(JsonWriter, Dictionary(Of String, TimerMetadata), JsonSerializer)
+- uid: Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter.WriteJson*
+  name: WriteJson
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter.html#Scaleout_Streaming_DigitalTwin_Core_DelegateSerializationConverter_WriteJson_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter.WriteJson
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter.WriteJson
+  nameWithType: DelegateSerializationConverter.WriteJson
+- uid: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase
+  name: DigitalTwinBase
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase
+  nameWithType: DigitalTwinBase
+- uid: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.Id
+  name: Id
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.html#Scaleout_Streaming_DigitalTwin_Core_DigitalTwinBase_Id
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.Id
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.Id
+  nameWithType: DigitalTwinBase.Id
+- uid: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.Id*
+  name: Id
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.html#Scaleout_Streaming_DigitalTwin_Core_DigitalTwinBase_Id_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.Id
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.Id
+  nameWithType: DigitalTwinBase.Id
+- uid: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.Init(System.String,System.String)
+  name: Init(string, string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.html#Scaleout_Streaming_DigitalTwin_Core_DigitalTwinBase_Init_System_String_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.Init(System.String,System.String)
+  name.vb: Init(String, String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.Init(string, string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.Init(String, String)
+  nameWithType: DigitalTwinBase.Init(string, string)
+  nameWithType.vb: DigitalTwinBase.Init(String, String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.Init(System.String,System.String,Scaleout.Streaming.DigitalTwin.Core.InitContext)
+  name: Init(string, string, InitContext)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.html#Scaleout_Streaming_DigitalTwin_Core_DigitalTwinBase_Init_System_String_System_String_Scaleout_Streaming_DigitalTwin_Core_InitContext_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.Init(System.String,System.String,Scaleout.Streaming.DigitalTwin.Core.InitContext)
+  name.vb: Init(String, String, InitContext)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.Init(string, string, Scaleout.Streaming.DigitalTwin.Core.InitContext)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.Init(String, String, Scaleout.Streaming.DigitalTwin.Core.InitContext)
+  nameWithType: DigitalTwinBase.Init(string, string, InitContext)
+  nameWithType.vb: DigitalTwinBase.Init(String, String, InitContext)
+- uid: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.Init*
+  name: Init
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.html#Scaleout_Streaming_DigitalTwin_Core_DigitalTwinBase_Init_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.Init
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.Init
+  nameWithType: DigitalTwinBase.Init
+- uid: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.InitAsync(System.String,System.String)
+  name: InitAsync(string, string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.html#Scaleout_Streaming_DigitalTwin_Core_DigitalTwinBase_InitAsync_System_String_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.InitAsync(System.String,System.String)
+  name.vb: InitAsync(String, String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.InitAsync(string, string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.InitAsync(String, String)
+  nameWithType: DigitalTwinBase.InitAsync(string, string)
+  nameWithType.vb: DigitalTwinBase.InitAsync(String, String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.InitAsync(System.String,System.String,Scaleout.Streaming.DigitalTwin.Core.InitContext)
+  name: InitAsync(string, string, InitContext)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.html#Scaleout_Streaming_DigitalTwin_Core_DigitalTwinBase_InitAsync_System_String_System_String_Scaleout_Streaming_DigitalTwin_Core_InitContext_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.InitAsync(System.String,System.String,Scaleout.Streaming.DigitalTwin.Core.InitContext)
+  name.vb: InitAsync(String, String, InitContext)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.InitAsync(string, string, Scaleout.Streaming.DigitalTwin.Core.InitContext)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.InitAsync(String, String, Scaleout.Streaming.DigitalTwin.Core.InitContext)
+  nameWithType: DigitalTwinBase.InitAsync(string, string, InitContext)
+  nameWithType.vb: DigitalTwinBase.InitAsync(String, String, InitContext)
+- uid: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.InitAsync*
+  name: InitAsync
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.html#Scaleout_Streaming_DigitalTwin_Core_DigitalTwinBase_InitAsync_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.InitAsync
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.InitAsync
+  nameWithType: DigitalTwinBase.InitAsync
+- uid: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.Model
+  name: Model
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.html#Scaleout_Streaming_DigitalTwin_Core_DigitalTwinBase_Model
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.Model
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.Model
+  nameWithType: DigitalTwinBase.Model
+- uid: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.Model*
+  name: Model
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.html#Scaleout_Streaming_DigitalTwin_Core_DigitalTwinBase_Model_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.Model
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.Model
+  nameWithType: DigitalTwinBase.Model
+- uid: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage
+  name: DigitalTwinTimerMessage
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage
+  nameWithType: DigitalTwinTimerMessage
+- uid: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.ModelName
+  name: ModelName
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.html#Scaleout_Streaming_DigitalTwin_Core_DigitalTwinTimerMessage_ModelName
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.ModelName
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.ModelName
+  nameWithType: DigitalTwinTimerMessage.ModelName
+- uid: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.ModelName*
+  name: ModelName
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.html#Scaleout_Streaming_DigitalTwin_Core_DigitalTwinTimerMessage_ModelName_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.ModelName
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.ModelName
+  nameWithType: DigitalTwinTimerMessage.ModelName
+- uid: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.TimerId
+  name: TimerId
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.html#Scaleout_Streaming_DigitalTwin_Core_DigitalTwinTimerMessage_TimerId
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.TimerId
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.TimerId
+  nameWithType: DigitalTwinTimerMessage.TimerId
+- uid: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.TimerId*
+  name: TimerId
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.html#Scaleout_Streaming_DigitalTwin_Core_DigitalTwinTimerMessage_TimerId_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.TimerId
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.TimerId
+  nameWithType: DigitalTwinTimerMessage.TimerId
+- uid: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.TimerName
+  name: TimerName
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.html#Scaleout_Streaming_DigitalTwin_Core_DigitalTwinTimerMessage_TimerName
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.TimerName
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.TimerName
+  nameWithType: DigitalTwinTimerMessage.TimerName
+- uid: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.TimerName*
+  name: TimerName
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.html#Scaleout_Streaming_DigitalTwin_Core_DigitalTwinTimerMessage_TimerName_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.TimerName
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.TimerName
+  nameWithType: DigitalTwinTimerMessage.TimerName
+- uid: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.TimerType
+  name: TimerType
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.html#Scaleout_Streaming_DigitalTwin_Core_DigitalTwinTimerMessage_TimerType
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.TimerType
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.TimerType
+  nameWithType: DigitalTwinTimerMessage.TimerType
+- uid: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.TimerType*
+  name: TimerType
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.html#Scaleout_Streaming_DigitalTwin_Core_DigitalTwinTimerMessage_TimerType_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.TimerType
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.TimerType
+  nameWithType: DigitalTwinTimerMessage.TimerType
+- uid: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.ToString
+  name: ToString()
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.html#Scaleout_Streaming_DigitalTwin_Core_DigitalTwinTimerMessage_ToString
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.ToString
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.ToString()
+  nameWithType: DigitalTwinTimerMessage.ToString()
+- uid: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.ToString*
+  name: ToString
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.html#Scaleout_Streaming_DigitalTwin_Core_DigitalTwinTimerMessage_ToString_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.ToString
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.ToString
+  nameWithType: DigitalTwinTimerMessage.ToString
+- uid: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.TwinId
+  name: TwinId
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.html#Scaleout_Streaming_DigitalTwin_Core_DigitalTwinTimerMessage_TwinId
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.TwinId
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.TwinId
+  nameWithType: DigitalTwinTimerMessage.TwinId
+- uid: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.TwinId*
+  name: TwinId
+  href: api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.html#Scaleout_Streaming_DigitalTwin_Core_DigitalTwinTimerMessage_TwinId_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.TwinId
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.TwinId
+  nameWithType: DigitalTwinTimerMessage.TwinId
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions
+  name: Scaleout.Streaming.DigitalTwin.Core.Exceptions
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.html
+  commentId: N:Scaleout.Streaming.DigitalTwin.Core.Exceptions
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions
+  nameWithType: Scaleout.Streaming.DigitalTwin.Core.Exceptions
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException
+  name: DigitalTwinConfigurationException
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException
+  nameWithType: DigitalTwinConfigurationException
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException.#ctor
+  name: DigitalTwinConfigurationException()
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_DigitalTwinConfigurationException__ctor
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException.#ctor
+  name.vb: New()
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException.DigitalTwinConfigurationException()
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException.New()
+  nameWithType: DigitalTwinConfigurationException.DigitalTwinConfigurationException()
+  nameWithType.vb: DigitalTwinConfigurationException.New()
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException.#ctor(System.String)
+  name: DigitalTwinConfigurationException(string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_DigitalTwinConfigurationException__ctor_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException.#ctor(System.String)
+  name.vb: New(String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException.DigitalTwinConfigurationException(string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException.New(String)
+  nameWithType: DigitalTwinConfigurationException.DigitalTwinConfigurationException(string)
+  nameWithType.vb: DigitalTwinConfigurationException.New(String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException.#ctor(System.String,System.Exception)
+  name: DigitalTwinConfigurationException(string, Exception)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_DigitalTwinConfigurationException__ctor_System_String_System_Exception_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException.#ctor(System.String,System.Exception)
+  name.vb: New(String, Exception)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException.DigitalTwinConfigurationException(string, System.Exception)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException.New(String, System.Exception)
+  nameWithType: DigitalTwinConfigurationException.DigitalTwinConfigurationException(string, Exception)
+  nameWithType.vb: DigitalTwinConfigurationException.New(String, Exception)
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException.#ctor*
+  name: DigitalTwinConfigurationException
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_DigitalTwinConfigurationException__ctor_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException.DigitalTwinConfigurationException
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException.New
+  nameWithType: DigitalTwinConfigurationException.DigitalTwinConfigurationException
+  nameWithType.vb: DigitalTwinConfigurationException.New
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException
+  name: DigitalTwinInstantiationException
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException
+  nameWithType: DigitalTwinInstantiationException
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException.#ctor
+  name: DigitalTwinInstantiationException()
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_DigitalTwinInstantiationException__ctor
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException.#ctor
+  name.vb: New()
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException.DigitalTwinInstantiationException()
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException.New()
+  nameWithType: DigitalTwinInstantiationException.DigitalTwinInstantiationException()
+  nameWithType.vb: DigitalTwinInstantiationException.New()
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException.#ctor(System.String)
+  name: DigitalTwinInstantiationException(string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_DigitalTwinInstantiationException__ctor_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException.#ctor(System.String)
+  name.vb: New(String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException.DigitalTwinInstantiationException(string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException.New(String)
+  nameWithType: DigitalTwinInstantiationException.DigitalTwinInstantiationException(string)
+  nameWithType.vb: DigitalTwinInstantiationException.New(String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException.#ctor(System.String,System.Exception)
+  name: DigitalTwinInstantiationException(string, Exception)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_DigitalTwinInstantiationException__ctor_System_String_System_Exception_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException.#ctor(System.String,System.Exception)
+  name.vb: New(String, Exception)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException.DigitalTwinInstantiationException(string, System.Exception)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException.New(String, System.Exception)
+  nameWithType: DigitalTwinInstantiationException.DigitalTwinInstantiationException(string, Exception)
+  nameWithType.vb: DigitalTwinInstantiationException.New(String, Exception)
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException.#ctor*
+  name: DigitalTwinInstantiationException
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_DigitalTwinInstantiationException__ctor_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException.DigitalTwinInstantiationException
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException.New
+  nameWithType: DigitalTwinInstantiationException.DigitalTwinInstantiationException
+  nameWithType.vb: DigitalTwinInstantiationException.New
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException
+  name: DigitalTwinProcessingException
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException
+  nameWithType: DigitalTwinProcessingException
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException.#ctor
+  name: DigitalTwinProcessingException()
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_DigitalTwinProcessingException__ctor
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException.#ctor
+  name.vb: New()
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException.DigitalTwinProcessingException()
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException.New()
+  nameWithType: DigitalTwinProcessingException.DigitalTwinProcessingException()
+  nameWithType.vb: DigitalTwinProcessingException.New()
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException.#ctor(System.String)
+  name: DigitalTwinProcessingException(string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_DigitalTwinProcessingException__ctor_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException.#ctor(System.String)
+  name.vb: New(String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException.DigitalTwinProcessingException(string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException.New(String)
+  nameWithType: DigitalTwinProcessingException.DigitalTwinProcessingException(string)
+  nameWithType.vb: DigitalTwinProcessingException.New(String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException.#ctor(System.String,System.Exception)
+  name: DigitalTwinProcessingException(string, Exception)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_DigitalTwinProcessingException__ctor_System_String_System_Exception_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException.#ctor(System.String,System.Exception)
+  name.vb: New(String, Exception)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException.DigitalTwinProcessingException(string, System.Exception)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException.New(String, System.Exception)
+  nameWithType: DigitalTwinProcessingException.DigitalTwinProcessingException(string, Exception)
+  nameWithType.vb: DigitalTwinProcessingException.New(String, Exception)
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException.#ctor*
+  name: DigitalTwinProcessingException
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_DigitalTwinProcessingException__ctor_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException.DigitalTwinProcessingException
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException.New
+  nameWithType: DigitalTwinProcessingException.DigitalTwinProcessingException
+  nameWithType.vb: DigitalTwinProcessingException.New
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException
+  name: ExecutionEnvironmentException
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException
+  nameWithType: ExecutionEnvironmentException
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException.#ctor
+  name: ExecutionEnvironmentException()
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_ExecutionEnvironmentException__ctor
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException.#ctor
+  name.vb: New()
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException.ExecutionEnvironmentException()
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException.New()
+  nameWithType: ExecutionEnvironmentException.ExecutionEnvironmentException()
+  nameWithType.vb: ExecutionEnvironmentException.New()
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException.#ctor(System.String)
+  name: ExecutionEnvironmentException(string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_ExecutionEnvironmentException__ctor_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException.#ctor(System.String)
+  name.vb: New(String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException.ExecutionEnvironmentException(string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException.New(String)
+  nameWithType: ExecutionEnvironmentException.ExecutionEnvironmentException(string)
+  nameWithType.vb: ExecutionEnvironmentException.New(String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException.#ctor(System.String,System.Exception)
+  name: ExecutionEnvironmentException(string, Exception)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_ExecutionEnvironmentException__ctor_System_String_System_Exception_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException.#ctor(System.String,System.Exception)
+  name.vb: New(String, Exception)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException.ExecutionEnvironmentException(string, System.Exception)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException.New(String, System.Exception)
+  nameWithType: ExecutionEnvironmentException.ExecutionEnvironmentException(string, Exception)
+  nameWithType.vb: ExecutionEnvironmentException.New(String, Exception)
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException.#ctor*
+  name: ExecutionEnvironmentException
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_ExecutionEnvironmentException__ctor_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException.ExecutionEnvironmentException
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException.New
+  nameWithType: ExecutionEnvironmentException.ExecutionEnvironmentException
+  nameWithType.vb: ExecutionEnvironmentException.New
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException
+  name: MessageInstantiationException
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException
+  nameWithType: MessageInstantiationException
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException.#ctor
+  name: MessageInstantiationException()
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_MessageInstantiationException__ctor
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException.#ctor
+  name.vb: New()
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException.MessageInstantiationException()
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException.New()
+  nameWithType: MessageInstantiationException.MessageInstantiationException()
+  nameWithType.vb: MessageInstantiationException.New()
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException.#ctor(System.String)
+  name: MessageInstantiationException(string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_MessageInstantiationException__ctor_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException.#ctor(System.String)
+  name.vb: New(String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException.MessageInstantiationException(string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException.New(String)
+  nameWithType: MessageInstantiationException.MessageInstantiationException(string)
+  nameWithType.vb: MessageInstantiationException.New(String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException.#ctor(System.String,System.Exception)
+  name: MessageInstantiationException(string, Exception)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_MessageInstantiationException__ctor_System_String_System_Exception_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException.#ctor(System.String,System.Exception)
+  name.vb: New(String, Exception)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException.MessageInstantiationException(string, System.Exception)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException.New(String, System.Exception)
+  nameWithType: MessageInstantiationException.MessageInstantiationException(string, Exception)
+  nameWithType.vb: MessageInstantiationException.New(String, Exception)
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException.#ctor*
+  name: MessageInstantiationException
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_MessageInstantiationException__ctor_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException.MessageInstantiationException
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException.New
+  nameWithType: MessageInstantiationException.MessageInstantiationException
+  nameWithType.vb: MessageInstantiationException.New
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException
+  name: MessageProcessorInstantiationException
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException
+  nameWithType: MessageProcessorInstantiationException
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException.#ctor
+  name: MessageProcessorInstantiationException()
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_MessageProcessorInstantiationException__ctor
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException.#ctor
+  name.vb: New()
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException.MessageProcessorInstantiationException()
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException.New()
+  nameWithType: MessageProcessorInstantiationException.MessageProcessorInstantiationException()
+  nameWithType.vb: MessageProcessorInstantiationException.New()
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException.#ctor(System.String)
+  name: MessageProcessorInstantiationException(string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_MessageProcessorInstantiationException__ctor_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException.#ctor(System.String)
+  name.vb: New(String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException.MessageProcessorInstantiationException(string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException.New(String)
+  nameWithType: MessageProcessorInstantiationException.MessageProcessorInstantiationException(string)
+  nameWithType.vb: MessageProcessorInstantiationException.New(String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException.#ctor(System.String,System.Exception)
+  name: MessageProcessorInstantiationException(string, Exception)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_MessageProcessorInstantiationException__ctor_System_String_System_Exception_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException.#ctor(System.String,System.Exception)
+  name.vb: New(String, Exception)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException.MessageProcessorInstantiationException(string, System.Exception)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException.New(String, System.Exception)
+  nameWithType: MessageProcessorInstantiationException.MessageProcessorInstantiationException(string, Exception)
+  nameWithType.vb: MessageProcessorInstantiationException.New(String, Exception)
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException.#ctor*
+  name: MessageProcessorInstantiationException
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_MessageProcessorInstantiationException__ctor_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException.MessageProcessorInstantiationException
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException.New
+  nameWithType: MessageProcessorInstantiationException.MessageProcessorInstantiationException
+  nameWithType.vb: MessageProcessorInstantiationException.New
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException
+  name: ModelSimulationException
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException
+  nameWithType: ModelSimulationException
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException.#ctor
+  name: ModelSimulationException()
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_ModelSimulationException__ctor
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException.#ctor
+  name.vb: New()
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException.ModelSimulationException()
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException.New()
+  nameWithType: ModelSimulationException.ModelSimulationException()
+  nameWithType.vb: ModelSimulationException.New()
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException.#ctor(System.String)
+  name: ModelSimulationException(string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_ModelSimulationException__ctor_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException.#ctor(System.String)
+  name.vb: New(String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException.ModelSimulationException(string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException.New(String)
+  nameWithType: ModelSimulationException.ModelSimulationException(string)
+  nameWithType.vb: ModelSimulationException.New(String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException.#ctor(System.String,System.Exception)
+  name: ModelSimulationException(string, Exception)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_ModelSimulationException__ctor_System_String_System_Exception_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException.#ctor(System.String,System.Exception)
+  name.vb: New(String, Exception)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException.ModelSimulationException(string, System.Exception)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException.New(String, System.Exception)
+  nameWithType: ModelSimulationException.ModelSimulationException(string, Exception)
+  nameWithType.vb: ModelSimulationException.New(String, Exception)
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException.#ctor*
+  name: ModelSimulationException
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_ModelSimulationException__ctor_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException.ModelSimulationException
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException.New
+  nameWithType: ModelSimulationException.ModelSimulationException
+  nameWithType.vb: ModelSimulationException.New
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException
+  name: PersistenceProviderException
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException
+  nameWithType: PersistenceProviderException
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.#ctor
+  name: PersistenceProviderException()
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_PersistenceProviderException__ctor
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.#ctor
+  name.vb: New()
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.PersistenceProviderException()
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.New()
+  nameWithType: PersistenceProviderException.PersistenceProviderException()
+  nameWithType.vb: PersistenceProviderException.New()
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.#ctor(System.String)
+  name: PersistenceProviderException(string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_PersistenceProviderException__ctor_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.#ctor(System.String)
+  name.vb: New(String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.PersistenceProviderException(string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.New(String)
+  nameWithType: PersistenceProviderException.PersistenceProviderException(string)
+  nameWithType.vb: PersistenceProviderException.New(String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.#ctor(System.String,System.Exception)
+  name: PersistenceProviderException(string, Exception)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_PersistenceProviderException__ctor_System_String_System_Exception_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.#ctor(System.String,System.Exception)
+  name.vb: New(String, Exception)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.PersistenceProviderException(string, System.Exception)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.New(String, System.Exception)
+  nameWithType: PersistenceProviderException.PersistenceProviderException(string, Exception)
+  nameWithType.vb: PersistenceProviderException.New(String, Exception)
+- uid: Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.#ctor*
+  name: PersistenceProviderException
+  href: api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.html#Scaleout_Streaming_DigitalTwin_Core_Exceptions_PersistenceProviderException__ctor_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.PersistenceProviderException
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.New
+  nameWithType: PersistenceProviderException.PersistenceProviderException
+  nameWithType.vb: PersistenceProviderException.New
+- uid: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint
+  name: IDigitalTwinModelEndpoint
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint
+  nameWithType: IDigitalTwinModelEndpoint
+- uid: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwin(System.String,System.Object)
+  name: CreateTwin(string, object)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.html#Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_CreateTwin_System_String_System_Object_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwin(System.String,System.Object)
+  name.vb: CreateTwin(String, Object)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwin(string, object)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwin(String, Object)
+  nameWithType: IDigitalTwinModelEndpoint.CreateTwin(string, object)
+  nameWithType.vb: IDigitalTwinModelEndpoint.CreateTwin(String, Object)
+- uid: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwin*
+  name: CreateTwin
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.html#Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_CreateTwin_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwin
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwin
+  nameWithType: IDigitalTwinModelEndpoint.CreateTwin
+- uid: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwinFromPersistenceStore(System.String)
+  name: CreateTwinFromPersistenceStore(string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.html#Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_CreateTwinFromPersistenceStore_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwinFromPersistenceStore(System.String)
+  name.vb: CreateTwinFromPersistenceStore(String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwinFromPersistenceStore(string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwinFromPersistenceStore(String)
+  nameWithType: IDigitalTwinModelEndpoint.CreateTwinFromPersistenceStore(string)
+  nameWithType.vb: IDigitalTwinModelEndpoint.CreateTwinFromPersistenceStore(String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwinFromPersistenceStore(System.String,System.Object)
+  name: CreateTwinFromPersistenceStore(string, object)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.html#Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_CreateTwinFromPersistenceStore_System_String_System_Object_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwinFromPersistenceStore(System.String,System.Object)
+  name.vb: CreateTwinFromPersistenceStore(String, Object)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwinFromPersistenceStore(string, object)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwinFromPersistenceStore(String, Object)
+  nameWithType: IDigitalTwinModelEndpoint.CreateTwinFromPersistenceStore(string, object)
+  nameWithType.vb: IDigitalTwinModelEndpoint.CreateTwinFromPersistenceStore(String, Object)
+- uid: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwinFromPersistenceStore*
+  name: CreateTwinFromPersistenceStore
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.html#Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_CreateTwinFromPersistenceStore_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwinFromPersistenceStore
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwinFromPersistenceStore
+  nameWithType: IDigitalTwinModelEndpoint.CreateTwinFromPersistenceStore
+- uid: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.DeleteTwin(System.String)
+  name: DeleteTwin(string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.html#Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_DeleteTwin_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.DeleteTwin(System.String)
+  name.vb: DeleteTwin(String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.DeleteTwin(string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.DeleteTwin(String)
+  nameWithType: IDigitalTwinModelEndpoint.DeleteTwin(string)
+  nameWithType.vb: IDigitalTwinModelEndpoint.DeleteTwin(String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.DeleteTwin*
+  name: DeleteTwin
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.html#Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_DeleteTwin_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.DeleteTwin
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.DeleteTwin
+  nameWithType: IDigitalTwinModelEndpoint.DeleteTwin
+- uid: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(System.String,System.Byte[])
+  name: Send(string, byte[])
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.html#Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_Send_System_String_System_Byte___
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(System.String,System.Byte[])
+  name.vb: Send(String, Byte())
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(string, byte[])
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(String, Byte())
+  nameWithType: IDigitalTwinModelEndpoint.Send(string, byte[])
+  nameWithType.vb: IDigitalTwinModelEndpoint.Send(String, Byte())
+- uid: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(System.String,System.Collections.Generic.IEnumerable{System.Byte[]})
+  name: Send(string, IEnumerable<byte[]>)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.html#Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_Send_System_String_System_Collections_Generic_IEnumerable_System_Byte____
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(System.String,System.Collections.Generic.IEnumerable{System.Byte[]})
+  name.vb: Send(String, IEnumerable(Of Byte()))
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(string, System.Collections.Generic.IEnumerable<byte[]>)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(String, System.Collections.Generic.IEnumerable(Of Byte()))
+  nameWithType: IDigitalTwinModelEndpoint.Send(string, IEnumerable<byte[]>)
+  nameWithType.vb: IDigitalTwinModelEndpoint.Send(String, IEnumerable(Of Byte()))
+- uid: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(System.String,System.Collections.Generic.IEnumerable{System.Object})
+  name: Send(string, IEnumerable<object>)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.html#Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_Send_System_String_System_Collections_Generic_IEnumerable_System_Object__
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(System.String,System.Collections.Generic.IEnumerable{System.Object})
+  name.vb: Send(String, IEnumerable(Of Object))
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(string, System.Collections.Generic.IEnumerable<object>)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(String, System.Collections.Generic.IEnumerable(Of Object))
+  nameWithType: IDigitalTwinModelEndpoint.Send(string, IEnumerable<object>)
+  nameWithType.vb: IDigitalTwinModelEndpoint.Send(String, IEnumerable(Of Object))
+- uid: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(System.String,System.Object)
+  name: Send(string, object)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.html#Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_Send_System_String_System_Object_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(System.String,System.Object)
+  name.vb: Send(String, Object)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(string, object)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(String, Object)
+  nameWithType: IDigitalTwinModelEndpoint.Send(string, object)
+  nameWithType.vb: IDigitalTwinModelEndpoint.Send(String, Object)
+- uid: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(System.String,System.String)
+  name: Send(string, string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.html#Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_Send_System_String_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(System.String,System.String)
+  name.vb: Send(String, String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(string, string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(String, String)
+  nameWithType: IDigitalTwinModelEndpoint.Send(string, string)
+  nameWithType.vb: IDigitalTwinModelEndpoint.Send(String, String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send*
+  name: Send
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.html#Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_Send_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send
+  nameWithType: IDigitalTwinModelEndpoint.Send
+- uid: Scaleout.Streaming.DigitalTwin.Core.IMessageListFactory
+  name: IMessageListFactory
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IMessageListFactory.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.IMessageListFactory
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IMessageListFactory
+  nameWithType: IMessageListFactory
+- uid: Scaleout.Streaming.DigitalTwin.Core.IMessageListFactory.GetIncomingMessageList*
+  name: GetIncomingMessageList
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IMessageListFactory.html#Scaleout_Streaming_DigitalTwin_Core_IMessageListFactory_GetIncomingMessageList_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IMessageListFactory.GetIncomingMessageList
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IMessageListFactory.GetIncomingMessageList
+  nameWithType: IMessageListFactory.GetIncomingMessageList
+- uid: Scaleout.Streaming.DigitalTwin.Core.IMessageListFactory.GetIncomingMessageList``1
+  name: GetIncomingMessageList<TMessage>()
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IMessageListFactory.html#Scaleout_Streaming_DigitalTwin_Core_IMessageListFactory_GetIncomingMessageList__1
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IMessageListFactory.GetIncomingMessageList``1
+  name.vb: GetIncomingMessageList(Of TMessage)()
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IMessageListFactory.GetIncomingMessageList<TMessage>()
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IMessageListFactory.GetIncomingMessageList(Of TMessage)()
+  nameWithType: IMessageListFactory.GetIncomingMessageList<TMessage>()
+  nameWithType.vb: IMessageListFactory.GetIncomingMessageList(Of TMessage)()
+- uid: Scaleout.Streaming.DigitalTwin.Core.IMessageSender
+  name: IMessageSender
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IMessageSender.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.IMessageSender
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IMessageSender
+  nameWithType: IMessageSender
+- uid: Scaleout.Streaming.DigitalTwin.Core.IMessageSender.Send(System.String,System.String,System.Byte[])
+  name: Send(string, string, byte[])
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IMessageSender.html#Scaleout_Streaming_DigitalTwin_Core_IMessageSender_Send_System_String_System_String_System_Byte___
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IMessageSender.Send(System.String,System.String,System.Byte[])
+  name.vb: Send(String, String, Byte())
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IMessageSender.Send(string, string, byte[])
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IMessageSender.Send(String, String, Byte())
+  nameWithType: IMessageSender.Send(string, string, byte[])
+  nameWithType.vb: IMessageSender.Send(String, String, Byte())
+- uid: Scaleout.Streaming.DigitalTwin.Core.IMessageSender.Send(System.String,System.String,System.Collections.Generic.IEnumerable{System.Byte[]})
+  name: Send(string, string, IEnumerable<byte[]>)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IMessageSender.html#Scaleout_Streaming_DigitalTwin_Core_IMessageSender_Send_System_String_System_String_System_Collections_Generic_IEnumerable_System_Byte____
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IMessageSender.Send(System.String,System.String,System.Collections.Generic.IEnumerable{System.Byte[]})
+  name.vb: Send(String, String, IEnumerable(Of Byte()))
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IMessageSender.Send(string, string, System.Collections.Generic.IEnumerable<byte[]>)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IMessageSender.Send(String, String, System.Collections.Generic.IEnumerable(Of Byte()))
+  nameWithType: IMessageSender.Send(string, string, IEnumerable<byte[]>)
+  nameWithType.vb: IMessageSender.Send(String, String, IEnumerable(Of Byte()))
+- uid: Scaleout.Streaming.DigitalTwin.Core.IMessageSender.Send*
+  name: Send
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IMessageSender.html#Scaleout_Streaming_DigitalTwin_Core_IMessageSender_Send_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IMessageSender.Send
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IMessageSender.Send
+  nameWithType: IMessageSender.Send
+- uid: Scaleout.Streaming.DigitalTwin.Core.IMessageSender.SourceAppId
+  name: SourceAppId
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IMessageSender.html#Scaleout_Streaming_DigitalTwin_Core_IMessageSender_SourceAppId
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.IMessageSender.SourceAppId
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IMessageSender.SourceAppId
+  nameWithType: IMessageSender.SourceAppId
+- uid: Scaleout.Streaming.DigitalTwin.Core.IMessageSender.SourceAppId*
+  name: SourceAppId
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IMessageSender.html#Scaleout_Streaming_DigitalTwin_Core_IMessageSender_SourceAppId_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IMessageSender.SourceAppId
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IMessageSender.SourceAppId
+  nameWithType: IMessageSender.SourceAppId
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider
+  name: IPersistenceProvider
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider
+  nameWithType: IPersistenceProvider
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstance(System.String,System.String)
+  name: GetInstance(string, string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_GetInstance_System_String_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstance(System.String,System.String)
+  name.vb: GetInstance(String, String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstance(string, string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstance(String, String)
+  nameWithType: IPersistenceProvider.GetInstance(string, string)
+  nameWithType.vb: IPersistenceProvider.GetInstance(String, String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstance*
+  name: GetInstance
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_GetInstance_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstance
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstance
+  nameWithType: IPersistenceProvider.GetInstance
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstanceAsync(System.String,System.String)
+  name: GetInstanceAsync(string, string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_GetInstanceAsync_System_String_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstanceAsync(System.String,System.String)
+  name.vb: GetInstanceAsync(String, String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstanceAsync(string, string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstanceAsync(String, String)
+  nameWithType: IPersistenceProvider.GetInstanceAsync(string, string)
+  nameWithType.vb: IPersistenceProvider.GetInstanceAsync(String, String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstanceAsync*
+  name: GetInstanceAsync
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_GetInstanceAsync_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstanceAsync
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstanceAsync
+  nameWithType: IPersistenceProvider.GetInstanceAsync
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstanceIds(System.String)
+  name: GetInstanceIds(string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_GetInstanceIds_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstanceIds(System.String)
+  name.vb: GetInstanceIds(String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstanceIds(string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstanceIds(String)
+  nameWithType: IPersistenceProvider.GetInstanceIds(string)
+  nameWithType.vb: IPersistenceProvider.GetInstanceIds(String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstanceIds*
+  name: GetInstanceIds
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_GetInstanceIds_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstanceIds
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstanceIds
+  nameWithType: IPersistenceProvider.GetInstanceIds
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstanceIdsAsync(System.String)
+  name: GetInstanceIdsAsync(string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_GetInstanceIdsAsync_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstanceIdsAsync(System.String)
+  name.vb: GetInstanceIdsAsync(String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstanceIdsAsync(string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstanceIdsAsync(String)
+  nameWithType: IPersistenceProvider.GetInstanceIdsAsync(string)
+  nameWithType.vb: IPersistenceProvider.GetInstanceIdsAsync(String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstanceIdsAsync*
+  name: GetInstanceIdsAsync
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_GetInstanceIdsAsync_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstanceIdsAsync
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetInstanceIdsAsync
+  nameWithType: IPersistenceProvider.GetInstanceIdsAsync
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetProperty*
+  name: GetProperty
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_GetProperty_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetProperty
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetProperty
+  nameWithType: IPersistenceProvider.GetProperty
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetPropertyAsync*
+  name: GetPropertyAsync
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_GetPropertyAsync_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetPropertyAsync
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetPropertyAsync
+  nameWithType: IPersistenceProvider.GetPropertyAsync
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetPropertyAsync``1(System.String,System.String,System.String)
+  name: GetPropertyAsync<T>(string, string, string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_GetPropertyAsync__1_System_String_System_String_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetPropertyAsync``1(System.String,System.String,System.String)
+  name.vb: GetPropertyAsync(Of T)(String, String, String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetPropertyAsync<T>(string, string, string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetPropertyAsync(Of T)(String, String, String)
+  nameWithType: IPersistenceProvider.GetPropertyAsync<T>(string, string, string)
+  nameWithType.vb: IPersistenceProvider.GetPropertyAsync(Of T)(String, String, String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetPropertyList(System.String)
+  name: GetPropertyList(string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_GetPropertyList_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetPropertyList(System.String)
+  name.vb: GetPropertyList(String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetPropertyList(string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetPropertyList(String)
+  nameWithType: IPersistenceProvider.GetPropertyList(string)
+  nameWithType.vb: IPersistenceProvider.GetPropertyList(String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetPropertyList*
+  name: GetPropertyList
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_GetPropertyList_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetPropertyList
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetPropertyList
+  nameWithType: IPersistenceProvider.GetPropertyList
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetPropertyListAsync(System.String)
+  name: GetPropertyListAsync(string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_GetPropertyListAsync_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetPropertyListAsync(System.String)
+  name.vb: GetPropertyListAsync(String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetPropertyListAsync(string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetPropertyListAsync(String)
+  nameWithType: IPersistenceProvider.GetPropertyListAsync(string)
+  nameWithType.vb: IPersistenceProvider.GetPropertyListAsync(String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetPropertyListAsync*
+  name: GetPropertyListAsync
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_GetPropertyListAsync_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetPropertyListAsync
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetPropertyListAsync
+  nameWithType: IPersistenceProvider.GetPropertyListAsync
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetProperty``1(System.String,System.String,System.String)
+  name: GetProperty<T>(string, string, string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_GetProperty__1_System_String_System_String_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetProperty``1(System.String,System.String,System.String)
+  name.vb: GetProperty(Of T)(String, String, String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetProperty<T>(string, string, string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetProperty(Of T)(String, String, String)
+  nameWithType: IPersistenceProvider.GetProperty<T>(string, string, string)
+  nameWithType.vb: IPersistenceProvider.GetProperty(Of T)(String, String, String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetRTDTProperty*
+  name: GetRTDTProperty
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_GetRTDTProperty_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetRTDTProperty
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetRTDTProperty
+  nameWithType: IPersistenceProvider.GetRTDTProperty
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetRTDTPropertyAsync*
+  name: GetRTDTPropertyAsync
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_GetRTDTPropertyAsync_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetRTDTPropertyAsync
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetRTDTPropertyAsync
+  nameWithType: IPersistenceProvider.GetRTDTPropertyAsync
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetRTDTPropertyAsync``1(System.String,System.String)
+  name: GetRTDTPropertyAsync<T>(string, string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_GetRTDTPropertyAsync__1_System_String_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetRTDTPropertyAsync``1(System.String,System.String)
+  name.vb: GetRTDTPropertyAsync(Of T)(String, String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetRTDTPropertyAsync<T>(string, string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetRTDTPropertyAsync(Of T)(String, String)
+  nameWithType: IPersistenceProvider.GetRTDTPropertyAsync<T>(string, string)
+  nameWithType.vb: IPersistenceProvider.GetRTDTPropertyAsync(Of T)(String, String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetRTDTProperty``1(System.String,System.String)
+  name: GetRTDTProperty<T>(string, string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_GetRTDTProperty__1_System_String_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetRTDTProperty``1(System.String,System.String)
+  name.vb: GetRTDTProperty(Of T)(String, String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetRTDTProperty<T>(string, string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.GetRTDTProperty(Of T)(String, String)
+  nameWithType: IPersistenceProvider.GetRTDTProperty<T>(string, string)
+  nameWithType.vb: IPersistenceProvider.GetRTDTProperty(Of T)(String, String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.IsActive
+  name: IsActive
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_IsActive
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.IsActive
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.IsActive
+  nameWithType: IPersistenceProvider.IsActive
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.IsActive*
+  name: IsActive
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_IsActive_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.IsActive
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.IsActive
+  nameWithType: IPersistenceProvider.IsActive
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.ProviderType
+  name: ProviderType
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_ProviderType
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.ProviderType
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.ProviderType
+  nameWithType: IPersistenceProvider.ProviderType
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.ProviderType*
+  name: ProviderType
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_ProviderType_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.ProviderType
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.ProviderType
+  nameWithType: IPersistenceProvider.ProviderType
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdateProperty*
+  name: UpdateProperty
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_UpdateProperty_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdateProperty
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdateProperty
+  nameWithType: IPersistenceProvider.UpdateProperty
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdatePropertyAsync*
+  name: UpdatePropertyAsync
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_UpdatePropertyAsync_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdatePropertyAsync
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdatePropertyAsync
+  nameWithType: IPersistenceProvider.UpdatePropertyAsync
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdatePropertyAsync``1(System.String,System.String,System.String,``0)
+  name: UpdatePropertyAsync<T>(string, string, string, T)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_UpdatePropertyAsync__1_System_String_System_String_System_String___0_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdatePropertyAsync``1(System.String,System.String,System.String,``0)
+  name.vb: UpdatePropertyAsync(Of T)(String, String, String, T)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdatePropertyAsync<T>(string, string, string, T)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdatePropertyAsync(Of T)(String, String, String, T)
+  nameWithType: IPersistenceProvider.UpdatePropertyAsync<T>(string, string, string, T)
+  nameWithType.vb: IPersistenceProvider.UpdatePropertyAsync(Of T)(String, String, String, T)
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdateProperty``1(System.String,System.String,System.String,``0)
+  name: UpdateProperty<T>(string, string, string, T)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_UpdateProperty__1_System_String_System_String_System_String___0_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdateProperty``1(System.String,System.String,System.String,``0)
+  name.vb: UpdateProperty(Of T)(String, String, String, T)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdateProperty<T>(string, string, string, T)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdateProperty(Of T)(String, String, String, T)
+  nameWithType: IPersistenceProvider.UpdateProperty<T>(string, string, string, T)
+  nameWithType.vb: IPersistenceProvider.UpdateProperty(Of T)(String, String, String, T)
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdateRTDTProperty*
+  name: UpdateRTDTProperty
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_UpdateRTDTProperty_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdateRTDTProperty
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdateRTDTProperty
+  nameWithType: IPersistenceProvider.UpdateRTDTProperty
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdateRTDTPropertyAsync*
+  name: UpdateRTDTPropertyAsync
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_UpdateRTDTPropertyAsync_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdateRTDTPropertyAsync
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdateRTDTPropertyAsync
+  nameWithType: IPersistenceProvider.UpdateRTDTPropertyAsync
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdateRTDTPropertyAsync``1(System.String,System.String,``0)
+  name: UpdateRTDTPropertyAsync<T>(string, string, T)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_UpdateRTDTPropertyAsync__1_System_String_System_String___0_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdateRTDTPropertyAsync``1(System.String,System.String,``0)
+  name.vb: UpdateRTDTPropertyAsync(Of T)(String, String, T)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdateRTDTPropertyAsync<T>(string, string, T)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdateRTDTPropertyAsync(Of T)(String, String, T)
+  nameWithType: IPersistenceProvider.UpdateRTDTPropertyAsync<T>(string, string, T)
+  nameWithType.vb: IPersistenceProvider.UpdateRTDTPropertyAsync(Of T)(String, String, T)
+- uid: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdateRTDTProperty``1(System.String,System.String,``0)
+  name: UpdateRTDTProperty<T>(string, string, T)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html#Scaleout_Streaming_DigitalTwin_Core_IPersistenceProvider_UpdateRTDTProperty__1_System_String_System_String___0_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdateRTDTProperty``1(System.String,System.String,``0)
+  name.vb: UpdateRTDTProperty(Of T)(String, String, T)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdateRTDTProperty<T>(string, string, T)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdateRTDTProperty(Of T)(String, String, T)
+  nameWithType: IPersistenceProvider.UpdateRTDTProperty<T>(string, string, T)
+  nameWithType.vb: IPersistenceProvider.UpdateRTDTProperty(Of T)(String, String, T)
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController
+  name: ISimulationController
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.ISimulationController
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController
+  nameWithType: ISimulationController
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.CreateTwin(System.String,System.String,System.Object)
+  name: CreateTwin(string, string, object)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html#Scaleout_Streaming_DigitalTwin_Core_ISimulationController_CreateTwin_System_String_System_String_System_Object_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ISimulationController.CreateTwin(System.String,System.String,System.Object)
+  name.vb: CreateTwin(String, String, Object)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.CreateTwin(string, string, object)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.CreateTwin(String, String, Object)
+  nameWithType: ISimulationController.CreateTwin(string, string, object)
+  nameWithType.vb: ISimulationController.CreateTwin(String, String, Object)
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.CreateTwin*
+  name: CreateTwin
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html#Scaleout_Streaming_DigitalTwin_Core_ISimulationController_CreateTwin_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ISimulationController.CreateTwin
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.CreateTwin
+  nameWithType: ISimulationController.CreateTwin
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.CreateTwinFromPersistenceStore(System.String,System.String)
+  name: CreateTwinFromPersistenceStore(string, string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html#Scaleout_Streaming_DigitalTwin_Core_ISimulationController_CreateTwinFromPersistenceStore_System_String_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ISimulationController.CreateTwinFromPersistenceStore(System.String,System.String)
+  name.vb: CreateTwinFromPersistenceStore(String, String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.CreateTwinFromPersistenceStore(string, string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.CreateTwinFromPersistenceStore(String, String)
+  nameWithType: ISimulationController.CreateTwinFromPersistenceStore(string, string)
+  nameWithType.vb: ISimulationController.CreateTwinFromPersistenceStore(String, String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.CreateTwinFromPersistenceStore(System.String,System.String,System.Object)
+  name: CreateTwinFromPersistenceStore(string, string, object)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html#Scaleout_Streaming_DigitalTwin_Core_ISimulationController_CreateTwinFromPersistenceStore_System_String_System_String_System_Object_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ISimulationController.CreateTwinFromPersistenceStore(System.String,System.String,System.Object)
+  name.vb: CreateTwinFromPersistenceStore(String, String, Object)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.CreateTwinFromPersistenceStore(string, string, object)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.CreateTwinFromPersistenceStore(String, String, Object)
+  nameWithType: ISimulationController.CreateTwinFromPersistenceStore(string, string, object)
+  nameWithType.vb: ISimulationController.CreateTwinFromPersistenceStore(String, String, Object)
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.CreateTwinFromPersistenceStore*
+  name: CreateTwinFromPersistenceStore
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html#Scaleout_Streaming_DigitalTwin_Core_ISimulationController_CreateTwinFromPersistenceStore_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ISimulationController.CreateTwinFromPersistenceStore
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.CreateTwinFromPersistenceStore
+  nameWithType: ISimulationController.CreateTwinFromPersistenceStore
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.Delay(System.TimeSpan)
+  name: Delay(TimeSpan)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html#Scaleout_Streaming_DigitalTwin_Core_ISimulationController_Delay_System_TimeSpan_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ISimulationController.Delay(System.TimeSpan)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.Delay(System.TimeSpan)
+  nameWithType: ISimulationController.Delay(TimeSpan)
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.Delay*
+  name: Delay
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html#Scaleout_Streaming_DigitalTwin_Core_ISimulationController_Delay_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ISimulationController.Delay
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.Delay
+  nameWithType: ISimulationController.Delay
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.DeleteThisTwin
+  name: DeleteThisTwin()
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html#Scaleout_Streaming_DigitalTwin_Core_ISimulationController_DeleteThisTwin
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ISimulationController.DeleteThisTwin
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.DeleteThisTwin()
+  nameWithType: ISimulationController.DeleteThisTwin()
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.DeleteThisTwin*
+  name: DeleteThisTwin
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html#Scaleout_Streaming_DigitalTwin_Core_ISimulationController_DeleteThisTwin_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ISimulationController.DeleteThisTwin
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.DeleteThisTwin
+  nameWithType: ISimulationController.DeleteThisTwin
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.DeleteTwin(System.String,System.String)
+  name: DeleteTwin(string, string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html#Scaleout_Streaming_DigitalTwin_Core_ISimulationController_DeleteTwin_System_String_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ISimulationController.DeleteTwin(System.String,System.String)
+  name.vb: DeleteTwin(String, String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.DeleteTwin(string, string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.DeleteTwin(String, String)
+  nameWithType: ISimulationController.DeleteTwin(string, string)
+  nameWithType.vb: ISimulationController.DeleteTwin(String, String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.DeleteTwin*
+  name: DeleteTwin
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html#Scaleout_Streaming_DigitalTwin_Core_ISimulationController_DeleteTwin_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ISimulationController.DeleteTwin
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.DeleteTwin
+  nameWithType: ISimulationController.DeleteTwin
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.EmitTelemetry(System.String,System.Byte[])
+  name: EmitTelemetry(string, byte[])
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html#Scaleout_Streaming_DigitalTwin_Core_ISimulationController_EmitTelemetry_System_String_System_Byte___
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ISimulationController.EmitTelemetry(System.String,System.Byte[])
+  name.vb: EmitTelemetry(String, Byte())
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.EmitTelemetry(string, byte[])
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.EmitTelemetry(String, Byte())
+  nameWithType: ISimulationController.EmitTelemetry(string, byte[])
+  nameWithType.vb: ISimulationController.EmitTelemetry(String, Byte())
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.EmitTelemetry(System.String,System.Object)
+  name: EmitTelemetry(string, object)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html#Scaleout_Streaming_DigitalTwin_Core_ISimulationController_EmitTelemetry_System_String_System_Object_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ISimulationController.EmitTelemetry(System.String,System.Object)
+  name.vb: EmitTelemetry(String, Object)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.EmitTelemetry(string, object)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.EmitTelemetry(String, Object)
+  nameWithType: ISimulationController.EmitTelemetry(string, object)
+  nameWithType.vb: ISimulationController.EmitTelemetry(String, Object)
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.EmitTelemetry*
+  name: EmitTelemetry
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html#Scaleout_Streaming_DigitalTwin_Core_ISimulationController_EmitTelemetry_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ISimulationController.EmitTelemetry
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.EmitTelemetry
+  nameWithType: ISimulationController.EmitTelemetry
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.GetSimulationTimeIncrement
+  name: GetSimulationTimeIncrement()
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html#Scaleout_Streaming_DigitalTwin_Core_ISimulationController_GetSimulationTimeIncrement
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ISimulationController.GetSimulationTimeIncrement
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.GetSimulationTimeIncrement()
+  nameWithType: ISimulationController.GetSimulationTimeIncrement()
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.GetSimulationTimeIncrement*
+  name: GetSimulationTimeIncrement
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html#Scaleout_Streaming_DigitalTwin_Core_ISimulationController_GetSimulationTimeIncrement_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ISimulationController.GetSimulationTimeIncrement
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.GetSimulationTimeIncrement
+  nameWithType: ISimulationController.GetSimulationTimeIncrement
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.StopSimulation
+  name: StopSimulation()
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html#Scaleout_Streaming_DigitalTwin_Core_ISimulationController_StopSimulation
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ISimulationController.StopSimulation
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.StopSimulation()
+  nameWithType: ISimulationController.StopSimulation()
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.StopSimulation*
+  name: StopSimulation
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html#Scaleout_Streaming_DigitalTwin_Core_ISimulationController_StopSimulation_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ISimulationController.StopSimulation
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.StopSimulation
+  nameWithType: ISimulationController.StopSimulation
+- uid: Scaleout.Streaming.DigitalTwin.Core.InitContext
+  name: InitContext
+  href: api/Scaleout.Streaming.DigitalTwin.Core.InitContext.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.InitContext
+  fullName: Scaleout.Streaming.DigitalTwin.Core.InitContext
+  nameWithType: InitContext
+- uid: Scaleout.Streaming.DigitalTwin.Core.InitContext.StartTimer(System.String,System.TimeSpan,Scaleout.Streaming.DigitalTwin.Core.TimerType,Scaleout.Streaming.DigitalTwin.Core.TimerHandler)
+  name: StartTimer(string, TimeSpan, TimerType, TimerHandler)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.InitContext.html#Scaleout_Streaming_DigitalTwin_Core_InitContext_StartTimer_System_String_System_TimeSpan_Scaleout_Streaming_DigitalTwin_Core_TimerType_Scaleout_Streaming_DigitalTwin_Core_TimerHandler_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.InitContext.StartTimer(System.String,System.TimeSpan,Scaleout.Streaming.DigitalTwin.Core.TimerType,Scaleout.Streaming.DigitalTwin.Core.TimerHandler)
+  name.vb: StartTimer(String, TimeSpan, TimerType, TimerHandler)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.InitContext.StartTimer(string, System.TimeSpan, Scaleout.Streaming.DigitalTwin.Core.TimerType, Scaleout.Streaming.DigitalTwin.Core.TimerHandler)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.InitContext.StartTimer(String, System.TimeSpan, Scaleout.Streaming.DigitalTwin.Core.TimerType, Scaleout.Streaming.DigitalTwin.Core.TimerHandler)
+  nameWithType: InitContext.StartTimer(string, TimeSpan, TimerType, TimerHandler)
+  nameWithType.vb: InitContext.StartTimer(String, TimeSpan, TimerType, TimerHandler)
+- uid: Scaleout.Streaming.DigitalTwin.Core.InitContext.StartTimer*
+  name: StartTimer
+  href: api/Scaleout.Streaming.DigitalTwin.Core.InitContext.html#Scaleout_Streaming_DigitalTwin_Core_InitContext_StartTimer_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.InitContext.StartTimer
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.InitContext.StartTimer
+  nameWithType: InitContext.StartTimer
+- uid: Scaleout.Streaming.DigitalTwin.Core.LogSeverity
+  name: LogSeverity
+  href: api/Scaleout.Streaming.DigitalTwin.Core.LogSeverity.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.LogSeverity
+  fullName: Scaleout.Streaming.DigitalTwin.Core.LogSeverity
+  nameWithType: LogSeverity
+- uid: Scaleout.Streaming.DigitalTwin.Core.LogSeverity.Critical
+  name: Critical
+  href: api/Scaleout.Streaming.DigitalTwin.Core.LogSeverity.html#Scaleout_Streaming_DigitalTwin_Core_LogSeverity_Critical
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.LogSeverity.Critical
+  fullName: Scaleout.Streaming.DigitalTwin.Core.LogSeverity.Critical
+  nameWithType: LogSeverity.Critical
+- uid: Scaleout.Streaming.DigitalTwin.Core.LogSeverity.Error
+  name: Error
+  href: api/Scaleout.Streaming.DigitalTwin.Core.LogSeverity.html#Scaleout_Streaming_DigitalTwin_Core_LogSeverity_Error
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.LogSeverity.Error
+  fullName: Scaleout.Streaming.DigitalTwin.Core.LogSeverity.Error
+  nameWithType: LogSeverity.Error
+- uid: Scaleout.Streaming.DigitalTwin.Core.LogSeverity.Informational
+  name: Informational
+  href: api/Scaleout.Streaming.DigitalTwin.Core.LogSeverity.html#Scaleout_Streaming_DigitalTwin_Core_LogSeverity_Informational
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.LogSeverity.Informational
+  fullName: Scaleout.Streaming.DigitalTwin.Core.LogSeverity.Informational
+  nameWithType: LogSeverity.Informational
+- uid: Scaleout.Streaming.DigitalTwin.Core.LogSeverity.None
+  name: None
+  href: api/Scaleout.Streaming.DigitalTwin.Core.LogSeverity.html#Scaleout_Streaming_DigitalTwin_Core_LogSeverity_None
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.LogSeverity.None
+  fullName: Scaleout.Streaming.DigitalTwin.Core.LogSeverity.None
+  nameWithType: LogSeverity.None
+- uid: Scaleout.Streaming.DigitalTwin.Core.LogSeverity.Verbose
+  name: Verbose
+  href: api/Scaleout.Streaming.DigitalTwin.Core.LogSeverity.html#Scaleout_Streaming_DigitalTwin_Core_LogSeverity_Verbose
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.LogSeverity.Verbose
+  fullName: Scaleout.Streaming.DigitalTwin.Core.LogSeverity.Verbose
+  nameWithType: LogSeverity.Verbose
+- uid: Scaleout.Streaming.DigitalTwin.Core.LogSeverity.Warning
+  name: Warning
+  href: api/Scaleout.Streaming.DigitalTwin.Core.LogSeverity.html#Scaleout_Streaming_DigitalTwin_Core_LogSeverity_Warning
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.LogSeverity.Warning
+  fullName: Scaleout.Streaming.DigitalTwin.Core.LogSeverity.Warning
+  nameWithType: LogSeverity.Warning
+- uid: Scaleout.Streaming.DigitalTwin.Core.MessageProcessor
+  name: MessageProcessor
+  href: api/Scaleout.Streaming.DigitalTwin.Core.MessageProcessor.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.MessageProcessor
+  fullName: Scaleout.Streaming.DigitalTwin.Core.MessageProcessor
+  nameWithType: MessageProcessor
+- uid: Scaleout.Streaming.DigitalTwin.Core.MessageProcessor`2
+  name: MessageProcessor<TDigitalTwin, TMessage>
+  href: api/Scaleout.Streaming.DigitalTwin.Core.MessageProcessor-2.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.MessageProcessor`2
+  name.vb: MessageProcessor(Of TDigitalTwin, TMessage)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.MessageProcessor<TDigitalTwin, TMessage>
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.MessageProcessor(Of TDigitalTwin, TMessage)
+  nameWithType: MessageProcessor<TDigitalTwin, TMessage>
+  nameWithType.vb: MessageProcessor(Of TDigitalTwin, TMessage)
+- uid: Scaleout.Streaming.DigitalTwin.Core.MessageProcessor`2.ProcessMessages(Scaleout.Streaming.DigitalTwin.Core.ProcessingContext,`0,System.Collections.Generic.IEnumerable{`1})
+  name: ProcessMessages(ProcessingContext, TDigitalTwin, IEnumerable<TMessage>)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.MessageProcessor-2.html#Scaleout_Streaming_DigitalTwin_Core_MessageProcessor_2_ProcessMessages_Scaleout_Streaming_DigitalTwin_Core_ProcessingContext__0_System_Collections_Generic_IEnumerable__1__
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.MessageProcessor`2.ProcessMessages(Scaleout.Streaming.DigitalTwin.Core.ProcessingContext,`0,System.Collections.Generic.IEnumerable{`1})
+  name.vb: ProcessMessages(ProcessingContext, TDigitalTwin, IEnumerable(Of TMessage))
+  fullName: Scaleout.Streaming.DigitalTwin.Core.MessageProcessor<TDigitalTwin, TMessage>.ProcessMessages(Scaleout.Streaming.DigitalTwin.Core.ProcessingContext, TDigitalTwin, System.Collections.Generic.IEnumerable<TMessage>)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.MessageProcessor(Of TDigitalTwin, TMessage).ProcessMessages(Scaleout.Streaming.DigitalTwin.Core.ProcessingContext, TDigitalTwin, System.Collections.Generic.IEnumerable(Of TMessage))
+  nameWithType: MessageProcessor<TDigitalTwin, TMessage>.ProcessMessages(ProcessingContext, TDigitalTwin, IEnumerable<TMessage>)
+  nameWithType.vb: MessageProcessor(Of TDigitalTwin, TMessage).ProcessMessages(ProcessingContext, TDigitalTwin, IEnumerable(Of TMessage))
+- uid: Scaleout.Streaming.DigitalTwin.Core.MessageProcessor`2.ProcessMessages*
+  name: ProcessMessages
+  href: api/Scaleout.Streaming.DigitalTwin.Core.MessageProcessor-2.html#Scaleout_Streaming_DigitalTwin_Core_MessageProcessor_2_ProcessMessages_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.MessageProcessor`2.ProcessMessages
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.MessageProcessor<TDigitalTwin, TMessage>.ProcessMessages
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.MessageProcessor(Of TDigitalTwin, TMessage).ProcessMessages
+  nameWithType: MessageProcessor<TDigitalTwin, TMessage>.ProcessMessages
+  nameWithType.vb: MessageProcessor(Of TDigitalTwin, TMessage).ProcessMessages
+- uid: Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType
+  name: PersistenceProviderType
+  href: api/Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType
+  fullName: Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType
+  nameWithType: PersistenceProviderType
+- uid: Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.AzureBlobStorage
+  name: AzureBlobStorage
+  href: api/Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.html#Scaleout_Streaming_DigitalTwin_Core_PersistenceProviderType_AzureBlobStorage
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.AzureBlobStorage
+  fullName: Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.AzureBlobStorage
+  nameWithType: PersistenceProviderType.AzureBlobStorage
+- uid: Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.AzureDigitalTwinsService
+  name: AzureDigitalTwinsService
+  href: api/Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.html#Scaleout_Streaming_DigitalTwin_Core_PersistenceProviderType_AzureDigitalTwinsService
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.AzureDigitalTwinsService
+  fullName: Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.AzureDigitalTwinsService
+  nameWithType: PersistenceProviderType.AzureDigitalTwinsService
+- uid: Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.SQLServer
+  name: SQLServer
+  href: api/Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.html#Scaleout_Streaming_DigitalTwin_Core_PersistenceProviderType_SQLServer
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.SQLServer
+  fullName: Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.SQLServer
+  nameWithType: PersistenceProviderType.SQLServer
+- uid: Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.SQLite
+  name: SQLite
+  href: api/Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.html#Scaleout_Streaming_DigitalTwin_Core_PersistenceProviderType_SQLite
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.SQLite
+  fullName: Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.SQLite
+  nameWithType: PersistenceProviderType.SQLite
+- uid: Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.Unspecified
+  name: Unspecified
+  href: api/Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.html#Scaleout_Streaming_DigitalTwin_Core_PersistenceProviderType_Unspecified
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.Unspecified
+  fullName: Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.Unspecified
+  nameWithType: PersistenceProviderType.Unspecified
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext
+  name: ProcessingContext
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext
+  nameWithType: ProcessingContext
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.DataSourceId
+  name: DataSourceId
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_DataSourceId
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.DataSourceId
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.DataSourceId
+  nameWithType: ProcessingContext.DataSourceId
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.DataSourceId*
+  name: DataSourceId
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_DataSourceId_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.DataSourceId
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.DataSourceId
+  nameWithType: ProcessingContext.DataSourceId
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.DigitalTwinModel
+  name: DigitalTwinModel
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_DigitalTwinModel
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.DigitalTwinModel
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.DigitalTwinModel
+  nameWithType: ProcessingContext.DigitalTwinModel
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.DigitalTwinModel*
+  name: DigitalTwinModel
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_DigitalTwinModel_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.DigitalTwinModel
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.DigitalTwinModel
+  nameWithType: ProcessingContext.DigitalTwinModel
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.GetCurrentTime
+  name: GetCurrentTime()
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_GetCurrentTime
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.GetCurrentTime
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.GetCurrentTime()
+  nameWithType: ProcessingContext.GetCurrentTime()
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.GetCurrentTime*
+  name: GetCurrentTime
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_GetCurrentTime_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.GetCurrentTime
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.GetCurrentTime
+  nameWithType: ProcessingContext.GetCurrentTime
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.LogMessage(Scaleout.Streaming.DigitalTwin.Core.LogSeverity,System.String)
+  name: LogMessage(LogSeverity, string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_LogMessage_Scaleout_Streaming_DigitalTwin_Core_LogSeverity_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.LogMessage(Scaleout.Streaming.DigitalTwin.Core.LogSeverity,System.String)
+  name.vb: LogMessage(LogSeverity, String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.LogMessage(Scaleout.Streaming.DigitalTwin.Core.LogSeverity, string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.LogMessage(Scaleout.Streaming.DigitalTwin.Core.LogSeverity, String)
+  nameWithType: ProcessingContext.LogMessage(LogSeverity, string)
+  nameWithType.vb: ProcessingContext.LogMessage(LogSeverity, String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.LogMessage*
+  name: LogMessage
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_LogMessage_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.LogMessage
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.LogMessage
+  nameWithType: ProcessingContext.LogMessage
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.PersistenceProvider
+  name: PersistenceProvider
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_PersistenceProvider
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.PersistenceProvider
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.PersistenceProvider
+  nameWithType: ProcessingContext.PersistenceProvider
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.PersistenceProvider*
+  name: PersistenceProvider
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_PersistenceProvider_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.PersistenceProvider
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.PersistenceProvider
+  nameWithType: ProcessingContext.PersistenceProvider
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendAlert(System.String,Scaleout.Streaming.DigitalTwin.Core.AlertMessage)
+  name: SendAlert(string, AlertMessage)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SendAlert_System_String_Scaleout_Streaming_DigitalTwin_Core_AlertMessage_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendAlert(System.String,Scaleout.Streaming.DigitalTwin.Core.AlertMessage)
+  name.vb: SendAlert(String, AlertMessage)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendAlert(string, Scaleout.Streaming.DigitalTwin.Core.AlertMessage)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendAlert(String, Scaleout.Streaming.DigitalTwin.Core.AlertMessage)
+  nameWithType: ProcessingContext.SendAlert(string, AlertMessage)
+  nameWithType.vb: ProcessingContext.SendAlert(String, AlertMessage)
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendAlert*
+  name: SendAlert
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SendAlert_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendAlert
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendAlert
+  nameWithType: ProcessingContext.SendAlert
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToDataSource(System.Byte[])
+  name: SendToDataSource(byte[])
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SendToDataSource_System_Byte___
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToDataSource(System.Byte[])
+  name.vb: SendToDataSource(Byte())
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToDataSource(byte[])
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToDataSource(Byte())
+  nameWithType: ProcessingContext.SendToDataSource(byte[])
+  nameWithType.vb: ProcessingContext.SendToDataSource(Byte())
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToDataSource(System.Collections.Generic.IEnumerable{System.Byte[]})
+  name: SendToDataSource(IEnumerable<byte[]>)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SendToDataSource_System_Collections_Generic_IEnumerable_System_Byte____
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToDataSource(System.Collections.Generic.IEnumerable{System.Byte[]})
+  name.vb: SendToDataSource(IEnumerable(Of Byte()))
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToDataSource(System.Collections.Generic.IEnumerable<byte[]>)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToDataSource(System.Collections.Generic.IEnumerable(Of Byte()))
+  nameWithType: ProcessingContext.SendToDataSource(IEnumerable<byte[]>)
+  nameWithType.vb: ProcessingContext.SendToDataSource(IEnumerable(Of Byte()))
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToDataSource(System.Collections.Generic.IEnumerable{System.Object})
+  name: SendToDataSource(IEnumerable<object>)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SendToDataSource_System_Collections_Generic_IEnumerable_System_Object__
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToDataSource(System.Collections.Generic.IEnumerable{System.Object})
+  name.vb: SendToDataSource(IEnumerable(Of Object))
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToDataSource(System.Collections.Generic.IEnumerable<object>)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToDataSource(System.Collections.Generic.IEnumerable(Of Object))
+  nameWithType: ProcessingContext.SendToDataSource(IEnumerable<object>)
+  nameWithType.vb: ProcessingContext.SendToDataSource(IEnumerable(Of Object))
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToDataSource(System.Object)
+  name: SendToDataSource(object)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SendToDataSource_System_Object_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToDataSource(System.Object)
+  name.vb: SendToDataSource(Object)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToDataSource(object)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToDataSource(Object)
+  nameWithType: ProcessingContext.SendToDataSource(object)
+  nameWithType.vb: ProcessingContext.SendToDataSource(Object)
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToDataSource*
+  name: SendToDataSource
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SendToDataSource_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToDataSource
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToDataSource
+  nameWithType: ProcessingContext.SendToDataSource
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToTwin(System.String,System.String,System.Byte[])
+  name: SendToTwin(string, string, byte[])
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SendToTwin_System_String_System_String_System_Byte___
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToTwin(System.String,System.String,System.Byte[])
+  name.vb: SendToTwin(String, String, Byte())
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToTwin(string, string, byte[])
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToTwin(String, String, Byte())
+  nameWithType: ProcessingContext.SendToTwin(string, string, byte[])
+  nameWithType.vb: ProcessingContext.SendToTwin(String, String, Byte())
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToTwin(System.String,System.String,System.Collections.Generic.IEnumerable{System.Byte[]})
+  name: SendToTwin(string, string, IEnumerable<byte[]>)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SendToTwin_System_String_System_String_System_Collections_Generic_IEnumerable_System_Byte____
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToTwin(System.String,System.String,System.Collections.Generic.IEnumerable{System.Byte[]})
+  name.vb: SendToTwin(String, String, IEnumerable(Of Byte()))
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToTwin(string, string, System.Collections.Generic.IEnumerable<byte[]>)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToTwin(String, String, System.Collections.Generic.IEnumerable(Of Byte()))
+  nameWithType: ProcessingContext.SendToTwin(string, string, IEnumerable<byte[]>)
+  nameWithType.vb: ProcessingContext.SendToTwin(String, String, IEnumerable(Of Byte()))
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToTwin(System.String,System.String,System.Collections.Generic.IEnumerable{System.Object})
+  name: SendToTwin(string, string, IEnumerable<object>)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SendToTwin_System_String_System_String_System_Collections_Generic_IEnumerable_System_Object__
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToTwin(System.String,System.String,System.Collections.Generic.IEnumerable{System.Object})
+  name.vb: SendToTwin(String, String, IEnumerable(Of Object))
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToTwin(string, string, System.Collections.Generic.IEnumerable<object>)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToTwin(String, String, System.Collections.Generic.IEnumerable(Of Object))
+  nameWithType: ProcessingContext.SendToTwin(string, string, IEnumerable<object>)
+  nameWithType.vb: ProcessingContext.SendToTwin(String, String, IEnumerable(Of Object))
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToTwin(System.String,System.String,System.Object)
+  name: SendToTwin(string, string, object)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SendToTwin_System_String_System_String_System_Object_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToTwin(System.String,System.String,System.Object)
+  name.vb: SendToTwin(String, String, Object)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToTwin(string, string, object)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToTwin(String, String, Object)
+  nameWithType: ProcessingContext.SendToTwin(string, string, object)
+  nameWithType.vb: ProcessingContext.SendToTwin(String, String, Object)
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToTwin*
+  name: SendToTwin
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SendToTwin_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToTwin
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToTwin
+  nameWithType: ProcessingContext.SendToTwin
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SimulationController
+  name: SimulationController
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SimulationController
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SimulationController
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SimulationController
+  nameWithType: ProcessingContext.SimulationController
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SimulationController*
+  name: SimulationController
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SimulationController_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SimulationController
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SimulationController
+  nameWithType: ProcessingContext.SimulationController
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.StartTimer(System.String,System.TimeSpan,Scaleout.Streaming.DigitalTwin.Core.TimerType,Scaleout.Streaming.DigitalTwin.Core.TimerHandler)
+  name: StartTimer(string, TimeSpan, TimerType, TimerHandler)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_StartTimer_System_String_System_TimeSpan_Scaleout_Streaming_DigitalTwin_Core_TimerType_Scaleout_Streaming_DigitalTwin_Core_TimerHandler_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.StartTimer(System.String,System.TimeSpan,Scaleout.Streaming.DigitalTwin.Core.TimerType,Scaleout.Streaming.DigitalTwin.Core.TimerHandler)
+  name.vb: StartTimer(String, TimeSpan, TimerType, TimerHandler)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.StartTimer(string, System.TimeSpan, Scaleout.Streaming.DigitalTwin.Core.TimerType, Scaleout.Streaming.DigitalTwin.Core.TimerHandler)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.StartTimer(String, System.TimeSpan, Scaleout.Streaming.DigitalTwin.Core.TimerType, Scaleout.Streaming.DigitalTwin.Core.TimerHandler)
+  nameWithType: ProcessingContext.StartTimer(string, TimeSpan, TimerType, TimerHandler)
+  nameWithType.vb: ProcessingContext.StartTimer(String, TimeSpan, TimerType, TimerHandler)
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.StartTimer*
+  name: StartTimer
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_StartTimer_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.StartTimer
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.StartTimer
+  nameWithType: ProcessingContext.StartTimer
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.StopTimer(System.String)
+  name: StopTimer(string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_StopTimer_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.StopTimer(System.String)
+  name.vb: StopTimer(String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.StopTimer(string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.StopTimer(String)
+  nameWithType: ProcessingContext.StopTimer(string)
+  nameWithType.vb: ProcessingContext.StopTimer(String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.StopTimer*
+  name: StopTimer
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_StopTimer_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.StopTimer
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.StopTimer
+  nameWithType: ProcessingContext.StopTimer
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingResult
+  name: ProcessingResult
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingResult.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.ProcessingResult
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingResult
+  nameWithType: ProcessingResult
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingResult.DoUpdate
+  name: DoUpdate
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingResult.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingResult_DoUpdate
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.ProcessingResult.DoUpdate
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingResult.DoUpdate
+  nameWithType: ProcessingResult.DoUpdate
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingResult.NoUpdate
+  name: NoUpdate
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingResult.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingResult_NoUpdate
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.ProcessingResult.NoUpdate
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingResult.NoUpdate
+  nameWithType: ProcessingResult.NoUpdate
+- uid: Scaleout.Streaming.DigitalTwin.Core.SendingResult
+  name: SendingResult
+  href: api/Scaleout.Streaming.DigitalTwin.Core.SendingResult.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.SendingResult
+  fullName: Scaleout.Streaming.DigitalTwin.Core.SendingResult
+  nameWithType: SendingResult
+- uid: Scaleout.Streaming.DigitalTwin.Core.SendingResult.Enqueued
+  name: Enqueued
+  href: api/Scaleout.Streaming.DigitalTwin.Core.SendingResult.html#Scaleout_Streaming_DigitalTwin_Core_SendingResult_Enqueued
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.SendingResult.Enqueued
+  fullName: Scaleout.Streaming.DigitalTwin.Core.SendingResult.Enqueued
+  nameWithType: SendingResult.Enqueued
+- uid: Scaleout.Streaming.DigitalTwin.Core.SendingResult.Handled
+  name: Handled
+  href: api/Scaleout.Streaming.DigitalTwin.Core.SendingResult.html#Scaleout_Streaming_DigitalTwin_Core_SendingResult_Handled
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.SendingResult.Handled
+  fullName: Scaleout.Streaming.DigitalTwin.Core.SendingResult.Handled
+  nameWithType: SendingResult.Handled
+- uid: Scaleout.Streaming.DigitalTwin.Core.SendingResult.NotHandled
+  name: NotHandled
+  href: api/Scaleout.Streaming.DigitalTwin.Core.SendingResult.html#Scaleout_Streaming_DigitalTwin_Core_SendingResult_NotHandled
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.SendingResult.NotHandled
+  fullName: Scaleout.Streaming.DigitalTwin.Core.SendingResult.NotHandled
+  nameWithType: SendingResult.NotHandled
+- uid: Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor
+  name: SimulationProcessor
+  href: api/Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor
+  fullName: Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor
+  nameWithType: SimulationProcessor
+- uid: Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor`1
+  name: SimulationProcessor<TDigitalTwin>
+  href: api/Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor-1.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor`1
+  name.vb: SimulationProcessor(Of TDigitalTwin)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor<TDigitalTwin>
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor(Of TDigitalTwin)
+  nameWithType: SimulationProcessor<TDigitalTwin>
+  nameWithType.vb: SimulationProcessor(Of TDigitalTwin)
+- uid: Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor`1.ProcessModel(Scaleout.Streaming.DigitalTwin.Core.ProcessingContext,`0,System.DateTimeOffset)
+  name: ProcessModel(ProcessingContext, TDigitalTwin, DateTimeOffset)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor-1.html#Scaleout_Streaming_DigitalTwin_Core_SimulationProcessor_1_ProcessModel_Scaleout_Streaming_DigitalTwin_Core_ProcessingContext__0_System_DateTimeOffset_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor`1.ProcessModel(Scaleout.Streaming.DigitalTwin.Core.ProcessingContext,`0,System.DateTimeOffset)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor<TDigitalTwin>.ProcessModel(Scaleout.Streaming.DigitalTwin.Core.ProcessingContext, TDigitalTwin, System.DateTimeOffset)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor(Of TDigitalTwin).ProcessModel(Scaleout.Streaming.DigitalTwin.Core.ProcessingContext, TDigitalTwin, System.DateTimeOffset)
+  nameWithType: SimulationProcessor<TDigitalTwin>.ProcessModel(ProcessingContext, TDigitalTwin, DateTimeOffset)
+  nameWithType.vb: SimulationProcessor(Of TDigitalTwin).ProcessModel(ProcessingContext, TDigitalTwin, DateTimeOffset)
+- uid: Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor`1.ProcessModel*
+  name: ProcessModel
+  href: api/Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor-1.html#Scaleout_Streaming_DigitalTwin_Core_SimulationProcessor_1_ProcessModel_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor`1.ProcessModel
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor<TDigitalTwin>.ProcessModel
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor(Of TDigitalTwin).ProcessModel
+  nameWithType: SimulationProcessor<TDigitalTwin>.ProcessModel
+  nameWithType.vb: SimulationProcessor(Of TDigitalTwin).ProcessModel
+- uid: Scaleout.Streaming.DigitalTwin.Core.TimerActionResult
+  name: TimerActionResult
+  href: api/Scaleout.Streaming.DigitalTwin.Core.TimerActionResult.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.TimerActionResult
+  fullName: Scaleout.Streaming.DigitalTwin.Core.TimerActionResult
+  nameWithType: TimerActionResult
+- uid: Scaleout.Streaming.DigitalTwin.Core.TimerActionResult.FailedInternalError
+  name: FailedInternalError
+  href: api/Scaleout.Streaming.DigitalTwin.Core.TimerActionResult.html#Scaleout_Streaming_DigitalTwin_Core_TimerActionResult_FailedInternalError
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.TimerActionResult.FailedInternalError
+  fullName: Scaleout.Streaming.DigitalTwin.Core.TimerActionResult.FailedInternalError
+  nameWithType: TimerActionResult.FailedInternalError
+- uid: Scaleout.Streaming.DigitalTwin.Core.TimerActionResult.FailedNoSuchTimer
+  name: FailedNoSuchTimer
+  href: api/Scaleout.Streaming.DigitalTwin.Core.TimerActionResult.html#Scaleout_Streaming_DigitalTwin_Core_TimerActionResult_FailedNoSuchTimer
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.TimerActionResult.FailedNoSuchTimer
+  fullName: Scaleout.Streaming.DigitalTwin.Core.TimerActionResult.FailedNoSuchTimer
+  nameWithType: TimerActionResult.FailedNoSuchTimer
+- uid: Scaleout.Streaming.DigitalTwin.Core.TimerActionResult.FailedTimerAlreadyExists
+  name: FailedTimerAlreadyExists
+  href: api/Scaleout.Streaming.DigitalTwin.Core.TimerActionResult.html#Scaleout_Streaming_DigitalTwin_Core_TimerActionResult_FailedTimerAlreadyExists
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.TimerActionResult.FailedTimerAlreadyExists
+  fullName: Scaleout.Streaming.DigitalTwin.Core.TimerActionResult.FailedTimerAlreadyExists
+  nameWithType: TimerActionResult.FailedTimerAlreadyExists
+- uid: Scaleout.Streaming.DigitalTwin.Core.TimerActionResult.FailedTooManyTimers
+  name: FailedTooManyTimers
+  href: api/Scaleout.Streaming.DigitalTwin.Core.TimerActionResult.html#Scaleout_Streaming_DigitalTwin_Core_TimerActionResult_FailedTooManyTimers
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.TimerActionResult.FailedTooManyTimers
+  fullName: Scaleout.Streaming.DigitalTwin.Core.TimerActionResult.FailedTooManyTimers
+  nameWithType: TimerActionResult.FailedTooManyTimers
+- uid: Scaleout.Streaming.DigitalTwin.Core.TimerActionResult.Success
+  name: Success
+  href: api/Scaleout.Streaming.DigitalTwin.Core.TimerActionResult.html#Scaleout_Streaming_DigitalTwin_Core_TimerActionResult_Success
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.TimerActionResult.Success
+  fullName: Scaleout.Streaming.DigitalTwin.Core.TimerActionResult.Success
+  nameWithType: TimerActionResult.Success
+- uid: Scaleout.Streaming.DigitalTwin.Core.TimerHandler
+  name: TimerHandler
+  href: api/Scaleout.Streaming.DigitalTwin.Core.TimerHandler.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.TimerHandler
+  fullName: Scaleout.Streaming.DigitalTwin.Core.TimerHandler
+  nameWithType: TimerHandler
+- uid: Scaleout.Streaming.DigitalTwin.Core.TimerMetadata
+  name: TimerMetadata
+  href: api/Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.TimerMetadata
+  fullName: Scaleout.Streaming.DigitalTwin.Core.TimerMetadata
+  nameWithType: TimerMetadata
+- uid: Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.Id
+  name: Id
+  href: api/Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.html#Scaleout_Streaming_DigitalTwin_Core_TimerMetadata_Id
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.Id
+  fullName: Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.Id
+  nameWithType: TimerMetadata.Id
+- uid: Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.Id*
+  name: Id
+  href: api/Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.html#Scaleout_Streaming_DigitalTwin_Core_TimerMetadata_Id_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.Id
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.Id
+  nameWithType: TimerMetadata.Id
+- uid: Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.Interval
+  name: Interval
+  href: api/Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.html#Scaleout_Streaming_DigitalTwin_Core_TimerMetadata_Interval
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.Interval
+  fullName: Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.Interval
+  nameWithType: TimerMetadata.Interval
+- uid: Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.Interval*
+  name: Interval
+  href: api/Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.html#Scaleout_Streaming_DigitalTwin_Core_TimerMetadata_Interval_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.Interval
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.Interval
+  nameWithType: TimerMetadata.Interval
+- uid: Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.TimerHandler
+  name: TimerHandler
+  href: api/Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.html#Scaleout_Streaming_DigitalTwin_Core_TimerMetadata_TimerHandler
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.TimerHandler
+  fullName: Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.TimerHandler
+  nameWithType: TimerMetadata.TimerHandler
+- uid: Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.TimerHandler*
+  name: TimerHandler
+  href: api/Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.html#Scaleout_Streaming_DigitalTwin_Core_TimerMetadata_TimerHandler_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.TimerHandler
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.TimerHandler
+  nameWithType: TimerMetadata.TimerHandler
+- uid: Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.Type
+  name: Type
+  href: api/Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.html#Scaleout_Streaming_DigitalTwin_Core_TimerMetadata_Type
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.Type
+  fullName: Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.Type
+  nameWithType: TimerMetadata.Type
+- uid: Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.Type*
+  name: Type
+  href: api/Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.html#Scaleout_Streaming_DigitalTwin_Core_TimerMetadata_Type_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.Type
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.Type
+  nameWithType: TimerMetadata.Type
+- uid: Scaleout.Streaming.DigitalTwin.Core.TimerType
+  name: TimerType
+  href: api/Scaleout.Streaming.DigitalTwin.Core.TimerType.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.TimerType
+  fullName: Scaleout.Streaming.DigitalTwin.Core.TimerType
+  nameWithType: TimerType
+- uid: Scaleout.Streaming.DigitalTwin.Core.TimerType.OneTime
+  name: OneTime
+  href: api/Scaleout.Streaming.DigitalTwin.Core.TimerType.html#Scaleout_Streaming_DigitalTwin_Core_TimerType_OneTime
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.TimerType.OneTime
+  fullName: Scaleout.Streaming.DigitalTwin.Core.TimerType.OneTime
+  nameWithType: TimerType.OneTime
+- uid: Scaleout.Streaming.DigitalTwin.Core.TimerType.Recurring
+  name: Recurring
+  href: api/Scaleout.Streaming.DigitalTwin.Core.TimerType.html#Scaleout_Streaming_DigitalTwin_Core_TimerType_Recurring
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.TimerType.Recurring
+  fullName: Scaleout.Streaming.DigitalTwin.Core.TimerType.Recurring
+  nameWithType: TimerType.Recurring

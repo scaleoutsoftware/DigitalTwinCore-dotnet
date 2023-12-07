@@ -1,0 +1,543 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Interface IDigitalTwinModelEndpoint
+ | ScaleOut Digital Twins&amp;trade; .NET API Reference </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Interface IDigitalTwinModelEndpoint
+ | ScaleOut Digital Twins&amp;trade; .NET API Reference ">
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/new/master/apiSpec/new?filename=Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint.md&amp;value=---%0Auid%3A%20Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/scaleout_logo.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint">
+
+
+
+  <h1 id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint" class="text-break">
+    Interface IDigitalTwinModelEndpoint
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelEndpoint.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Scaleout.html">Scaleout</a>.<a class="xref" href="Scaleout.Streaming.html">Streaming</a>.<a class="xref" href="Scaleout.Streaming.DigitalTwin.html">DigitalTwin</a>.<a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.html">Core</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>ScaleOut.Streaming.DigitalTwin.Core.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Interface for use by client applications that send messages to digital twin instances.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IDigitalTwinModelEndpoint</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_CreateTwin_" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwin*"></a>
+
+  <h3 id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_CreateTwin_System_String_System_Object_" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwin(System.String,System.Object)">
+  CreateTwin(string, object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelEndpoint.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Creates a new digital twin instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">SendingResult CreateTwin(string digitalTwinId, object digitalTwin)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>digitalTwinId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>ID of the digital twin instance.</p>
+</dd>
+    <dt><code>digitalTwin</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>Digital twin instance to create. It could an object of a real
+digital twin model type or simply an anonymous object with a set of digital twin model's
+properties and their initial values.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.SendingResult.html">SendingResult</a></dt>
+    <dd><p><a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.SendingResult.html#Scaleout_Streaming_DigitalTwin_Core_SendingResult_Handled">Handled</a> if the message was successfully sent,
+<a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.SendingResult.html#Scaleout_Streaming_DigitalTwin_Core_SendingResult_NotHandled">NotHandled</a> otherwise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_CreateTwinFromPersistenceStore_" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwinFromPersistenceStore*"></a>
+
+  <h3 id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_CreateTwinFromPersistenceStore_System_String_" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwinFromPersistenceStore(System.String)">
+  CreateTwinFromPersistenceStore(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelEndpoint.cs/#L108"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Create a new digital twin instance in the ScaleOut data grid. This method assumes that persistence store is
+enabled for the target model and the twin instance with the specified <code class="paramref">digitalTwinId</code>
+exists there. In this case, a new twin instance is created and initialized from the persistence store.
+Otherwise, the <a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException.html">DigitalTwinInstantiationException</a>
+is thrown.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">SendingResult CreateTwinFromPersistenceStore(string digitalTwinId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>digitalTwinId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Digital twin identifier.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.SendingResult.html">SendingResult</a></dt>
+    <dd><p><a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.SendingResult.html#Scaleout_Streaming_DigitalTwin_Core_SendingResult_Handled">Handled</a> in case of success, otherwise
+the method throws DigitalTwinInstantiationException with the error details.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_CreateTwinFromPersistenceStore_" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwinFromPersistenceStore*"></a>
+
+  <h3 id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_CreateTwinFromPersistenceStore_System_String_System_Object_" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwinFromPersistenceStore(System.String,System.Object)">
+  CreateTwinFromPersistenceStore(string, object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelEndpoint.cs/#L96"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Create a new digital twin instance . This method first tries to create
+a new twin instance from a persistence store if it is enabled. If a persistence store is not enabled or
+if the twin instance is not found there, the property values of the specified fallback
+<code class="paramref">defaultValue</code> are used to create and initialize a new twin instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">SendingResult CreateTwinFromPersistenceStore(string digitalTwinId, object defaultValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>digitalTwinId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Digital twin identifier.</p>
+</dd>
+    <dt><code>defaultValue</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>Digital twin instance to create. It could an object of a real
+digital twin model type or simply an anonymous object with a set of digital twin model's
+properties and their initial values.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.SendingResult.html">SendingResult</a></dt>
+    <dd><p><a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.SendingResult.html#Scaleout_Streaming_DigitalTwin_Core_SendingResult_Handled">Handled</a> in case of success, otherwise
+the method throws DigitalTwinInstantiationException with the error details.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_DeleteTwin_" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.DeleteTwin*"></a>
+
+  <h3 id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_DeleteTwin_System_String_" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.DeleteTwin(System.String)">
+  DeleteTwin(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelEndpoint.cs/#L116"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Delete a digital twin instance from the ScaleOut data grid.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">SendingResult DeleteTwin(string digitalTwinId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>digitalTwinId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Digital twin identifier.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.SendingResult.html">SendingResult</a></dt>
+    <dd><p><a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.SendingResult.html#Scaleout_Streaming_DigitalTwin_Core_SendingResult_Handled">Handled</a> in case of success, otherwise
+the method throws DigitalTwinProcessingException with the error details.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_Send_" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send*"></a>
+
+  <h3 id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_Send_System_String_System_Byte___" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(System.String,System.Byte[])">
+  Send(string, byte[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelEndpoint.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sends a JSON serialized message to a digital twin instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">SendingResult Send(string digitalTwinId, byte[] message)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>digitalTwinId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>ID of the digital twin instance.</p>
+</dd>
+    <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>Serialized message.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.SendingResult.html">SendingResult</a></dt>
+    <dd><p><a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.SendingResult.html#Scaleout_Streaming_DigitalTwin_Core_SendingResult_Handled">Handled</a> if the message was successfully sent,
+<a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.SendingResult.html#Scaleout_Streaming_DigitalTwin_Core_SendingResult_NotHandled">NotHandled</a> otherwise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_Send_" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send*"></a>
+
+  <h3 id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_Send_System_String_System_Collections_Generic_IEnumerable_System_Byte____" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(System.String,System.Collections.Generic.IEnumerable{System.Byte[]})">
+  Send(string, IEnumerable&lt;byte[]&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelEndpoint.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sends JSON serialized messages to a digital twin instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">SendingResult Send(string digitalTwinId, IEnumerable&lt;byte[]&gt; messages)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>digitalTwinId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>ID of the digital twin instance.</p>
+</dd>
+    <dt><code>messages</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]&gt;</dt>
+    <dd><p>Enumerable collection of serialized messages.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.SendingResult.html">SendingResult</a></dt>
+    <dd><p><a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.SendingResult.html#Scaleout_Streaming_DigitalTwin_Core_SendingResult_Handled">Handled</a> if the message was successfully sent,
+<a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.SendingResult.html#Scaleout_Streaming_DigitalTwin_Core_SendingResult_NotHandled">NotHandled</a> otherwise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_Send_" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send*"></a>
+
+  <h3 id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_Send_System_String_System_Collections_Generic_IEnumerable_System_Object__" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(System.String,System.Collections.Generic.IEnumerable{System.Object})">
+  Send(string, IEnumerable&lt;object&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelEndpoint.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sends messages to a digital twin instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">SendingResult Send(string digitalTwinId, IEnumerable&lt;object&gt; message)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>digitalTwinId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>ID of the digital twin instance.</p>
+</dd>
+    <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a>&gt;</dt>
+    <dd><p>Messages to send to the instance.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.SendingResult.html">SendingResult</a></dt>
+    <dd><p><a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.SendingResult.html#Scaleout_Streaming_DigitalTwin_Core_SendingResult_Handled">Handled</a> if the message was successfully sent,
+<a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.SendingResult.html#Scaleout_Streaming_DigitalTwin_Core_SendingResult_NotHandled">NotHandled</a> otherwise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_Send_" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send*"></a>
+
+  <h3 id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_Send_System_String_System_Object_" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(System.String,System.Object)">
+  Send(string, object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelEndpoint.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sends a message to a digital twin instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">SendingResult Send(string digitalTwinId, object message)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>digitalTwinId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>ID of the digital twin instance.</p>
+</dd>
+    <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>Message instance.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.SendingResult.html">SendingResult</a></dt>
+    <dd><p><a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.SendingResult.html#Scaleout_Streaming_DigitalTwin_Core_SendingResult_Handled">Handled</a> if the message was successfully sent,
+<a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.SendingResult.html#Scaleout_Streaming_DigitalTwin_Core_SendingResult_NotHandled">NotHandled</a> otherwise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_Send_" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send*"></a>
+
+  <h3 id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_Send_System_String_System_String_" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(System.String,System.String)">
+  Send(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelEndpoint.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sends a JSON serialized message to a digital twin instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">SendingResult Send(string digitalTwinId, string message)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>digitalTwinId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>ID of the digital twin instance.</p>
+</dd>
+    <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Serialized message.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.SendingResult.html">SendingResult</a></dt>
+    <dd><p><a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.SendingResult.html#Scaleout_Streaming_DigitalTwin_Core_SendingResult_Handled">Handled</a> if the message was successfully sent,
+<a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.SendingResult.html#Scaleout_Streaming_DigitalTwin_Core_SendingResult_NotHandled">NotHandled</a> otherwise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelEndpoint.cs/#L26" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2023 ScaleOut Software, Inc.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

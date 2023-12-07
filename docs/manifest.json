@@ -1,0 +1,498 @@
+{
+  "source_base_path": "C:/dev/DigitalTwinCore-dotnet/src/docfx",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.DigitalTwin.Workbench.PostedAlert.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.DigitalTwin.Workbench.PostedAlert.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.DigitalTwin.Workbench.SimulationStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.DigitalTwin.Workbench.SimulationStatus.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.DigitalTwin.Workbench.StepResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.DigitalTwin.Workbench.StepResult.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.DigitalTwin.Workbench.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.DigitalTwin.Workbench.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.AlertMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.AlertMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.AlertProviderType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.AlertProviderType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.DigitalTwinTimerMessage.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinConfigurationException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.ExecutionEnvironmentException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageInstantiationException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.MessageProcessorInstantiationException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.Exceptions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.IMessageListFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.IMessageListFactory.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.IMessageSender.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.IMessageSender.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.InitContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.InitContext.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.LogSeverity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.LogSeverity.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.MessageProcessor-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.MessageProcessor-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.MessageProcessor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.MessageProcessor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.ProcessingResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.ProcessingResult.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.SendingResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.SendingResult.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.TimerActionResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.TimerActionResult.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.TimerHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.TimerHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.TimerMetadata.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.TimerType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.TimerType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html"
+        },
+        ".json": {
+          "relative_path": "articles/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "images/favicon.ico"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/scaleout_logo.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/scaleout_logo.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
