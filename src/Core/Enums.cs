@@ -20,7 +20,7 @@ namespace Scaleout.Streaming.DigitalTwin.Core
 {
     /// <summary>
     /// Specifies whether or not a Digital Twin should be updated after a call to a
-	/// <see cref="MessageProcessor.ProcessMessages(ProcessingContext, DigitalTwinBase, IMessageListFactory)"/>
+	/// <see cref="MessageProcessor{TDigitalTwin, TMessage}.ProcessMessages(ProcessingContext, TDigitalTwin, System.Collections.Generic.IEnumerable{TMessage})"/>
 	/// implementation has returned.
     /// </summary>
     public enum ProcessingResult
