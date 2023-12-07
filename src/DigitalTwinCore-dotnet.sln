@@ -9,6 +9,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scaleout.DigitalTwin.Workbe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scaleout.DigitalTwin.Workbench.UnitTests", "Workbench.UnitTests\Scaleout.DigitalTwin.Workbench.UnitTests.csproj", "{66450FBD-9505-45FC-B897-D07A46574B23}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docfx", "docfx", "{449A39BA-B899-42E4-B402-60CC4E004A27}"
+	ProjectSection(SolutionItems) = preProject
+		docfx\docfx.json = docfx\docfx.json
+		docfx\index.md = docfx\index.md
+		docfx\README.TXT = docfx\README.TXT
+		docfx\toc.yml = docfx\toc.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

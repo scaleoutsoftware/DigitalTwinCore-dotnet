@@ -1,0 +1,77 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "*.csproj"
+          ],
+          "src": "../Core/"
+        },
+        {
+          "files": [
+            "*.csproj"
+          ],
+          "src": "../Workbench/"
+        }
+      ],
+      "dest": "api",
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "api/**.yml",
+          "api/index.md"
+        ]
+      },
+      {
+        "files": [
+          "articles/**.md",
+          "articles/**/toc.yml",
+          "toc.yml",
+          "*.md"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+    "overwrite": [
+      {
+        "files": [
+          "apidoc/**.md"
+        ],
+        "exclude": [
+          "obj/**"
+        ]
+      }
+    ],
+    "dest": "../../docs",
+    "globalMetadataFiles": [],
+    "fileMetadataFiles": [],
+    "template": [
+      "default",
+      "modern"
+    ],
+    "postProcessors": [],
+    "noLangKeyword": false,
+    "keepFileLink": false,
+    "disableGitFeatures": false,
+    "globalMetadata": {
+      "_appTitle": "ScaleOut Digital Twins&trade; .NET API Reference",
+      "_appLogoPath": "images/scaleout_logo.png",
+      "_appFooter": "Copyright &copy; 2023 ScaleOut Software, Inc.",
+      "_appFaviconPath": "images/favicon.ico",
+      "_disableContribution": false,
+      "_enableSearch": true
+    }
+  }
+}
