@@ -1,4 +1,4 @@
-# ScaleOut Digital Twins&trade; Core Libraries
+# ScaleOut Digital Twins&trade; Core Libraries for .NET
 
 This repository contains the open source (Apache 2.0 licensed) projects for the following NuGet packages:
 
