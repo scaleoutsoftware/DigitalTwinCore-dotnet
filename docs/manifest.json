@@ -448,20 +448,20 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "images/favicon.ico",
+      "source_relative_path": "images/ScaleOutDigitalTwins-Logo.png",
       "output": {
         "resource": {
-          "relative_path": "images/favicon.ico"
+          "relative_path": "images/ScaleOutDigitalTwins-Logo.png"
         }
       },
       "version": ""
     },
     {
       "type": "Resource",
-      "source_relative_path": "images/scaleout_logo.png",
+      "source_relative_path": "images/favicon.ico",
       "output": {
         "resource": {
-          "relative_path": "images/scaleout_logo.png"
+          "relative_path": "images/favicon.ico"
         }
       },
       "version": ""
