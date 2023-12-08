@@ -15,7 +15,7 @@
     <Version>3.11.0</Version>
     <Description>Core classes and interfaces that support ScaleOut Digital Twins™.</Description>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <PackageIcon>ScaleOut-Logo-Vertical-RGB-72dpi.png</PackageIcon>
+    <PackageIcon>ScaleOutDigitalTwins-Logo-128x128@2x.png</PackageIcon>
     <PackageTags>scaleout digital twin core</PackageTags>
     <PackageReleaseNotes>Initial open source release. Adds new Init() overload to DigitalTwinBase class that supplies and InitContext parameter, allowing for timers to be created at twin initialization time.</PackageReleaseNotes>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
@@ -33,7 +33,7 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-    <None Include="..\nuget\ScaleOut-Logo-Vertical-RGB-72dpi.png">
+    <None Include="..\nuget\ScaleOutDigitalTwins-Logo-128x128@2x.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>

@@ -59,7 +59,8 @@
     "fileMetadataFiles": [],
     "template": [
       "default",
-      "modern"
+      "modern",
+      "templates/scaleout"
     ],
     "postProcessors": [],
     "noLangKeyword": false,
@@ -67,7 +68,7 @@
     "disableGitFeatures": false,
     "globalMetadata": {
       "_appTitle": "ScaleOut Digital Twins&trade; .NET API Reference",
-      "_appLogoPath": "images/scaleout_logo.png",
+      "_appLogoPath": "images/ScaleOutDigitalTwins-Logo.png",
       "_appFooter": "Copyright &copy; 2023 ScaleOut Software, Inc.",
       "_appFaviconPath": "images/favicon.ico",
       "_disableContribution": false,
