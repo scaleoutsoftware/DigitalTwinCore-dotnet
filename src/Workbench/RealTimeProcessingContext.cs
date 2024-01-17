@@ -63,6 +63,10 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public override ISimulationController? SimulationController => null;
 
+        public override ISharedData SharedModelData => InstanceRegistration.ModelRegistration.SharedModelData;
+
+        public override ISharedData SharedGlobalData => _env.SharedGlobalData;
+
         public override DateTimeOffset GetCurrentTime()
         {
             return DateTimeOffset.UtcNow;

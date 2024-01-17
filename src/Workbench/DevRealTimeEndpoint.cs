@@ -162,5 +162,9 @@ namespace Scaleout.DigitalTwin.Workbench
 
             return SendingResult.Handled;
         }
+
+        public ISharedData SharedModelData => _registration.SharedModelData;
+
+        public ISharedData SharedGlobalData => _workbench.SharedGlobalData;
     }
 }

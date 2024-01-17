@@ -59,5 +59,9 @@ namespace Scaleout.DigitalTwin.Workbench
                 return TimerActionResult.FailedTimerAlreadyExists;
             }
         }
+
+        public override ISharedData SharedModelData => _instanceRegistration.ModelRegistration.SharedModelData;
+
+        public override ISharedData SharedGlobalData => _env.SharedGlobalData;
     }
 }

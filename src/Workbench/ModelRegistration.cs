@@ -33,13 +33,16 @@ namespace Scaleout.DigitalTwin.Workbench
 
     internal class ModelRegistration
     {
-        public ModelRegistration(string modelName)
+        public ModelRegistration(string modelName, ISharedData sharedModelData)
         {
             ModelName = modelName;
+            SharedModelData = sharedModelData;
         }
         public string ModelName { get; }
 
         public SimulationProcessor? SimulationProcessor { get; set; }
+
+        public ISharedData SharedModelData { get; set; }
 
         public ProcessModelInvoker? InvokeProcessModel;
 

@@ -114,5 +114,17 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// <returns><see cref="SendingResult.Handled"/> in case of success, otherwise 
         /// the method throws DigitalTwinProcessingException with the error details.</returns>
         SendingResult DeleteTwin(string digitalTwinId);
+
+        /// <summary>
+        /// Gets an <see cref="ISharedData"/> instance for accessing shared objects
+        /// that are associated with the endpoint's model.
+        /// </summary>
+        ISharedData SharedModelData { get; }
+
+        /// <summary>
+        /// Gets an <see cref="ISharedData"/> instance for accessing objects
+        /// that are shared globally between all models.
+        /// </summary>
+        ISharedData SharedGlobalData { get; }
     }
 }

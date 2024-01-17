@@ -180,5 +180,17 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// <returns>The current time - either the current system time or the current
 		/// simulation time if simulation process is active.</returns>
         public abstract DateTimeOffset GetCurrentTime();
+
+        /// <summary>
+        /// Gets an <see cref="ISharedData"/> instance for accessing shared objects
+        /// that are associated with the model being processed.
+        /// </summary>
+        public abstract ISharedData SharedModelData { get; }
+
+        /// <summary>
+        /// Gets an <see cref="ISharedData"/> instance for accessing objects
+        /// that are shared globally between all models.
+        /// </summary>
+        public abstract ISharedData SharedGlobalData { get; }
     }
 }

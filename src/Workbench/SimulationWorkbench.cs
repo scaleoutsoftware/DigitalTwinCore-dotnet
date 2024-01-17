@@ -57,6 +57,7 @@ namespace Scaleout.DigitalTwin.Workbench
         private ConcurrentDictionary<string, ModelRegistration> _models = new ConcurrentDictionary<string, ModelRegistration>();
         private ConcurrentDictionary<string, ConcurrentDictionary<string, InstanceRegistration>> _instances = new ConcurrentDictionary<string, ConcurrentDictionary<string, InstanceRegistration>>();
         private ConcurrentDictionary<string, SimulationTimer> _timers = new ConcurrentDictionary<string, SimulationTimer>();
+        private WorkbenchSharedData _sharedGlobalData = new WorkbenchSharedData();
         private ILogger _logger;
         private SimulationState _simulationState = SimulationState.Initializing;
 
@@ -84,6 +85,31 @@ namespace Scaleout.DigitalTwin.Workbench
         internal IDictionary<string, SimulationTimer> Timers 
         { 
             get => _timers; 
+        }
+
+        /// <summary>
+        /// Gets an <see cref="ISharedData"/> instance for accessing objects
+        /// that are shared globally between all models in the simulation.
+        /// </summary>
+        public ISharedData SharedGlobalData 
+        {
+            get => _sharedGlobalData;
+        }
+
+        /// <summary>
+        /// Gets an <see cref="ISharedData"/> instance for accessing objects
+        /// that are shared between the objects in the specified model.
+        /// </summary>
+        /// <param name="modelName">Name of the model associated with the shared data.</param>
+        /// <returns>An <see cref="ISharedData"/> instance that can be used to access shared objects.</returns>
+        /// <exception cref="InvalidOperationException">The specified model has not been registered with the workbench.</exception>
+        public ISharedData GetSharedModelData(string modelName)
+        {
+            bool foundModel = _models.TryGetValue(modelName, out var registration);
+            if (!foundModel)
+                throw new InvalidOperationException($"Model {modelName} has not been registered.");
+
+            return registration.SharedModelData;
         }
 
         /// <summary>
@@ -241,7 +267,7 @@ namespace Scaleout.DigitalTwin.Workbench
             if (_models.ContainsKey(modelName))
                 throw new ArgumentException($"A model named {modelName} already exists.");
 
-            ModelRegistration registration = new ModelRegistration(modelName);
+            ModelRegistration registration = new ModelRegistration(modelName, sharedModelData: new WorkbenchSharedData());
 
             if (realTimeProcessor != null)
             {

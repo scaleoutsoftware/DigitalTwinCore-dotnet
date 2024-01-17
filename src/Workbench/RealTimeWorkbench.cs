@@ -36,6 +36,7 @@ namespace Scaleout.DigitalTwin.Workbench
     {
         private ConcurrentDictionary<string, ModelRegistration> _models = new ConcurrentDictionary<string, ModelRegistration>();
         private ConcurrentDictionary<string, ConcurrentDictionary<string, InstanceRegistration>> _instances = new ConcurrentDictionary<string, ConcurrentDictionary<string, InstanceRegistration>>();
+        private WorkbenchSharedData _sharedGlobalData = new WorkbenchSharedData();
         internal List<PostedAlert> _postedAlerts = new List<PostedAlert>();
         private ConcurrentDictionary<string, RealTimeTimer> _timers = new ConcurrentDictionary<string, RealTimeTimer>();
         private ILogger _logger;
@@ -66,6 +67,31 @@ namespace Scaleout.DigitalTwin.Workbench
         }
 
         /// <summary>
+        /// Gets an <see cref="ISharedData"/> instance for accessing objects
+        /// that are shared globally between all models in this workbench instance.
+        /// </summary>
+        public ISharedData SharedGlobalData
+        {
+            get => _sharedGlobalData;
+        }
+
+        /// <summary>
+        /// Gets an <see cref="ISharedData"/> instance for accessing objects
+        /// that are shared between the objects in the specified model.
+        /// </summary>
+        /// <param name="modelName">Name of the model associated with the shared data.</param>
+        /// <returns>An <see cref="ISharedData"/> instance that can be used to access shared objects.</returns>
+        /// <exception cref="InvalidOperationException">The specified model has not been registered with the workbench.</exception>
+        public ISharedData GetSharedModelData(string modelName)
+        {
+            bool foundModel = _models.TryGetValue(modelName, out var registration);
+            if (!foundModel)
+                throw new InvalidOperationException($"Model {modelName} has not been registered.");
+
+            return registration.SharedModelData;
+        }
+
+        /// <summary>
         /// Adds a real-time model (with a message processor) to the workbench. The
         /// returned endpoint can be used to send messages to instances in the model.
         /// </summary>
@@ -92,7 +118,7 @@ namespace Scaleout.DigitalTwin.Workbench
             if (_models.ContainsKey(modelName))
                 throw new ArgumentException($"A model named {modelName} already exists.");
 
-            ModelRegistration registration = new ModelRegistration(modelName);
+            ModelRegistration registration = new ModelRegistration(modelName, sharedModelData: new WorkbenchSharedData());
             registration.MessageProcessor = processor;
 
             // We have all the nice TDigitalTwin and TMessage type information right now.

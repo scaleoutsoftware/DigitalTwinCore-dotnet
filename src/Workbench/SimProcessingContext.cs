@@ -30,6 +30,7 @@ namespace Scaleout.DigitalTwin.Workbench
     {
         private SimulationWorkbench _env;
         private ILogger _logger;
+
         internal string InstanceId { get; }
 
         const int MAX_MESSAGE_DEPTH = 100;
@@ -68,6 +69,10 @@ namespace Scaleout.DigitalTwin.Workbench
         public override IPersistenceProvider PersistenceProvider => throw new NotImplementedException();
 
         public override ISimulationController SimulationController => this as ISimulationController;
+
+        public override ISharedData SharedModelData => InstanceRegistration.ModelRegistration.SharedModelData;
+
+        public override ISharedData SharedGlobalData => _env.SharedGlobalData;
 
         public InstanceRegistration InstanceRegistration { get; }
 

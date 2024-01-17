@@ -39,5 +39,19 @@ namespace Scaleout.Streaming.DigitalTwin.Core
 		/// error codes is returned: <see cref="TimerActionResult.FailedTooManyTimers"/> when the maximum number of timers is reached or 
 		/// <see cref="TimerActionResult.FailedInternalError"/> if an error occurred during the method call.</returns>
         public abstract TimerActionResult StartTimer(string timerName, TimeSpan interval, TimerType type, TimerHandler timerCallback);
+
+        /// <summary>
+        /// Gets an <see cref="ISharedData"/> instance for accessing shared objects
+        /// that are associated with the model being processed.
+        /// </summary>
+        public abstract ISharedData SharedModelData { get; }
+
+        /// <summary>
+        /// Gets an <see cref="ISharedData"/> instance for accessing objects
+        /// that are shared globally between all models.
+        /// </summary>
+        public abstract ISharedData SharedGlobalData { get; }
+
+
     }
 }
