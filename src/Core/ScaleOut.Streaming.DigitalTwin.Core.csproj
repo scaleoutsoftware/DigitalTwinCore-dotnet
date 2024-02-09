@@ -12,12 +12,12 @@
     <RepositoryUrl>https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet</RepositoryUrl>
     <RepositoryType></RepositoryType>
     <RootNamespace>Scaleout.Streaming.DigitalTwin.Core</RootNamespace>
-    <Version>3.11.0</Version>
+    <Version>4.1.0</Version>
     <Description>Core classes and interfaces that support ScaleOut Digital Twins™.</Description>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageIcon>ScaleOutDigitalTwins-Logo-128x128@2x.png</PackageIcon>
     <PackageTags>scaleout digital twin core</PackageTags>
-    <PackageReleaseNotes>Initial open source release. Adds new Init() overload to DigitalTwinBase class that supplies and InitContext parameter, allowing for timers to be created at twin initialization time.</PackageReleaseNotes>
+    <PackageReleaseNotes>Introduce support for a DynamoDB persistence provider.</PackageReleaseNotes>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <SignAssembly>True</SignAssembly>
     <Title>ScaleOut DigitalTwin Builder™ Core Types</Title>
