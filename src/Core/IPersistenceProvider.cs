@@ -48,11 +48,7 @@ namespace Scaleout.Streaming.DigitalTwin.Core
 
         /// <summary>SQLite</summary>
         [Display(Name = "SQLite")]
-        SQLite,
-
-        /// <summary>DynamoDB</summary>
-        [Display(Name = "DynamoDB")]
-        DynamoDb
+        SQLite
     }
 
     /// <summary>
