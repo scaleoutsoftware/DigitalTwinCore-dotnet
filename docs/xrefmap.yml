@@ -80,6 +80,25 @@ references:
   fullName.vb: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.AddRealTimeModel(Of TDigitalTwin, TMessage)(String, Scaleout.Streaming.DigitalTwin.Core.MessageProcessor(Of TDigitalTwin, TMessage))
   nameWithType: RealTimeWorkbench.AddRealTimeModel<TDigitalTwin, TMessage>(string, MessageProcessor<TDigitalTwin, TMessage>)
   nameWithType.vb: RealTimeWorkbench.AddRealTimeModel(Of TDigitalTwin, TMessage)(String, MessageProcessor(Of TDigitalTwin, TMessage))
+- uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.CreateConsoleLogger
+  name: CreateConsoleLogger()
+  href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_CreateConsoleLogger
+  commentId: M:Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.CreateConsoleLogger
+  fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.CreateConsoleLogger()
+  nameWithType: RealTimeWorkbench.CreateConsoleLogger()
+- uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.CreateConsoleLogger*
+  name: CreateConsoleLogger
+  href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_CreateConsoleLogger_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.CreateConsoleLogger
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.CreateConsoleLogger
+  nameWithType: RealTimeWorkbench.CreateConsoleLogger
+- uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.DataSourceMessageReceived
+  name: DataSourceMessageReceived
+  href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_DataSourceMessageReceived
+  commentId: E:Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.DataSourceMessageReceived
+  fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.DataSourceMessageReceived
+  nameWithType: RealTimeWorkbench.DataSourceMessageReceived
 - uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.Dispose
   name: Dispose()
   href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_Dispose
@@ -134,6 +153,19 @@ references:
   isSpec: "True"
   fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.GetSharedModelData
   nameWithType: RealTimeWorkbench.GetSharedModelData
+- uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.OnDataSourceMessageReceived(Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs)
+  name: OnDataSourceMessageReceived(SendToDataSourceEventArgs)
+  href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_OnDataSourceMessageReceived_Scaleout_DigitalTwin_Workbench_SendToDataSourceEventArgs_
+  commentId: M:Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.OnDataSourceMessageReceived(Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs)
+  fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.OnDataSourceMessageReceived(Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs)
+  nameWithType: RealTimeWorkbench.OnDataSourceMessageReceived(SendToDataSourceEventArgs)
+- uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.OnDataSourceMessageReceived*
+  name: OnDataSourceMessageReceived
+  href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_OnDataSourceMessageReceived_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.OnDataSourceMessageReceived
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.OnDataSourceMessageReceived
+  nameWithType: RealTimeWorkbench.OnDataSourceMessageReceived
 - uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.PostedAlerts
   name: PostedAlerts
   href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_PostedAlerts
@@ -160,6 +192,51 @@ references:
   isSpec: "True"
   fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.SharedGlobalData
   nameWithType: RealTimeWorkbench.SharedGlobalData
+- uid: Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs
+  name: SendToDataSourceEventArgs
+  href: api/Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.html
+  commentId: T:Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs
+  fullName: Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs
+  nameWithType: SendToDataSourceEventArgs
+- uid: Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.DigitalTwinId
+  name: DigitalTwinId
+  href: api/Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.html#Scaleout_DigitalTwin_Workbench_SendToDataSourceEventArgs_DigitalTwinId
+  commentId: P:Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.DigitalTwinId
+  fullName: Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.DigitalTwinId
+  nameWithType: SendToDataSourceEventArgs.DigitalTwinId
+- uid: Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.DigitalTwinId*
+  name: DigitalTwinId
+  href: api/Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.html#Scaleout_DigitalTwin_Workbench_SendToDataSourceEventArgs_DigitalTwinId_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.DigitalTwinId
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.DigitalTwinId
+  nameWithType: SendToDataSourceEventArgs.DigitalTwinId
+- uid: Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.Message
+  name: Message
+  href: api/Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.html#Scaleout_DigitalTwin_Workbench_SendToDataSourceEventArgs_Message
+  commentId: P:Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.Message
+  fullName: Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.Message
+  nameWithType: SendToDataSourceEventArgs.Message
+- uid: Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.Message*
+  name: Message
+  href: api/Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.html#Scaleout_DigitalTwin_Workbench_SendToDataSourceEventArgs_Message_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.Message
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.Message
+  nameWithType: SendToDataSourceEventArgs.Message
+- uid: Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.ModelName
+  name: ModelName
+  href: api/Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.html#Scaleout_DigitalTwin_Workbench_SendToDataSourceEventArgs_ModelName
+  commentId: P:Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.ModelName
+  fullName: Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.ModelName
+  nameWithType: SendToDataSourceEventArgs.ModelName
+- uid: Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.ModelName*
+  name: ModelName
+  href: api/Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.html#Scaleout_DigitalTwin_Workbench_SendToDataSourceEventArgs_ModelName_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.ModelName
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.ModelName
+  nameWithType: SendToDataSourceEventArgs.ModelName
 - uid: Scaleout.DigitalTwin.Workbench.SimulationStatus
   name: SimulationStatus
   href: api/Scaleout.DigitalTwin.Workbench.SimulationStatus.html
@@ -272,6 +349,19 @@ references:
   fullName.vb: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddSimulationModel(Of TDigitalTwin, TMessage)(String, Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor(Of TDigitalTwin), Scaleout.Streaming.DigitalTwin.Core.MessageProcessor(Of TDigitalTwin, TMessage))
   nameWithType: SimulationWorkbench.AddSimulationModel<TDigitalTwin, TMessage>(string, SimulationProcessor<TDigitalTwin>, MessageProcessor<TDigitalTwin, TMessage>)
   nameWithType.vb: SimulationWorkbench.AddSimulationModel(Of TDigitalTwin, TMessage)(String, SimulationProcessor(Of TDigitalTwin), MessageProcessor(Of TDigitalTwin, TMessage))
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.CreateConsoleLogger
+  name: CreateConsoleLogger()
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_CreateConsoleLogger
+  commentId: M:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.CreateConsoleLogger
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.CreateConsoleLogger()
+  nameWithType: SimulationWorkbench.CreateConsoleLogger()
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.CreateConsoleLogger*
+  name: CreateConsoleLogger
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_CreateConsoleLogger_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.CreateConsoleLogger
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.CreateConsoleLogger
+  nameWithType: SimulationWorkbench.CreateConsoleLogger
 - uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.CurrentTime
   name: CurrentTime
   href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_CurrentTime
