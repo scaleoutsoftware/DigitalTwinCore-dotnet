@@ -1,5 +1,5 @@
 {
-  "source_base_path": "C:/dev/DigitalTwinCore-dotnet/src/docfx",
+  "source_base_path": "C:/Users/markw/dev/github/DigitalTwinCore-dotnet/src/docfx",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -86,6 +86,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.AlertProviderType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus.html"
         }
       },
       "version": ""
@@ -212,6 +222,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.ICacheResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.ICacheResult.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.yml",
       "output": {
         ".html": {
@@ -246,6 +266,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.ISharedData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.ISharedData.html"
         }
       },
       "version": ""

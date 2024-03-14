@@ -118,6 +118,22 @@ references:
   fullName.vb: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.GetInstances(Of TDigitalTwin)(String)
   nameWithType: RealTimeWorkbench.GetInstances<TDigitalTwin>(string)
   nameWithType.vb: RealTimeWorkbench.GetInstances(Of TDigitalTwin)(String)
+- uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.GetSharedModelData(System.String)
+  name: GetSharedModelData(string)
+  href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_GetSharedModelData_System_String_
+  commentId: M:Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.GetSharedModelData(System.String)
+  name.vb: GetSharedModelData(String)
+  fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.GetSharedModelData(string)
+  fullName.vb: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.GetSharedModelData(String)
+  nameWithType: RealTimeWorkbench.GetSharedModelData(string)
+  nameWithType.vb: RealTimeWorkbench.GetSharedModelData(String)
+- uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.GetSharedModelData*
+  name: GetSharedModelData
+  href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_GetSharedModelData_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.GetSharedModelData
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.GetSharedModelData
+  nameWithType: RealTimeWorkbench.GetSharedModelData
 - uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.PostedAlerts
   name: PostedAlerts
   href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_PostedAlerts
@@ -131,6 +147,19 @@ references:
   isSpec: "True"
   fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.PostedAlerts
   nameWithType: RealTimeWorkbench.PostedAlerts
+- uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.SharedGlobalData
+  name: SharedGlobalData
+  href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_SharedGlobalData
+  commentId: P:Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.SharedGlobalData
+  fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.SharedGlobalData
+  nameWithType: RealTimeWorkbench.SharedGlobalData
+- uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.SharedGlobalData*
+  name: SharedGlobalData
+  href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_SharedGlobalData_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.SharedGlobalData
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.SharedGlobalData
+  nameWithType: RealTimeWorkbench.SharedGlobalData
 - uid: Scaleout.DigitalTwin.Workbench.SimulationStatus
   name: SimulationStatus
   href: api/Scaleout.DigitalTwin.Workbench.SimulationStatus.html
@@ -288,6 +317,22 @@ references:
   fullName.vb: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetInstances(Of TDigitalTwin)(String)
   nameWithType: SimulationWorkbench.GetInstances<TDigitalTwin>(string)
   nameWithType.vb: SimulationWorkbench.GetInstances(Of TDigitalTwin)(String)
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetSharedModelData(System.String)
+  name: GetSharedModelData(string)
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_GetSharedModelData_System_String_
+  commentId: M:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetSharedModelData(System.String)
+  name.vb: GetSharedModelData(String)
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetSharedModelData(string)
+  fullName.vb: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetSharedModelData(String)
+  nameWithType: SimulationWorkbench.GetSharedModelData(string)
+  nameWithType.vb: SimulationWorkbench.GetSharedModelData(String)
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetSharedModelData*
+  name: GetSharedModelData
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_GetSharedModelData_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetSharedModelData
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetSharedModelData
+  nameWithType: SimulationWorkbench.GetSharedModelData
 - uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.InitializeSimulation(System.DateTimeOffset,System.DateTimeOffset,System.TimeSpan)
   name: InitializeSimulation(DateTimeOffset, DateTimeOffset, TimeSpan)
   href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_InitializeSimulation_System_DateTimeOffset_System_DateTimeOffset_System_TimeSpan_
@@ -327,6 +372,19 @@ references:
   isSpec: "True"
   fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.RunSimulation
   nameWithType: SimulationWorkbench.RunSimulation
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.SharedGlobalData
+  name: SharedGlobalData
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_SharedGlobalData
+  commentId: P:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.SharedGlobalData
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.SharedGlobalData
+  nameWithType: SimulationWorkbench.SharedGlobalData
+- uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.SharedGlobalData*
+  name: SharedGlobalData
+  href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_SharedGlobalData_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.SimulationWorkbench.SharedGlobalData
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.SharedGlobalData
+  nameWithType: SimulationWorkbench.SharedGlobalData
 - uid: Scaleout.DigitalTwin.Workbench.SimulationWorkbench.Step
   name: Step()
   href: api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html#Scaleout_DigitalTwin_Workbench_SimulationWorkbench_Step
@@ -460,6 +518,42 @@ references:
   commentId: F:Scaleout.Streaming.DigitalTwin.Core.AlertProviderType.Splunk
   fullName: Scaleout.Streaming.DigitalTwin.Core.AlertProviderType.Splunk
   nameWithType: AlertProviderType.Splunk
+- uid: Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus
+  name: CacheOperationStatus
+  href: api/Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus
+  fullName: Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus
+  nameWithType: CacheOperationStatus
+- uid: Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus.CacheCleared
+  name: CacheCleared
+  href: api/Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus.html#Scaleout_Streaming_DigitalTwin_Core_CacheOperationStatus_CacheCleared
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus.CacheCleared
+  fullName: Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus.CacheCleared
+  nameWithType: CacheOperationStatus.CacheCleared
+- uid: Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus.ObjectDoesNotExist
+  name: ObjectDoesNotExist
+  href: api/Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus.html#Scaleout_Streaming_DigitalTwin_Core_CacheOperationStatus_ObjectDoesNotExist
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus.ObjectDoesNotExist
+  fullName: Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus.ObjectDoesNotExist
+  nameWithType: CacheOperationStatus.ObjectDoesNotExist
+- uid: Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus.ObjectPut
+  name: ObjectPut
+  href: api/Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus.html#Scaleout_Streaming_DigitalTwin_Core_CacheOperationStatus_ObjectPut
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus.ObjectPut
+  fullName: Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus.ObjectPut
+  nameWithType: CacheOperationStatus.ObjectPut
+- uid: Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus.ObjectRemoved
+  name: ObjectRemoved
+  href: api/Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus.html#Scaleout_Streaming_DigitalTwin_Core_CacheOperationStatus_ObjectRemoved
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus.ObjectRemoved
+  fullName: Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus.ObjectRemoved
+  nameWithType: CacheOperationStatus.ObjectRemoved
+- uid: Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus.ObjectRetrieved
+  name: ObjectRetrieved
+  href: api/Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus.html#Scaleout_Streaming_DigitalTwin_Core_CacheOperationStatus_ObjectRetrieved
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus.ObjectRetrieved
+  fullName: Scaleout.Streaming.DigitalTwin.Core.CacheOperationStatus.ObjectRetrieved
+  nameWithType: CacheOperationStatus.ObjectRetrieved
 - uid: Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter
   name: DelegateSerializationConverter
   href: api/Scaleout.Streaming.DigitalTwin.Core.DelegateSerializationConverter.html
@@ -1014,6 +1108,51 @@ references:
   fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.New
   nameWithType: PersistenceProviderException.PersistenceProviderException
   nameWithType.vb: PersistenceProviderException.New
+- uid: Scaleout.Streaming.DigitalTwin.Core.ICacheResult
+  name: ICacheResult
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ICacheResult.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.ICacheResult
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ICacheResult
+  nameWithType: ICacheResult
+- uid: Scaleout.Streaming.DigitalTwin.Core.ICacheResult.Key
+  name: Key
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ICacheResult.html#Scaleout_Streaming_DigitalTwin_Core_ICacheResult_Key
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.ICacheResult.Key
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ICacheResult.Key
+  nameWithType: ICacheResult.Key
+- uid: Scaleout.Streaming.DigitalTwin.Core.ICacheResult.Key*
+  name: Key
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ICacheResult.html#Scaleout_Streaming_DigitalTwin_Core_ICacheResult_Key_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ICacheResult.Key
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ICacheResult.Key
+  nameWithType: ICacheResult.Key
+- uid: Scaleout.Streaming.DigitalTwin.Core.ICacheResult.Status
+  name: Status
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ICacheResult.html#Scaleout_Streaming_DigitalTwin_Core_ICacheResult_Status
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.ICacheResult.Status
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ICacheResult.Status
+  nameWithType: ICacheResult.Status
+- uid: Scaleout.Streaming.DigitalTwin.Core.ICacheResult.Status*
+  name: Status
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ICacheResult.html#Scaleout_Streaming_DigitalTwin_Core_ICacheResult_Status_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ICacheResult.Status
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ICacheResult.Status
+  nameWithType: ICacheResult.Status
+- uid: Scaleout.Streaming.DigitalTwin.Core.ICacheResult.Value
+  name: Value
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ICacheResult.html#Scaleout_Streaming_DigitalTwin_Core_ICacheResult_Value
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.ICacheResult.Value
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ICacheResult.Value
+  nameWithType: ICacheResult.Value
+- uid: Scaleout.Streaming.DigitalTwin.Core.ICacheResult.Value*
+  name: Value
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ICacheResult.html#Scaleout_Streaming_DigitalTwin_Core_ICacheResult_Value_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ICacheResult.Value
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ICacheResult.Value
+  nameWithType: ICacheResult.Value
 - uid: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint
   name: IDigitalTwinModelEndpoint
   href: api/Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.html
@@ -1129,6 +1268,32 @@ references:
   isSpec: "True"
   fullName: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send
   nameWithType: IDigitalTwinModelEndpoint.Send
+- uid: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.SharedGlobalData
+  name: SharedGlobalData
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.html#Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_SharedGlobalData
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.SharedGlobalData
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.SharedGlobalData
+  nameWithType: IDigitalTwinModelEndpoint.SharedGlobalData
+- uid: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.SharedGlobalData*
+  name: SharedGlobalData
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.html#Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_SharedGlobalData_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.SharedGlobalData
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.SharedGlobalData
+  nameWithType: IDigitalTwinModelEndpoint.SharedGlobalData
+- uid: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.SharedModelData
+  name: SharedModelData
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.html#Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_SharedModelData
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.SharedModelData
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.SharedModelData
+  nameWithType: IDigitalTwinModelEndpoint.SharedModelData
+- uid: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.SharedModelData*
+  name: SharedModelData
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.html#Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_SharedModelData_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.SharedModelData
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.SharedModelData
+  nameWithType: IDigitalTwinModelEndpoint.SharedModelData
 - uid: Scaleout.Streaming.DigitalTwin.Core.IMessageListFactory
   name: IMessageListFactory
   href: api/Scaleout.Streaming.DigitalTwin.Core.IMessageListFactory.html
@@ -1451,6 +1616,73 @@ references:
   fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IPersistenceProvider.UpdateRTDTProperty(Of T)(String, String, T)
   nameWithType: IPersistenceProvider.UpdateRTDTProperty<T>(string, string, T)
   nameWithType.vb: IPersistenceProvider.UpdateRTDTProperty(Of T)(String, String, T)
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISharedData
+  name: ISharedData
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISharedData.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.ISharedData
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISharedData
+  nameWithType: ISharedData
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISharedData.Clear
+  name: Clear()
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISharedData.html#Scaleout_Streaming_DigitalTwin_Core_ISharedData_Clear
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ISharedData.Clear
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISharedData.Clear()
+  nameWithType: ISharedData.Clear()
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISharedData.Clear*
+  name: Clear
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISharedData.html#Scaleout_Streaming_DigitalTwin_Core_ISharedData_Clear_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ISharedData.Clear
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISharedData.Clear
+  nameWithType: ISharedData.Clear
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISharedData.Get(System.String)
+  name: Get(string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISharedData.html#Scaleout_Streaming_DigitalTwin_Core_ISharedData_Get_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ISharedData.Get(System.String)
+  name.vb: Get(String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISharedData.Get(string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.ISharedData.Get(String)
+  nameWithType: ISharedData.Get(string)
+  nameWithType.vb: ISharedData.Get(String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISharedData.Get*
+  name: Get
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISharedData.html#Scaleout_Streaming_DigitalTwin_Core_ISharedData_Get_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ISharedData.Get
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISharedData.Get
+  nameWithType: ISharedData.Get
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISharedData.Put(System.String,System.Byte[])
+  name: Put(string, byte[])
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISharedData.html#Scaleout_Streaming_DigitalTwin_Core_ISharedData_Put_System_String_System_Byte___
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ISharedData.Put(System.String,System.Byte[])
+  name.vb: Put(String, Byte())
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISharedData.Put(string, byte[])
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.ISharedData.Put(String, Byte())
+  nameWithType: ISharedData.Put(string, byte[])
+  nameWithType.vb: ISharedData.Put(String, Byte())
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISharedData.Put*
+  name: Put
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISharedData.html#Scaleout_Streaming_DigitalTwin_Core_ISharedData_Put_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ISharedData.Put
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISharedData.Put
+  nameWithType: ISharedData.Put
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISharedData.Remove(System.String)
+  name: Remove(string)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISharedData.html#Scaleout_Streaming_DigitalTwin_Core_ISharedData_Remove_System_String_
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ISharedData.Remove(System.String)
+  name.vb: Remove(String)
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISharedData.Remove(string)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.ISharedData.Remove(String)
+  nameWithType: ISharedData.Remove(string)
+  nameWithType.vb: ISharedData.Remove(String)
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISharedData.Remove*
+  name: Remove
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISharedData.html#Scaleout_Streaming_DigitalTwin_Core_ISharedData_Remove_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ISharedData.Remove
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISharedData.Remove
+  nameWithType: ISharedData.Remove
 - uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController
   name: ISimulationController
   href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html
@@ -1597,6 +1829,32 @@ references:
   commentId: T:Scaleout.Streaming.DigitalTwin.Core.InitContext
   fullName: Scaleout.Streaming.DigitalTwin.Core.InitContext
   nameWithType: InitContext
+- uid: Scaleout.Streaming.DigitalTwin.Core.InitContext.SharedGlobalData
+  name: SharedGlobalData
+  href: api/Scaleout.Streaming.DigitalTwin.Core.InitContext.html#Scaleout_Streaming_DigitalTwin_Core_InitContext_SharedGlobalData
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.InitContext.SharedGlobalData
+  fullName: Scaleout.Streaming.DigitalTwin.Core.InitContext.SharedGlobalData
+  nameWithType: InitContext.SharedGlobalData
+- uid: Scaleout.Streaming.DigitalTwin.Core.InitContext.SharedGlobalData*
+  name: SharedGlobalData
+  href: api/Scaleout.Streaming.DigitalTwin.Core.InitContext.html#Scaleout_Streaming_DigitalTwin_Core_InitContext_SharedGlobalData_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.InitContext.SharedGlobalData
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.InitContext.SharedGlobalData
+  nameWithType: InitContext.SharedGlobalData
+- uid: Scaleout.Streaming.DigitalTwin.Core.InitContext.SharedModelData
+  name: SharedModelData
+  href: api/Scaleout.Streaming.DigitalTwin.Core.InitContext.html#Scaleout_Streaming_DigitalTwin_Core_InitContext_SharedModelData
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.InitContext.SharedModelData
+  fullName: Scaleout.Streaming.DigitalTwin.Core.InitContext.SharedModelData
+  nameWithType: InitContext.SharedModelData
+- uid: Scaleout.Streaming.DigitalTwin.Core.InitContext.SharedModelData*
+  name: SharedModelData
+  href: api/Scaleout.Streaming.DigitalTwin.Core.InitContext.html#Scaleout_Streaming_DigitalTwin_Core_InitContext_SharedModelData_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.InitContext.SharedModelData
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.InitContext.SharedModelData
+  nameWithType: InitContext.SharedModelData
 - uid: Scaleout.Streaming.DigitalTwin.Core.InitContext.StartTimer(System.String,System.TimeSpan,Scaleout.Streaming.DigitalTwin.Core.TimerType,Scaleout.Streaming.DigitalTwin.Core.TimerHandler)
   name: StartTimer(string, TimeSpan, TimerType, TimerHandler)
   href: api/Scaleout.Streaming.DigitalTwin.Core.InitContext.html#Scaleout_Streaming_DigitalTwin_Core_InitContext_StartTimer_System_String_System_TimeSpan_Scaleout_Streaming_DigitalTwin_Core_TimerType_Scaleout_Streaming_DigitalTwin_Core_TimerHandler_
@@ -1900,6 +2158,32 @@ references:
   isSpec: "True"
   fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToTwin
   nameWithType: ProcessingContext.SendToTwin
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SharedGlobalData
+  name: SharedGlobalData
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SharedGlobalData
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SharedGlobalData
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SharedGlobalData
+  nameWithType: ProcessingContext.SharedGlobalData
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SharedGlobalData*
+  name: SharedGlobalData
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SharedGlobalData_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SharedGlobalData
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SharedGlobalData
+  nameWithType: ProcessingContext.SharedGlobalData
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SharedModelData
+  name: SharedModelData
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SharedModelData
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SharedModelData
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SharedModelData
+  nameWithType: ProcessingContext.SharedModelData
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SharedModelData*
+  name: SharedModelData
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SharedModelData_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SharedModelData
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SharedModelData
+  nameWithType: ProcessingContext.SharedModelData
 - uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SimulationController
   name: SimulationController
   href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SimulationController

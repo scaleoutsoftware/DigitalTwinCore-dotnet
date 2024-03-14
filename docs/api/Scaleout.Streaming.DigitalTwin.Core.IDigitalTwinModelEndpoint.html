@@ -8,6 +8,7 @@
       <meta name="title" content="Interface IDigitalTwinModelEndpoint
  | ScaleOut Digital Twins&amp;trade; .NET API Reference ">
       
+      
       <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -17,7 +18,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/new/master/apiSpec/new?filename=Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint.md&amp;value=---%0Auid%3A%20Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/new/dev-shareddata/apiSpec/new?filename=Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint.md&amp;value=---%0Auid%3A%20Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -91,7 +92,7 @@
 
   <h1 id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint" class="text-break">
     Interface IDigitalTwinModelEndpoint
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelEndpoint.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/IDigitalTwinModelEndpoint.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -119,6 +120,76 @@
 
 
 
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_SharedGlobalData_" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.SharedGlobalData*"></a>
+
+  <h3 id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_SharedGlobalData" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.SharedGlobalData">
+  SharedGlobalData
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/IDigitalTwinModelEndpoint.cs/#L128"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets an <a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.ISharedData.html">ISharedData</a> instance for accessing objects
+that are shared globally between all models.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ISharedData SharedGlobalData { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.ISharedData.html">ISharedData</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_SharedModelData_" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.SharedModelData*"></a>
+
+  <h3 id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_SharedModelData" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.SharedModelData">
+  SharedModelData
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/IDigitalTwinModelEndpoint.cs/#L122"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets an <a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.ISharedData.html">ISharedData</a> instance for accessing shared objects
+that are associated with the endpoint's model.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ISharedData SharedModelData { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.ISharedData.html">ISharedData</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -127,7 +198,7 @@
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_CreateTwin_System_String_System_Object_" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwin(System.String,System.Object)">
   CreateTwin(string, object)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelEndpoint.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/IDigitalTwinModelEndpoint.cs/#L82"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Creates a new digital twin instance.</p>
@@ -172,7 +243,7 @@ properties and their initial values.</p>
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_CreateTwinFromPersistenceStore_System_String_" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwinFromPersistenceStore(System.String)">
   CreateTwinFromPersistenceStore(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelEndpoint.cs/#L108"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/IDigitalTwinModelEndpoint.cs/#L108"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Create a new digital twin instance in the ScaleOut data grid. This method assumes that persistence store is
@@ -216,7 +287,7 @@ the method throws DigitalTwinInstantiationException with the error details.</p>
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_CreateTwinFromPersistenceStore_System_String_System_Object_" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.CreateTwinFromPersistenceStore(System.String,System.Object)">
   CreateTwinFromPersistenceStore(string, object)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelEndpoint.cs/#L96"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/IDigitalTwinModelEndpoint.cs/#L96"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Create a new digital twin instance . This method first tries to create
@@ -264,7 +335,7 @@ the method throws DigitalTwinInstantiationException with the error details.</p>
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_DeleteTwin_System_String_" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.DeleteTwin(System.String)">
   DeleteTwin(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelEndpoint.cs/#L116"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/IDigitalTwinModelEndpoint.cs/#L116"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Delete a digital twin instance from the ScaleOut data grid.</p>
@@ -304,7 +375,7 @@ the method throws DigitalTwinProcessingException with the error details.</p>
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_Send_System_String_System_Byte___" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(System.String,System.Byte[])">
   Send(string, byte[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelEndpoint.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/IDigitalTwinModelEndpoint.cs/#L44"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sends a JSON serialized message to a digital twin instance.</p>
@@ -347,7 +418,7 @@ the method throws DigitalTwinProcessingException with the error details.</p>
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_Send_System_String_System_Collections_Generic_IEnumerable_System_Byte____" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(System.String,System.Collections.Generic.IEnumerable{System.Byte[]})">
   Send(string, IEnumerable&lt;byte[]&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelEndpoint.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/IDigitalTwinModelEndpoint.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sends JSON serialized messages to a digital twin instance.</p>
@@ -390,7 +461,7 @@ the method throws DigitalTwinProcessingException with the error details.</p>
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_Send_System_String_System_Collections_Generic_IEnumerable_System_Object__" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(System.String,System.Collections.Generic.IEnumerable{System.Object})">
   Send(string, IEnumerable&lt;object&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelEndpoint.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/IDigitalTwinModelEndpoint.cs/#L71"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sends messages to a digital twin instance.</p>
@@ -433,7 +504,7 @@ the method throws DigitalTwinProcessingException with the error details.</p>
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_Send_System_String_System_Object_" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(System.String,System.Object)">
   Send(string, object)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelEndpoint.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/IDigitalTwinModelEndpoint.cs/#L62"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sends a message to a digital twin instance.</p>
@@ -476,7 +547,7 @@ the method throws DigitalTwinProcessingException with the error details.</p>
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_IDigitalTwinModelEndpoint_Send_System_String_System_String_" data-uid="Scaleout.Streaming.DigitalTwin.Core.IDigitalTwinModelEndpoint.Send(System.String,System.String)">
   Send(string, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelEndpoint.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/IDigitalTwinModelEndpoint.cs/#L53"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sends a JSON serialized message to a digital twin instance.</p>
@@ -519,7 +590,7 @@ the method throws DigitalTwinProcessingException with the error details.</p>
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelEndpoint.cs/#L26" class="edit-link">Edit this page</a>
+          <a href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/IDigitalTwinModelEndpoint.cs/#L26" class="edit-link">Edit this page</a>
         </div>
 
 
@@ -535,7 +606,7 @@ the method throws DigitalTwinProcessingException with the error details.</p>
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          Copyright &copy; 2023 ScaleOut Software, Inc.
+          Copyright &copy; 2024 ScaleOut Software, Inc.
         </div>
       </div>
     </footer>

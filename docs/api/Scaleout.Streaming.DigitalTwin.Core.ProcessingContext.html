@@ -8,6 +8,7 @@
       <meta name="title" content="Class ProcessingContext
  | ScaleOut Digital Twins&amp;trade; .NET API Reference ">
       
+      
       <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -17,7 +18,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/new/master/apiSpec/new?filename=Scaleout_Streaming_DigitalTwin_Core_ProcessingContext.md&amp;value=---%0Auid%3A%20Scaleout.Streaming.DigitalTwin.Core.ProcessingContext%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/new/dev-shareddata/apiSpec/new?filename=Scaleout_Streaming_DigitalTwin_Core_ProcessingContext.md&amp;value=---%0Auid%3A%20Scaleout.Streaming.DigitalTwin.Core.ProcessingContext%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -91,7 +92,7 @@
 
   <h1 id="Scaleout_Streaming_DigitalTwin_Core_ProcessingContext" data-uid="Scaleout.Streaming.DigitalTwin.Core.ProcessingContext" class="text-break">
     Class ProcessingContext
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ProcessingContext.cs/#L29"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/ProcessingContext.cs/#L29"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -161,7 +162,7 @@ are originated from.</p>
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_DataSourceId" data-uid="Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.DataSourceId">
   DataSourceId
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ProcessingContext.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/ProcessingContext.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Data source unique identifier, e.g. for IoT use case it is typically device Id,
@@ -194,7 +195,7 @@ which is also used as a digital twin Id.</p>
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_DigitalTwinModel" data-uid="Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.DigitalTwinModel">
   DigitalTwinModel
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ProcessingContext.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/ProcessingContext.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Digital twin model type.</p>
@@ -226,7 +227,7 @@ which is also used as a digital twin Id.</p>
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_PersistenceProvider" data-uid="Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.PersistenceProvider">
   PersistenceProvider
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ProcessingContext.cs/#L145"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/ProcessingContext.cs/#L145"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the reference to registered persistence provider the model is using.
@@ -258,11 +259,77 @@ provider is supported.</p>
 
 
 
+  <a id="Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SharedGlobalData_" data-uid="Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SharedGlobalData*"></a>
+
+  <h3 id="Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SharedGlobalData" data-uid="Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SharedGlobalData">
+  SharedGlobalData
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/ProcessingContext.cs/#L194"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets an <a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.ISharedData.html">ISharedData</a> instance for accessing objects
+that are shared globally between all models.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract ISharedData SharedGlobalData { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.ISharedData.html">ISharedData</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SharedModelData_" data-uid="Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SharedModelData*"></a>
+
+  <h3 id="Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SharedModelData" data-uid="Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SharedModelData">
+  SharedModelData
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/ProcessingContext.cs/#L188"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets an <a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.ISharedData.html">ISharedData</a> instance for accessing shared objects
+that are associated with the model being processed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract ISharedData SharedModelData { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.ISharedData.html">ISharedData</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SimulationController_" data-uid="Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SimulationController*"></a>
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SimulationController" data-uid="Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SimulationController">
   SimulationController
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ProcessingContext.cs/#L173"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/ProcessingContext.cs/#L173"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the <a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html">ISimulationController</a> interface to control
@@ -300,7 +367,7 @@ all aspects of model simulation.</p>
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_GetCurrentTime" data-uid="Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.GetCurrentTime">
   GetCurrentTime()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ProcessingContext.cs/#L182"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/ProcessingContext.cs/#L182"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns the current time in UTC. If model simulation is active the method
@@ -336,7 +403,7 @@ simulation time if simulation process is active.</p>
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_LogMessage_Scaleout_Streaming_DigitalTwin_Core_LogSeverity_System_String_" data-uid="Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.LogMessage(Scaleout.Streaming.DigitalTwin.Core.LogSeverity,System.String)">
   LogMessage(LogSeverity, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ProcessingContext.cs/#L128"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/ProcessingContext.cs/#L128"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Logs user message with the specified severity level.</p>
@@ -372,7 +439,7 @@ simulation time if simulation process is active.</p>
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SendAlert_System_String_Scaleout_Streaming_DigitalTwin_Core_AlertMessage_" data-uid="Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendAlert(System.String,Scaleout.Streaming.DigitalTwin.Core.AlertMessage)">
   SendAlert(string, AlertMessage)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ProcessingContext.cs/#L136"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/ProcessingContext.cs/#L136"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sends an alert to a given Alerting provider.</p>
@@ -413,7 +480,7 @@ simulation time if simulation process is active.</p>
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SendToDataSource_System_Byte___" data-uid="Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToDataSource(System.Byte[])">
   SendToDataSource(byte[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ProcessingContext.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/ProcessingContext.cs/#L50"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sends a message back to a data source origination point (e.g. IoT device). When sending
@@ -455,7 +522,7 @@ must be JSON encoded.</p>
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SendToDataSource_System_Collections_Generic_IEnumerable_System_Byte____" data-uid="Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToDataSource(System.Collections.Generic.IEnumerable{System.Byte[]})">
   SendToDataSource(IEnumerable&lt;byte[]&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ProcessingContext.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/ProcessingContext.cs/#L70"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sends a list of messages back to a data source origination point (e.g. IoT device).
@@ -497,7 +564,7 @@ must be JSON encoded.</p>
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SendToDataSource_System_Collections_Generic_IEnumerable_System_Object__" data-uid="Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToDataSource(System.Collections.Generic.IEnumerable{System.Object})">
   SendToDataSource(IEnumerable&lt;object&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ProcessingContext.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/ProcessingContext.cs/#L80"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sends a list of messages back to a data source origination point (e.g. IoT device).
@@ -539,7 +606,7 @@ must be JSON encoded.</p>
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SendToDataSource_System_Object_" data-uid="Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToDataSource(System.Object)">
   SendToDataSource(object)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ProcessingContext.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/ProcessingContext.cs/#L60"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sends a message back to a data source origination point (e.g. IoT device). When sending
@@ -581,7 +648,7 @@ must be JSON encoded.</p>
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SendToTwin_System_String_System_String_System_Byte___" data-uid="Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToTwin(System.String,System.String,System.Byte[])">
   SendToTwin(string, string, byte[])
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ProcessingContext.cs/#L90"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/ProcessingContext.cs/#L90"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sends message to a different digital twin in twin's hierarchy.</p>
@@ -627,7 +694,7 @@ must be JSON encoded.</p>
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SendToTwin_System_String_System_String_System_Collections_Generic_IEnumerable_System_Byte____" data-uid="Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToTwin(System.String,System.String,System.Collections.Generic.IEnumerable{System.Byte[]})">
   SendToTwin(string, string, IEnumerable&lt;byte[]&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ProcessingContext.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/ProcessingContext.cs/#L110"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sends a list of messages to a different digital twin in twin's hierarchy.</p>
@@ -673,7 +740,7 @@ must be JSON encoded.</p>
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SendToTwin_System_String_System_String_System_Collections_Generic_IEnumerable_System_Object__" data-uid="Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToTwin(System.String,System.String,System.Collections.Generic.IEnumerable{System.Object})">
   SendToTwin(string, string, IEnumerable&lt;object&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ProcessingContext.cs/#L120"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/ProcessingContext.cs/#L120"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sends a list of messages to a different digital twin in twin's hierarchy.</p>
@@ -719,7 +786,7 @@ must be JSON encoded.</p>
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_SendToTwin_System_String_System_String_System_Object_" data-uid="Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.SendToTwin(System.String,System.String,System.Object)">
   SendToTwin(string, string, object)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ProcessingContext.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/ProcessingContext.cs/#L100"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Sends message to a different digital twin in twin's hierarchy.</p>
@@ -765,7 +832,7 @@ must be JSON encoded.</p>
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_StartTimer_System_String_System_TimeSpan_Scaleout_Streaming_DigitalTwin_Core_TimerType_Scaleout_Streaming_DigitalTwin_Core_TimerHandler_" data-uid="Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.StartTimer(System.String,System.TimeSpan,Scaleout.Streaming.DigitalTwin.Core.TimerType,Scaleout.Streaming.DigitalTwin.Core.TimerHandler)">
   StartTimer(string, TimeSpan, TimerType, TimerHandler)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ProcessingContext.cs/#L157"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/ProcessingContext.cs/#L157"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Starts a new timer for the digital twin <a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_DataSourceId">DataSourceId</a>.</p>
@@ -815,7 +882,7 @@ error codes is returned: <a class="xref" href="Scaleout.Streaming.DigitalTwin.Co
 
   <h3 id="Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_StopTimer_System_String_" data-uid="Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.StopTimer(System.String)">
   StopTimer(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ProcessingContext.cs/#L166"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/ProcessingContext.cs/#L166"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Stops the specified timer.</p>
@@ -856,7 +923,7 @@ error codes is returned: <a class="xref" href="Scaleout.Streaming.DigitalTwin.Co
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ProcessingContext.cs/#L29" class="edit-link">Edit this page</a>
+          <a href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Core/ProcessingContext.cs/#L29" class="edit-link">Edit this page</a>
         </div>
 
 
@@ -872,7 +939,7 @@ error codes is returned: <a class="xref" href="Scaleout.Streaming.DigitalTwin.Co
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          Copyright &copy; 2023 ScaleOut Software, Inc.
+          Copyright &copy; 2024 ScaleOut Software, Inc.
         </div>
       </div>
     </footer>

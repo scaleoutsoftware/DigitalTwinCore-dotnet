@@ -8,6 +8,7 @@
       <meta name="title" content="Class SimulationWorkbench
  | ScaleOut Digital Twins&amp;trade; .NET API Reference ">
       
+      
       <link rel="icon" href="../images/favicon.ico">
       <link rel="stylesheet" href="../public/docfx.min.css">
       <link rel="stylesheet" href="../public/main.css">
@@ -17,7 +18,7 @@
       <meta name="docfx:rel" content="../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/new/master/apiSpec/new?filename=Scaleout_DigitalTwin_Workbench_SimulationWorkbench.md&amp;value=---%0Auid%3A%20Scaleout.DigitalTwin.Workbench.SimulationWorkbench%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/new/dev-shareddata/apiSpec/new?filename=Scaleout_DigitalTwin_Workbench_SimulationWorkbench.md&amp;value=---%0Auid%3A%20Scaleout.DigitalTwin.Workbench.SimulationWorkbench%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -91,7 +92,7 @@
 
   <h1 id="Scaleout_DigitalTwin_Workbench_SimulationWorkbench" data-uid="Scaleout.DigitalTwin.Workbench.SimulationWorkbench" class="text-break">
     Class SimulationWorkbench
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Workbench/SimulationWorkbench.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Workbench/SimulationWorkbench.cs/#L55"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -159,7 +160,7 @@
 
   <h3 id="Scaleout_DigitalTwin_Workbench_SimulationWorkbench__ctor_Microsoft_Extensions_Logging_ILogger_" data-uid="Scaleout.DigitalTwin.Workbench.SimulationWorkbench.#ctor(Microsoft.Extensions.Logging.ILogger)">
   SimulationWorkbench(ILogger?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Workbench/SimulationWorkbench.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Workbench/SimulationWorkbench.cs/#L70"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Constructor</p>
@@ -196,7 +197,7 @@
 
   <h3 id="Scaleout_DigitalTwin_Workbench_SimulationWorkbench_CurrentTime" data-uid="Scaleout.DigitalTwin.Workbench.SimulationWorkbench.CurrentTime">
   CurrentTime
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Workbench/SimulationWorkbench.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Workbench/SimulationWorkbench.cs/#L119"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets the CurrentTime of a running simulation.</p>
@@ -230,6 +231,39 @@
 
 
 
+  <a id="Scaleout_DigitalTwin_Workbench_SimulationWorkbench_SharedGlobalData_" data-uid="Scaleout.DigitalTwin.Workbench.SimulationWorkbench.SharedGlobalData*"></a>
+
+  <h3 id="Scaleout_DigitalTwin_Workbench_SimulationWorkbench_SharedGlobalData" data-uid="Scaleout.DigitalTwin.Workbench.SimulationWorkbench.SharedGlobalData">
+  SharedGlobalData
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Workbench/SimulationWorkbench.cs/#L94"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets an <a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.ISharedData.html">ISharedData</a> instance for accessing objects
+that are shared globally between all models in the simulation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ISharedData SharedGlobalData { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.ISharedData.html">ISharedData</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <h2 class="section" id="methods">Methods
 </h2>
 
@@ -238,7 +272,7 @@
 
   <h3 id="Scaleout_DigitalTwin_Workbench_SimulationWorkbench_AddInstance_System_String_System_String_Scaleout_Streaming_DigitalTwin_Core_DigitalTwinBase_" data-uid="Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddInstance(System.String,System.String,Scaleout.Streaming.DigitalTwin.Core.DigitalTwinBase)">
   AddInstance(string, string, DigitalTwinBase)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Workbench/SimulationWorkbench.cs/#L319"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Workbench/SimulationWorkbench.cs/#L345"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds a digital twin instance to a model that has been registered with this workbench.</p>
@@ -286,7 +320,7 @@
 
   <h3 id="Scaleout_DigitalTwin_Workbench_SimulationWorkbench_AddRealTimeModel__2_System_String_Scaleout_Streaming_DigitalTwin_Core_MessageProcessor___0___1__" data-uid="Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddRealTimeModel``2(System.String,Scaleout.Streaming.DigitalTwin.Core.MessageProcessor{``0,``1})">
   AddRealTimeModel&lt;TDigitalTwin, TMessage&gt;(string, MessageProcessor&lt;TDigitalTwin, TMessage&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Workbench/SimulationWorkbench.cs/#L170"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Workbench/SimulationWorkbench.cs/#L196"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds a real-time model (with a message processor) to the workbench.</p>
@@ -346,7 +380,7 @@
 
   <h3 id="Scaleout_DigitalTwin_Workbench_SimulationWorkbench_AddSimulationModel__1_System_String_Scaleout_Streaming_DigitalTwin_Core_SimulationProcessor___0__" data-uid="Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddSimulationModel``1(System.String,Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor{``0})">
   AddSimulationModel&lt;TDigitalTwin&gt;(string, SimulationProcessor&lt;TDigitalTwin&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Workbench/SimulationWorkbench.cs/#L191"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Workbench/SimulationWorkbench.cs/#L217"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds a simulation model (with a simulation processor) to the workbench.</p>
@@ -403,7 +437,7 @@
 
   <h3 id="Scaleout_DigitalTwin_Workbench_SimulationWorkbench_AddSimulationModel__2_System_String_Scaleout_Streaming_DigitalTwin_Core_SimulationProcessor___0__Scaleout_Streaming_DigitalTwin_Core_MessageProcessor___0___1__" data-uid="Scaleout.DigitalTwin.Workbench.SimulationWorkbench.AddSimulationModel``2(System.String,Scaleout.Streaming.DigitalTwin.Core.SimulationProcessor{``0},Scaleout.Streaming.DigitalTwin.Core.MessageProcessor{``0,``1})">
   AddSimulationModel&lt;TDigitalTwin, TMessage&gt;(string, SimulationProcessor&lt;TDigitalTwin&gt;, MessageProcessor&lt;TDigitalTwin, TMessage&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Workbench/SimulationWorkbench.cs/#L216"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Workbench/SimulationWorkbench.cs/#L242"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds a simulation model (with both a simulation processor and a message processor) to the workbench.</p>
@@ -466,7 +500,7 @@
 
   <h3 id="Scaleout_DigitalTwin_Workbench_SimulationWorkbench_GetInstance__1_System_String_System_String_" data-uid="Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetInstance``1(System.String,System.String)">
   GetInstance&lt;TDigitalTwin&gt;(string, string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Workbench/SimulationWorkbench.cs/#L125"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Workbench/SimulationWorkbench.cs/#L151"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets a specified instance.</p>
@@ -520,7 +554,7 @@
 
   <h3 id="Scaleout_DigitalTwin_Workbench_SimulationWorkbench_GetInstances__1_System_String_" data-uid="Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetInstances``1(System.String)">
   GetInstances&lt;TDigitalTwin&gt;(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Workbench/SimulationWorkbench.cs/#L149"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Workbench/SimulationWorkbench.cs/#L175"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets a read-only dictionary of all digital twin instances in a model.</p>
@@ -567,11 +601,57 @@
 
 
 
+  <a id="Scaleout_DigitalTwin_Workbench_SimulationWorkbench_GetSharedModelData_" data-uid="Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetSharedModelData*"></a>
+
+  <h3 id="Scaleout_DigitalTwin_Workbench_SimulationWorkbench_GetSharedModelData_System_String_" data-uid="Scaleout.DigitalTwin.Workbench.SimulationWorkbench.GetSharedModelData(System.String)">
+  GetSharedModelData(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Workbench/SimulationWorkbench.cs/#L106"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets an <a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.ISharedData.html">ISharedData</a> instance for accessing objects
+that are shared between the instances of the specified model.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ISharedData GetSharedModelData(string modelName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>modelName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Name of the model associated with the shared data.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.ISharedData.html">ISharedData</a></dt>
+    <dd><p>An <a class="xref" href="Scaleout.Streaming.DigitalTwin.Core.ISharedData.html">ISharedData</a> instance that can be used to access shared objects.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.invalidoperationexception">InvalidOperationException</a></dt>
+    <dd><p>The specified model has not been registered with the workbench.</p>
+</dd>
+  </dl>
+
+
+
   <a id="Scaleout_DigitalTwin_Workbench_SimulationWorkbench_InitializeSimulation_" data-uid="Scaleout.DigitalTwin.Workbench.SimulationWorkbench.InitializeSimulation*"></a>
 
   <h3 id="Scaleout_DigitalTwin_Workbench_SimulationWorkbench_InitializeSimulation_System_DateTimeOffset_System_DateTimeOffset_System_TimeSpan_" data-uid="Scaleout.DigitalTwin.Workbench.SimulationWorkbench.InitializeSimulation(System.DateTimeOffset,System.DateTimeOffset,System.TimeSpan)">
   InitializeSimulation(DateTimeOffset, DateTimeOffset, TimeSpan)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Workbench/SimulationWorkbench.cs/#L399"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Workbench/SimulationWorkbench.cs/#L425"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Initializes a simulation so it can be manully stepped through
@@ -611,7 +691,7 @@ simulation using the <a class="xref" href="Scaleout.DigitalTwin.Workbench.Simula
 
   <h3 id="Scaleout_DigitalTwin_Workbench_SimulationWorkbench_PeekNextTimeStep" data-uid="Scaleout.DigitalTwin.Workbench.SimulationWorkbench.PeekNextTimeStep">
   PeekNextTimeStep()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Workbench/SimulationWorkbench.cs/#L109"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Workbench/SimulationWorkbench.cs/#L135"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets next time step in the current simulation.</p>
@@ -650,7 +730,7 @@ simulation using the <a class="xref" href="Scaleout.DigitalTwin.Workbench.Simula
 
   <h3 id="Scaleout_DigitalTwin_Workbench_SimulationWorkbench_RunSimulation_System_DateTimeOffset_System_DateTimeOffset_System_TimeSpan_System_TimeSpan_" data-uid="Scaleout.DigitalTwin.Workbench.SimulationWorkbench.RunSimulation(System.DateTimeOffset,System.DateTimeOffset,System.TimeSpan,System.TimeSpan)">
   RunSimulation(DateTimeOffset, DateTimeOffset, TimeSpan, TimeSpan)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Workbench/SimulationWorkbench.cs/#L373"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Workbench/SimulationWorkbench.cs/#L399"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Runs a simulation to completion.</p>
@@ -698,7 +778,7 @@ simulation using the <a class="xref" href="Scaleout.DigitalTwin.Workbench.Simula
 
   <h3 id="Scaleout_DigitalTwin_Workbench_SimulationWorkbench_Step" data-uid="Scaleout.DigitalTwin.Workbench.SimulationWorkbench.Step">
   Step()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Workbench/SimulationWorkbench.cs/#L456"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Workbench/SimulationWorkbench.cs/#L482"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Executes events for the next time step.</p>
@@ -731,7 +811,7 @@ simulation using the <a class="xref" href="Scaleout.DigitalTwin.Workbench.Simula
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Workbench/SimulationWorkbench.cs/#L55" class="edit-link">Edit this page</a>
+          <a href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/dev-shareddata/src/Workbench/SimulationWorkbench.cs/#L55" class="edit-link">Edit this page</a>
         </div>
 
 
@@ -747,7 +827,7 @@ simulation using the <a class="xref" href="Scaleout.DigitalTwin.Workbench.Simula
     <footer class="border-top text-secondary">
       <div class="container-xxl">
         <div class="flex-fill">
-          Copyright &copy; 2023 ScaleOut Software, Inc.
+          Copyright &copy; 2024 ScaleOut Software, Inc.
         </div>
       </div>
     </footer>
