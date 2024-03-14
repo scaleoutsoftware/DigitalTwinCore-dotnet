@@ -43,6 +43,12 @@ namespace Scaleout.DigitalTwin.Workbench
         private bool _disposed;
 
         /// <summary>
+        /// Event raised when a message processor implementation sends a message back to its
+        /// data source using <see cref="ProcessingContext.SendToDataSource(object)"/>.
+        /// </summary>
+        public event EventHandler<SendToDataSourceEventArgs>? DataSourceMessageReceived;
+
+        /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="logger">ILogger instance, or null.</param>
@@ -216,6 +222,21 @@ namespace Scaleout.DigitalTwin.Workbench
                 throw new InvalidOperationException($"Model {modelName} has not been registered.");
 
             return new InstanceDictionary<TDigitalTwin>(instances);
+        }
+
+        /// <summary>
+        /// Raises the <see cref="DataSourceMessageReceived"/> event.
+        /// </summary>
+        /// <param name="e">Event arguments containing information about the message sent back to the data source.</param>
+        protected virtual void OnDataSourceMessageReceived(SendToDataSourceEventArgs e)
+        {
+            DataSourceMessageReceived?.Invoke(this, e);
+        }
+
+        internal void SendToDataSouce(string digitalTwinId, string modelName, object message)
+        {
+            SendToDataSourceEventArgs e = new SendToDataSourceEventArgs(digitalTwinId, modelName, message);
+            OnDataSourceMessageReceived(e);
         }
 
         /// <summary>

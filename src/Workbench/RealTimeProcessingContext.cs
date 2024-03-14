@@ -21,6 +21,7 @@ using Microsoft.Extensions.Logging.Abstractions;
 using Scaleout.Streaming.DigitalTwin.Core;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 
@@ -85,22 +86,32 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public override SendingResult SendToDataSource(byte[] message)
         {
-            throw new NotSupportedException();
+            _env.SendToDataSouce(InstanceId, DigitalTwinModel, message);
+            return SendingResult.Handled;
         }
 
         public override SendingResult SendToDataSource(object message)
         {
-            throw new NotSupportedException();
+            _env.SendToDataSouce(InstanceId, DigitalTwinModel, message);
+            return SendingResult.Handled;
         }
 
         public override SendingResult SendToDataSource(IEnumerable<byte[]> messages)
         {
-            throw new NotSupportedException();
+            foreach (var msg in messages)
+            {
+                SendToDataSource(msg);
+            }
+            return SendingResult.Handled;
         }
 
         public override SendingResult SendToDataSource(IEnumerable<object> messages)
         {
-            throw new NotSupportedException();
+            foreach (var msg in messages)
+            {
+                SendToDataSource(msg);
+            }
+            return SendingResult.Handled;
         }
 
         public override SendingResult SendToTwin(string targetTwinModel, string targetTwinId, byte[] message)

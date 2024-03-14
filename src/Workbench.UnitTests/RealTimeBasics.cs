@@ -40,5 +40,26 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             var instances = wb.GetInstances<RealTimeCarModel>(nameof(RealTimeCar));
             Assert.True(instances.ContainsKey("Car1"));
         }
+
+        [Fact]
+        public void SendToDataSource()
+        {
+            RealTimeWorkbench wb = new RealTimeWorkbench();
+            bool msgReceived = false;
+            wb.DataSourceMessageReceived += (sender, e) =>
+            {
+                msgReceived = true;
+                Assert.Equal("Too Fast", ((StatusMessage)e.Message).Payload);
+                Assert.Equal("Car1", e.DigitalTwinId);
+                Assert.Equal(nameof(RealTimeCar), e.ModelName); 
+            };
+
+            var endpoint = wb.AddRealTimeModel(nameof(RealTimeCar), new RealTimeCarMessageProcessor2());
+
+            endpoint.Send("Car1", new CarMessage { Speed = 22 });
+
+            
+            Assert.True(msgReceived);
+        }
     }
 }
