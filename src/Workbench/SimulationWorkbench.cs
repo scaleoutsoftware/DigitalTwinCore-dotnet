@@ -98,7 +98,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
         /// <summary>
         /// Gets an <see cref="ISharedData"/> instance for accessing objects
-        /// that are shared between the objects in the specified model.
+        /// that are shared between the instances of the specified model.
         /// </summary>
         /// <param name="modelName">Name of the model associated with the shared data.</param>
         /// <returns>An <see cref="ISharedData"/> instance that can be used to access shared objects.</returns>
