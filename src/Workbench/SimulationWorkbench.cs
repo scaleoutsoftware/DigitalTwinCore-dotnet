@@ -96,6 +96,17 @@ namespace Scaleout.DigitalTwin.Workbench
             get => _sharedGlobalData;
         }
 
+
+        /// <summary>
+        /// Creates a console logger for use in the SimulationWorkbench constructor.
+        /// </summary>
+        /// <returns>ILogger instance that writes to the console.</returns>
+        public static ILogger CreateConsoleLogger()
+        {
+            using ILoggerFactory factory = LoggerFactory.Create(builder => builder.AddConsole());
+            return factory.CreateLogger<SimulationWorkbench>();
+        }
+
         /// <summary>
         /// Gets an <see cref="ISharedData"/> instance for accessing objects
         /// that are shared between the instances of the specified model.

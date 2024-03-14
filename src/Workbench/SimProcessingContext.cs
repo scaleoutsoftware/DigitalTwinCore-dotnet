@@ -215,7 +215,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public override void LogMessage(LogSeverity severity, string message)
         {
-            throw new NotImplementedException();
+            _logger.Log(severity.ToLogLevel(), message);
         }
 
         public override SendingResult SendAlert(string providerName, AlertMessage alertMessage)
