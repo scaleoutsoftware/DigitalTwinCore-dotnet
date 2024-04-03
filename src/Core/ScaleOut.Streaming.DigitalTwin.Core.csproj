@@ -12,7 +12,7 @@
     <RepositoryUrl>https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet</RepositoryUrl>
     <RepositoryType></RepositoryType>
     <RootNamespace>Scaleout.Streaming.DigitalTwin.Core</RootNamespace>
-    <Version>4.0.0</Version>
+    <Version>4.2.0</Version>
     <Description>Core classes and interfaces that support ScaleOut Digital Twins™.</Description>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageIcon>ScaleOutDigitalTwins-Logo-128x128@2x.png</PackageIcon>
