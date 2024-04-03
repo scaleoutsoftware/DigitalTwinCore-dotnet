@@ -162,6 +162,13 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         SendingResult DeleteThisTwin();
 
         /// <summary>
+        /// Adds this simulation twin instance (itself) to the end of the priority queue for
+        /// running the <see cref="SimulationProcessor{T}.ProcessModel(ProcessingContext, DigitalTwinBase, DateTimeOffset)"/> 
+        /// method for it at the current simulation time.
+        /// </summary>
+        void RunThisTwin();
+
+        /// <summary>
         /// Stop the currently running simulation.
         /// </summary>
         void StopSimulation();
