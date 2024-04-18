@@ -116,12 +116,24 @@ namespace Scaleout.DigitalTwin.Workbench
             return SendingResult.Handled;
         }
 
+        public SendingResult DelayInfinitely()
+        {
+            this.RequestedSimulationCycleDelay = TimeSpan.MaxValue;
+            return SendingResult.Handled;
+        }
+
         public SendingResult DeleteThisTwin()
         {
             DeleteRequested = true; // prevents simulation instance from being re-enqueud in the scheduler.
 
             _env.RemoveInstance(this.DigitalTwinModel, this.InstanceId);
             return SendingResult.Handled;
+        }
+
+        public void RunThisTwin()
+        {
+            _env.EnqueueImmediate(this.InstanceRegistration);
+            _env.Step();
         }
 
         public SendingResult DeleteTwin(string modelName, string twinId)
