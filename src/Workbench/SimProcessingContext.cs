@@ -116,7 +116,7 @@ namespace Scaleout.DigitalTwin.Workbench
             return SendingResult.Handled;
         }
 
-        public SendingResult DelayInfinitely()
+        public SendingResult DelayIndefinitely()
         {
             this.RequestedSimulationCycleDelay = TimeSpan.MaxValue;
             return SendingResult.Handled;

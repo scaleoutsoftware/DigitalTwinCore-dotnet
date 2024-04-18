@@ -57,7 +57,7 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// <exception cref="Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException">
         /// The exception is thrown if the current digital twin model does not support simulation.
         /// </exception>
-        SendingResult DelayInfinitely();
+        SendingResult DelayIndefinitely();
 
         /// <summary>
         /// Sends a telemetry message to the corresponding real-time digital twin instance. 

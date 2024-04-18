@@ -202,11 +202,11 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
                 digitalTwin.Speed = digitalTwin.Speed - 1;
 
                 if (digitalTwin.Speed == 10 && digitalTwin.Id == "Car_Sleeper")
-                    context.SimulationController.DelayInfinitely();
+                    context.SimulationController.DelayIndefinitely();
                 else if (digitalTwin.Speed == 20 && digitalTwin.Id == "Car_Waker")
                     context.SendToTwin(nameof(SimulatedCar), "Car_Sleeper", new StatusMessage() { Payload = "WakeUp!" });
                 else if (digitalTwin.Speed == 0)
-                    context.SimulationController.DelayInfinitely();
+                    context.SimulationController.DelayIndefinitely();
 
                 return ProcessingResult.DoUpdate;
             }
