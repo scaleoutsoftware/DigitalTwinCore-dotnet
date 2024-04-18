@@ -133,7 +133,6 @@ namespace Scaleout.DigitalTwin.Workbench
         public void RunThisTwin()
         {
             _env.EnqueueImmediate(this.InstanceRegistration);
-            _env.Step();
         }
 
         public SendingResult DeleteTwin(string modelName, string twinId)
