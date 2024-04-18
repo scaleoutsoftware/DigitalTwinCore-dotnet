@@ -108,22 +108,8 @@ namespace Scaleout.Streaming.DigitalTwin.Core
 			return InitAsync(id, model); 
 		}
 
-        /// <summary>
-        /// Collection of digital twin timer handlers.
-        /// </summary>
-        [JsonProperty]
-		[JsonConverter(typeof(DelegateSerializationConverter))]
-		[Browsable(false)]
-		[EditorBrowsable(EditorBrowsableState.Never)]
-		internal Dictionary<string, TimerMetadata> TimerHandlers { get; set; } = new Dictionary<string, TimerMetadata>();
 
-        /// <summary>
-        /// The next simulation time.
-        /// </summary>
-        [JsonProperty("NextSimulationTime")]
-        [Browsable(false)]
-        [EditorBrowsable(EditorBrowsableState.Never)]
-        internal ulong NextSimulationTimeUnixMsec { get; set; } = 0;
+
 
         /// <summary>
         /// Initializes <see cref="DigitalTwinBase.Id"/> and <see cref="DigitalTwinBase.Model"/>
