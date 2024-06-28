@@ -52,7 +52,11 @@ namespace Scaleout.Streaming.DigitalTwin.Core
 
         /// <summary>DynamoDB</summary>
         [Display(Name = "DynamoDB")]
-        DynamoDb
+        DynamoDb,
+
+        /// <summary>CosmosDB</summary>
+        [Display(Name = "CosmosDB")]
+        CosmosDb,
     }
 
     /// <summary>
