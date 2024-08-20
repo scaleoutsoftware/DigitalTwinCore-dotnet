@@ -144,6 +144,11 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// <returns>The registered <see cref="IPersistenceProvider"/> used by the model.</returns>
         public abstract IPersistenceProvider PersistenceProvider { get; }
 
+        /// <summary>
+        /// Returns the collection of registered anomaly detection providers the model has access to.
+        /// </summary>
+        public abstract Dictionary<string, IAnomalyDetectionProvider> AnomalyDetectionProviders { get; }
+
 		/// <summary>
 		/// Starts a new timer for the digital twin <see cref="DataSourceId"/>.
 		/// </summary>

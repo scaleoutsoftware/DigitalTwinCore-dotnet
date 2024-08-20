@@ -62,6 +62,8 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public override IPersistenceProvider PersistenceProvider => throw new NotSupportedException();
 
+        public override Dictionary<string, IAnomalyDetectionProvider> AnomalyDetectionProviders => new Dictionary<string, IAnomalyDetectionProvider>();
+
         public override ISimulationController? SimulationController => null;
 
         public override ISharedData SharedModelData => InstanceRegistration.ModelRegistration.SharedModelData;
