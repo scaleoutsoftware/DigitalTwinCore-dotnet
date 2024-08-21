@@ -53,6 +53,16 @@ namespace Scaleout.Streaming.DigitalTwin.Core
     public abstract class SimulationProcessor
     {
         /// <summary>
+        /// This method called by the ScaleOut service once when the simulation starts.
+        /// </summary>
+        /// <param name="context">Initial processing context that allows to access shared data.</param>
+        /// <param name="startTime">The simulation start time.</param>
+        /// <returns><see cref="ProcessingResult.DoUpdate"/> if the digital twin
+        /// object needs to be updated, or <see cref="ProcessingResult.NoUpdate"/> if
+        /// no updates are needed.</returns>
+        internal abstract ProcessingResult InitSimulation(InitContext context, DateTimeOffset startTime);
+
+        /// <summary>
         /// The method called by the ScaleOut service every time the simulation time 
         /// interval has elapsed.
         /// </summary>
