@@ -1,6 +1,6 @@
 ﻿#region Copyright notice and license
 
-// Copyright 2023 ScaleOut Software, Inc.
+// Copyright 2023-2024 ScaleOut Software, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -30,6 +30,11 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar
 
     class DoNothingProcessor : SimulationProcessor<SimulatedCarModel>
     {
+        public override ProcessingResult InitSimulation(InitSimulationContext context, SimulatedCarModel digitalTwin, DateTimeOffset startTime)
+        {
+            return ProcessingResult.NoUpdate;
+        }
+
         public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
         {
             return ProcessingResult.DoUpdate;
@@ -38,6 +43,11 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar
 
     public class CarSimulationProcessor1 : SimulationProcessor<SimulatedCarModel>
     {
+        public override ProcessingResult InitSimulation(InitSimulationContext context, SimulatedCarModel digitalTwin, DateTimeOffset startTime)
+        {
+            return ProcessingResult.NoUpdate;
+        }
+
         public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
         {
             digitalTwin.Speed = RandomNumberGenerator.GetInt32(45, 65);
@@ -48,7 +58,11 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar
 
     public class CarSimulationProcessor2 : SimulationProcessor<SimulatedCarModel>
     {
-        
+        public override ProcessingResult InitSimulation(InitSimulationContext context, SimulatedCarModel digitalTwin, DateTimeOffset startTime)
+        {
+            return ProcessingResult.NoUpdate;
+        }
+
         public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
         {
             CarMessage msg = new CarMessage() { Speed = digitalTwin.Speed };
@@ -60,6 +74,11 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar
 
     public class CarSimulationProcessor3 : SimulationProcessor<SimulatedCarModel>
     {
+        public override ProcessingResult InitSimulation(InitSimulationContext context, SimulatedCarModel digitalTwin, DateTimeOffset startTime)
+        {
+            return ProcessingResult.NoUpdate;
+        }
+
         public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
         {
             digitalTwin.Speed = 75;
@@ -71,6 +90,11 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar
 
     public class CarSimulationProcessor4 : SimulationProcessor<SimulatedCarModel>
     {
+        public override ProcessingResult InitSimulation(InitSimulationContext context, SimulatedCarModel digitalTwin, DateTimeOffset startTime)
+        {
+            return ProcessingResult.NoUpdate;
+        }
+
         public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
         {
             context.SimulationController.DeleteThisTwin();
@@ -80,6 +104,11 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar
 
     public class CarSimulationProcessor5 : SimulationProcessor<SimulatedCarModel>
     {
+        public override ProcessingResult InitSimulation(InitSimulationContext context, SimulatedCarModel digitalTwin, DateTimeOffset startTime)
+        {
+            return ProcessingResult.NoUpdate;
+        }
+
         public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
         {
             // use speed as a countdown to zero, then delete the DT instance.

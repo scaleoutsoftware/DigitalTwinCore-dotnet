@@ -1,6 +1,6 @@
 ﻿#region Copyright notice and license
 
-// Copyright 2023 ScaleOut Software, Inc.
+// Copyright 2023-2024 ScaleOut Software, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -34,7 +34,11 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
         {
             private bool _timerStarted = false;
             public int _timerFiredCount = 0;
-            
+
+            public override ProcessingResult InitSimulation(InitSimulationContext context, SimulatedCarModel digitalTwin, DateTimeOffset startTime)
+            {
+                return ProcessingResult.NoUpdate;
+            }
 
             public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
@@ -79,6 +83,10 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             private bool _timerStarted = false;
             public int _timerFiredCount = 0;
 
+            public override ProcessingResult InitSimulation(InitSimulationContext context, SimulatedCarModel digitalTwin, DateTimeOffset startTime)
+            {
+                return ProcessingResult.NoUpdate;
+            }
 
             public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
@@ -127,6 +135,10 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             public int _timerFiredCount = 0;
             public int _processModelCount = 0;
 
+            public override ProcessingResult InitSimulation(InitSimulationContext context, SimulatedCarModel digitalTwin, DateTimeOffset startTime)
+            {
+                return ProcessingResult.NoUpdate;
+            }
 
             public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
@@ -195,6 +207,11 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
         class InitTimerProcessor : SimulationProcessor<TimerTwin>
         {
+            public override ProcessingResult InitSimulation(InitSimulationContext context, TimerTwin digitalTwin, DateTimeOffset startTime)
+            {
+                return ProcessingResult.NoUpdate;
+            }
+
             public override ProcessingResult ProcessModel(ProcessingContext context, TimerTwin digitalTwin, DateTimeOffset currentTime)
             {
                 return ProcessingResult.DoUpdate;

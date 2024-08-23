@@ -1,6 +1,6 @@
 ﻿#region Copyright notice and license
 
-// Copyright 2023 ScaleOut Software, Inc.
+// Copyright 2023-2024 ScaleOut Software, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -110,6 +110,11 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
         class DelayInfiniteProcessor : SimulationProcessor<SimulatedCarModel>
         {
+            public override ProcessingResult InitSimulation(InitSimulationContext context, SimulatedCarModel digitalTwin, DateTimeOffset startTime)
+            {
+                return ProcessingResult.NoUpdate;
+            }
+
             public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 // Delay forever when speed hits zero.
@@ -153,6 +158,11 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
         class RequestStopProcessor : SimulationProcessor<SimulatedCarModel>
         {
+            public override ProcessingResult InitSimulation(InitSimulationContext context, SimulatedCarModel digitalTwin, DateTimeOffset startTime)
+            {
+                return ProcessingResult.NoUpdate;
+            }
+
             public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 // Delay forever when speed hits zero.
@@ -196,6 +206,11 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
         class RunThisTwinSimProcessor : SimulationProcessor<SimulatedCarModel>
         {
+            public override ProcessingResult InitSimulation(InitSimulationContext context, SimulatedCarModel digitalTwin, DateTimeOffset startTime)
+            {
+                return ProcessingResult.NoUpdate;
+            }
+
             public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 // Delay forever when speed hits zero.
