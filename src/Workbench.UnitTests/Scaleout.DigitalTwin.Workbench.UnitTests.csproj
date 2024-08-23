@@ -4,8 +4,10 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-
-    <IsPackable>false</IsPackable>
+	<Version>4.2.0</Version>
+    <Company>ScaleOut Software, Inc.</Company>
+	<Product>ScaleOut Digital Twin Workbench</Product>
+	<IsPackable>false</IsPackable>
   </PropertyGroup>
 
   <ItemGroup>
