@@ -52,6 +52,8 @@ namespace Scaleout.DigitalTwin.Workbench
             InstanceRegistration = instanceRegistration;
             _env = env;
             _messageDepth = messageDepth;
+            AnomalyDetectionProviders = _env.AnomalyDetectionProviders?.ContainsKey(DigitalTwinModel) == true ? 
+                _env.AnomalyDetectionProviders[DigitalTwinModel] : new Dictionary<string, IAnomalyDetectionProvider>();
 
             _logger = logger ?? NullLogger.Instance;
         }
@@ -62,7 +64,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public override IPersistenceProvider PersistenceProvider => throw new NotSupportedException();
 
-        public override Dictionary<string, IAnomalyDetectionProvider> AnomalyDetectionProviders => new Dictionary<string, IAnomalyDetectionProvider>();
+        public override Dictionary<string, IAnomalyDetectionProvider> AnomalyDetectionProviders { get; }
 
         public override ISimulationController? SimulationController => null;
 
