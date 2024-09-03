@@ -80,6 +80,19 @@ references:
   fullName.vb: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.AddRealTimeModel(Of TDigitalTwin, TMessage)(String, Scaleout.Streaming.DigitalTwin.Core.MessageProcessor(Of TDigitalTwin, TMessage))
   nameWithType: RealTimeWorkbench.AddRealTimeModel<TDigitalTwin, TMessage>(string, MessageProcessor<TDigitalTwin, TMessage>)
   nameWithType.vb: RealTimeWorkbench.AddRealTimeModel(Of TDigitalTwin, TMessage)(String, MessageProcessor(Of TDigitalTwin, TMessage))
+- uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.AnomalyDetectionProviders
+  name: AnomalyDetectionProviders
+  href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_AnomalyDetectionProviders
+  commentId: P:Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.AnomalyDetectionProviders
+  fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.AnomalyDetectionProviders
+  nameWithType: RealTimeWorkbench.AnomalyDetectionProviders
+- uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.AnomalyDetectionProviders*
+  name: AnomalyDetectionProviders
+  href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_AnomalyDetectionProviders_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.AnomalyDetectionProviders
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.AnomalyDetectionProviders
+  nameWithType: RealTimeWorkbench.AnomalyDetectionProviders
 - uid: Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.CreateConsoleLogger
   name: CreateConsoleLogger()
   href: api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html#Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_CreateConsoleLogger
@@ -1198,6 +1211,28 @@ references:
   fullName.vb: Scaleout.Streaming.DigitalTwin.Core.Exceptions.PersistenceProviderException.New
   nameWithType: PersistenceProviderException.PersistenceProviderException
   nameWithType.vb: PersistenceProviderException.New
+- uid: Scaleout.Streaming.DigitalTwin.Core.IAnomalyDetectionProvider
+  name: IAnomalyDetectionProvider
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IAnomalyDetectionProvider.html
+  commentId: T:Scaleout.Streaming.DigitalTwin.Core.IAnomalyDetectionProvider
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IAnomalyDetectionProvider
+  nameWithType: IAnomalyDetectionProvider
+- uid: Scaleout.Streaming.DigitalTwin.Core.IAnomalyDetectionProvider.DetectAnomaly(System.Collections.Generic.Dictionary{System.String,System.Single})
+  name: DetectAnomaly(Dictionary<string, float>)
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IAnomalyDetectionProvider.html#Scaleout_Streaming_DigitalTwin_Core_IAnomalyDetectionProvider_DetectAnomaly_System_Collections_Generic_Dictionary_System_String_System_Single__
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.IAnomalyDetectionProvider.DetectAnomaly(System.Collections.Generic.Dictionary{System.String,System.Single})
+  name.vb: DetectAnomaly(Dictionary(Of String, Single))
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IAnomalyDetectionProvider.DetectAnomaly(System.Collections.Generic.Dictionary<string, float>)
+  fullName.vb: Scaleout.Streaming.DigitalTwin.Core.IAnomalyDetectionProvider.DetectAnomaly(System.Collections.Generic.Dictionary(Of String, Single))
+  nameWithType: IAnomalyDetectionProvider.DetectAnomaly(Dictionary<string, float>)
+  nameWithType.vb: IAnomalyDetectionProvider.DetectAnomaly(Dictionary(Of String, Single))
+- uid: Scaleout.Streaming.DigitalTwin.Core.IAnomalyDetectionProvider.DetectAnomaly*
+  name: DetectAnomaly
+  href: api/Scaleout.Streaming.DigitalTwin.Core.IAnomalyDetectionProvider.html#Scaleout_Streaming_DigitalTwin_Core_IAnomalyDetectionProvider_DetectAnomaly_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.IAnomalyDetectionProvider.DetectAnomaly
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.IAnomalyDetectionProvider.DetectAnomaly
+  nameWithType: IAnomalyDetectionProvider.DetectAnomaly
 - uid: Scaleout.Streaming.DigitalTwin.Core.ICacheResult
   name: ICacheResult
   href: api/Scaleout.Streaming.DigitalTwin.Core.ICacheResult.html
@@ -1833,6 +1868,19 @@ references:
   isSpec: "True"
   fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.Delay
   nameWithType: ISimulationController.Delay
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.DelayIndefinitely
+  name: DelayIndefinitely()
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html#Scaleout_Streaming_DigitalTwin_Core_ISimulationController_DelayIndefinitely
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ISimulationController.DelayIndefinitely
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.DelayIndefinitely()
+  nameWithType: ISimulationController.DelayIndefinitely()
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.DelayIndefinitely*
+  name: DelayIndefinitely
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html#Scaleout_Streaming_DigitalTwin_Core_ISimulationController_DelayIndefinitely_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ISimulationController.DelayIndefinitely
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.DelayIndefinitely
+  nameWithType: ISimulationController.DelayIndefinitely
 - uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.DeleteThisTwin
   name: DeleteThisTwin()
   href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html#Scaleout_Streaming_DigitalTwin_Core_ISimulationController_DeleteThisTwin
@@ -1900,6 +1948,19 @@ references:
   isSpec: "True"
   fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.GetSimulationTimeIncrement
   nameWithType: ISimulationController.GetSimulationTimeIncrement
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.RunThisTwin
+  name: RunThisTwin()
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html#Scaleout_Streaming_DigitalTwin_Core_ISimulationController_RunThisTwin
+  commentId: M:Scaleout.Streaming.DigitalTwin.Core.ISimulationController.RunThisTwin
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.RunThisTwin()
+  nameWithType: ISimulationController.RunThisTwin()
+- uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.RunThisTwin*
+  name: RunThisTwin
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html#Scaleout_Streaming_DigitalTwin_Core_ISimulationController_RunThisTwin_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ISimulationController.RunThisTwin
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.RunThisTwin
+  nameWithType: ISimulationController.RunThisTwin
 - uid: Scaleout.Streaming.DigitalTwin.Core.ISimulationController.StopSimulation
   name: StopSimulation()
   href: api/Scaleout.Streaming.DigitalTwin.Core.ISimulationController.html#Scaleout_Streaming_DigitalTwin_Core_ISimulationController_StopSimulation
@@ -2054,6 +2115,18 @@ references:
   commentId: F:Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.AzureDigitalTwinsService
   fullName: Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.AzureDigitalTwinsService
   nameWithType: PersistenceProviderType.AzureDigitalTwinsService
+- uid: Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.CosmosDb
+  name: CosmosDb
+  href: api/Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.html#Scaleout_Streaming_DigitalTwin_Core_PersistenceProviderType_CosmosDb
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.CosmosDb
+  fullName: Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.CosmosDb
+  nameWithType: PersistenceProviderType.CosmosDb
+- uid: Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.DynamoDb
+  name: DynamoDb
+  href: api/Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.html#Scaleout_Streaming_DigitalTwin_Core_PersistenceProviderType_DynamoDb
+  commentId: F:Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.DynamoDb
+  fullName: Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.DynamoDb
+  nameWithType: PersistenceProviderType.DynamoDb
 - uid: Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.SQLServer
   name: SQLServer
   href: api/Scaleout.Streaming.DigitalTwin.Core.PersistenceProviderType.html#Scaleout_Streaming_DigitalTwin_Core_PersistenceProviderType_SQLServer
@@ -2078,6 +2151,19 @@ references:
   commentId: T:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext
   fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext
   nameWithType: ProcessingContext
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.AnomalyDetectionProviders
+  name: AnomalyDetectionProviders
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_AnomalyDetectionProviders
+  commentId: P:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.AnomalyDetectionProviders
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.AnomalyDetectionProviders
+  nameWithType: ProcessingContext.AnomalyDetectionProviders
+- uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.AnomalyDetectionProviders*
+  name: AnomalyDetectionProviders
+  href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_AnomalyDetectionProviders_
+  commentId: Overload:Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.AnomalyDetectionProviders
+  isSpec: "True"
+  fullName: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.AnomalyDetectionProviders
+  nameWithType: ProcessingContext.AnomalyDetectionProviders
 - uid: Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.DataSourceId
   name: DataSourceId
   href: api/Scaleout.Streaming.DigitalTwin.Core.ProcessingContext.html#Scaleout_Streaming_DigitalTwin_Core_ProcessingContext_DataSourceId

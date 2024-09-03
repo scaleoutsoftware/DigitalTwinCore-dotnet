@@ -232,6 +232,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.IAnomalyDetectionProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.IAnomalyDetectionProvider.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Scaleout.Streaming.DigitalTwin.Core.ICacheResult.yml",
       "output": {
         ".html": {
