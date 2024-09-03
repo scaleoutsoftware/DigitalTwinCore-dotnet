@@ -68,6 +68,9 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public override IPersistenceProvider PersistenceProvider => throw new NotImplementedException();
 
+        public override Dictionary<string, IAnomalyDetectionProvider> AnomalyDetectionProviders => throw new NotImplementedException();
+
+
         public override ISimulationController SimulationController => this as ISimulationController;
 
         public override ISharedData SharedModelData => InstanceRegistration.ModelRegistration.SharedModelData;

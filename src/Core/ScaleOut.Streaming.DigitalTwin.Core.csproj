@@ -17,7 +17,7 @@
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageIcon>ScaleOutDigitalTwins-Logo-128x128@2x.png</PackageIcon>
     <PackageTags>scaleout digital twin core</PackageTags>
-    <PackageReleaseNotes>Introduces support for a CosmosDB persistence provider.</PackageReleaseNotes>
+    <PackageReleaseNotes>Introduces support for anomaly detection in .NET models using ML.NET</PackageReleaseNotes>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <SignAssembly>True</SignAssembly>
     <Title>ScaleOut DigitalTwin Builder™ Core Types</Title>
