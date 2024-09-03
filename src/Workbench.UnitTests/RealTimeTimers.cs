@@ -159,7 +159,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
             // Make sure instance is still present
             var instances = env.GetInstances<RealTimeCarModel>(nameof(RealTimeCar));
-            Assert.Equal(1, instances.Count);
+            Assert.Single(instances);
         }
 
         [Fact]

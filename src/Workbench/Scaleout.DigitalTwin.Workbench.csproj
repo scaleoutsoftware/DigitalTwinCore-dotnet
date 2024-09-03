@@ -18,7 +18,7 @@
 - Adds convenience methods to workbench classes for creating a Console logger.
 - Adds support for processing context's SendToDataSource() method in RealTimeWorkbench. Messages available via new DataSourceMessageReceived event on the real-time workbench.</PackageReleaseNotes>
     <!--<LangVersion>9.0</LangVersion>-->
-    <Version>4.2.0</Version>
+    <Version>4.4.0</Version>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>

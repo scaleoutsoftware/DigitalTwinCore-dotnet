@@ -1,6 +1,6 @@
 ﻿#region Copyright notice and license
 
-// Copyright 2023-2024 ScaleOut Software, Inc.
+// Copyright 2023 ScaleOut Software, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -22,25 +22,17 @@ using System.Text;
 
 namespace Scaleout.Streaming.DigitalTwin.Core
 {
-
     /// <summary>
-    /// Represents a response from an <see cref="ISharedData"/> operation.
+    /// Encapsulates the capabilities of a ScaleOut real-time digital twin 
+    /// anomaly detection provider (based on ML.NET libraries).
     /// </summary>
-    public interface ICacheResult
+    public interface IAnomalyDetectionProvider
     {
         /// <summary>
-        /// Gets the key to the object associated with the result.
+        /// Detects anomalies by using the trained algorithm and the provided property values
         /// </summary>
-        string Key { get; }
-
-        /// <summary>
-        /// Get the object returned from a Get operation.
-        /// </summary>
-        byte[] Value { get; }
-
-        /// <summary>
-        /// Gets the outcome of the cache operation.
-        /// </summary>
-        CacheOperationStatus Status { get; }
+        /// <param name="properties">A dictionary of the properties to use for the prediction</param>
+        /// <returns>True if an anomaly is detected, False otherwise</returns>
+        bool DetectAnomaly(Dictionary<string, float> properties);
     }
 }
