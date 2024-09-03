@@ -47,10 +47,10 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         SendingResult Delay(TimeSpan delay);
 
         /// <summary>
-        /// Delays calling the <see cref="SimulationProcessor.ProcessModel(ProcessingContext, DigitalTwinBase, DateTimeOffset)"/>
-        /// for this instance forever. Users can interrupt this infinite delay later
+        /// Delays calling the <see cref="SimulationProcessor{TDigitalTwin}.ProcessModel(ProcessingContext, TDigitalTwin, DateTimeOffset)"/>
+        /// method for this instance forever. Users can interrupt this infinite delay later
         /// by calling <see cref="ISimulationController.RunThisTwin"/> for this instance within the 
-        /// <see cref="MessageProcessor.ProcessMessages(ProcessingContext, DigitalTwinBase, IMessageListFactory)"/> method call.
+        /// <see cref="MessageProcessor{TDigitalTwin, TMessage}.ProcessMessages(ProcessingContext, TDigitalTwin, System.Collections.Generic.IEnumerable{TMessage})"/> method call.
         /// </summary>
         /// <returns><see cref="SendingResult.Handled"/> in case of success, otherwise 
         /// the method returns <see cref="SendingResult.NotHandled"/>.</returns>
@@ -176,7 +176,7 @@ namespace Scaleout.Streaming.DigitalTwin.Core
 
         /// <summary>
         /// Adds this simulation twin instance (itself) to the end of the priority queue for
-        /// running the <see cref="SimulationProcessor{T}.ProcessModel(ProcessingContext, DigitalTwinBase, DateTimeOffset)"/> 
+        /// running the <see cref="SimulationProcessor{TDigitalTwin}.ProcessModel(ProcessingContext, TDigitalTwin, DateTimeOffset)"/> 
         /// method for it at the current simulation time.
         /// </summary>
         void RunThisTwin();
