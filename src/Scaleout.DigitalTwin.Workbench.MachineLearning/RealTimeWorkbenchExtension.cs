@@ -75,7 +75,7 @@ namespace Scaleout.DigitalTwin.Workbench.MachineLearning
                 return;
             }
 
-            MachineLearningTrainedAlgorithmInfo algo = JsonConvert.DeserializeObject<MachineLearningTrainedAlgorithmInfo>(metadata);
+            MachineLearningTrainedAlgorithmInfo? algo = JsonConvert.DeserializeObject<MachineLearningTrainedAlgorithmInfo>(metadata);
             if (algo == null)
             {
                 if (logger != null)
