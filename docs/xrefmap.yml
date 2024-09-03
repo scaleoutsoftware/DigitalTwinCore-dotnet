@@ -7,6 +7,34 @@ references:
   commentId: N:Scaleout.DigitalTwin.Workbench
   fullName: Scaleout.DigitalTwin.Workbench
   nameWithType: Scaleout.DigitalTwin.Workbench
+- uid: Scaleout.DigitalTwin.Workbench.MachineLearning
+  name: Scaleout.DigitalTwin.Workbench.MachineLearning
+  href: api/Scaleout.DigitalTwin.Workbench.MachineLearning.html
+  commentId: N:Scaleout.DigitalTwin.Workbench.MachineLearning
+  fullName: Scaleout.DigitalTwin.Workbench.MachineLearning
+  nameWithType: Scaleout.DigitalTwin.Workbench.MachineLearning
+- uid: Scaleout.DigitalTwin.Workbench.MachineLearning.RealTimeWorkbenchExtension
+  name: RealTimeWorkbenchExtension
+  href: api/Scaleout.DigitalTwin.Workbench.MachineLearning.RealTimeWorkbenchExtension.html
+  commentId: T:Scaleout.DigitalTwin.Workbench.MachineLearning.RealTimeWorkbenchExtension
+  fullName: Scaleout.DigitalTwin.Workbench.MachineLearning.RealTimeWorkbenchExtension
+  nameWithType: RealTimeWorkbenchExtension
+- uid: Scaleout.DigitalTwin.Workbench.MachineLearning.RealTimeWorkbenchExtension.AddAnomalyDetectionProvider(Scaleout.DigitalTwin.Workbench.RealTimeWorkbench,System.String,System.String,System.String,Microsoft.Extensions.Logging.ILogger)
+  name: AddAnomalyDetectionProvider(RealTimeWorkbench, string, string, string, ILogger)
+  href: api/Scaleout.DigitalTwin.Workbench.MachineLearning.RealTimeWorkbenchExtension.html#Scaleout_DigitalTwin_Workbench_MachineLearning_RealTimeWorkbenchExtension_AddAnomalyDetectionProvider_Scaleout_DigitalTwin_Workbench_RealTimeWorkbench_System_String_System_String_System_String_Microsoft_Extensions_Logging_ILogger_
+  commentId: M:Scaleout.DigitalTwin.Workbench.MachineLearning.RealTimeWorkbenchExtension.AddAnomalyDetectionProvider(Scaleout.DigitalTwin.Workbench.RealTimeWorkbench,System.String,System.String,System.String,Microsoft.Extensions.Logging.ILogger)
+  name.vb: AddAnomalyDetectionProvider(RealTimeWorkbench, String, String, String, ILogger)
+  fullName: Scaleout.DigitalTwin.Workbench.MachineLearning.RealTimeWorkbenchExtension.AddAnomalyDetectionProvider(Scaleout.DigitalTwin.Workbench.RealTimeWorkbench, string, string, string, Microsoft.Extensions.Logging.ILogger)
+  fullName.vb: Scaleout.DigitalTwin.Workbench.MachineLearning.RealTimeWorkbenchExtension.AddAnomalyDetectionProvider(Scaleout.DigitalTwin.Workbench.RealTimeWorkbench, String, String, String, Microsoft.Extensions.Logging.ILogger)
+  nameWithType: RealTimeWorkbenchExtension.AddAnomalyDetectionProvider(RealTimeWorkbench, string, string, string, ILogger)
+  nameWithType.vb: RealTimeWorkbenchExtension.AddAnomalyDetectionProvider(RealTimeWorkbench, String, String, String, ILogger)
+- uid: Scaleout.DigitalTwin.Workbench.MachineLearning.RealTimeWorkbenchExtension.AddAnomalyDetectionProvider*
+  name: AddAnomalyDetectionProvider
+  href: api/Scaleout.DigitalTwin.Workbench.MachineLearning.RealTimeWorkbenchExtension.html#Scaleout_DigitalTwin_Workbench_MachineLearning_RealTimeWorkbenchExtension_AddAnomalyDetectionProvider_
+  commentId: Overload:Scaleout.DigitalTwin.Workbench.MachineLearning.RealTimeWorkbenchExtension.AddAnomalyDetectionProvider
+  isSpec: "True"
+  fullName: Scaleout.DigitalTwin.Workbench.MachineLearning.RealTimeWorkbenchExtension.AddAnomalyDetectionProvider
+  nameWithType: RealTimeWorkbenchExtension.AddAnomalyDetectionProvider
 - uid: Scaleout.DigitalTwin.Workbench.PostedAlert
   name: PostedAlert
   href: api/Scaleout.DigitalTwin.Workbench.PostedAlert.html
