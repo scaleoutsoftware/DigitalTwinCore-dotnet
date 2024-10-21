@@ -23,19 +23,6 @@ using System.Text;
 namespace Scaleout.Streaming.DigitalTwin.Core
 {
     /// <summary>
-    /// Holds the different types of Alerting providers supported in the system.
-    /// </summary>
-    public static class AlertProviderType
-    {
-        /// <summary>Send alerts to Slack.</summary>
-        public const string Slack = "Slack";
-        /// <summary>Send alerts to Splunk On-Call.</summary>
-        public const string Splunk = "Splunk";
-        /// <summary>Send alerts to Pager Duty.</summary>
-        public const string PagerDuty = "PagerDuty";
-    }
-
-    /// <summary>
     /// The AlertMessage objects contain all the data to send alerts to external services.
     /// This includes properties such as title, message and severity. Finally, alerts can include snapshots of instance
     /// properties along with the message.
