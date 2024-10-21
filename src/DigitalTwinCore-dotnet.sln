@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docfx", "docfx", "{449A39BA
 		docfx\toc.yml = docfx\toc.yml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scaleout.DigitalTwin.Workbench.MachineLearning", "Scaleout.DigitalTwin.Workbench.MachineLearning\Scaleout.DigitalTwin.Workbench.MachineLearning.csproj", "{49858EFE-B6BB-47D0-A74B-F6E207E0197D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{66450FBD-9505-45FC-B897-D07A46574B23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66450FBD-9505-45FC-B897-D07A46574B23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66450FBD-9505-45FC-B897-D07A46574B23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49858EFE-B6BB-47D0-A74B-F6E207E0197D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49858EFE-B6BB-47D0-A74B-F6E207E0197D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49858EFE-B6BB-47D0-A74B-F6E207E0197D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49858EFE-B6BB-47D0-A74B-F6E207E0197D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

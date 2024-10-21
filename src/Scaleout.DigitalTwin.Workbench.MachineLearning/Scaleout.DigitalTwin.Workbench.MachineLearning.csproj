@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <Version>4.4.0</Version>
+    <Authors>scaleoutsoftware</Authors>
+    <Company>ScaleOut Software, Inc.</Company>
+    <Product>ScaleOut Digital Twin Workbench Machine Learning Extension</Product>
+    <Copyright>Copyright © 2024 by ScaleOut Software, Inc.</Copyright>
+    <Description>An extension to the existing ScaleOut Digital Twin Workbench, specific to Machine Learning for anomaly detection in C# digital twin models.</Description>
+    <PackageProjectUrl>https://static.scaleoutsoftware.com/docs/digital_twin_user_guide/software_toolkit/dt_builder/dotnetcore_api/dotnetcore_workbench.html</PackageProjectUrl>
+    <PackageIcon>ScaleOutDigitalTwins-Logo-128x128@2x.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet</RepositoryUrl>
+    <PackageTags>scaleout dt digitaltwin digital twin workbench machinelearning ml</PackageTags>
+    <PackageReleaseNotes>Adds support for testing Anomaly Detection Providers in the Workbench for C# Digital Twin Models using the ML.NET library</PackageReleaseNotes>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\nuget\ScaleOutDigitalTwins-Logo-128x128@2x.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Scaleout.Streaming.DigitalTwin.MachineLearning" Version="4.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Workbench\Scaleout.DigitalTwin.Workbench.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

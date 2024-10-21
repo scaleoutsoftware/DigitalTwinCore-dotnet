@@ -73,6 +73,13 @@ namespace Scaleout.DigitalTwin.Workbench
         }
 
         /// <summary>
+        /// Keeps track of Anomaly Detection Providers for each digital twin model. In order to add providers, use the 
+        /// <see href="xref:Scaleout.DigitalTwin.Workbench.MachineLearning.RealTimeWorkbenchExtension.AddAnomalyDetectionProvider(Scaleout.DigitalTwin.Workbench.RealTimeWorkbench,System.String,System.String,System.String,Microsoft.Extensions.Logging.ILogger)">AddAnomalyDetectionProvider</see>
+        /// extension method in the Scaleout.DigitalTwin.Workbench.MachineLearning Nuget package.
+        /// </summary>
+        public Dictionary<string, Dictionary<string, IAnomalyDetectionProvider>> AnomalyDetectionProviders { get; set; } = new Dictionary<string, Dictionary<string, IAnomalyDetectionProvider>>();
+
+        /// <summary>
         /// Gets an <see cref="ISharedData"/> instance for accessing objects
         /// that are shared globally between all models in this workbench instance.
         /// </summary>

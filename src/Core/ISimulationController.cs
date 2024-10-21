@@ -47,11 +47,24 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         SendingResult Delay(TimeSpan delay);
 
         /// <summary>
+        /// Delays calling the <see cref="SimulationProcessor{TDigitalTwin}.ProcessModel(ProcessingContext, TDigitalTwin, DateTimeOffset)"/>
+        /// method for this instance forever. Users can interrupt this infinite delay later
+        /// by calling <see cref="ISimulationController.RunThisTwin"/> for this instance within the 
+        /// <see cref="MessageProcessor{TDigitalTwin, TMessage}.ProcessMessages(ProcessingContext, TDigitalTwin, System.Collections.Generic.IEnumerable{TMessage})"/> method call.
+        /// </summary>
+        /// <returns><see cref="SendingResult.Handled"/> in case of success, otherwise 
+        /// the method returns <see cref="SendingResult.NotHandled"/>.</returns>
+        /// <exception cref="Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException">
+        /// The exception is thrown if the current digital twin model does not support simulation.
+        /// </exception>
+        SendingResult DelayIndefinitely();
+
+        /// <summary>
         /// Sends a telemetry message to the corresponding real-time digital twin instance. 
         /// The twin ids for both, sending digital twin in a simulation model and the receiving twin 
         /// in the real-time model are the same.
         /// </summary>
-		/// <param name="modelName">Real-time digital twin model name.</param>
+        /// <param name="modelName">Real-time digital twin model name.</param>
         /// <param name="message">The JSON-serialized message to send.</param>
         /// <returns><see cref="SendingResult.Handled"/> in case of success, otherwise 
         /// the method returns <see cref="SendingResult.NotHandled"/>.</returns>
@@ -160,6 +173,13 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// The exception is thrown if the current digital twin model does not support simulation.
         /// </exception>
         SendingResult DeleteThisTwin();
+
+        /// <summary>
+        /// Adds this simulation twin instance (itself) to the end of the priority queue for
+        /// running the <see cref="SimulationProcessor{TDigitalTwin}.ProcessModel(ProcessingContext, TDigitalTwin, DateTimeOffset)"/> 
+        /// method for it at the current simulation time.
+        /// </summary>
+        void RunThisTwin();
 
         /// <summary>
         /// Stop the currently running simulation.

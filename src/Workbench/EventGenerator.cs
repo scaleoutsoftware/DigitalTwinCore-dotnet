@@ -116,7 +116,7 @@ namespace Scaleout.DigitalTwin.Workbench
                 _simTime = _pq.Peek().EventTime;
             }
 
-            while (count > 0)
+            while (true)
             {
                 // Yielding under a lock seems dangerous, (especially if we ever go
                 // multithreaded) so we take a pretty fine-grained approach here
@@ -126,14 +126,11 @@ namespace Scaleout.DigitalTwin.Workbench
                 InstanceRegistration element;
                 lock (_pq)
                 {
-                    if (_pq.Peek().EventTime > SimulationTime)
+                    if (_pq.Count == 0 || _pq.Peek().EventTime > SimulationTime)
                         yield break;
 
                     var entry = _pq.Dequeue();
                     element = entry.InstanceRegistration;
-                    
-
-                    count = _pq.Count;
                 }
                 yield return element;
 

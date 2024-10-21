@@ -68,6 +68,9 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public override IPersistenceProvider PersistenceProvider => throw new NotImplementedException();
 
+        public override Dictionary<string, IAnomalyDetectionProvider> AnomalyDetectionProviders => throw new NotImplementedException();
+
+
         public override ISimulationController SimulationController => this as ISimulationController;
 
         public override ISharedData SharedModelData => InstanceRegistration.ModelRegistration.SharedModelData;
@@ -116,12 +119,23 @@ namespace Scaleout.DigitalTwin.Workbench
             return SendingResult.Handled;
         }
 
+        public SendingResult DelayIndefinitely()
+        {
+            this.RequestedSimulationCycleDelay = TimeSpan.MaxValue;
+            return SendingResult.Handled;
+        }
+
         public SendingResult DeleteThisTwin()
         {
             DeleteRequested = true; // prevents simulation instance from being re-enqueud in the scheduler.
 
             _env.RemoveInstance(this.DigitalTwinModel, this.InstanceId);
             return SendingResult.Handled;
+        }
+
+        public void RunThisTwin()
+        {
+            _env.EnqueueImmediate(this.InstanceRegistration);
         }
 
         public SendingResult DeleteTwin(string modelName, string twinId)
