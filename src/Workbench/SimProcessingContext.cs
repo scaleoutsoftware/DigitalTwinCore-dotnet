@@ -237,6 +237,11 @@ namespace Scaleout.DigitalTwin.Workbench
             throw new NotImplementedException();
         }
 
+        public override SendingResult SendAlert(AlertMessage alertMessage)
+        {
+            throw new NotImplementedException();
+        }
+
         public override SendingResult SendToDataSource(byte[] message)
         {
             if (message == null) throw new ArgumentNullException(nameof(message));

@@ -88,6 +88,11 @@ namespace Scaleout.DigitalTwin.Workbench
             return SendingResult.Handled;
         }
 
+        public override SendingResult SendAlert(AlertMessage alertMessage)
+        {
+            return SendAlert("default", alertMessage);
+        }
+
         public override SendingResult SendToDataSource(byte[] message)
         {
             _env.SendToDataSouce(InstanceId, DigitalTwinModel, message);
