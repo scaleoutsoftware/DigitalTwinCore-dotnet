@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
-    <Version>4.4.0</Version>
+    <Version>4.4.5</Version>
     <Authors>scaleoutsoftware</Authors>
     <Company>ScaleOut Software, Inc.</Company>
     <Product>ScaleOut Digital Twin Workbench Machine Learning Extension</Product>
@@ -31,7 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Scaleout.Streaming.DigitalTwin.MachineLearning" Version="4.4.0" />
+    <PackageReference Include="Scaleout.Streaming.DigitalTwin.MachineLearning" Version="4.4.5" />
   </ItemGroup>
 
   <ItemGroup>
