@@ -163,7 +163,7 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         public abstract Dictionary<string, IAnomalyDetectionProvider> AnomalyDetectionProviders { get; }
 
         /// <summary>
-        /// Starts a new timer for the digital twin <see cref="DataSourceId"/>.
+        /// Starts a new timer for the digital twin whose message is currently being processed.
         /// </summary>
         /// <param name="timerName">The timer name.</param>
         /// <param name="interval">The timer interval.</param>
