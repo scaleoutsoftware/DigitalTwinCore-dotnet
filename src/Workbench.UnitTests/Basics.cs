@@ -167,9 +167,33 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             var car1 = instances["Car1"];
             // speed should be negative after 50 steps:
             Assert.True(car1.Speed < 0);
-            
+        }
 
-            
+        [Fact]
+        public void RealtimeToRealtimeUnderSimulation()
+        {
+            SimulationWorkbench env = new SimulationWorkbench(logger: null);
+            env.AddSimulationModel(nameof(SimulatedCar), new CarSimulationProcessor6());
+            env.AddRealTimeModel("RealtimeMessageSender", new RealTimeCarMessageProcessor3());
+            env.AddRealTimeModel("RealtimeDatasourceSender", new RealTimeCarMessageProcessor4());
+
+            var sc = new SimulatedCarModel { Speed = 45 };
+            env.AddInstance("Car1", nameof(SimulatedCar), sc);
+            var rtc = new RealTimeCarModel { Speed = 45 };
+            env.AddInstance("Car1", "RealtimeMessageSender", rtc);
+
+            DateTime startTime = new DateTime(2023, 1, 1);
+
+            env.InitializeSimulation(startTime,
+                     endTime: DateTimeOffset.MaxValue,
+                     simulationIterationInterval: TimeSpan.FromSeconds(1));
+
+            // Should cause sim to send a message and then rt to send another message:
+            var res = env.Step();
+            Assert.Equal(SimulationStatus.Running, res.SimulationStatus);
+
+            //var simCar = env.GetInstance<SimulatedCarModel>(nameof(SimulatedCar), "Car1");
+            //Assert.Equal("Too Fast", simCar!.Status);
         }
     }
 }

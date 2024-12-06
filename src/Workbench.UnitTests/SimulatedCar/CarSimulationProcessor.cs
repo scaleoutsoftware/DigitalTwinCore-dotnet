@@ -91,4 +91,15 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar
             return ProcessingResult.DoUpdate;
         }
     }
+
+    public class CarSimulationProcessor6 : SimulationProcessor<SimulatedCarModel>
+    {
+        public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+        {
+            digitalTwin.Speed = 75;
+            CarMessage msg = new CarMessage() { Speed = digitalTwin.Speed };
+            context.SimulationController.EmitTelemetry("RealtimeMessageSender", msg);
+            return ProcessingResult.DoUpdate;
+        }
+    }
 }
