@@ -54,9 +54,6 @@ namespace Scaleout.DigitalTwin.Workbench
             _logger = logger ?? NullLogger.Instance;
         }
 
-        public override string? DataSourceId {
-            get => DataSourceContext?.InstanceId;
-        }
 
         public override string DigitalTwinModel { get; }
 
@@ -78,6 +75,10 @@ namespace Scaleout.DigitalTwin.Workbench
         public override ISharedData SharedGlobalData => _env.SharedGlobalData;
 
         public InstanceRegistration InstanceRegistration { get; }
+
+        public override string? MessageSourceId => DataSourceContext?.DigitalTwinModel;
+
+        public override string? MessageSourceModelName => DataSourceContext?.InstanceId;
 
         public SendingResult CreateTwin(string modelName, string twinId, object newInstance)
         {

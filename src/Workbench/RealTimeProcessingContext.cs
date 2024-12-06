@@ -37,16 +37,16 @@ namespace Scaleout.DigitalTwin.Workbench
         const int MAX_MESSAGE_DEPTH = 100;
         private int _messageDepth;
 
-        internal RealTimeProcessingContext? DataSourceContext;
+        internal RealTimeProcessingContext? MessageSourceContext;
 
 
-        public RealTimeProcessingContext(RealTimeProcessingContext? dataSourceContext,
+        public RealTimeProcessingContext(RealTimeProcessingContext? messageSourceContext,
                                       InstanceRegistration instanceRegistration,
                                       RealTimeWorkbench env,
                                       int messageDepth,
                                       ILogger? logger = null)
         {
-            DataSourceContext = dataSourceContext;
+            MessageSourceContext = messageSourceContext;
             DigitalTwinModel = instanceRegistration.ModelRegistration.ModelName;
             InstanceId = instanceRegistration.DigitalTwinInstance.Id;
             InstanceRegistration = instanceRegistration;
@@ -58,7 +58,9 @@ namespace Scaleout.DigitalTwin.Workbench
             _logger = logger ?? NullLogger.Instance;
         }
 
-        public override string DataSourceId => throw new NotSupportedException();
+        public override string? MessageSourceId => MessageSourceContext?.InstanceId;
+
+        public override string? MessageSourceModelName => MessageSourceContext?.DigitalTwinModel;
 
         public override string DigitalTwinModel { get; }
 

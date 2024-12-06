@@ -80,7 +80,7 @@ namespace Scaleout.DigitalTwin.Workbench
                     try
                     {
                         ProcessingContext processingContext = new RealTimeProcessingContext(
-                            dataSourceContext: null, // no data source when just firing a timer
+                            messageSourceContext: null, // no data source when just firing a timer
                             instanceRegistration,
                             env,
                             0,

@@ -29,10 +29,15 @@ namespace Scaleout.Streaming.DigitalTwin.Core
     public abstract class ProcessingContext
     {
         /// <summary>
-        /// Data source unique identifier, e.g. for IoT use case it is typically device Id,
-        /// which is also used as a digital twin Id.
+        /// ID of the sender of the message.
         /// </summary>
-        public abstract string DataSourceId { get; }
+        public abstract string MessageSourceId { get; }
+
+        /// <summary>
+        /// Name of the model that sent the message, if the message originiated
+        /// from another digital twin instance.
+        /// </summary>
+        public abstract string MessageSourceModelName { get; }
 
         /// <summary>
         /// Digital twin model type.
