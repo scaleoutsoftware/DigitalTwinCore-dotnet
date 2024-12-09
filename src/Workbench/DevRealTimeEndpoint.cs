@@ -53,7 +53,7 @@ namespace Scaleout.DigitalTwin.Workbench
             if (newInstance == null)
                 throw new ArgumentException("digitalTwin must inherit from DigitalTwinBase");
 
-            var instanceRegistration = new InstanceRegistration(newInstance, _registration);
+            var instanceRegistration = new InstanceRegistration(newInstance, _registration, dataSource: null);
 
             var initContext = new RealTimeInitContext(instanceRegistration, _workbench, _logger);
             newInstance.InitInternal(digitalTwinId, _registration.ModelName, initContext);
@@ -138,7 +138,7 @@ namespace Scaleout.DigitalTwin.Workbench
                     throw new InvalidOperationException($"Model {_registration.ModelName} is not able to create new instances.");
 
                 DigitalTwinBase newInstance = _registration.CreateNew();
-                var registration = new InstanceRegistration(newInstance, _registration);
+                var registration = new InstanceRegistration(newInstance, _registration, dataSource: null);
 
                 var initContext = new RealTimeInitContext(registration, _workbench, _logger);
                 newInstance.InitInternal(digitalTwinId, _registration.ModelName, initContext);

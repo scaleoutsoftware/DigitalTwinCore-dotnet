@@ -36,15 +36,11 @@ namespace Scaleout.DigitalTwin.Workbench
         const int MAX_MESSAGE_DEPTH = 100;
         private int _messageDepth;
 
-        internal SimProcessingContext? DataSourceContext;
-
-        internal SimProcessingContext(SimProcessingContext? dataSourceContext,
-                                      InstanceRegistration instanceRegistration,
+        internal SimProcessingContext(InstanceRegistration instanceRegistration,
                                       SimulationWorkbench env,
                                       int messageDepth,
                                       ILogger? logger = null)
         {
-            DataSourceContext = dataSourceContext;
             DigitalTwinModel = instanceRegistration.ModelRegistration.ModelName;
             InstanceId = instanceRegistration.DigitalTwinInstance.Id;
             _env = env;
@@ -55,7 +51,7 @@ namespace Scaleout.DigitalTwin.Workbench
         }
 
         public override string? DataSourceId {
-            get => DataSourceContext?.InstanceId;
+            get => InstanceRegistration.DataSource?.DigitalTwinInstance.Id;
         }
 
         public override string DigitalTwinModel { get; }
@@ -168,7 +164,7 @@ namespace Scaleout.DigitalTwin.Workbench
             if (!foundModel)
                 throw new KeyNotFoundException($"Model {modelName} not found. Register it first with the {nameof(SimulationWorkbench)} before sending telemetry to it.");
 
-            //bool foundInstance = instances.TryGetValue(InstanceId, out var instanceRegistration);
+            //bool foundInstance = instances.TryGetValue(InstanceId, out var targetInstanceRegistration);
 
             var instanceRegistration = instances.GetOrAdd(InstanceId, key =>
             {
@@ -180,7 +176,7 @@ namespace Scaleout.DigitalTwin.Workbench
                     throw new InvalidOperationException($"Model {modelName} is not able to create new instances.");
 
                 DigitalTwinBase newInstance = modelRegistration.CreateNew();
-                var registration = new InstanceRegistration(newInstance, modelRegistration);
+                var registration = new InstanceRegistration(newInstance, modelRegistration, dataSource: this.InstanceRegistration);
                 newInstance.InitInternal(InstanceId, modelName, new SimInitContext(registration, _env));
                 return registration;
             });
@@ -194,8 +190,7 @@ namespace Scaleout.DigitalTwin.Workbench
             if (nextMessageDepth == MAX_MESSAGE_DEPTH)
                 throw new InvalidOperationException($"Max message depth of {MAX_MESSAGE_DEPTH} has been hit. Sending from {this.DigitalTwinModel}\\{InstanceId} to {modelName}\\{InstanceId}");
 
-            var processingContext = new SimProcessingContext(dataSourceContext: this,
-                                                             instanceRegistration,
+            var processingContext = new SimProcessingContext(instanceRegistration,
                                                              _env,
                                                              nextMessageDepth,
                                                              _logger);
@@ -254,12 +249,10 @@ namespace Scaleout.DigitalTwin.Workbench
         {
             if (messages == null) throw new ArgumentNullException(nameof(messages));
 
-            if (DataSourceContext == null)
+            if (InstanceRegistration.DataSource == null)
                 throw new InvalidOperationException($"Data source is not available in this context. (Instance {DigitalTwinModel}\\{InstanceId}).");
 
-            bool foundModel = _env.Models.TryGetValue(DataSourceContext.DigitalTwinModel, out var model);
-            if (!foundModel)
-                throw new KeyNotFoundException($"Data source model {DataSourceContext.DigitalTwinModel} not found.");
+            ModelRegistration model = InstanceRegistration.DataSource.ModelRegistration;
 
             if (model.DeserializeMessage == null)
                 throw new InvalidOperationException("Model was not configured to process messages.");
@@ -277,35 +270,28 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public override SendingResult SendToDataSource(IEnumerable<object> messages)
         {
-            if (DataSourceContext == null)
+            if (InstanceRegistration.DataSource == null)
                 throw new InvalidOperationException($"Data source is not available in this context. (Instance {DigitalTwinModel}\\{InstanceId}).");
 
             if (messages == null)
                 throw new ArgumentNullException(nameof(messages));
 
-            bool foundModel = _env.Instances.TryGetValue(DataSourceContext.DigitalTwinModel, out var instances);
-            if (!foundModel)
-                throw new KeyNotFoundException($"Data source model {DataSourceContext.DigitalTwinModel} not found.");
+            InstanceRegistration targetInstanceRegistration = InstanceRegistration.DataSource;
 
-            bool foundInstance = instances.TryGetValue(DataSourceContext.InstanceId, out var instanceRegistration);
-            if (!foundInstance)
-                throw new KeyNotFoundException($"Data source {DataSourceContext.DigitalTwinModel}\\{DataSourceContext.InstanceId} was not found. It may have been deleted.");
-
-            if (instanceRegistration.ModelRegistration.InvokeProcessMessages == null)
-                throw new InvalidOperationException($"Model {DataSourceContext.DigitalTwinModel} is not configured to process messages.");
+            if (targetInstanceRegistration.ModelRegistration.InvokeProcessMessages == null)
+                throw new InvalidOperationException($"Model {targetInstanceRegistration.ModelRegistration.ModelName} is not configured to process messages.");
 
             int nextMessageDepth = _messageDepth + 1;
             if (nextMessageDepth == MAX_MESSAGE_DEPTH)
-                throw new InvalidOperationException($"Max message depth of {MAX_MESSAGE_DEPTH} has been hit. Sending from {this.DigitalTwinModel}\\{InstanceId} to {DataSourceContext.DigitalTwinModel}\\{DataSourceContext.InstanceId}.");
+                throw new InvalidOperationException($"Max message depth of {MAX_MESSAGE_DEPTH} has been hit. Sending from {this.DigitalTwinModel}\\{InstanceId} to {targetInstanceRegistration.ModelRegistration.ModelName}\\{targetInstanceRegistration.DigitalTwinInstance.Id}.");
 
-            var processingContext = new SimProcessingContext(null, // no data source when sending back to a data source.
-                                                             instanceRegistration,
+            var processingContext = new SimProcessingContext(targetInstanceRegistration,
                                                              _env,
                                                              nextMessageDepth,
                                                              _logger);
 
-            instanceRegistration.ModelRegistration.InvokeProcessMessages(processingContext,
-                                                                         instanceRegistration.DigitalTwinInstance,
+            targetInstanceRegistration.ModelRegistration.InvokeProcessMessages(processingContext,
+                                                                         targetInstanceRegistration.DigitalTwinInstance,
                                                                          messages);
 
             return SendingResult.Handled;
@@ -372,7 +358,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
                 DigitalTwinBase newInstance = modelRegistration.CreateNew();
 
-                var registration = new InstanceRegistration(newInstance, modelRegistration);
+                var registration = new InstanceRegistration(newInstance, modelRegistration, dataSource: null);
                 newInstance.InitInternal(targetTwinId, targetTwinModel, new SimInitContext(registration, _env));
                 return registration;
             });
@@ -385,8 +371,7 @@ namespace Scaleout.DigitalTwin.Workbench
             if (nextMessageDepth == MAX_MESSAGE_DEPTH)
                 throw new InvalidOperationException($"Max message depth of {MAX_MESSAGE_DEPTH} has been hit. Sending from {this.DigitalTwinModel}\\{InstanceId} to {targetTwinModel}\\{targetTwinId}");
 
-            var processingContext = new SimProcessingContext(null, // no data source when just sending a message.
-                                                             instanceRegistration,
+            var processingContext = new SimProcessingContext(instanceRegistration,
                                                              _env,
                                                              nextMessageDepth,
                                                              _logger);

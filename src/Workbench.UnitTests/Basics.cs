@@ -84,8 +84,8 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
             var sc = new SimulatedCarModel { Speed = 45 };
             env.AddInstance("Car1", nameof(SimulatedCar), sc);
-            var rtc = new RealTimeCarModel { Speed = 45 };
-            env.AddInstance("Car1", nameof(RealTimeCar), rtc);
+            //var rtc = new RealTimeCarModel { Speed = 45 };
+            //env.AddInstance("Car1", nameof(RealTimeCar), rtc);
 
             DateTime startTime = new DateTime(2023, 1, 1);
 
