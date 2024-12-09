@@ -38,7 +38,7 @@ namespace Scaleout.DigitalTwin.Workbench
                                TimerType timerType,
                                TimeSpan interval,
                                TimerHandler callback) 
-            : base(instanceRegistration.DigitalTwinInstance, instanceRegistration.ModelRegistration)
+            : base(instanceRegistration.DigitalTwinInstance, instanceRegistration.ModelRegistration, null)
         {
             TimerName = timerName;
             TimerType = timerType;

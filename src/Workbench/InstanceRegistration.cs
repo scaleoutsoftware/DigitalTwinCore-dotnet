@@ -25,17 +25,19 @@ namespace Scaleout.DigitalTwin.Workbench
 {
     internal class InstanceRegistration
     {
-        public InstanceRegistration(DigitalTwinBase digitalTwinInstance, ModelRegistration modelRegistration)
+        public InstanceRegistration(DigitalTwinBase digitalTwinInstance, ModelRegistration modelRegistration, InstanceRegistration? dataSource)
         {
             DigitalTwinInstance = digitalTwinInstance;
             ModelRegistration = modelRegistration;
-
+            DataSource = dataSource;
         }
+
         public DigitalTwinBase DigitalTwinInstance { get; }
 
         public ModelRegistration ModelRegistration { get; }
 
         public bool IsDeleted { get; set; } = false;
 
+        public InstanceRegistration? DataSource { get; set; }
     }
 }

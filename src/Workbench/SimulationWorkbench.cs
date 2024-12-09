@@ -363,7 +363,7 @@ namespace Scaleout.DigitalTwin.Workbench
             if (!foundModel )
                 throw new InvalidOperationException($"{modelName} has not been registered as a simulation or realtime model. Call AddSimulationModel or AddRealTimeModel first.");
 
-            InstanceRegistration instanceRegistration = new InstanceRegistration(instance, modelRegistration);
+            InstanceRegistration instanceRegistration = new InstanceRegistration(instance, modelRegistration, dataSource: null);
 
             SimInitContext initContext = new SimInitContext(instanceRegistration, this);
             instance.InitInternal(instanceId, modelName, initContext);
@@ -525,8 +525,7 @@ namespace Scaleout.DigitalTwin.Workbench
                 string modelName = simEvent.DigitalTwinInstance.Model;
                 string instanceId = simEvent.DigitalTwinInstance.Id;
 
-                var processingContext = new SimProcessingContext(null,
-                                                                 simEvent,
+                var processingContext = new SimProcessingContext(simEvent,
                                                                  this,
                                                                  messageDepth: 0,
                                                                  logger: _logger
