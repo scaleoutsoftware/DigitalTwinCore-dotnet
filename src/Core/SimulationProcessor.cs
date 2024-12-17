@@ -38,6 +38,11 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// no updates are needed.</returns>
         public abstract ProcessingResult ProcessModel(ProcessingContext context, TDigitalTwin digitalTwin, DateTimeOffset currentTime);
 
+        internal override ProcessingResult ProcessModel(ProcessingContext context, DigitalTwinBase digitalTwin, DateTimeOffset currentTime)
+        {
+            return ProcessModel(context, digitalTwin as TDigitalTwin, currentTime);
+        }
+
         /// <summary>
         /// This method called by the ScaleOut service when the simulation starts.
         /// </summary>
@@ -47,16 +52,14 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// <returns><see cref="ProcessingResult.DoUpdate"/> if the digital twin
         /// object needs to be updated, or <see cref="ProcessingResult.NoUpdate"/> if
         /// no updates are needed.</returns>
-        public abstract ProcessingResult InitSimulation(InitSimulationContext context, TDigitalTwin digitalTwin, DateTimeOffset startTime);
+        public virtual ProcessingResult InitSimulation(InitSimulationContext context, TDigitalTwin digitalTwin, DateTimeOffset startTime)
+        {
+            return ProcessingResult.NoUpdate;
+        }
 
         internal override ProcessingResult InitSimulation(InitSimulationContext context, DigitalTwinBase digitalTwin, DateTimeOffset startTime)
         {
             return InitSimulation(context, digitalTwin as TDigitalTwin, startTime);
-        }
-
-        internal override ProcessingResult ProcessModel(ProcessingContext context, DigitalTwinBase digitalTwin, DateTimeOffset currentTime)
-        {
-            return ProcessModel(context, digitalTwin as TDigitalTwin, currentTime);
         }
 
         /// <inheritdoc/>

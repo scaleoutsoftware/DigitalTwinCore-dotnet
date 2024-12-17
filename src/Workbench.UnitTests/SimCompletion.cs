@@ -110,11 +110,6 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
         class DelayInfiniteProcessor : SimulationProcessor<SimulatedCarModel>
         {
-            public override ProcessingResult InitSimulation(InitSimulationContext context, SimulatedCarModel digitalTwin, DateTimeOffset startTime)
-            {
-                return ProcessingResult.NoUpdate;
-            }
-
             public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 // Delay forever when speed hits zero.
@@ -158,11 +153,6 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
         class RequestStopProcessor : SimulationProcessor<SimulatedCarModel>
         {
-            public override ProcessingResult InitSimulation(InitSimulationContext context, SimulatedCarModel digitalTwin, DateTimeOffset startTime)
-            {
-                return ProcessingResult.NoUpdate;
-            }
-
             public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 // Delay forever when speed hits zero.
@@ -206,11 +196,6 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
         class RunThisTwinSimProcessor : SimulationProcessor<SimulatedCarModel>
         {
-            public override ProcessingResult InitSimulation(InitSimulationContext context, SimulatedCarModel digitalTwin, DateTimeOffset startTime)
-            {
-                return ProcessingResult.NoUpdate;
-            }
-
             public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 // Delay forever when speed hits zero.

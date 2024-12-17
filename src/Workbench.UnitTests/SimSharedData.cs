@@ -24,11 +24,6 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
     {
         class SharedDataProcessor : SimulationProcessor<SimulatedCarModel>
         {
-            public override ProcessingResult InitSimulation(InitSimulationContext context, SimulatedCarModel digitalTwin, DateTimeOffset startTime)
-            {
-                return ProcessingResult.NoUpdate;
-            }
-
             public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 // Modify global shared data:

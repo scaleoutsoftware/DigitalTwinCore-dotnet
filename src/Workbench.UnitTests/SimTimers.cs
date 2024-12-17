@@ -35,11 +35,6 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             private bool _timerStarted = false;
             public int _timerFiredCount = 0;
 
-            public override ProcessingResult InitSimulation(InitSimulationContext context, SimulatedCarModel digitalTwin, DateTimeOffset startTime)
-            {
-                return ProcessingResult.NoUpdate;
-            }
-
             public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 if (!_timerStarted)
@@ -82,11 +77,6 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
         {
             private bool _timerStarted = false;
             public int _timerFiredCount = 0;
-
-            public override ProcessingResult InitSimulation(InitSimulationContext context, SimulatedCarModel digitalTwin, DateTimeOffset startTime)
-            {
-                return ProcessingResult.NoUpdate;
-            }
 
             public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
@@ -134,11 +124,6 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             private bool _timerStarted = false;
             public int _timerFiredCount = 0;
             public int _processModelCount = 0;
-
-            public override ProcessingResult InitSimulation(InitSimulationContext context, SimulatedCarModel digitalTwin, DateTimeOffset startTime)
-            {
-                return ProcessingResult.NoUpdate;
-            }
 
             public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
@@ -207,11 +192,6 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
         class InitTimerProcessor : SimulationProcessor<TimerTwin>
         {
-            public override ProcessingResult InitSimulation(InitSimulationContext context, TimerTwin digitalTwin, DateTimeOffset startTime)
-            {
-                return ProcessingResult.NoUpdate;
-            }
-
             public override ProcessingResult ProcessModel(ProcessingContext context, TimerTwin digitalTwin, DateTimeOffset currentTime)
             {
                 return ProcessingResult.DoUpdate;

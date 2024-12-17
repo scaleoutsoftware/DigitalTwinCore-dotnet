@@ -60,6 +60,8 @@ namespace Scaleout.DigitalTwin.Workbench
         private WorkbenchSharedData _sharedGlobalData = new WorkbenchSharedData();
         private ILogger _logger;
         private SimulationState _simulationState = SimulationState.Initializing;
+        /// <summary>Sets to true when InitializeSimulation is called.</summary>
+        private bool _firstSimulationStep = false;
 
         internal EventGenerator? EventGenerator {get; private set;}
 
@@ -414,6 +416,10 @@ namespace Scaleout.DigitalTwin.Workbench
             while (true)
             {
                 lastResult = Step();
+
+                if (_firstSimulationStep)
+                    _firstSimulationStep = false;
+
                 if (lastResult.SimulationStatus != SimulationStatus.Running)
                 {
                     return lastResult;
@@ -441,6 +447,7 @@ namespace Scaleout.DigitalTwin.Workbench
             switch (_simulationState)
             {
                 case SimulationState.Initializing:
+                    _firstSimulationStep = true;
                     _simulationState = SimulationState.Running;
                     break;
                 case SimulationState.Running:
