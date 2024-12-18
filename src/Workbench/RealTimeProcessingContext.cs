@@ -1,6 +1,6 @@
 ﻿#region Copyright notice and license
 
-// Copyright 2023 ScaleOut Software, Inc.
+// Copyright 2023-2024 ScaleOut Software, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -178,7 +178,7 @@ namespace Scaleout.DigitalTwin.Workbench
                     throw new InvalidOperationException($"Model {targetTwinModel} is not able to create new instances.");
 
                 DigitalTwinBase newInstance = modelRegistration.CreateNew();
-                var registration = new InstanceRegistration(newInstance, modelRegistration);
+                var registration = new InstanceRegistration(newInstance, modelRegistration, dataSource: null);
 
                 var initContext = new RealTimeInitContext(registration, _env, _logger);
                 newInstance.InitInternal(targetTwinId, targetTwinModel, initContext);

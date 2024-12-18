@@ -34,7 +34,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
         {
             private bool _timerStarted = false;
             public int _timerFiredCount = 0;
-
+            
             public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 if (!_timerStarted)

@@ -13,12 +13,9 @@
     <PackageIcon>ScaleOutDigitalTwins-Logo-128x128@2x.png</PackageIcon>
     <RepositoryUrl>https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet</RepositoryUrl>
     <PackageTags>scaleout dt digitaltwin digital twin workbench</PackageTags>
-    <PackageReleaseNotes>- Adds support for new SharedModelData and SharedGlobalData properties, allowing DT model instances to access shared object data in a workbench environment.
-- Adds support for LogMessage() in simulation processing context. 
-- Adds convenience methods to workbench classes for creating a Console logger.
-- Adds support for processing context's SendToDataSource() method in RealTimeWorkbench. Messages available via new DataSourceMessageReceived event on the real-time workbench.</PackageReleaseNotes>
+    <PackageReleaseNotes>Adds support for a new virtual InitSimulation method.</PackageReleaseNotes>
     <!--<LangVersion>9.0</LangVersion>-->
-    <Version>4.4.0</Version>
+    <Version>4.5.0</Version>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>

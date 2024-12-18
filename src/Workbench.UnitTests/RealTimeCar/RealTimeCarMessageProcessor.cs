@@ -1,6 +1,6 @@
 ﻿#region Copyright notice and license
 
-// Copyright 2023 ScaleOut Software, Inc.
+// Copyright 2023-2024 ScaleOut Software, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -47,6 +47,46 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.RealTimeCar
                 digitalTwin.Speed = message.Speed;
                 var msg = new StatusMessage() { Payload = "Too Fast" };
                 context.SendToDataSource(msg);
+            }
+            return ProcessingResult.DoUpdate;
+        }
+    }
+
+    public class RealTimeCarMessageProcessor3 : MessageProcessor<RealTimeCarModel, CarMessage>
+    {
+        public int MessagesReceived = 0;
+
+        public override ProcessingResult ProcessMessages(ProcessingContext context, RealTimeCarModel digitalTwin, IEnumerable<CarMessage> newMessages)
+        {
+            foreach (var message in newMessages)
+            {
+                if (MessagesReceived > 0)
+                {
+                    throw new InvalidOperationException("Only one message should be received");
+                }
+                MessagesReceived++;
+
+                // Send to another RT model. Since we're already in a
+                // RT model, the target should not have a datasource, therefore
+                // it should not send a message back to us.
+                digitalTwin.Speed = message.Speed;
+                context.SendToTwin("RealtimeDatasourceSender", "Car2", message);
+            }
+            return ProcessingResult.DoUpdate;
+        }
+    }
+
+    public class RealTimeCarMessageProcessor4 : MessageProcessor<RealTimeCarModel, CarMessage>
+    {
+        public override ProcessingResult ProcessMessages(ProcessingContext context, RealTimeCarModel digitalTwin, IEnumerable<CarMessage> newMessages)
+        {
+            foreach (var message in newMessages)
+            {
+                digitalTwin.Speed = message.Speed;
+                var msg = new StatusMessage() { Payload = "Too Fast" };
+                // this call should fail because we shouldn't have a data source--this 
+                // twin was created by another RT twin.
+                Assert.Throws<InvalidOperationException>(() => context.SendToDataSource(msg));
             }
             return ProcessingResult.DoUpdate;
         }

@@ -38,6 +38,11 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar
 
     public class CarSimulationProcessor1 : SimulationProcessor<SimulatedCarModel>
     {
+        public override ProcessingResult InitSimulation(InitSimulationContext context, SimulatedCarModel digitalTwin, DateTimeOffset startTime)
+        {
+            return ProcessingResult.NoUpdate;
+        }
+
         public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
         {
             digitalTwin.Speed = RandomNumberGenerator.GetInt32(45, 65);
@@ -48,6 +53,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar
 
     public class CarSimulationProcessor2 : SimulationProcessor<SimulatedCarModel>
     {
+        
         public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
         {
             CarMessage msg = new CarMessage() { Speed = digitalTwin.Speed };
@@ -87,6 +93,17 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar
             {
                 context.SimulationController.DeleteThisTwin();
             }
+            return ProcessingResult.DoUpdate;
+        }
+    }
+
+    public class CarSimulationProcessor6 : SimulationProcessor<SimulatedCarModel>
+    {
+        public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+        {
+            digitalTwin.Speed = 75;
+            CarMessage msg = new CarMessage() { Speed = digitalTwin.Speed };
+            context.SimulationController.EmitTelemetry("RealtimeMessageSender", msg);
             return ProcessingResult.DoUpdate;
         }
     }
