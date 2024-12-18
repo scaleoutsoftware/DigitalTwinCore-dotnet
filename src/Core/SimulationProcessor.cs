@@ -40,7 +40,7 @@ namespace Scaleout.Streaming.DigitalTwin.Core
 
         internal override ProcessingResult ProcessModel(ProcessingContext context, DigitalTwinBase digitalTwin, DateTimeOffset currentTime)
         {
-            return ProcessModel(context, digitalTwin as TDigitalTwin, currentTime);
+            return ProcessModel(context, (TDigitalTwin)digitalTwin, currentTime);
         }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Scaleout.Streaming.DigitalTwin.Core
 
         internal override ProcessingResult InitSimulation(InitSimulationContext context, DigitalTwinBase digitalTwin, DateTimeOffset startTime)
         {
-            return InitSimulation(context, digitalTwin as TDigitalTwin, startTime);
+            return InitSimulation(context, (TDigitalTwin)digitalTwin, startTime);
         }
 
         /// <inheritdoc/>
@@ -72,7 +72,7 @@ namespace Scaleout.Streaming.DigitalTwin.Core
     public abstract class SimulationProcessor
     {
         /// <summary>
-        /// This method called by the ScaleOut service when the simulation starts.
+        /// This method called by the ScaleOut service when the simulation starts. It is used by ScaleOut Digital Twin runtime.
         /// </summary>
         /// <param name="context">Initial simulation processing context that allows to access shared data.</param>
         /// <param name="digitalTwin">Targeted digital twin instance.</param>
