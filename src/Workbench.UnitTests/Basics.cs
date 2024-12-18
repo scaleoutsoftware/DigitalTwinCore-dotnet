@@ -165,7 +165,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
             // Car1 got to zero first, so it should have deleted Car2.
             var instances = env.GetInstances<SimulatedCarModel>(nameof(SimulatedCar));
-            Assert.Equal(1, instances.Count);
+            Assert.Single(instances);
             bool deletedCarFound = instances.TryGetValue("Car2", out _);
             Assert.False(deletedCarFound);
 

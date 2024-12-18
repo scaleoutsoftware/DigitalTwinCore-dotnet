@@ -170,7 +170,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
             // Make sure instance is still present
             var instances = env.GetInstances<SimulatedCarModel>(nameof(SimulatedCar));
-            Assert.Equal(1, instances.Count);
+            Assert.Single(instances);
         }
 
         class TimerTwin : DigitalTwinBase

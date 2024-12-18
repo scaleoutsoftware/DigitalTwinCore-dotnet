@@ -16,6 +16,7 @@
     <PackageTags>scaleout dt digitaltwin digital twin workbench machinelearning ml</PackageTags>
     <PackageReleaseNotes>Adds support for testing Anomaly Detection Providers in the Workbench for C# Digital Twin Models using the ML.NET library</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
 
   <ItemGroup>

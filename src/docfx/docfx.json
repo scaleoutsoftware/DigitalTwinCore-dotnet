@@ -13,6 +13,12 @@
             "*.csproj"
           ],
           "src": "../Workbench/"
+        },
+        {
+          "files": [
+            "*.csproj"
+          ],
+          "src": "../Scaleout.DigitalTwin.Workbench.MachineLearning/"
         }
       ],
       "dest": "api",
