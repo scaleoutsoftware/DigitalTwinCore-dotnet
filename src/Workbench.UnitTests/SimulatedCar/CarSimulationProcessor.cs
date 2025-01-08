@@ -38,7 +38,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar
 
     public class CarSimulationProcessor1 : SimulationProcessor<SimulatedCarModel>
     {
-        public override ProcessingResult InitSimulation(InitSimulationContext context, SimulatedCarModel digitalTwin, DateTimeOffset startTime)
+        public override ProcessingResult OnInitSimulation(InitSimulationContext context, SimulatedCarModel digitalTwin, DateTimeOffset startTime)
         {
             return ProcessingResult.NoUpdate;
         }

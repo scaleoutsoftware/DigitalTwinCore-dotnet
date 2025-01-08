@@ -24,7 +24,7 @@ namespace Scaleout.Streaming.DigitalTwin.Core
     /// Abstract base class for logic that gets triggered for every time interval in a simulation.
     /// </summary>
     /// <typeparam name="TDigitalTwin">User-defined type for a digital twin object.</typeparam>
-    public abstract class SimulationProcessor<TDigitalTwin> : SimulationProcessor where TDigitalTwin: class
+    public abstract class SimulationProcessor<TDigitalTwin> : SimulationProcessor where TDigitalTwin: DigitalTwinBase
     {
         /// <summary>
         /// The method called by the ScaleOut service every time the simulation time 
@@ -52,14 +52,14 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// <returns><see cref="ProcessingResult.DoUpdate"/> if the digital twin
         /// object needs to be updated, or <see cref="ProcessingResult.NoUpdate"/> if
         /// no updates are needed.</returns>
-        public virtual ProcessingResult InitSimulation(InitSimulationContext context, TDigitalTwin digitalTwin, DateTimeOffset startTime)
+        public virtual ProcessingResult OnInitSimulation(InitSimulationContext context, TDigitalTwin digitalTwin, DateTimeOffset startTime)
         {
             return ProcessingResult.NoUpdate;
         }
 
-        internal override ProcessingResult InitSimulation(InitSimulationContext context, DigitalTwinBase digitalTwin, DateTimeOffset startTime)
+        internal override ProcessingResult OnInitSimulation(InitSimulationContext context, DigitalTwinBase digitalTwin, DateTimeOffset startTime)
         {
-            return InitSimulation(context, (TDigitalTwin)digitalTwin, startTime);
+            return OnInitSimulation(context, (TDigitalTwin)digitalTwin, startTime);
         }
 
         /// <inheritdoc/>
@@ -80,7 +80,7 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// <returns><see cref="ProcessingResult.DoUpdate"/> if the digital twin
         /// object needs to be updated, or <see cref="ProcessingResult.NoUpdate"/> if
         /// no updates are needed.</returns>
-        internal abstract ProcessingResult InitSimulation(InitSimulationContext context, DigitalTwinBase digitalTwin, DateTimeOffset startTime);
+        internal abstract ProcessingResult OnInitSimulation(InitSimulationContext context, DigitalTwinBase digitalTwin, DateTimeOffset startTime);
 
         /// <summary>
         /// The method called by the ScaleOut service every time the simulation time 

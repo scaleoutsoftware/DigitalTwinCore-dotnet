@@ -336,7 +336,7 @@ namespace Scaleout.DigitalTwin.Workbench
                     if (typedTwin == null)
                         throw new ArgumentException($"Simulation processor for {modelName} is for a different digital twin type. Expected: {typeof(TDigitalTwin)}; Actual: {twinInstance.GetType()}");
 
-                    return simProcessor.InitSimulation(initSimulationContext, typedTwin, simTime);
+                    return simProcessor.OnInitSimulation(initSimulationContext, typedTwin, simTime);
                 };
             }
 

@@ -17,7 +17,7 @@
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageIcon>ScaleOutDigitalTwins-Logo-128x128@2x.png</PackageIcon>
     <PackageTags>scaleout digital twin core</PackageTags>
-    <PackageReleaseNotes>Adds new InitSimulation virtual method to the SimulationProcessor class and new SimulationStartTime property to the ISimulationController interface.</PackageReleaseNotes>
+    <PackageReleaseNotes>Adds new OnInitSimulation virtual method to the SimulationProcessor class and new SimulationStartTime property to the ISimulationController interface.</PackageReleaseNotes>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <SignAssembly>True</SignAssembly>
     <Title>ScaleOut DigitalTwin Builder™ Core Types</Title>
