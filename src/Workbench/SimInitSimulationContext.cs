@@ -1,6 +1,6 @@
 ﻿#region Copyright notice and license
 
-// Copyright 2024 ScaleOut Software, Inc.
+// Copyright 2024-2025 ScaleOut Software, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.

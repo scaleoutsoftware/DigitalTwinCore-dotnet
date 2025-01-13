@@ -8,7 +8,7 @@
     <Company>ScaleOut Software, Inc.</Company>
     <Product>ScaleOut Digital Twin Workbench</Product>
     <Description>A lightweight, in-process environment that can be used for debugging and testing your ScaleOut Digital Twin projects.</Description>
-    <Copyright>Copyright © 2024 by ScaleOut Software, Inc.</Copyright>
+    <Copyright>Copyright © 2024-2025 by ScaleOut Software, Inc.</Copyright>
     <PackageProjectUrl>https://static.scaleoutsoftware.com/docs/digital_twin_user_guide/software_toolkit/dt_builder/dotnetcore_api/dotnetcore_workbench.html</PackageProjectUrl>
     <PackageIcon>ScaleOutDigitalTwins-Logo-128x128@2x.png</PackageIcon>
     <RepositoryUrl>https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet</RepositoryUrl>
