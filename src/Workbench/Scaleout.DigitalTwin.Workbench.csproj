@@ -13,7 +13,7 @@
     <PackageIcon>ScaleOutDigitalTwins-Logo-128x128@2x.png</PackageIcon>
     <RepositoryUrl>https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet</RepositoryUrl>
     <PackageTags>scaleout dt digitaltwin digital twin workbench</PackageTags>
-    <PackageReleaseNotes>Adds support for a new virtual OnInitSimulation method.</PackageReleaseNotes>
+    <PackageReleaseNotes>Adds support for a new virtual OnInitSimulation method and a new SimulationStartTime property. Also, updated the copyright year.</PackageReleaseNotes>
     <!--<LangVersion>9.0</LangVersion>-->
     <Version>4.5.0</Version>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
