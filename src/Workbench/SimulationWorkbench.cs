@@ -1,6 +1,6 @@
 ﻿#region Copyright notice and license
 
-// Copyright 2023 ScaleOut Software, Inc.
+// Copyright 2023-2025 ScaleOut Software, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -324,6 +324,20 @@ namespace Scaleout.DigitalTwin.Workbench
 
                     return simProcessor.ProcessModel(processingContext, typedTwin, simTime);
                 };
+
+                // We have the nice TDigitalTwin type information now, so capture it in a lambda
+                // that does casting and makes the ProcessModel call. We can call this lambda later
+                // during a simulation run (when we won't have the instanceRegistration's type information).
+                registration.InvokeInitSimulation = (initSimulationContext, twinInstance, simTime) =>
+                {
+                    if (twinInstance == null) throw new ArgumentNullException(nameof(twinInstance));
+
+                    TDigitalTwin? typedTwin = twinInstance as TDigitalTwin;
+                    if (typedTwin == null)
+                        throw new ArgumentException($"Simulation processor for {modelName} is for a different digital twin type. Expected: {typeof(TDigitalTwin)}; Actual: {twinInstance.GetType()}");
+
+                    return simProcessor.OnInitSimulation(initSimulationContext, typedTwin, simTime);
+                };
             }
 
             registration.CreateNew = () =>
@@ -427,7 +441,7 @@ namespace Scaleout.DigitalTwin.Workbench
         }
 
         /// <summary>
-        /// Initializes a simulation so it can be manully stepped through
+        /// Initializes a simulation so it can be manually stepped through
         /// simulation using the <see cref="Step"/> method.
         /// </summary>
         /// <param name="startTime">Simulated time of the first time step.</param>
@@ -470,6 +484,7 @@ namespace Scaleout.DigitalTwin.Workbench
                 var modelInstances = _instances[kvp.Key];
                 foreach (var instanceRegistration in modelInstances.Values)
                 {
+                    instanceRegistration.IsFirstSimStep = true;
                     EventGenerator.EnqueueEvent(instanceRegistration, startTime);
                     instanceCount++;
                 }
@@ -545,6 +560,13 @@ namespace Scaleout.DigitalTwin.Workbench
                         break;
                     case InstanceRegistration instanceRegistration:
                         _logger.LogTrace("Invoking ProcessModel for {ModelName}\\{InstanceId}", instanceRegistration.ModelRegistration.ModelName, instanceRegistration.DigitalTwinInstance.Id);
+                        if (simEvent.IsFirstSimStep)
+                        {
+                            SimInitSimulationContext simInitContext = new SimInitSimulationContext(instanceRegistration, this);
+                            _ = instanceRegistration.ModelRegistration.InvokeInitSimulation(simInitContext, simEvent.DigitalTwinInstance, EventGenerator.SimulationTime);
+                            simEvent.IsFirstSimStep = false;
+                        }
+
                         _ = instanceRegistration.ModelRegistration.InvokeProcessModel(processingContext, simEvent.DigitalTwinInstance, EventGenerator.SimulationTime);
                         break;
                     default:
