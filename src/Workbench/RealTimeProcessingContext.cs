@@ -58,9 +58,6 @@ namespace Scaleout.DigitalTwin.Workbench
             _logger = logger ?? NullLogger.Instance;
         }
 
-        public override string? MessageSourceId => MessageSourceContext?.InstanceId;
-
-        public override string? MessageSourceModelName => MessageSourceContext?.DigitalTwinModel;
 
         public override string DigitalTwinModel { get; }
 

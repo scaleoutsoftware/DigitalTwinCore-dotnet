@@ -29,18 +29,7 @@ namespace Scaleout.Streaming.DigitalTwin.Core
     public abstract class ProcessingContext
     {
         /// <summary>
-        /// ID of the sender of the message.
-        /// </summary>
-        public abstract string MessageSourceId { get; }
-
-        /// <summary>
-        /// Name of the model that sent the message, if the message originiated
-        /// from another digital twin instance.
-        /// </summary>
-        public abstract string MessageSourceModelName { get; }
-
-        /// <summary>
-        /// Digital twin model type.
+        /// Digital twin model name.
         /// </summary>
         public abstract string DigitalTwinModel { get; }
 

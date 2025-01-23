@@ -72,10 +72,6 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public InstanceRegistration InstanceRegistration { get; }
 
-        public override string? MessageSourceId => InstanceRegistration.DataSource?.DigitalTwinInstance.Id;
-
-        public override string? MessageSourceModelName => InstanceRegistration.DataSource?.ModelRegistration.ModelName;
-
         public SendingResult CreateTwin(string modelName, string twinId, object newInstance)
         {
             if (string.IsNullOrWhiteSpace(modelName))
