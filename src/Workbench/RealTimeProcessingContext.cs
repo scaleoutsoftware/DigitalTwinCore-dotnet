@@ -245,5 +245,21 @@ namespace Scaleout.DigitalTwin.Workbench
                 return TimerActionResult.Success;
             }
         }
+
+        public override SendingResult RemoveRealTimeTwin(string targetTwinModel, string targetTwinId)
+        {
+            // Undocumented feature of the real ProcessingContextInternal class: If the targetTwinModel is null/empty,
+            // assuming we're working on another instanceRegistration in the same model.
+            if (string.IsNullOrEmpty(targetTwinModel))
+                targetTwinModel = this.DigitalTwinModel;
+
+            bool foundModel = _env.Instances.TryGetValue(targetTwinModel, out var instances);
+            if (!foundModel)
+                throw new KeyNotFoundException($"Model {targetTwinModel} not found. Register it first with the {nameof(RealTimeWorkbench)} before sending message to it.");
+
+            instances.TryRemove(targetTwinId, out _);
+
+            return SendingResult.Handled;
+        }
     }
 }

@@ -297,7 +297,13 @@ namespace Scaleout.DigitalTwin.Workbench
 
                     IEnumerable<TMessage> typedMessages = messages.Cast<TMessage>();
 
-                    return realTimeProcessor.ProcessMessages(processingContext, typedTwin, typedMessages);
+                    ProcessingResult result = realTimeProcessor.ProcessMessages(processingContext, typedTwin, typedMessages);
+                    if (result == ProcessingResult.Remove)
+                    {
+                        // Remove the instance from the model:
+                        _instances[modelName].TryRemove(twinInstance.Id, out var _);
+                    }
+                    return result;
                 };
 
                 registration.DeserializeMessage = (serializedMessage) =>
@@ -322,7 +328,13 @@ namespace Scaleout.DigitalTwin.Workbench
                     if (typedTwin == null)
                         throw new ArgumentException($"Simulation processor for {modelName} is for a different digital twin type. Expected: {typeof(TDigitalTwin)}; Actual: {twinInstance.GetType()}");
 
-                    return simProcessor.ProcessModel(processingContext, typedTwin, simTime);
+                    var result = simProcessor.ProcessModel(processingContext, typedTwin, simTime);
+                    if (result == ProcessingResult.Remove)
+                    {
+                        // Remove the instance from the model:
+                        _instances[modelName].TryRemove(twinInstance.Id, out var _);
+                    }
+                    return result;
                 };
             }
 

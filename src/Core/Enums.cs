@@ -33,14 +33,19 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// <summary>
         /// The digital twin object was not modified and does not need to be updated in the ScaleOut service.
         /// </summary>
-        NoUpdate
+        NoUpdate,
+
+        /// <summary>
+		/// Remove the digital twin object from the ScaleOut service.
+		/// </summary>
+		Remove
     }
 
-	/// <summary>
-	/// Indicates the status of a <see cref="IMessageSender.Send(string, string, System.Collections.Generic.IEnumerable{byte[]})"/> 
-	/// operation when sending messages to or from a digital twin object.
-	/// </summary>
-	public enum SendingResult
+    /// <summary>
+    /// Indicates the status of a <see cref="IMessageSender.Send(string, string, System.Collections.Generic.IEnumerable{byte[]})"/> 
+    /// operation when sending messages to or from a digital twin object.
+    /// </summary>
+    public enum SendingResult
 	{
 		/// <summary>
 		/// The messages were sent and processed successfully.

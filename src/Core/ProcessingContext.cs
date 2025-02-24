@@ -76,7 +76,7 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// <summary>
         /// Sends message to a different digital twin in twin's hierarchy.
         /// </summary>
-        /// <param name="targetTwinModel">Digital twin model type.</param>
+        /// <param name="targetTwinModel">Digital twin model name.</param>
         /// <param name="targetTwinId">Digital twin identifier.</param>
         /// <param name="message">JSON encoded message as <see cref="T:byte[]" />.</param>
         /// <returns><see cref="SendingResult.Enqueued"/> when message was successfully enqueued,
@@ -86,7 +86,7 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// <summary>
         /// Sends message to a different digital twin in twin's hierarchy.
         /// </summary>
-        /// <param name="targetTwinModel">Digital twin model type.</param>
+        /// <param name="targetTwinModel">Digital twin model name.</param>
         /// <param name="targetTwinId">Digital twin identifier.</param>
         /// <param name="message">Message object to be encoded as JSON.</param>
         /// <returns><see cref="SendingResult.Enqueued"/> when message was successfully enqueued,
@@ -96,7 +96,7 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// <summary>
         /// Sends a list of messages to a different digital twin in twin's hierarchy.
         /// </summary>
-        /// <param name="targetTwinModel">Digital twin model type.</param>
+        /// <param name="targetTwinModel">Digital twin model name.</param>
         /// <param name="targetTwinId">Digital twin identifier.</param>
         /// <param name="messages">JSON encoded messages as a list of <see cref="T:byte[]" />.</param>
         /// <returns><see cref="SendingResult.Enqueued"/> when messages were successfully enqueued,
@@ -106,7 +106,7 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// <summary>
         /// Sends a list of messages to a different digital twin in twin's hierarchy.
         /// </summary>
-        /// <param name="targetTwinModel">Digital twin model type.</param>
+        /// <param name="targetTwinModel">Digital twin model name.</param>
         /// <param name="targetTwinId">Digital twin identifier.</param>
         /// <param name="messages">Messages to be encoded as JSON.</param>
         /// <returns><see cref="SendingResult.Enqueued"/> when messages were successfully enqueued,
@@ -199,5 +199,13 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// that are shared globally between all models.
         /// </summary>
         public abstract ISharedData SharedGlobalData { get; }
+
+        /// <summary>
+        /// Deletes a real-time twin instance.
+        /// </summary>
+        /// <param name="targetTwinModel">Digital twin model name.</param>
+        /// <param name="targetTwinId">Digital twin identifier.</param>
+        /// <returns></returns>
+        public abstract SendingResult RemoveRealTimeTwin(string targetTwinModel, string targetTwinId);
     }
 }
