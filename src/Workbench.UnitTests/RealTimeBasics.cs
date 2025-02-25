@@ -61,5 +61,33 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             
             Assert.True(msgReceived);
         }
+
+        [Fact]
+        public void RemoveInstance()
+        {
+            RealTimeWorkbench wb = new RealTimeWorkbench();
+            var endpoint = wb.AddRealTimeModel(nameof(RealTimeCar), new RealTimeCarMessageProcessor5());
+
+            endpoint.Send("Car1", new CarMessage { Speed = 22 });
+            endpoint.Send("Car2", new CarMessage { Speed = 42 }); // should delete car1
+
+            var instances = wb.GetInstances<RealTimeCarModel>(nameof(RealTimeCar));
+            Assert.False(instances.ContainsKey("Car1"));
+            Assert.True(instances.ContainsKey("Car2"));
+        }
+
+        [Fact]
+        public void SelfDestruct()
+        {
+            RealTimeWorkbench wb = new RealTimeWorkbench();
+            var endpoint = wb.AddRealTimeModel(nameof(RealTimeCar), new RealTimeCarMessageProcessor6());
+
+            endpoint.Send("Car1", new CarMessage { Speed = 22 });
+            endpoint.Send("Car2", new CarMessage { Speed = 42 }); // should delete itself
+
+            var instances = wb.GetInstances<RealTimeCarModel>(nameof(RealTimeCar));
+            Assert.True(instances.ContainsKey("Car1"));
+            Assert.False(instances.ContainsKey("Car2"));
+        }
     }
 }

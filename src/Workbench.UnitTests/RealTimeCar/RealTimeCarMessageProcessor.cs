@@ -91,4 +91,37 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.RealTimeCar
             return ProcessingResult.DoUpdate;
         }
     }
+
+    public class RealTimeCarMessageProcessor5 : MessageProcessor<RealTimeCarModel, CarMessage>
+    {
+        public override ProcessingResult ProcessMessages(ProcessingContext context, RealTimeCarModel digitalTwin, IEnumerable<CarMessage> newMessages)
+        {
+            foreach (var message in newMessages)
+            {
+                if (message.Speed == 42)
+                {
+                    // delete Car1
+                    context.RemoveRealTimeTwin(null, "Car1");
+                }
+            }
+            return ProcessingResult.DoUpdate;
+        }
+    }
+
+    public class RealTimeCarMessageProcessor6 : MessageProcessor<RealTimeCarModel, CarMessage>
+    {
+        public override ProcessingResult ProcessMessages(ProcessingContext context, RealTimeCarModel digitalTwin, IEnumerable<CarMessage> newMessages)
+        {
+            foreach (var message in newMessages)
+            {
+                if (message.Speed == 42)
+                    return ProcessingResult.Remove;
+                else
+                    return ProcessingResult.DoUpdate;
+
+            }
+
+            throw new InvalidOperationException("No messages received");
+        }
+    }
 }
