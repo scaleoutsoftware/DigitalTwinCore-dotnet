@@ -28,12 +28,12 @@ namespace Scaleout.Streaming.DigitalTwin.Core
 
 
     /// <summary>
-    /// Encapsulates the capabilities of a ScaleOut real-time digital twin 
+    /// Encapsulates the capabilities of a third-party digital twin
     /// persistence provider.
     /// </summary>
-    public interface IPersistenceProvider
+    public interface IDigitalTwinModelProvider
     {
-        /// <summary>Returns type of persistence provider ("SQLServer", "SQLite", etc).</summary>
+        /// <summary>Returns type of persistence provider ("AzureDigitalTwinsService", etc).</summary>
         string ProviderType { get; }
 
         /// <summary>

@@ -59,7 +59,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public bool DeleteRequested { get; set; } = false;
 
-        public override IPersistenceProvider PersistenceProvider => throw new NotImplementedException();
+        public override IDigitalTwinModelProvider AzureDigitalTwinsProvider => throw new NotImplementedException();
 
         public override Dictionary<string, IAnomalyDetectionProvider> AnomalyDetectionProviders => throw new NotImplementedException();
 

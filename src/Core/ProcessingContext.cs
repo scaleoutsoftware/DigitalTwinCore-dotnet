@@ -138,13 +138,12 @@ namespace Scaleout.Streaming.DigitalTwin.Core
 		public abstract SendingResult SendAlert(AlertMessage alertMessage);
 
         /// <summary>
-        /// Returns the reference to registered persistence provider the model is using.
-        /// The name of the registered persistence provider should be specified in the model's
-        /// appsettings.json file via the PersistenceProvider key. Only Azure Digital Twins Service 
-		/// provider is supported.
+        /// Returns a reference to registered AzureDigitalTwins provider the model is using.
+        /// Azure Digital Twins must be configured as a persistence provider in the ScaleOut
+        /// Digital Twins service, and the model must be configured to use it in appsettings.json.
         /// </summary>
-        /// <returns>The registered <see cref="IPersistenceProvider"/> used by the model.</returns>
-        public abstract IPersistenceProvider PersistenceProvider { get; }
+        /// <returns>The AzureDigitalTwins provider used by the model.</returns>
+        public abstract IDigitalTwinModelProvider AzureDigitalTwinsProvider { get; }
 
         /// <summary>
         /// Returns the collection of registered anomaly detection providers the model has access to.

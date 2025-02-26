@@ -61,7 +61,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public override string DigitalTwinModel { get; }
 
-        public override IPersistenceProvider PersistenceProvider => throw new NotSupportedException();
+        public override IDigitalTwinModelProvider AzureDigitalTwinsProvider => throw new NotSupportedException();
 
         public override Dictionary<string, IAnomalyDetectionProvider> AnomalyDetectionProviders { get; }
 
