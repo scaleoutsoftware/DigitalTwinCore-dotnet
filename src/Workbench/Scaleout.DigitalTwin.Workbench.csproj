@@ -13,9 +13,9 @@
     <PackageIcon>ScaleOutDigitalTwins-Logo-128x128@2x.png</PackageIcon>
     <RepositoryUrl>https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet</RepositoryUrl>
     <PackageTags>scaleout dt digitaltwin digital twin workbench</PackageTags>
-    <PackageReleaseNotes>Adds support for TensorFlow models in C# digital twins.</PackageReleaseNotes>
+    <PackageReleaseNotes>Dependency update to introduce a new API to report anomaly data for retraining of ML algorithms.</PackageReleaseNotes>
     <!--<LangVersion>9.0</LangVersion>-->
-    <Version>4.4.5</Version>
+    <Version>4.6.0</Version>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
