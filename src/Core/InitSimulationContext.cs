@@ -1,6 +1,6 @@
 ﻿#region Copyright notice and license
 
-// Copyright 2023-2025 ScaleOut Software, Inc.
+// Copyright 2024-2025 ScaleOut Software, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,31 +16,24 @@
 
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace Scaleout.Streaming.DigitalTwin.Core
 {
-
     /// <summary>
-    /// Represents a response from an <see cref="ISharedData"/> operation.
+    /// Context object that provides operations that are available
+	/// when a new simulation starts
     /// </summary>
-    public interface ICacheResult
+    public abstract class InitSimulationContext
     {
         /// <summary>
-        /// Gets the key to the object associated with the result.
+        /// Gets an <see cref="ISharedData"/> instance for accessing shared objects
+        /// that are associated with the model being processed.
         /// </summary>
-        string Key { get; }
+        public abstract ISharedData SharedModelData { get; }
 
         /// <summary>
-        /// Get the object returned from a Get operation.
+        /// Gets an <see cref="ISharedData"/> instance for accessing objects
+        /// that are shared globally between all models.
         /// </summary>
-        byte[] Value { get; }
-
-        /// <summary>
-        /// Gets the outcome of the cache operation.
-        /// </summary>
-        CacheOperationStatus Status { get; }
+        public abstract ISharedData SharedGlobalData { get; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿#region Copyright notice and license
 
-// Copyright 2023-2025 ScaleOut Software, Inc.
+// Copyright 2024-2025 ScaleOut Software, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -17,20 +17,22 @@
 #endregion
 
 using Scaleout.Streaming.DigitalTwin.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar
+namespace Scaleout.DigitalTwin.Workbench
 {
-    public class SimulatedCarModel : DigitalTwinBase
+    internal class SimInitSimulationContext : InitSimulationContext
     {
-        public int Speed { get; set; } = 55;
+        InstanceRegistration _instanceRegistration;
+        SimulationWorkbench _env;
 
-        public string? Status { get; set; }
+        public SimInitSimulationContext(InstanceRegistration instanceRegistration, SimulationWorkbench env)
+        {
+            _instanceRegistration = instanceRegistration;
+            _env = env;
+        }
 
-        public TimeSpan DelayTime { get; set; } = TimeSpan.FromSeconds(1);
+        public override ISharedData SharedModelData => _instanceRegistration.ModelRegistration.SharedModelData;
+
+        public override ISharedData SharedGlobalData => _env.SharedGlobalData;
     }
 }

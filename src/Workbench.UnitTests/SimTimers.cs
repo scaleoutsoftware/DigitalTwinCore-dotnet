@@ -1,6 +1,6 @@
 ﻿#region Copyright notice and license
 
-// Copyright 2023 ScaleOut Software, Inc.
+// Copyright 2023-2025 ScaleOut Software, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -35,7 +35,6 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             private bool _timerStarted = false;
             public int _timerFiredCount = 0;
             
-
             public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 if (!_timerStarted)
@@ -78,7 +77,6 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
         {
             private bool _timerStarted = false;
             public int _timerFiredCount = 0;
-
 
             public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
@@ -126,7 +124,6 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             private bool _timerStarted = false;
             public int _timerFiredCount = 0;
             public int _processModelCount = 0;
-
 
             public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
