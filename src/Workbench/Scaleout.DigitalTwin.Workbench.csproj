@@ -15,7 +15,7 @@
     <PackageTags>scaleout dt digitaltwin digital twin workbench</PackageTags>
     <PackageReleaseNotes>Dependency update to introduce a new API to report anomaly data for retraining of ML algorithms.</PackageReleaseNotes>
     <!--<LangVersion>9.0</LangVersion>-->
-    <Version>4.6.0</Version>
+    <Version>5.0.0</Version>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
