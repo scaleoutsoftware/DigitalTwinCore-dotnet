@@ -322,7 +322,13 @@ namespace Scaleout.DigitalTwin.Workbench
                     if (typedTwin == null)
                         throw new ArgumentException($"Simulation processor for {modelName} is for a different digital twin type. Expected: {typeof(TDigitalTwin)}; Actual: {twinInstance.GetType()}");
 
-                    return simProcessor.ProcessModel(processingContext, typedTwin, simTime);
+                    ProcessingResult result = simProcessor.ProcessModel(processingContext, typedTwin, simTime);
+                    if (result == ProcessingResult.Remove)
+                    {
+                        // Remove the instance from the model:
+                        _instances[modelName].TryRemove(twinInstance.Id, out var _);
+                    }
+                    return result;
                 };
 
                 // We have the nice TDigitalTwin type information now, so capture it in a lambda
