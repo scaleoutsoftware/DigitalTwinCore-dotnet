@@ -19,6 +19,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Scaleout.Streaming.DigitalTwin.Core
 {
@@ -34,5 +35,14 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// <param name="properties">A dictionary of the properties to use for the prediction</param>
         /// <returns>True if an anomaly is detected, False otherwise</returns>
         bool DetectAnomaly(Dictionary<string, float> properties);
+
+        /// <summary>
+        /// Add anomaly data. Used for retraining ML algorithms, anomaly data consists in
+        /// a collection of properties and their associated values, along with a label
+        /// to indicate whether these properties constitute an anomaly.
+        /// </summary>
+        /// <param name="properties">A collection of properties and their values</param>
+        /// <param name="isAnomaly">True if the values constitute an anomaly</param>
+        Task ReportAnomalyDataAsync(Dictionary<string, float> properties, bool isAnomaly);
     }
 }
