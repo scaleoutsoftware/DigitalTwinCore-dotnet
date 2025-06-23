@@ -25,7 +25,7 @@ namespace Scaleout.Streaming.DigitalTwin.Core
 {
     /// <summary>
     /// Encapsulates the capabilities of a ScaleOut real-time digital twin 
-    /// anomaly detection provider (based on ML.NET libraries).
+    /// anomaly detection provider.
     /// </summary>
     public interface IAnomalyDetectionProvider
     {
@@ -35,6 +35,14 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// <param name="properties">A dictionary of the properties to use for the prediction</param>
         /// <returns>True if an anomaly is detected, False otherwise</returns>
         bool DetectAnomaly(Dictionary<string, float> properties);
+
+        /// <summary>
+        /// Obtain a prediction score (between 0 and 1) by using the trained algorithm and the
+        /// provided property values.
+        /// </summary>
+        /// <param name="properties">A dictionary of the properties to use for the prediction</param>
+        /// <returns>A number between 0 and 1: the closer to 1, the higher the chance an anomaly is detected.</returns>
+        float GetPredictionScore(Dictionary<string, float> properties);
 
         /// <summary>
         /// Add anomaly data. Used for retraining ML algorithms, anomaly data consists in
