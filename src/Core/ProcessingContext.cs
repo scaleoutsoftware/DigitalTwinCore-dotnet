@@ -197,5 +197,13 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// that are shared globally between all models.
         /// </summary>
         public abstract ISharedData SharedGlobalData { get; }
+
+        /// <summary>
+        /// Deletes a real-time twin instance.
+        /// </summary>
+        /// <param name="targetTwinModel">Digital twin model name.</param>
+        /// <param name="targetTwinId">Digital twin identifier.</param>
+        /// <returns></returns>
+        public abstract SendingResult RemoveRealTimeTwin(string targetTwinModel, string targetTwinId);
     }
 }

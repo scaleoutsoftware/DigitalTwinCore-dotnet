@@ -157,7 +157,13 @@ namespace Scaleout.DigitalTwin.Workbench
 
                 IEnumerable<TMessage> typedMessages = messages.Cast<TMessage>();
 
-                return processor.ProcessMessages(processingContext, typedTwin, typedMessages);
+                ProcessingResult result = processor.ProcessMessages(processingContext, typedTwin, typedMessages);
+                if (result == ProcessingResult.Remove)
+                {
+                    // Remove the instance from the model:
+                    _instances[modelName].TryRemove(twinInstance.Id, out var _);
+                }
+                return result;
             };
 
             registration.DeserializeMessage = (serializedMessage) =>
@@ -182,7 +188,7 @@ namespace Scaleout.DigitalTwin.Workbench
             added = _instances.TryAdd(modelName, modelInstances);
             if (!added)
             {
-                throw new InvalidOperationException($"Intances under model {modelName} already exist.");
+                throw new InvalidOperationException($"Instances under model {modelName} already exist.");
             }
 
             return new DevRealTimeEndpoint(this, registration, modelInstances, _logger);

@@ -33,7 +33,12 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// <summary>
         /// The digital twin object was not modified and does not need to be updated in the ScaleOut service.
         /// </summary>
-        NoUpdate
+        NoUpdate,
+
+        /// <summary>
+        /// Remove the digital twin object from the ScaleOut service.
+        /// </summary>
+        Remove
     }
 
 	/// <summary>
