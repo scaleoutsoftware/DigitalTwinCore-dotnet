@@ -13,7 +13,7 @@
     <PackageIcon>ScaleOutDigitalTwins-Logo-128x128@2x.png</PackageIcon>
     <RepositoryUrl>https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet</RepositoryUrl>
     <PackageTags>scaleout dt digitaltwin digital twin workbench</PackageTags>
-    <PackageReleaseNotes>Now, it implements a new RemoveRealTimeTwin method of the ProcessingContext class and handles a new Remove value of the ProcessingResult enum.</PackageReleaseNotes>
+    <PackageReleaseNotes>Dependency update to introduce a new persistence provider.</PackageReleaseNotes>
     <!--<LangVersion>9.0</LangVersion>-->
     <Version>5.3.0</Version>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
