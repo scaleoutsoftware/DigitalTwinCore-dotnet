@@ -57,6 +57,10 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// <summary>CosmosDB</summary>
         [Display(Name = "CosmosDB")]
         CosmosDb,
+
+        /// <summary>Warp10</summary>
+        [Display(Name = "SenX Warp10")]
+        Warp10
     }
 
     /// <summary>
