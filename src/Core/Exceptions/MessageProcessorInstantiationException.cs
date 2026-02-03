@@ -18,7 +18,7 @@
 
 using System;
 
-namespace Scaleout.Streaming.DigitalTwin.Core.Exceptions
+namespace Scaleout.Modules.DigitalTwin.Abstractions.Exceptions
 {
     /// <summary>
     /// The MessageProcessorInstantiationException is used to detect if a messages processor is unable to be instantiated by the 

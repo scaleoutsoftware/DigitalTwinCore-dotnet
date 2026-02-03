@@ -18,7 +18,7 @@
 
 using System.Collections.Generic;
 
-namespace Scaleout.Streaming.DigitalTwin.Core
+namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
     /// <summary>
     /// Interface for use by client applications that send messages to digital twin instances.
@@ -99,7 +99,7 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// Create a new digital twin instance in the ScaleOut data grid. This method assumes that persistence store is 
         /// enabled for the target model and the twin instance with the specified <paramref name="digitalTwinId"/> 
         /// exists there. In this case, a new twin instance is created and initialized from the persistence store.
-        /// Otherwise, the <see cref="Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException"/>
+        /// Otherwise, the <see cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinInstantiationException"/>
         /// is thrown.
         /// </summary>
         /// <param name="digitalTwinId">Digital twin identifier.</param>

@@ -18,7 +18,7 @@
 
 using System;
 
-namespace Scaleout.Streaming.DigitalTwin.Core
+namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
     /// <summary>
     /// Used by the <see cref="DigitalTwinBase"/> class to store

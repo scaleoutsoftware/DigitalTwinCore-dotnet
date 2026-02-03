@@ -42,7 +42,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Core\ScaleOut.Streaming.DigitalTwin.Core.csproj" />
+    <ProjectReference Include="..\Core\Scaleout.Modules.DigitalTwin.Abstractions.csproj" />
   </ItemGroup>
 
 

@@ -20,7 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Scaleout.Streaming.DigitalTwin.Core
+namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
     /// <summary>
     /// Encapsulates the capabilities of a ScaleOut real-time digital twin 

@@ -1,4 +1,4 @@
-﻿namespace Scaleout.Streaming.DigitalTwin.Core
+﻿namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
     /// <summary>
     /// An enumeration that indicates the outcome of a cache operation.

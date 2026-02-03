@@ -16,7 +16,7 @@
 
 #endregion
 
-namespace Scaleout.Streaming.DigitalTwin.Core
+namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
     /// <summary>
     /// Defines a timer message for data exchange between the timer's object 

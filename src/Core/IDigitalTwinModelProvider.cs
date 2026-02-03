@@ -21,9 +21,9 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-using Scaleout.Streaming.DigitalTwin.Core.Exceptions;
+using Scaleout.Modules.DigitalTwin.Abstractions.Exceptions;
 
-namespace Scaleout.Streaming.DigitalTwin.Core
+namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
 
 

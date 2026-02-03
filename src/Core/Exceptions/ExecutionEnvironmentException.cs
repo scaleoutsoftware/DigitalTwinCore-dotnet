@@ -18,7 +18,7 @@
 
 using System;
 
-namespace Scaleout.Streaming.DigitalTwin.Core.Exceptions
+namespace Scaleout.Modules.DigitalTwin.Abstractions.Exceptions
 {
     /// <summary>
     /// Exception indicating that an error occurred when establishing the execution environment.

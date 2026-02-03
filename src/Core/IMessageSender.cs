@@ -18,7 +18,7 @@
 
 using System.Collections.Generic;
 
-namespace Scaleout.Streaming.DigitalTwin.Core
+namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
 	/// <summary>
 	/// Interface that must be implemented by a message sender class for sending

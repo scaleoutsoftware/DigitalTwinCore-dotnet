@@ -17,7 +17,7 @@
 #endregion
 
 using Scaleout.DigitalTwin.DevEnv.Tests.Messages;
-using Scaleout.Streaming.DigitalTwin.Core;
+using Scaleout.Modules.DigitalTwin.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -19,7 +19,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Scaleout.Streaming.DigitalTwin.Core
+namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
 	/// <summary>
 	/// Abstract base class that must be subclassed to implement the message processor which

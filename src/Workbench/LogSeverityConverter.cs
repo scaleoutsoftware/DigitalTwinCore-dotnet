@@ -17,7 +17,7 @@
 #endregion
 
 using Microsoft.Extensions.Logging;
-using Scaleout.Streaming.DigitalTwin.Core;
+using Scaleout.Modules.DigitalTwin.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Text;

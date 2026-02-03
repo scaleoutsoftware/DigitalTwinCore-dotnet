@@ -18,7 +18,7 @@
 
 using System;
 
-namespace Scaleout.Streaming.DigitalTwin.Core.Exceptions
+namespace Scaleout.Modules.DigitalTwin.Abstractions.Exceptions
 {
     /// <summary>
     /// Exception that contains an error occured while processing messages by a digital twin.

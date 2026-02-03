@@ -1,5 +1,5 @@
 ﻿using Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar;
-using Scaleout.Streaming.DigitalTwin.Core;
+using Scaleout.Modules.DigitalTwin.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;

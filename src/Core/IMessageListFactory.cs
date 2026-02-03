@@ -18,7 +18,7 @@
 
 using System.Collections.Generic;
 
-namespace Scaleout.Streaming.DigitalTwin.Core
+namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
 	/// <summary>
 	/// Creates collection of new messages received by a digital twin object.

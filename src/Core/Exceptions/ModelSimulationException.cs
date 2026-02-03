@@ -18,7 +18,7 @@
 
 using System;
 
-namespace Scaleout.Streaming.DigitalTwin.Core.Exceptions
+namespace Scaleout.Modules.DigitalTwin.Abstractions.Exceptions
 {
     /// <summary>
     /// The ModelSimulationException is raised when an error condition 

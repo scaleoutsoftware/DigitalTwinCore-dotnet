@@ -18,7 +18,7 @@
 
 using System;
 
-namespace Scaleout.Streaming.DigitalTwin.Core
+namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
     /// <summary>
     /// The methods of this interface allow user to control all aspects of 
@@ -30,7 +30,7 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// Get a simulation time increment.
         /// </summary>
         /// <returns><see cref="TimeSpan"/> for the simulation time increment.</returns>
-        /// <exception cref="Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException">
+        /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException">
         /// The exception is thrown if the current digital twin model does not support simulation.
         /// </exception>
         TimeSpan GetSimulationTimeIncrement();
@@ -41,7 +41,7 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// <param name="delay"><see cref="TimeSpan"/> for simulation time delay.</param>
         /// <returns><see cref="SendingResult.Handled"/> in case of success, otherwise 
         /// the method returns <see cref="SendingResult.NotHandled"/>.</returns>
-        /// <exception cref="Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException">
+        /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException">
         /// The exception is thrown if the current digital twin model does not support simulation.
         /// </exception>
         SendingResult Delay(TimeSpan delay);
@@ -54,7 +54,7 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// </summary>
         /// <returns><see cref="SendingResult.Handled"/> in case of success, otherwise 
         /// the method returns <see cref="SendingResult.NotHandled"/>.</returns>
-        /// <exception cref="Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException">
+        /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException">
         /// The exception is thrown if the current digital twin model does not support simulation.
         /// </exception>
         SendingResult DelayIndefinitely();
@@ -68,10 +68,10 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// <param name="message">The JSON-serialized message to send.</param>
         /// <returns><see cref="SendingResult.Handled"/> in case of success, otherwise 
         /// the method returns <see cref="SendingResult.NotHandled"/>.</returns>
-        /// <exception cref="Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException">
+        /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException">
         /// The exception is thrown if the current digital twin model does not support simulation.
         /// </exception>
-        /// <exception cref="Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException">
+        /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinProcessingException">
         /// An error occurred while processing the message by digital twin.
         /// </exception>
         SendingResult EmitTelemetry(string modelName, byte[] message);
@@ -85,10 +85,10 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// <param name="message">The message to serialize and send.</param>
         /// <returns><see cref="SendingResult.Handled"/> in case of success, otherwise 
         /// the method returns <see cref="SendingResult.NotHandled"/>.</returns>
-        /// <exception cref="Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException">
+        /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException">
         /// The exception is thrown if the current digital twin model does not support simulation.
         /// </exception>
-        /// <exception cref="Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinProcessingException">
+        /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinProcessingException">
         /// An error occurred while processing the message by digital twin.
         /// </exception>
         SendingResult EmitTelemetry(string modelName, object message);
@@ -105,10 +105,10 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// properties and their initial values.</param>
         /// <returns><see cref="SendingResult.Handled"/> in case of success, otherwise 
         /// the method returns <see cref="SendingResult.NotHandled"/>.</returns>
-        /// <exception cref="Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException">
+        /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException">
         /// The exception is thrown if the current digital twin model does not support simulation.
         /// </exception>
-        /// <exception cref="Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException">
+        /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinInstantiationException">
         /// An error occurred while creating a new digital twin instance.
         /// </exception>
         SendingResult CreateTwin(string modelName, string twinId, object newInstance);
@@ -126,10 +126,10 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// properties and their initial values.</param>
         /// <returns><see cref="SendingResult.Handled"/> in case of success, otherwise 
         /// the method throws DigitalTwinInstantiationException with the error details.</returns>
-        /// <exception cref="Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException">
+        /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException">
         /// The exception is thrown if the current digital twin model does not support simulation.
         /// </exception>
-        /// <exception cref="Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException">
+        /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinInstantiationException">
         /// An error occurred while creating a new digital twin instance.
         /// </exception>
         SendingResult CreateTwinFromPersistenceStore(string modelName, string twinId, object defaultInstance);
@@ -144,10 +144,10 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// <param name="twinId">Digital twin identifier.</param>
         /// <returns><see cref="SendingResult.Handled"/> in case of success, otherwise 
         /// the method throws DigitalTwinInstantiationException with the error details.</returns>
-        /// <exception cref="Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException">
+        /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException">
         /// The exception is thrown if the current digital twin model does not support simulation.
         /// </exception>
-        /// <exception cref="Scaleout.Streaming.DigitalTwin.Core.Exceptions.DigitalTwinInstantiationException">
+        /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinInstantiationException">
         /// An error occurred while creating a new digital twin instance.
         /// </exception>
         SendingResult CreateTwinFromPersistenceStore(string modelName, string twinId);
@@ -159,7 +159,7 @@ namespace Scaleout.Streaming.DigitalTwin.Core
 		/// <param name="twinId">Digital twin identifier.</param>
         /// <returns><see cref="SendingResult.Handled"/> in case of success, otherwise 
         /// the method returns <see cref="SendingResult.NotHandled"/>.</returns>
-        /// <exception cref="Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException">
+        /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException">
         /// The exception is thrown if the current digital twin model does not support simulation.
         /// </exception>
         SendingResult DeleteTwin(string modelName, string twinId);
@@ -169,7 +169,7 @@ namespace Scaleout.Streaming.DigitalTwin.Core
         /// </summary>
         /// <returns><see cref="SendingResult.Handled"/> in case of success, otherwise 
         /// the method returns <see cref="SendingResult.NotHandled"/>.</returns>
-        /// <exception cref="Scaleout.Streaming.DigitalTwin.Core.Exceptions.ModelSimulationException">
+        /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException">
         /// The exception is thrown if the current digital twin model does not support simulation.
         /// </exception>
         SendingResult DeleteThisTwin();

@@ -19,13 +19,13 @@
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Scaleout.Streaming.DigitalTwin.Common;
-using Scaleout.Streaming.DigitalTwin.Core.Exceptions;
+using Scaleout.Modules.DigitalTwin.Abstractions.Exceptions;
 using System;
 using System.IO.Compression;
 using System.IO;
 using System.Linq;
 using Scaleout.Streaming.DigitalTwin.MachineLearning;
-using Scaleout.Streaming.DigitalTwin.Core;
+using Scaleout.Modules.DigitalTwin.Abstractions;
 using System.Collections.Generic;
 
 namespace Scaleout.DigitalTwin.Workbench.MachineLearning

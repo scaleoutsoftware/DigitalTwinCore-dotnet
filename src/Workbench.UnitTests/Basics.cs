@@ -19,7 +19,7 @@
 using Scaleout.DigitalTwin.Workbench;
 using Scaleout.DigitalTwin.DevEnv.Tests.RealTimeCar;
 using Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar;
-using Scaleout.Streaming.DigitalTwin.Core;
+using Scaleout.Modules.DigitalTwin.Abstractions;
 
 namespace Scaleout.DigitalTwin.DevEnv.Tests
 {

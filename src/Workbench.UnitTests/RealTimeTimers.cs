@@ -20,7 +20,7 @@ using Scaleout.DigitalTwin.DevEnv.Tests.Messages;
 using Scaleout.DigitalTwin.DevEnv.Tests.RealTimeCar;
 using Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar;
 using Scaleout.DigitalTwin.Workbench;
-using Scaleout.Streaming.DigitalTwin.Core;
+using Scaleout.Modules.DigitalTwin.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Linq;

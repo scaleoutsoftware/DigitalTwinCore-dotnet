@@ -23,7 +23,7 @@ using System.Collections.Generic;
 
 using Newtonsoft.Json;
 
-namespace Scaleout.Streaming.DigitalTwin.Core
+namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
     /// <summary>
     /// Digital twin timer delegate. Must be assigned to either a public static method or a 

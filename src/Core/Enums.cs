@@ -16,7 +16,7 @@
 
 #endregion
 
-namespace Scaleout.Streaming.DigitalTwin.Core
+namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
     /// <summary>
     /// Specifies whether or not a Digital Twin should be updated after a call to a

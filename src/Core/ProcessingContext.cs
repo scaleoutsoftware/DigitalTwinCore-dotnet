@@ -19,7 +19,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Scaleout.Streaming.DigitalTwin.Core
+namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
     /// <summary>
     /// Message processing context for currently processing messages.
