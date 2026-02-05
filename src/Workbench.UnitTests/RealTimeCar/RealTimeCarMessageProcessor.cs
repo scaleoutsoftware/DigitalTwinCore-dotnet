@@ -26,37 +26,42 @@ using System.Threading.Tasks;
 
 namespace Scaleout.DigitalTwin.DevEnv.Tests.RealTimeCar
 {
-    public class RealTimeCarMessageProcessor1 : MessageProcessor<RealTimeCarModel, CarMessage>
+    public class RealTimeCarMessageProcessor1 : MessageProcessor<RealTimeCarModel>
     {
-        public override ProcessingResult ProcessMessages(ProcessingContext context, RealTimeCarModel digitalTwin, IEnumerable<CarMessage> newMessages)
+        public override ProcessingResult ProcessMessages(ProcessingContext context, RealTimeCarModel digitalTwin, IEnumerable<byte[]> newMessages)
         {
             foreach (var message in newMessages)
             {
-                digitalTwin.Speed = message.Speed;
+                CarMessage? carMsg = System.Text.Json.JsonSerializer.Deserialize<CarMessage>(message);
+                Assert.NotNull(carMsg);
+                digitalTwin.Speed = carMsg.Speed;
             }
             return ProcessingResult.DoUpdate;
         }
     }
 
-    public class RealTimeCarMessageProcessor2 : MessageProcessor<RealTimeCarModel, CarMessage>
+    public class RealTimeCarMessageProcessor2 : MessageProcessor<RealTimeCarModel>
     {
-        public override ProcessingResult ProcessMessages(ProcessingContext context, RealTimeCarModel digitalTwin, IEnumerable<CarMessage> newMessages)
+        public override ProcessingResult ProcessMessages(ProcessingContext context, RealTimeCarModel digitalTwin, IEnumerable<byte[]> newMessages)
         {
             foreach (var message in newMessages)
             {
-                digitalTwin.Speed = message.Speed;
+                CarMessage? carMsg = System.Text.Json.JsonSerializer.Deserialize<CarMessage>(message);
+                Assert.NotNull(carMsg);
+                digitalTwin.Speed = carMsg.Speed;
                 var msg = new StatusMessage() { Payload = "Too Fast" };
-                context.SendToDataSource(msg);
+                byte[] msgBytes = System.Text.Json.JsonSerializer.SerializeToUtf8Bytes(msg);
+                context.SendToDataSource(msgBytes);
             }
             return ProcessingResult.DoUpdate;
         }
     }
 
-    public class RealTimeCarMessageProcessor3 : MessageProcessor<RealTimeCarModel, CarMessage>
+    public class RealTimeCarMessageProcessor3 : MessageProcessor<RealTimeCarModel>
     {
         public int MessagesReceived = 0;
 
-        public override ProcessingResult ProcessMessages(ProcessingContext context, RealTimeCarModel digitalTwin, IEnumerable<CarMessage> newMessages)
+        public override ProcessingResult ProcessMessages(ProcessingContext context, RealTimeCarModel digitalTwin, IEnumerable<byte[]> newMessages)
         {
             foreach (var message in newMessages)
             {
@@ -69,36 +74,43 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.RealTimeCar
                 // Send to another RT model. Since we're already in a
                 // RT model, the target should not have a datasource, therefore
                 // it should not send a message back to us.
-                digitalTwin.Speed = message.Speed;
+                CarMessage? carMsg = System.Text.Json.JsonSerializer.Deserialize<CarMessage>(message);
+                Assert.NotNull(carMsg);
+                digitalTwin.Speed = carMsg.Speed;
                 context.SendToTwin("RealtimeDatasourceSender", "Car2", message);
             }
             return ProcessingResult.DoUpdate;
         }
     }
 
-    public class RealTimeCarMessageProcessor4 : MessageProcessor<RealTimeCarModel, CarMessage>
+    public class RealTimeCarMessageProcessor4 : MessageProcessor<RealTimeCarModel>
     {
-        public override ProcessingResult ProcessMessages(ProcessingContext context, RealTimeCarModel digitalTwin, IEnumerable<CarMessage> newMessages)
+        public override ProcessingResult ProcessMessages(ProcessingContext context, RealTimeCarModel digitalTwin, IEnumerable<byte[]> newMessages)
         {
             foreach (var message in newMessages)
             {
-                digitalTwin.Speed = message.Speed;
+                CarMessage? carMsg = System.Text.Json.JsonSerializer.Deserialize<CarMessage>(message);
+                Assert.NotNull(carMsg);
+                digitalTwin.Speed = carMsg.Speed;
                 var msg = new StatusMessage() { Payload = "Too Fast" };
                 // this call should fail because we shouldn't have a data source--this 
                 // twin was created by another RT twin.
-                Assert.Throws<InvalidOperationException>(() => context.SendToDataSource(msg));
+                byte[] msgBytes = System.Text.Json.JsonSerializer.SerializeToUtf8Bytes(msg);
+                Assert.Throws<InvalidOperationException>(() => context.SendToDataSource(msgBytes));
             }
             return ProcessingResult.DoUpdate;
         }
     }
 
-    public class RealTimeCarMessageProcessor5 : MessageProcessor<RealTimeCarModel, CarMessage>
+    public class RealTimeCarMessageProcessor5 : MessageProcessor<RealTimeCarModel>
     {
-        public override ProcessingResult ProcessMessages(ProcessingContext context, RealTimeCarModel digitalTwin, IEnumerable<CarMessage> newMessages)
+        public override ProcessingResult ProcessMessages(ProcessingContext context, RealTimeCarModel digitalTwin, IEnumerable<byte[]> newMessages)
         {
             foreach (var message in newMessages)
             {
-                if (message.Speed == 42)
+                CarMessage? carMsg = System.Text.Json.JsonSerializer.Deserialize<CarMessage>(message);
+                Assert.NotNull(carMsg);
+                if (carMsg.Speed == 42)
                 {
                     // delete Car1
                     context.RemoveRealTimeTwin(null, "Car1");
@@ -108,13 +120,15 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.RealTimeCar
         }
     }
 
-    public class RealTimeCarMessageProcessor6 : MessageProcessor<RealTimeCarModel, CarMessage>
+    public class RealTimeCarMessageProcessor6 : MessageProcessor<RealTimeCarModel>
     {
-        public override ProcessingResult ProcessMessages(ProcessingContext context, RealTimeCarModel digitalTwin, IEnumerable<CarMessage> newMessages)
+        public override ProcessingResult ProcessMessages(ProcessingContext context, RealTimeCarModel digitalTwin, IEnumerable<byte[]> newMessages)
         {
             foreach (var message in newMessages)
             {
-                if (message.Speed == 42)
+                CarMessage? carMsg = System.Text.Json.JsonSerializer.Deserialize<CarMessage>(message);
+                Assert.NotNull(carMsg);
+                if (carMsg.Speed == 42)
                     return ProcessingResult.Remove;
                 else
                     return ProcessingResult.DoUpdate;

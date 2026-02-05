@@ -204,7 +204,11 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
                 if (digitalTwin.Speed == 10 && digitalTwin.Id == "Car_Sleeper")
                     context.SimulationController.DelayIndefinitely();
                 else if (digitalTwin.Speed == 20 && digitalTwin.Id == "Car_Waker")
-                    context.SendToTwin(nameof(SimulatedCar), "Car_Sleeper", new StatusMessage() { Payload = "WakeUp!" });
+                {
+                    var msg = new StatusMessage() { Payload = "WakeUp!" };
+                    byte[] msgBytes = System.Text.Json.JsonSerializer.SerializeToUtf8Bytes(msg);
+                    context.SendToTwin(nameof(SimulatedCar), "Car_Sleeper", msgBytes);
+                }
                 else if (digitalTwin.Speed == 0)
                     context.SimulationController.DelayIndefinitely();
 
@@ -212,14 +216,16 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             }
         }
 
-        class RunThisTwinMsgProcessor : MessageProcessor<SimulatedCarModel, StatusMessage>
+        class RunThisTwinMsgProcessor : MessageProcessor<SimulatedCarModel>
         {
-            public override ProcessingResult ProcessMessages(ProcessingContext context, SimulatedCarModel digitalTwin, IEnumerable<StatusMessage> newMessages)
+            public override ProcessingResult ProcessMessages(ProcessingContext context, SimulatedCarModel digitalTwin, IEnumerable<byte[]> newMessages)
             {
                 foreach (var message in newMessages)
                 {
-                    digitalTwin.Status = message.Payload;
-                    if (message.Payload == "WakeUp!")
+                    var statusMessage = System.Text.Json.JsonSerializer.Deserialize<StatusMessage>(message);
+                    Assert.NotNull(statusMessage);
+                    digitalTwin.Status = statusMessage.Payload;
+                    if (statusMessage.Payload == "WakeUp!")
                         context.SimulationController.RunThisTwin();
                 }
                 return ProcessingResult.DoUpdate;

@@ -9,7 +9,7 @@ namespace Scaleout.DigitalTwin.Workbench
     /// </summary>
     public class SendToDataSourceEventArgs : EventArgs
     {
-        internal SendToDataSourceEventArgs(string digitalTwinId, string modelName, object message)
+        internal SendToDataSourceEventArgs(string digitalTwinId, string modelName, byte[] message)
         {
             DigitalTwinId = digitalTwinId;
             Message = message;
@@ -18,7 +18,7 @@ namespace Scaleout.DigitalTwin.Workbench
         /// <summary>
         /// Message sent to the digital twin's data source.
         /// </summary>
-        public object Message { get; set; }
+        public byte[] Message { get; set; }
 
         /// <summary>
         /// ID of the digital twin instance.

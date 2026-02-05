@@ -137,25 +137,8 @@ namespace Scaleout.DigitalTwin.Workbench
             return SendingResult.Handled;
         }
 
+
         public SendingResult EmitTelemetry(string modelName, byte[] message)
-        {
-            if (message == null) throw new ArgumentNullException(nameof(message));
-
-            bool foundModel = _env.Models.TryGetValue(modelName, out var model);
-            if (!foundModel)
-                throw new KeyNotFoundException($"Model {modelName} not found. Register it first with the {nameof(SimulationWorkbench)} before sending telemetry to it.");
-
-            if (model.DeserializeMessage == null)
-                throw new InvalidOperationException("Model was not configured to process messages.");
-
-            object? deserializedMsg = model.DeserializeMessage(message);
-            if (deserializedMsg == null)
-                throw new ArgumentException("message deserializes to null", nameof(message));
-
-            return EmitTelemetry(modelName, deserializedMsg);
-        }
-
-        public SendingResult EmitTelemetry(string modelName, object message)
         {
             bool foundModel = _env.Instances.TryGetValue(modelName, out var instances);
             if (!foundModel)
@@ -192,7 +175,7 @@ namespace Scaleout.DigitalTwin.Workbench
                                                              nextMessageDepth,
                                                              _logger);
 
-            object[] messages = new object[] { message };
+            byte[][] messages = new byte[][] { message };
             instanceRegistration.ModelRegistration.InvokeProcessMessages(processingContext,
                                                                           instanceRegistration.DigitalTwinInstance,
                                                                           messages);
@@ -240,37 +223,7 @@ namespace Scaleout.DigitalTwin.Workbench
             byte[][] messages = new byte[][] { message };
             return SendToDataSource(messages);
         }
-
-        public override SendingResult SendToDataSource(object message)
-        {
-            object[] messages = new object[] { message };
-            return SendToDataSource(messages);
-        }
-
         public override SendingResult SendToDataSource(IEnumerable<byte[]> messages)
-        {
-            if (messages == null) throw new ArgumentNullException(nameof(messages));
-
-            if (InstanceRegistration.DataSource == null)
-                throw new InvalidOperationException($"Data source is not available in this context. (Instance {DigitalTwinModel}\\{InstanceId}).");
-
-            ModelRegistration model = InstanceRegistration.DataSource.ModelRegistration;
-
-            if (model.DeserializeMessage == null)
-                throw new InvalidOperationException("Model was not configured to process messages.");
-
-            List<object> deserializedMessages = new List<object>(messages.Count());
-            foreach (var serializedMsg in messages)
-            {
-                object? deserializedMsg = model.DeserializeMessage(serializedMsg);
-                if (deserializedMsg != null)
-                    deserializedMessages.Add(deserializedMsg);
-            }
-
-            return SendToDataSource(deserializedMessages);
-        }
-
-        public override SendingResult SendToDataSource(IEnumerable<object> messages)
         {
             if (InstanceRegistration.DataSource == null)
                 throw new InvalidOperationException($"Data source is not available in this context. (Instance {DigitalTwinModel}\\{InstanceId}).");
@@ -306,36 +259,7 @@ namespace Scaleout.DigitalTwin.Workbench
             return SendToTwin(targetTwinModel, targetTwinId, messages);
         }
 
-        public override SendingResult SendToTwin(string targetTwinModel, string targetTwinId, object message)
-        {
-            if (message == null) throw new ArgumentNullException(nameof(message));
-            object[] messages = new object[] { message };
-            return SendToTwin(targetTwinModel, targetTwinId, messages);
-        }
-
         public override SendingResult SendToTwin(string targetTwinModel, string targetTwinId, IEnumerable<byte[]> messages)
-        {
-            if (messages == null) throw new ArgumentNullException(nameof(messages));
-
-            bool foundModel = _env.Models.TryGetValue(targetTwinModel, out var model);
-            if (!foundModel)
-                throw new KeyNotFoundException($"Model {targetTwinModel} not found. Register it first with the {nameof(SimulationWorkbench)} before sending message to it.");
-
-            if (model.DeserializeMessage == null)
-                throw new InvalidOperationException("Model was not configured to process messages.");
-
-            List<object> deserializedMessages = new List<object>(messages.Count());
-            foreach (var serializedMsg in messages)
-            {
-                object? deserializedMsg = model.DeserializeMessage(serializedMsg);
-                if (deserializedMsg != null)
-                    deserializedMessages.Add(deserializedMsg);
-            }
-
-            return SendToTwin(targetTwinModel, targetTwinId, deserializedMessages);
-        }
-
-        public override SendingResult SendToTwin(string targetTwinModel, string targetTwinId, IEnumerable<object> messages)
         {
             if (messages == null)
                 throw new ArgumentNullException(nameof(messages));

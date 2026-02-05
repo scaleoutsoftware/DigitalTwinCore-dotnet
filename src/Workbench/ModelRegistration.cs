@@ -25,7 +25,7 @@ namespace Scaleout.DigitalTwin.Workbench
 {
     internal delegate ProcessingResult ProcessModelInvoker(ProcessingContext processingContext, DigitalTwinBase dtInstance, DateTimeOffset simulationTime);
 
-    internal delegate ProcessingResult ProcessMessagesInvoker(ProcessingContext processingContext, DigitalTwinBase dtInstance, IEnumerable<object> messages);
+    internal delegate ProcessingResult ProcessMessagesInvoker(ProcessingContext processingContext, DigitalTwinBase dtInstance, IEnumerable<byte[]> messages);
 
     internal delegate object? MessageDeserializer(byte[] message);
 
@@ -49,8 +49,6 @@ namespace Scaleout.DigitalTwin.Workbench
         public MessageProcessor? MessageProcessor { get; set; }
 
         public ProcessMessagesInvoker? InvokeProcessMessages { get; set; }
-
-        public MessageDeserializer? DeserializeMessage { get; set; }
 
         public CreateNew? CreateNew { get; set; }
     }

@@ -11,11 +11,11 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
 {
     public class RealTimeSharedData
     {
-        public class SharedDataMessageProcessor : MessageProcessor<RealTimeCarModel, CarMessage>
+        public class SharedDataMessageProcessor : MessageProcessor<RealTimeCarModel>
         {
             public override ProcessingResult ProcessMessages(ProcessingContext context, 
                                                              RealTimeCarModel digitalTwin, 
-                                                             IEnumerable<CarMessage> newMessages)
+                                                             IEnumerable<byte[]> newMessages)
             {
                 // Modify global shared data:
                 var res = context.SharedGlobalData.Get("foo");
@@ -62,7 +62,9 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
             Assert.Equal(CacheOperationStatus.ObjectPut, res.Status);
 
             // Causes shared data to be incremented:
-            endpoint.Send("Car1", new CarMessage { Speed = 22 });
+            var msg = new CarMessage { Speed = 22 };
+            byte[] msgBytes = Encoding.UTF8.GetBytes(System.Text.Json.JsonSerializer.Serialize(msg));
+            endpoint.Send("Car1", msgBytes);
 
             res = endpoint.SharedGlobalData.Get("foo");
             Assert.Equal(CacheOperationStatus.ObjectRetrieved, res.Status);
@@ -113,11 +115,11 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
             }
         }
 
-        public class TrainMessageProcessor : MessageProcessor<RealTimeTrainModel, CarMessage>
+        public class TrainMessageProcessor : MessageProcessor<RealTimeTrainModel>
         {
             public override ProcessingResult ProcessMessages(ProcessingContext context,
                                                              RealTimeTrainModel digitalTwin,
-                                                             IEnumerable<CarMessage> newMessages)
+                                                             IEnumerable<byte[]> newMessages)
             {
                 return ProcessingResult.DoUpdate;
             }
@@ -146,7 +148,9 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
 
             // Send a msg to another (non-exising) train instnce. This should cause another
             // instance to be created:
-            endpoint.Send("train2", new CarMessage { Speed = 11 });
+            var msg = new CarMessage { Speed = 11 };
+            byte[] msgBytes = Encoding.UTF8.GetBytes(System.Text.Json.JsonSerializer.Serialize(msg));
+            endpoint.Send("train2", msgBytes);
 
             // This second instance's Init method should have incremented shared model
             // and global objects again.

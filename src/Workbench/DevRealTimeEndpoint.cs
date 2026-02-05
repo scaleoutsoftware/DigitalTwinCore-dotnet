@@ -88,24 +88,6 @@ namespace Scaleout.DigitalTwin.Workbench
 
         }
 
-        public SendingResult Send(string digitalTwinId, IEnumerable<byte[]> messages)
-        {
-            if (messages == null) throw new ArgumentNullException(nameof(messages));
-
-            if (_registration.DeserializeMessage == null)
-                throw new InvalidOperationException("Model was not configured to process messages.");
-
-            List<object> deserializedMessages = new List<object>(messages.Count());
-            foreach (var serializedMsg in messages)
-            {
-                object? deserializedMsg = _registration.DeserializeMessage(serializedMsg);
-                if (deserializedMsg != null)
-                    deserializedMessages.Add(deserializedMsg);
-            }
-
-            return Send(digitalTwinId, deserializedMessages);
-        }
-
         public SendingResult Send(string digitalTwinId, byte[] message)
         {
             if (message == null) throw new ArgumentNullException(nameof(message));
@@ -113,20 +95,8 @@ namespace Scaleout.DigitalTwin.Workbench
             return Send(digitalTwinId, messages);
         }
 
-        public SendingResult Send(string digitalTwinId, string message)
-        {
-            byte[] messageBytes = Encoding.UTF8.GetBytes(message);
-            return Send(digitalTwinId, messageBytes);
-        }
 
-        public SendingResult Send(string digitalTwinId, object message)
-        {
-            if (message == null) throw new ArgumentNullException(nameof(message));
-            object[] messages = new object[] { message };
-            return Send(digitalTwinId, messages);
-        }
-
-        public SendingResult Send(string digitalTwinId, IEnumerable<object> messages)
+        public SendingResult Send(string digitalTwinId, IEnumerable<byte[]> messages)
         {
             if (digitalTwinId == null) throw new ArgumentNullException(nameof(digitalTwinId));
             if (messages == null) throw new ArgumentNullException(nameof(messages));

@@ -50,7 +50,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// Delays calling the <see cref="SimulationProcessor{TDigitalTwin}.ProcessModel(ProcessingContext, TDigitalTwin, DateTimeOffset)"/>
         /// method for this instance forever. Users can interrupt this infinite delay later
         /// by calling <see cref="ISimulationController.RunThisTwin"/> for this instance within the 
-        /// <see cref="MessageProcessor{TDigitalTwin, TMessage}.ProcessMessages(ProcessingContext, TDigitalTwin, System.Collections.Generic.IEnumerable{TMessage})"/> method call.
+        /// <see cref="MessageProcessor{TDigitalTwin}.ProcessMessages(ProcessingContext, TDigitalTwin, System.Collections.Generic.IEnumerable{Byte[]})"/> method call.
         /// </summary>
         /// <returns><see cref="SendingResult.Handled"/> in case of success, otherwise 
         /// the method returns <see cref="SendingResult.NotHandled"/>.</returns>
@@ -76,22 +76,6 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// </exception>
         SendingResult EmitTelemetry(string modelName, byte[] message);
 
-        /// <summary>
-        /// Sends a telemetry message to the corresponding real-time digital twin instance. 
-        /// The twin ids for both, sending digital twin in a simulation model and the receiving twin 
-        /// in the real-time model are the same.
-        /// </summary>
-		/// <param name="modelName">Real-time digital twin model name.</param>
-        /// <param name="message">The message to serialize and send.</param>
-        /// <returns><see cref="SendingResult.Handled"/> in case of success, otherwise 
-        /// the method returns <see cref="SendingResult.NotHandled"/>.</returns>
-        /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException">
-        /// The exception is thrown if the current digital twin model does not support simulation.
-        /// </exception>
-        /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinProcessingException">
-        /// An error occurred while processing the message by digital twin.
-        /// </exception>
-        SendingResult EmitTelemetry(string modelName, object message);
 
         /// <summary>
         /// Create a new digital twin instance of the specified simulation <paramref name="modelName"/>.

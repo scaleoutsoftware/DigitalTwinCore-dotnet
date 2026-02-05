@@ -44,16 +44,6 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         public abstract SendingResult SendToDataSource(byte[] message);
 
         /// <summary>
-        /// Sends a message back to a data source origination point (e.g. IoT device). When sending 
-        /// a message to the ScaleOut Messaging REST service as a data source, the message content
-        /// must be JSON encoded.
-        /// </summary>
-        /// <param name="message">Message object to be encoded as JSON.</param>
-        /// <returns><see cref="SendingResult.Enqueued"/> when message was successfully enqueued,
-        /// <see cref="SendingResult.NotHandled"/> otherwise.</returns>
-        public abstract SendingResult SendToDataSource(object message);
-
-        /// <summary>
         /// Sends a list of messages back to a data source origination point (e.g. IoT device).
         /// When sending messages to the ScaleOut Messaging REST service as a data source, each message
         /// must be JSON encoded.
@@ -63,15 +53,6 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <see cref="SendingResult.NotHandled"/> otherwise.</returns>
         public abstract SendingResult SendToDataSource(IEnumerable<byte[]> messages);
 
-        /// <summary>
-        /// Sends a list of messages back to a data source origination point (e.g. IoT device).
-        /// When sending messages to the ScaleOut Messaging REST service as a data source, each message
-        /// must be JSON encoded.
-        /// </summary>
-        /// <param name="messages">Message object to be encoded as JSON.</param>
-        /// <returns><see cref="SendingResult.Enqueued"/> when messages were successfully enqueued,
-        /// <see cref="SendingResult.NotHandled"/> otherwise.</returns>
-        public abstract SendingResult SendToDataSource(IEnumerable<object> messages);
 
         /// <summary>
         /// Sends message to a different digital twin in twin's hierarchy.
@@ -83,15 +64,6 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <see cref="SendingResult.NotHandled"/> otherwise.</returns>
         public abstract SendingResult SendToTwin(string targetTwinModel, string targetTwinId, byte[] message);
 
-        /// <summary>
-        /// Sends message to a different digital twin in twin's hierarchy.
-        /// </summary>
-        /// <param name="targetTwinModel">Digital twin model name.</param>
-        /// <param name="targetTwinId">Digital twin identifier.</param>
-        /// <param name="message">Message object to be encoded as JSON.</param>
-        /// <returns><see cref="SendingResult.Enqueued"/> when message was successfully enqueued,
-        /// <see cref="SendingResult.NotHandled"/> otherwise.</returns>
-        public abstract SendingResult SendToTwin(string targetTwinModel, string targetTwinId, object message);
 
         /// <summary>
         /// Sends a list of messages to a different digital twin in twin's hierarchy.
@@ -102,16 +74,6 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <returns><see cref="SendingResult.Enqueued"/> when messages were successfully enqueued,
         /// <see cref="SendingResult.NotHandled"/> otherwise.</returns>
         public abstract SendingResult SendToTwin(string targetTwinModel, string targetTwinId, IEnumerable<byte[]> messages);
-
-        /// <summary>
-        /// Sends a list of messages to a different digital twin in twin's hierarchy.
-        /// </summary>
-        /// <param name="targetTwinModel">Digital twin model name.</param>
-        /// <param name="targetTwinId">Digital twin identifier.</param>
-        /// <param name="messages">Messages to be encoded as JSON.</param>
-        /// <returns><see cref="SendingResult.Enqueued"/> when messages were successfully enqueued,
-        /// <see cref="SendingResult.NotHandled"/> otherwise.</returns>
-        public abstract SendingResult SendToTwin(string targetTwinModel, string targetTwinId, IEnumerable<object> messages);
 
 
         /// <summary>

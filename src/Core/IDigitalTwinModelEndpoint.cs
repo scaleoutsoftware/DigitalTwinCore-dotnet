@@ -44,33 +44,6 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         SendingResult Send(string digitalTwinId, byte[] message);
 
         /// <summary>
-        /// Sends a JSON serialized message to a digital twin instance.
-        /// </summary>
-        /// <param name="digitalTwinId">ID of the digital twin instance.</param>
-        /// <param name="message">Serialized message.</param>
-        /// <returns><see cref="SendingResult.Handled"/> if the message was successfully sent,
-		/// <see cref="SendingResult.NotHandled"/> otherwise.</returns>
-        SendingResult Send(string digitalTwinId, string message);
-
-        /// <summary>
-        /// Sends a message to a digital twin instance.
-        /// </summary>
-        /// <param name="digitalTwinId">ID of the digital twin instance.</param>
-        /// <param name="message">Message instance.</param>
-        /// <returns><see cref="SendingResult.Handled"/> if the message was successfully sent,
-		/// <see cref="SendingResult.NotHandled"/> otherwise.</returns>
-        SendingResult Send(string digitalTwinId, object message);
-
-        /// <summary>
-        /// Sends messages to a digital twin instance.
-        /// </summary>
-        /// <param name="digitalTwinId">ID of the digital twin instance.</param>
-        /// <param name="message">Messages to send to the instance.</param>
-        /// <returns><see cref="SendingResult.Handled"/> if the message was successfully sent,
-		/// <see cref="SendingResult.NotHandled"/> otherwise.</returns>
-        SendingResult Send(string digitalTwinId, IEnumerable<object> message);
-
-        /// <summary>
         /// Creates a new digital twin instance.
         /// </summary>
         /// <param name="digitalTwinId">ID of the digital twin instance.</param>

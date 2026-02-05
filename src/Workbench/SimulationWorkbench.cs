@@ -197,14 +197,13 @@ namespace Scaleout.DigitalTwin.Workbench
         /// Adds a real-time model (with a message processor) to the workbench.
         /// </summary>
         /// <typeparam name="TDigitalTwin">Type of digital twin model (derived from <see cref="DigitalTwinBase"/>).</typeparam>
-        /// <typeparam name="TMessage">Type of message sent to the model's message processor.</typeparam>
         /// <param name="modelName">Name of the model.</param>
-        /// <param name="processor">The model's <see cref="MessageProcessor{TDigitalTwin, TMessage}"/> implementation.</param>
+        /// <param name="processor">The model's <see cref="MessageProcessor{TDigitalTwin}"/> implementation.</param>
         /// <exception cref="ArgumentNullException">The provided message processor was null.</exception>
         /// <exception cref="ArgumentException">The model name is invalid (null or whitespace).</exception>
         /// <exception cref="ArgumentException">A model with the same name already exists in this workbench.</exception>
         /// <exception cref="InvalidOperationException">A model cannot be added after a simulation has been started (using InitializeSimulation() or RunSimulation()).</exception>
-        public void AddRealTimeModel<TDigitalTwin, TMessage>(string modelName, MessageProcessor<TDigitalTwin, TMessage> processor)
+        public void AddRealTimeModel<TDigitalTwin>(string modelName, MessageProcessor<TDigitalTwin> processor)
             where TDigitalTwin : DigitalTwinBase, new()
         {
             if (processor == null)
@@ -232,9 +231,9 @@ namespace Scaleout.DigitalTwin.Workbench
             if (processor == null)
                 throw new ArgumentNullException(nameof(processor));
 
-            AddModel<TDigitalTwin, object>(modelName,
-                                           simProcessor: processor,
-                                           realTimeProcessor: null);
+            AddModel<TDigitalTwin>(modelName,
+                                   simProcessor: processor,
+                                   realTimeProcessor: null);
 
         }
 
@@ -242,17 +241,16 @@ namespace Scaleout.DigitalTwin.Workbench
         /// Adds a simulation model (with both a simulation processor and a message processor) to the workbench.
         /// </summary>
         /// <typeparam name="TDigitalTwin">Type of digital twin model (derived from <see cref="DigitalTwinBase"/>).</typeparam>
-        /// <typeparam name="TMessage">Type of message sent to the model's message processor.</typeparam>
         /// <param name="modelName">Name of the model.</param>
         /// <param name="simulationProcessor">The model's <see cref="SimulationProcessor{TDigitalTwin}"/> implementation.</param>
-        /// <param name="messageProcessor">The model's <see cref="MessageProcessor{TDigitalTwin, TMessage}"/> implementation.</param>
+        /// <param name="messageProcessor">The model's <see cref="MessageProcessor{TDigitalTwin}"/> implementation.</param>
         /// <exception cref="ArgumentNullException">The provided simulation processor or message processor was null.</exception>
         /// <exception cref="ArgumentException">The model name is invalid (null or whitespace).</exception>
         /// <exception cref="ArgumentException">A model with the same name already exists in this workbench.</exception>
         /// <exception cref="InvalidOperationException">A model cannot be added after a simulation has been started (using InitializeSimulation() or RunSimulation()).</exception>
-        public void AddSimulationModel<TDigitalTwin, TMessage>(string modelName, 
+        public void AddSimulationModel<TDigitalTwin>(string modelName, 
                                                                SimulationProcessor<TDigitalTwin> simulationProcessor,
-                                                               MessageProcessor<TDigitalTwin, TMessage> messageProcessor)
+                                                               MessageProcessor<TDigitalTwin> messageProcessor)
             where TDigitalTwin : DigitalTwinBase, new()
         {
             if (simulationProcessor == null)
@@ -266,7 +264,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
         }
 
-        private void AddModel<TDigitalTwin, TMessage>(string modelName, SimulationProcessor<TDigitalTwin>? simProcessor, MessageProcessor<TDigitalTwin, TMessage>? realTimeProcessor)
+        private void AddModel<TDigitalTwin>(string modelName, SimulationProcessor<TDigitalTwin>? simProcessor, MessageProcessor<TDigitalTwin>? realTimeProcessor)
             where TDigitalTwin : DigitalTwinBase, new()
         {
             if (_simulationState > SimulationState.Initializing)
@@ -284,7 +282,7 @@ namespace Scaleout.DigitalTwin.Workbench
             {
                 registration.MessageProcessor = realTimeProcessor;
 
-                // We have all the nice TDigitalTwin and TMessage type information right now.
+                // We have all the nice TDigitalTwin type information right now.
                 // Capture this type info in lambdas that do casting. We can use these lambdas later
                 // during a simulation run (when we won't have the type information).
                 registration.InvokeProcessMessages = (processingContext, twinInstance, messages) =>
@@ -295,9 +293,7 @@ namespace Scaleout.DigitalTwin.Workbench
                     if (typedTwin == null)
                         throw new ArgumentException($"Real time processor for {modelName} is for a different digital twin type. Expected: {typeof(TDigitalTwin)}; Actual: {twinInstance.GetType()}");
 
-                    IEnumerable<TMessage> typedMessages = messages.Cast<TMessage>();
-
-                    ProcessingResult result = realTimeProcessor.ProcessMessages(processingContext, typedTwin, typedMessages);
+                    ProcessingResult result = realTimeProcessor.ProcessMessages(processingContext, typedTwin, messages);
                     if (result == ProcessingResult.Remove)
                     {
                         // Remove the instance from the model:
@@ -306,11 +302,6 @@ namespace Scaleout.DigitalTwin.Workbench
                     return result;
                 };
 
-                registration.DeserializeMessage = (serializedMessage) =>
-                {
-                    string msgJson = Encoding.UTF8.GetString(serializedMessage);
-                    return JsonConvert.DeserializeObject<TMessage>(msgJson);
-                };
             }
 
             if (simProcessor != null)
@@ -361,7 +352,7 @@ namespace Scaleout.DigitalTwin.Workbench
         /// Adds a digital twin instance to a model that has been registered with this workbench.
         /// </summary>
         /// <param name="instanceId">ID of the instance being added.</param>
-        /// <param name="modelName">Name of a model that has been registered with this workbench instance using <see cref="AddSimulationModel{TDigitalTwin}(string, SimulationProcessor{TDigitalTwin})"/> or <see cref="AddRealTimeModel{TDigitalTwin, TMessage}(string, MessageProcessor{TDigitalTwin, TMessage})"/>.</param>
+        /// <param name="modelName">Name of a model that has been registered with this workbench instance using <see cref="AddSimulationModel{TDigitalTwin}(string, SimulationProcessor{TDigitalTwin})"/> or <see cref="AddRealTimeModel{TDigitalTwin}(string, MessageProcessor{TDigitalTwin})"/>.</param>
         /// <param name="instance">The digital twin instance.</param>
         /// <exception cref="InvalidOperationException">The provided <paramref name="modelName"/> has not been registered as a simulation or realtime model.</exception>
         /// <exception cref="InvalidOperationException">The instance cannot be added because the simulation was already started (using InitializeSimulation() or RunSimulation()).</exception>
@@ -394,7 +385,7 @@ namespace Scaleout.DigitalTwin.Workbench
         /// Removes a digital twin instance.
         /// </summary>
         /// <param name="instanceId">ID of the instance being added.</param>
-        /// <param name="modelName">Name of a model that has been registered with this workbench instance using <see cref="AddSimulationModel{TDigitalTwin}(string, SimulationProcessor{TDigitalTwin})"/> or <see cref="AddRealTimeModel{TDigitalTwin, TMessage}(string, MessageProcessor{TDigitalTwin, TMessage})"/>.</param>
+        /// <param name="modelName">Name of a model that has been registered with this workbench instance using <see cref="AddSimulationModel{TDigitalTwin}(string, SimulationProcessor{TDigitalTwin})"/> or <see cref="AddRealTimeModel{TDigitalTwin}(string, MessageProcessor{TDigitalTwin})"/>.</param>
         /// <exception cref="InvalidOperationException">The provided <paramref name="modelName"/> has not been registered as a simulation or realtime model.</exception>
         /// <exception cref="InvalidOperationException">The instance cannot be removed because the simulation was already started (using InitializeSimulation() or RunSimulation()).</exception>
         internal void RemoveInstance(string modelName, string instanceId)

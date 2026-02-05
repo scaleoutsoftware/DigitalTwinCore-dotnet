@@ -35,7 +35,9 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             RealTimeWorkbench wb = new RealTimeWorkbench();
             var endpoint = wb.AddRealTimeModel(nameof(RealTimeCar), new RealTimeCarMessageProcessor1());
 
-            endpoint.Send("Car1", new CarMessage { Speed = 22 });
+            var msg = new CarMessage { Speed = 22 };
+            byte[] msgBytes = System.Text.Json.JsonSerializer.SerializeToUtf8Bytes(msg);
+            endpoint.Send("Car1", msgBytes);
 
             var instances = wb.GetInstances<RealTimeCarModel>(nameof(RealTimeCar));
             Assert.True(instances.ContainsKey("Car1"));
@@ -49,14 +51,17 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             wb.DataSourceMessageReceived += (sender, e) =>
             {
                 msgReceived = true;
-                Assert.Equal("Too Fast", ((StatusMessage)e.Message).Payload);
+                StatusMessage? statusMessage = System.Text.Json.JsonSerializer.Deserialize<StatusMessage>(e.Message);
+                Assert.NotNull(statusMessage);
+                Assert.Equal("Too Fast", statusMessage.Payload);
                 Assert.Equal("Car1", e.DigitalTwinId);
                 Assert.Equal(nameof(RealTimeCar), e.ModelName); 
             };
 
             var endpoint = wb.AddRealTimeModel(nameof(RealTimeCar), new RealTimeCarMessageProcessor2());
-
-            endpoint.Send("Car1", new CarMessage { Speed = 22 });
+            var msg = new CarMessage { Speed = 22 };
+            byte[] msgBytes = System.Text.Json.JsonSerializer.SerializeToUtf8Bytes(msg);
+            endpoint.Send("Car1", msgBytes);
 
             
             Assert.True(msgReceived);
@@ -68,8 +73,13 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             RealTimeWorkbench wb = new RealTimeWorkbench();
             var endpoint = wb.AddRealTimeModel(nameof(RealTimeCar), new RealTimeCarMessageProcessor5());
 
-            endpoint.Send("Car1", new CarMessage { Speed = 22 });
-            endpoint.Send("Car2", new CarMessage { Speed = 42 }); // should delete car1
+            var msg22 = new CarMessage { Speed = 22 };
+            byte[] msgBytes = System.Text.Json.JsonSerializer.SerializeToUtf8Bytes(msg22);
+            endpoint.Send("Car1", msgBytes);
+
+            var msg42 = new CarMessage { Speed = 42 };
+            msgBytes = System.Text.Json.JsonSerializer.SerializeToUtf8Bytes(msg42);
+            endpoint.Send("Car2", msgBytes); // should delete car1
 
             var instances = wb.GetInstances<RealTimeCarModel>(nameof(RealTimeCar));
             Assert.False(instances.ContainsKey("Car1"));
@@ -82,8 +92,13 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             RealTimeWorkbench wb = new RealTimeWorkbench();
             var endpoint = wb.AddRealTimeModel(nameof(RealTimeCar), new RealTimeCarMessageProcessor6());
 
-            endpoint.Send("Car1", new CarMessage { Speed = 22 });
-            endpoint.Send("Car2", new CarMessage { Speed = 42 }); // should delete itself
+            var msg22 = new CarMessage { Speed = 22 };
+            byte[] msgBytes = System.Text.Json.JsonSerializer.SerializeToUtf8Bytes(msg22);
+            endpoint.Send("Car1", msgBytes);
+
+            var msg42 = new CarMessage { Speed = 42 };
+            byte[] msg42Bytes = System.Text.Json.JsonSerializer.SerializeToUtf8Bytes(msg42);
+            endpoint.Send("Car2", msg42Bytes); // should delete itself
 
             var instances = wb.GetInstances<RealTimeCarModel>(nameof(RealTimeCar));
             Assert.True(instances.ContainsKey("Car1"));

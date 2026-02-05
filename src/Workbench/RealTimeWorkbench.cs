@@ -44,7 +44,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
         /// <summary>
         /// Event raised when a message processor implementation sends a message back to its
-        /// data source using <see cref="ProcessingContext.SendToDataSource(object)"/>.
+        /// data source using <see cref="ProcessingContext.SendToDataSource(byte[])"/>.
         /// </summary>
         public event EventHandler<SendToDataSourceEventArgs>? DataSourceMessageReceived;
 
@@ -119,14 +119,13 @@ namespace Scaleout.DigitalTwin.Workbench
         /// returned endpoint can be used to send messages to instances in the model.
         /// </summary>
         /// <typeparam name="TDigitalTwin">Type of digital twin model (derived from <see cref="DigitalTwinBase"/>).</typeparam>
-        /// <typeparam name="TMessage">Type of message sent to the model's message processor.</typeparam>
         /// <param name="modelName">Name of the model.</param>
-        /// <param name="processor">The model's <see cref="MessageProcessor{TDigitalTwin, TMessage}"/> implementation.</param>
+        /// <param name="processor">The model's <see cref="MessageProcessor{TDigitalTwin}"/> implementation.</param>
         /// <returns><see cref="IDigitalTwinModelEndpoint"/> that can be used to send messages to an instance of the model.</returns>
         /// <exception cref="ArgumentNullException">The provided message processor was null.</exception>
         /// <exception cref="ArgumentException">The model name is invalid (null or whitespace).</exception>
         /// <exception cref="ArgumentException">A model with the same name already exists in this workbench.</exception>
-        public IDigitalTwinModelEndpoint AddRealTimeModel<TDigitalTwin, TMessage>(string modelName, MessageProcessor<TDigitalTwin, TMessage> processor)
+        public IDigitalTwinModelEndpoint AddRealTimeModel<TDigitalTwin>(string modelName, MessageProcessor<TDigitalTwin> processor)
             where TDigitalTwin : DigitalTwinBase, new()
         {
             if (_disposed)
@@ -144,7 +143,7 @@ namespace Scaleout.DigitalTwin.Workbench
             ModelRegistration registration = new ModelRegistration(modelName, sharedModelData: new WorkbenchSharedData());
             registration.MessageProcessor = processor;
 
-            // We have all the nice TDigitalTwin and TMessage type information right now.
+            // We have all the nice TDigitalTwin type information right now.
             // Capture this type info in lambdas that do casting. We can use these lambdas later
             // during a simulation run (when we won't have the type information).
             registration.InvokeProcessMessages = (processingContext, twinInstance, messages) =>
@@ -155,21 +154,13 @@ namespace Scaleout.DigitalTwin.Workbench
                 if (typedTwin == null)
                     throw new ArgumentException($"Real time processor for {modelName} is for a different digital twin type. Expected: {typeof(TDigitalTwin)}; Actual: {twinInstance.GetType()}");
 
-                IEnumerable<TMessage> typedMessages = messages.Cast<TMessage>();
-
-                ProcessingResult result = processor.ProcessMessages(processingContext, typedTwin, typedMessages);
+                ProcessingResult result = processor.ProcessMessages(processingContext, typedTwin, messages);
                 if (result == ProcessingResult.Remove)
                 {
                     // Remove the instance from the model:
                     _instances[modelName].TryRemove(twinInstance.Id, out var _);
                 }
                 return result;
-            };
-
-            registration.DeserializeMessage = (serializedMessage) =>
-            {
-                string msgJson = Encoding.UTF8.GetString(serializedMessage);
-                return JsonConvert.DeserializeObject<TMessage>(msgJson);
             };
 
             registration.CreateNew = () =>
@@ -246,7 +237,7 @@ namespace Scaleout.DigitalTwin.Workbench
             DataSourceMessageReceived?.Invoke(this, e);
         }
 
-        internal void SendToDataSouce(string digitalTwinId, string modelName, object message)
+        internal void SendToDataSouce(string digitalTwinId, string modelName, byte[] message)
         {
             SendToDataSourceEventArgs e = new SendToDataSourceEventArgs(digitalTwinId, modelName, message);
             OnDataSourceMessageReceived(e);

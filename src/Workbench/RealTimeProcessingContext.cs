@@ -98,22 +98,7 @@ namespace Scaleout.DigitalTwin.Workbench
             return SendingResult.Handled;
         }
 
-        public override SendingResult SendToDataSource(object message)
-        {
-            _env.SendToDataSouce(InstanceId, DigitalTwinModel, message);
-            return SendingResult.Handled;
-        }
-
         public override SendingResult SendToDataSource(IEnumerable<byte[]> messages)
-        {
-            foreach (var msg in messages)
-            {
-                SendToDataSource(msg);
-            }
-            return SendingResult.Handled;
-        }
-
-        public override SendingResult SendToDataSource(IEnumerable<object> messages)
         {
             foreach (var msg in messages)
             {
@@ -129,36 +114,9 @@ namespace Scaleout.DigitalTwin.Workbench
             return SendToTwin(targetTwinModel, targetTwinId, messages);
         }
 
-        public override SendingResult SendToTwin(string targetTwinModel, string targetTwinId, object message)
-        {
-            if (message == null) throw new ArgumentNullException(nameof(message));
-            object[] messages = new object[] { message };
-            return SendToTwin(targetTwinModel, targetTwinId, messages);
-        }
+        
 
         public override SendingResult SendToTwin(string targetTwinModel, string targetTwinId, IEnumerable<byte[]> messages)
-        {
-            if (messages == null) throw new ArgumentNullException(nameof(messages));
-
-            bool foundModel = _env.Models.TryGetValue(targetTwinModel, out var model);
-            if (!foundModel)
-                throw new KeyNotFoundException($"Model {targetTwinModel} not found. Register it first with the {nameof(SimulationWorkbench)} before sending message to it.");
-
-            if (model.DeserializeMessage == null)
-                throw new InvalidOperationException("Model was not configured to process messages.");
-
-            List<object> deserializedMessages = new List<object>(messages.Count());
-            foreach (var serializedMsg in messages)
-            {
-                object? deserializedMsg = model.DeserializeMessage(serializedMsg);
-                if (deserializedMsg != null)
-                    deserializedMessages.Add(deserializedMsg);
-            }
-
-            return SendToTwin(targetTwinModel, targetTwinId, deserializedMessages);
-        }
-
-        public override SendingResult SendToTwin(string targetTwinModel, string targetTwinId, IEnumerable<object> messages)
         {
             if (messages == null)
                 throw new ArgumentNullException(nameof(messages));
