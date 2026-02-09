@@ -32,7 +32,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
     public class SimCompletion
     {
         [Fact]
-        public void NoMoreWork()
+        public async Task NoMoreWork()
         {
             SimulationWorkbench env = new SimulationWorkbench(logger: null);
             env.AddSimulationModel(nameof(SimulatedCar), new CarSimulationProcessor5());
@@ -49,7 +49,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             int stepCount = 0;
             for (; stepCount < 100; stepCount++) // should only take 5 steps, but don't want to loop forever if there's a bug
             {
-                var stepResult = env.Step();
+                var stepResult = await env.StepAsync();
                 if (stepResult.SimulationStatus != SimulationStatus.Running)
                 {
                     Assert.Equal(SimulationStatus.NoRemainingWork, stepResult.SimulationStatus);
@@ -77,11 +77,8 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             Assert.Equal("No simulation instances were registered, no work to do.", ex.Message);
         }
 
-
-
-
         [Fact]
-        public void EndTimeReached()
+        public async Task EndTimeReached()
         {
             SimulationWorkbench env = new SimulationWorkbench(logger: null);
             env.AddSimulationModel(nameof(SimulatedCar), new DoNothingProcessor());
@@ -98,7 +95,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             int stepCount = 0;
             for (; stepCount < 100; stepCount++) // should only take 60 steps, but don't want to loop forever if there's a bug
             {
-                var stepResult = env.Step();
+                var stepResult = await env.StepAsync();
                 if (stepResult.SimulationStatus != SimulationStatus.Running)
                 {
                     Assert.Equal(SimulationStatus.EndTimeReached, stepResult.SimulationStatus);
@@ -110,19 +107,19 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
         class DelayInfiniteProcessor : SimulationProcessor<SimulatedCarModel>
         {
-            public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+            public override Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 // Delay forever when speed hits zero.
                 digitalTwin.Speed = digitalTwin.Speed - 1;
                 if (digitalTwin.Speed == 0)
                     context.SimulationController.Delay(TimeSpan.MaxValue);
 
-                return ProcessingResult.DoUpdate;
+                return Task.FromResult(ProcessingResult.DoUpdate);
             }
         }
 
         [Fact]
-        public void AllDelayed()
+        public async Task AllDelayed()
         {
             SimulationWorkbench env = new SimulationWorkbench(logger: null);
             env.AddSimulationModel(nameof(SimulatedCar), new DelayInfiniteProcessor());
@@ -141,7 +138,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             int stepCount = 0;
             for (; stepCount < 100; stepCount++) // should only take 50 steps, but don't want to loop forever if there's a bug
             {
-                var stepResult = env.Step();
+                var stepResult = await env.StepAsync();
                 if (stepResult.SimulationStatus != SimulationStatus.Running)
                 {
                     Assert.Equal(SimulationStatus.NoRemainingWork, stepResult.SimulationStatus);
@@ -153,19 +150,19 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
         class RequestStopProcessor : SimulationProcessor<SimulatedCarModel>
         {
-            public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+            public override Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 // Delay forever when speed hits zero.
                 digitalTwin.Speed = digitalTwin.Speed - 1;
                 if (digitalTwin.Speed == 0)
                     context.SimulationController.StopSimulation();
 
-                return ProcessingResult.DoUpdate;
+                return Task.FromResult(ProcessingResult.DoUpdate);
             }
         }
 
         [Fact]
-        public void StopRequested()
+        public async Task StopRequested()
         {
             SimulationWorkbench env = new SimulationWorkbench(logger: null);
             env.AddSimulationModel(nameof(SimulatedCar), new RequestStopProcessor());
@@ -184,7 +181,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             int stepCount = 0;
             for (; stepCount < 100; stepCount++) // should only take 5 steps, but don't want to loop forever if there's a bug
             {
-                var stepResult = env.Step();
+                var stepResult = await env.StepAsync();
                 if (stepResult.SimulationStatus != SimulationStatus.Running)
                 {
                     Assert.Equal(SimulationStatus.StopRequested, stepResult.SimulationStatus);
@@ -196,7 +193,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
         class RunThisTwinSimProcessor : SimulationProcessor<SimulatedCarModel>
         {
-            public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+            public async override Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 // Delay forever when speed hits zero.
                 digitalTwin.Speed = digitalTwin.Speed - 1;
@@ -207,7 +204,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
                 {
                     var msg = new StatusMessage() { Payload = "WakeUp!" };
                     byte[] msgBytes = System.Text.Json.JsonSerializer.SerializeToUtf8Bytes(msg);
-                    context.SendToTwin(nameof(SimulatedCar), "Car_Sleeper", msgBytes);
+                    await context.SendToTwinAsync(nameof(SimulatedCar), "Car_Sleeper", msgBytes);
                 }
                 else if (digitalTwin.Speed == 0)
                     context.SimulationController.DelayIndefinitely();
@@ -218,22 +215,20 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
         class RunThisTwinMsgProcessor : MessageProcessor<SimulatedCarModel>
         {
-            public override ProcessingResult ProcessMessages(ProcessingContext context, SimulatedCarModel digitalTwin, IEnumerable<byte[]> newMessages)
+            public override Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context, SimulatedCarModel digitalTwin, byte[] msgBytes)
             {
-                foreach (var message in newMessages)
-                {
-                    var statusMessage = System.Text.Json.JsonSerializer.Deserialize<StatusMessage>(message);
-                    Assert.NotNull(statusMessage);
-                    digitalTwin.Status = statusMessage.Payload;
-                    if (statusMessage.Payload == "WakeUp!")
-                        context.SimulationController.RunThisTwin();
-                }
-                return ProcessingResult.DoUpdate;
+                var statusMessage = System.Text.Json.JsonSerializer.Deserialize<StatusMessage>(msgBytes);
+                Assert.NotNull(statusMessage);
+                digitalTwin.Status = statusMessage.Payload;
+                if (statusMessage.Payload == "WakeUp!")
+                    context.SimulationController.RunThisTwin();
+
+                return Task.FromResult(ProcessingResult.DoUpdate);
             }
         }
 
         [Fact]
-        public void RunThisTwinTest()
+        public async Task RunThisTwinTest()
         {
             SimulationWorkbench env = new SimulationWorkbench(logger: null);
             env.AddSimulationModel(nameof(SimulatedCar), new RunThisTwinSimProcessor(), new RunThisTwinMsgProcessor());
@@ -252,7 +247,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             int stepCount = 0;
             for (; stepCount < 100; stepCount++) // should only take 29 steps
             {
-                var stepResult = env.Step();
+                var stepResult = await env.StepAsync();
                 if (stepResult.SimulationStatus != SimulationStatus.Running)
                 {
                     Assert.Equal(SimulationStatus.NoRemainingWork, stepResult.SimulationStatus);

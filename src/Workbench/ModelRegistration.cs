@@ -24,7 +24,7 @@ using System.Threading.Tasks;
 
 namespace Scaleout.DigitalTwin.Workbench
 {
-    internal delegate ProcessingResult ProcessModelInvoker(ProcessingContext processingContext, DigitalTwinBase dtInstance, DateTimeOffset simulationTime);
+    internal delegate Task<ProcessingResult> ProcessModelAsyncInvoker(ProcessingContext processingContext, DigitalTwinBase dtInstance, DateTimeOffset simulationTime);
 
     internal delegate Task<ProcessingResult> ProcessMessagesAsyncInvoker(ProcessingContext processingContext, DigitalTwinBase dtInstance, byte[] msgBytes);
 
@@ -45,7 +45,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public ISharedData SharedModelData { get; set; }
 
-        public ProcessModelInvoker? InvokeProcessModel;
+        public ProcessModelAsyncInvoker? InvokeProcessModelAsync { get; set; }
 
         public MessageProcessor? MessageProcessor { get; set; }
 

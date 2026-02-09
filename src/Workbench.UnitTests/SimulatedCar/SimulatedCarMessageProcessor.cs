@@ -28,15 +28,12 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar
 {
     internal class SimulatedCarMessageProcessor : MessageProcessor<SimulatedCarModel>
     {
-        public override ProcessingResult ProcessMessages(ProcessingContext context, SimulatedCarModel digitalTwin, IEnumerable<byte[]> newMessages)
+        public override Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context, SimulatedCarModel digitalTwin, byte[] msgBytes)
         {
-            foreach (var message in newMessages)
-            {
-                StatusMessage? statusMsg = System.Text.Json.JsonSerializer.Deserialize<StatusMessage>(message);
-                Assert.NotNull(statusMsg);
-                digitalTwin.Status = statusMsg.Payload;
-            }
-            return ProcessingResult.DoUpdate;
+            StatusMessage? statusMsg = System.Text.Json.JsonSerializer.Deserialize<StatusMessage>(msgBytes);
+            Assert.NotNull(statusMsg);
+            digitalTwin.Status = statusMsg.Payload;
+            return Task.FromResult(ProcessingResult.DoUpdate);
         }
     }
 }

@@ -13,9 +13,9 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
     {
         public class SharedDataMessageProcessor : MessageProcessor<RealTimeCarModel>
         {
-            public override ProcessingResult ProcessMessages(ProcessingContext context, 
-                                                             RealTimeCarModel digitalTwin, 
-                                                             IEnumerable<byte[]> newMessages)
+            public override Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context, 
+                                                                        RealTimeCarModel digitalTwin, 
+                                                                        byte[] msgBytes)
             {
                 // Modify global shared data:
                 var res = context.SharedGlobalData.Get("foo");
@@ -45,12 +45,12 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
                     throw new Exception($"Bad status {res.Status}");
                 }
 
-                return ProcessingResult.DoUpdate;
+                return Task.FromResult(ProcessingResult.DoUpdate);
             }
         }
 
         [Fact]
-        public void ModifySharedData()
+        public async Task ModifySharedDataAsync()
         {
             RealTimeWorkbench wb = new RealTimeWorkbench();
             var endpoint = wb.AddRealTimeModel("RealTimeCar", new SharedDataMessageProcessor());
@@ -64,7 +64,7 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
             // Causes shared data to be incremented:
             var msg = new CarMessage { Speed = 22 };
             byte[] msgBytes = Encoding.UTF8.GetBytes(System.Text.Json.JsonSerializer.Serialize(msg));
-            endpoint.Send("Car1", msgBytes);
+            await endpoint.SendAsync("Car1", msgBytes);
 
             res = endpoint.SharedGlobalData.Get("foo");
             Assert.Equal(CacheOperationStatus.ObjectRetrieved, res.Status);
@@ -117,22 +117,22 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
 
         public class TrainMessageProcessor : MessageProcessor<RealTimeTrainModel>
         {
-            public override ProcessingResult ProcessMessages(ProcessingContext context,
-                                                             RealTimeTrainModel digitalTwin,
-                                                             IEnumerable<byte[]> newMessages)
+            public override Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context,
+                                                                        RealTimeTrainModel digitalTwin,
+                                                                        byte[] msgBytes)
             {
-                return ProcessingResult.DoUpdate;
+                return Task.FromResult(ProcessingResult.DoUpdate);
             }
         }
 
         [Fact]
-        public void SharedDataInInitContext()
+        public async Task SharedDataInInitContextAsync()
         {
             RealTimeWorkbench wb = new RealTimeWorkbench();
             var endpoint = wb.AddRealTimeModel("RealTimeTrain", new TrainMessageProcessor());
 
             // Add object via endpoint
-            endpoint.CreateTwin("train1", new RealTimeTrainModel { Speed = 42 });
+            await endpoint.CreateTwinAsync("train1", new RealTimeTrainModel { Speed = 42 });
 
             // The model's Init method should have incremented shared model
             // and global objects.
@@ -150,7 +150,7 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
             // instance to be created:
             var msg = new CarMessage { Speed = 11 };
             byte[] msgBytes = Encoding.UTF8.GetBytes(System.Text.Json.JsonSerializer.Serialize(msg));
-            endpoint.Send("train2", msgBytes);
+            await endpoint.SendAsync("train2", msgBytes);
 
             // This second instance's Init method should have incremented shared model
             // and global objects again.

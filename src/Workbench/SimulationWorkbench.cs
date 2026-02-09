@@ -23,6 +23,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using Newtonsoft.Json;
@@ -132,7 +133,7 @@ namespace Scaleout.DigitalTwin.Workbench
             get
             {
                 if (EventGenerator == null)
-                    throw new InvalidOperationException($"Simulation is not running. Call {nameof(RunSimulation)} or {nameof(InitializeSimulation)} to start a simulation.");
+                    throw new InvalidOperationException($"Simulation is not running. Call {nameof(RunSimulationAsync)} or {nameof(InitializeSimulation)} to start a simulation.");
 
                 return EventGenerator.SimulationTime; // might throw InvalidOperationException if caller hasn't called Step() yet to enter a timestep.
             }
@@ -146,7 +147,7 @@ namespace Scaleout.DigitalTwin.Workbench
         public DateTimeOffset PeekNextTimeStep()
         {
             if (EventGenerator == null)
-                throw new InvalidOperationException($"Simulation is not running. Call {nameof(RunSimulation)} or {nameof(InitializeSimulation)} to start a simulation.");
+                throw new InvalidOperationException($"Simulation is not running. Call {nameof(RunSimulationAsync)} or {nameof(InitializeSimulation)} to start a simulation.");
 
             return EventGenerator.PeekNextTime(); // might throw InvalidOperationException if caller hasn't called Step() yet to enter a timestep.
         }
@@ -268,7 +269,7 @@ namespace Scaleout.DigitalTwin.Workbench
             where TDigitalTwin : DigitalTwinBase, new()
         {
             if (_simulationState > SimulationState.Initializing)
-                throw new InvalidOperationException($"Cannot add model after starting simulation with {nameof(InitializeSimulation)} or {nameof(RunSimulation)}.");
+                throw new InvalidOperationException($"Cannot add model after starting simulation with {nameof(InitializeSimulation)} or {nameof(RunSimulationAsync)}.");
 
             if (string.IsNullOrWhiteSpace(modelName))
                 throw new ArgumentException("Invalid model name", nameof(modelName));
@@ -311,7 +312,7 @@ namespace Scaleout.DigitalTwin.Workbench
                 // We have the nice TDigitalTwin type information now, so capture it in a lambda
                 // that does casting and makes the ProcessModel call. We can call this lambda later
                 // during a simulation run (when we won't have the instanceRegistration's type information).
-                registration.InvokeProcessModel = (processingContext, twinInstance, simTime) =>
+                registration.InvokeProcessModelAsync = async (processingContext, twinInstance, simTime) =>
                 {
                     if (twinInstance == null) throw new ArgumentNullException(nameof(twinInstance));
 
@@ -319,7 +320,7 @@ namespace Scaleout.DigitalTwin.Workbench
                     if (typedTwin == null)
                         throw new ArgumentException($"Simulation processor for {modelName} is for a different digital twin type. Expected: {typeof(TDigitalTwin)}; Actual: {twinInstance.GetType()}");
 
-                    var result = simProcessor.ProcessModel(processingContext, typedTwin, simTime);
+                    var result = await simProcessor.ProcessModelAsync(processingContext, typedTwin, simTime);
                     if (result == ProcessingResult.Remove)
                     {
                         // Remove the instance from the model:
@@ -359,7 +360,7 @@ namespace Scaleout.DigitalTwin.Workbench
         public void AddInstance(string instanceId, string modelName, DigitalTwinBase instance)
         {
             if (_simulationState > SimulationState.Initializing)
-                throw new InvalidOperationException($"Cannot add instances after starting simulation with {nameof(InitializeSimulation)} or {nameof(RunSimulation)}.");
+                throw new InvalidOperationException($"Cannot add instances after starting simulation with {nameof(InitializeSimulation)} or {nameof(RunSimulationAsync)}.");
 
             bool foundModel = _models.TryGetValue(modelName, out var modelRegistration);
 
@@ -410,13 +411,13 @@ namespace Scaleout.DigitalTwin.Workbench
         /// <param name="simulationIterationInterval">Simulated time between steps in the simulation.</param>
         /// <param name="delayBetweenTimesteps">Sleep time between simulation time steps.</param>
         /// <returns><see cref="StepResult"/> containing the final status of the completed simulation.</returns>
-        public StepResult RunSimulation(DateTimeOffset startTime, DateTimeOffset endTime, TimeSpan simulationIterationInterval, TimeSpan delayBetweenTimesteps)
+        public async Task<StepResult> RunSimulationAsync(DateTimeOffset startTime, DateTimeOffset endTime, TimeSpan simulationIterationInterval, TimeSpan delayBetweenTimesteps)
         {
             InitializeSimulation(startTime, endTime, simulationIterationInterval);
             StepResult lastResult;
             while (true)
             {
-                lastResult = Step();
+                lastResult = await StepAsync();
                 if (lastResult.SimulationStatus != SimulationStatus.Running)
                 {
                     return lastResult;
@@ -424,14 +425,14 @@ namespace Scaleout.DigitalTwin.Workbench
 
                 if (delayBetweenTimesteps > TimeSpan.Zero)
                 {
-                    Thread.Sleep(delayBetweenTimesteps);
+                    await Task.Delay(delayBetweenTimesteps);
                 }
             }
         }
 
         /// <summary>
         /// Initializes a simulation so it can be manully stepped through
-        /// simulation using the <see cref="Step"/> method.
+        /// simulation using the <see cref="StepAsync"/> method.
         /// </summary>
         /// <param name="startTime">Simulated time of the first time step.</param>
         /// <param name="endTime">End time (exclusive) for the simulation. Pass <see cref="DateTime.MaxValue"/> to run the simulation indefinitely.</param>
@@ -493,7 +494,7 @@ namespace Scaleout.DigitalTwin.Workbench
         /// Executes events for the next time step.
         /// </summary>
         /// <returns><see cref="StepResult"/> containing the status and time of the next step in the simulation.</returns>
-        public StepResult Step()
+        public async Task<StepResult> StepAsync()
         {
             if (EventGenerator == null)
                 throw new InvalidOperationException("Not debugging a simulation. Call Workbench.InitializeSimulation(startTime) before stepping.");
@@ -534,7 +535,7 @@ namespace Scaleout.DigitalTwin.Workbench
                                                                  logger: _logger
                                                                  );
 
-                if (simEvent.ModelRegistration.InvokeProcessModel == null)
+                if (simEvent.ModelRegistration.InvokeProcessModelAsync == null)
                     throw new InvalidOperationException("Model was not configured to process simulation events.");
 
                 // NOTE: The returned ProcessingResult is ignored after invoking the callbacks below.
@@ -548,7 +549,7 @@ namespace Scaleout.DigitalTwin.Workbench
                         break;
                     case InstanceRegistration instanceRegistration:
                         _logger.LogTrace("Invoking ProcessModel for {ModelName}\\{InstanceId}", instanceRegistration.ModelRegistration.ModelName, instanceRegistration.DigitalTwinInstance.Id);
-                        _ = instanceRegistration.ModelRegistration.InvokeProcessModel(processingContext, simEvent.DigitalTwinInstance, EventGenerator.SimulationTime);
+                        await instanceRegistration.ModelRegistration.InvokeProcessModelAsync(processingContext, simEvent.DigitalTwinInstance, EventGenerator.SimulationTime);
                         break;
                     default:
                         throw new NotSupportedException($"Unexpected registration type {simEvent.GetType()}");

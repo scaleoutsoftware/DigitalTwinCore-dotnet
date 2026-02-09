@@ -13,7 +13,7 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
         class SharedDataProcessor : SimulationProcessor<SimulatedCarModel>
         {
 
-            public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+            public override Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 // Modify global shared data:
                 var res = context.SharedGlobalData.Get("foo");
@@ -43,13 +43,13 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
                     throw new Exception($"Bad status {res.Status}");
                 }
 
-                return ProcessingResult.DoUpdate;
+                return Task.FromResult(ProcessingResult.DoUpdate);
             }
 
         }
 
         [Fact]
-        public void ModifySharedData()
+        public async Task ModifySharedData()
         {
             SimulationWorkbench env = new SimulationWorkbench(logger: null);
             env.AddSimulationModel("SimulatedCar", new SharedDataProcessor());
@@ -63,7 +63,7 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
 
             for (int i = 0; i < 5; i++)
             {
-                var stepRes = env.Step();
+                var stepRes = await env.StepAsync();
                 Assert.Equal(SimulationStatus.Running, stepRes.SimulationStatus);
             }
 

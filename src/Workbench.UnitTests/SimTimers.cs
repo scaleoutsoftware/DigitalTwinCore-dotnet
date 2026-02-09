@@ -24,6 +24,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Scaleout.DigitalTwin.DevEnv.Tests
 {
@@ -36,14 +37,14 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             public int _timerFiredCount = 0;
             
 
-            public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+            public override Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 if (!_timerStarted)
                 {
                     context.StartTimer("foo", TimeSpan.FromSeconds(10), TimerType.OneTime, TimerFiredHandler);
                     _timerStarted = true;
                 }
-                return ProcessingResult.DoUpdate;
+                return Task.FromResult(ProcessingResult.DoUpdate);
             }
 
             private ProcessingResult TimerFiredHandler(string timerName, DigitalTwinBase instance, ProcessingContext context)
@@ -54,7 +55,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
         }
 
         [Fact]
-        public void FiresOnce()
+        public async Task FiresOnce()
         {
             SimulationWorkbench env = new SimulationWorkbench(logger: null);
             var msgProcessor = new StartSingleTimerProcessor();
@@ -64,10 +65,10 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             env.AddInstance("Car1", nameof(SimulatedCar), car1);
 
             DateTime startTime = new DateTime(2023, 1, 1);
-            var result = env.RunSimulation(startTime,
-                                           endTime: startTime.AddSeconds(30),
-                                           simulationIterationInterval: TimeSpan.FromSeconds(1),
-                                           delayBetweenTimesteps: TimeSpan.Zero);
+            var result = await env.RunSimulationAsync(startTime,
+                                                      endTime: startTime.AddSeconds(30),
+                                                      simulationIterationInterval: TimeSpan.FromSeconds(1),
+                                                      delayBetweenTimesteps: TimeSpan.Zero);
 
             Assert.Equal(SimulationStatus.EndTimeReached, result.SimulationStatus);
             Assert.Equal(1, msgProcessor._timerFiredCount);
@@ -80,14 +81,14 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             public int _timerFiredCount = 0;
 
 
-            public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+            public override Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 if (!_timerStarted)
                 {
                     context.StartTimer("foo", TimeSpan.FromSeconds(5), TimerType.Recurring, TimerFiredHandler);
                     _timerStarted = true;
                 }
-                return ProcessingResult.DoUpdate;
+                return Task.FromResult(ProcessingResult.DoUpdate);
             }
 
             private ProcessingResult TimerFiredHandler(string timerName, DigitalTwinBase instance, ProcessingContext context)
@@ -102,7 +103,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
         }
 
         [Fact]
-        public void RecurringFires()
+        public async Task RecurringFires()
         {
             SimulationWorkbench env = new SimulationWorkbench(logger: null);
             var msgProcessor = new StartRecurringTimerProcessor();
@@ -112,10 +113,10 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             env.AddInstance("Car1", nameof(SimulatedCar), car1);
 
             DateTime startTime = new DateTime(2023, 1, 1);
-            var result = env.RunSimulation(startTime,
-                                           endTime: startTime.AddSeconds(31),
-                                           simulationIterationInterval: TimeSpan.FromSeconds(1),
-                                           delayBetweenTimesteps: TimeSpan.Zero);
+            var result = await env.RunSimulationAsync(startTime,
+                                                      endTime: startTime.AddSeconds(31),
+                                                      simulationIterationInterval: TimeSpan.FromSeconds(1),
+                                                      delayBetweenTimesteps: TimeSpan.Zero);
 
             Assert.Equal(SimulationStatus.EndTimeReached, result.SimulationStatus);
             Assert.Equal(6, msgProcessor._timerFiredCount);
@@ -128,7 +129,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             public int _processModelCount = 0;
 
 
-            public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+            public override Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 if (!_timerStarted)
                 {
@@ -136,7 +137,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
                     _timerStarted = true;
                 }
                 _processModelCount++;
-                return ProcessingResult.DoUpdate;
+                return Task.FromResult(ProcessingResult.DoUpdate);
             }
 
             private ProcessingResult TimerFiredHandler(string timerName, DigitalTwinBase instance, ProcessingContext context)
@@ -152,7 +153,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
         }
 
         [Fact]
-        public void StopRecurring()
+        public async Task StopRecurring()
         {
             SimulationWorkbench env = new SimulationWorkbench(logger: null);
             var msgProcessor = new StopRecurringTimerProcessor();
@@ -162,10 +163,10 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             env.AddInstance("Car1", nameof(SimulatedCar), car1);
 
             DateTime startTime = new DateTime(2023, 1, 1);
-            var result = env.RunSimulation(startTime,
-                                           endTime: startTime.AddSeconds(30),
-                                           simulationIterationInterval: TimeSpan.FromSeconds(1),
-                                           delayBetweenTimesteps: TimeSpan.Zero);
+            var result = await env.RunSimulationAsync(startTime,
+                                                      endTime: startTime.AddSeconds(30),
+                                                      simulationIterationInterval: TimeSpan.FromSeconds(1),
+                                                      delayBetweenTimesteps: TimeSpan.Zero);
 
             Assert.Equal(SimulationStatus.EndTimeReached, result.SimulationStatus);
             Assert.Equal(3, msgProcessor._timerFiredCount);
@@ -195,14 +196,14 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
         class InitTimerProcessor : SimulationProcessor<TimerTwin>
         {
-            public override ProcessingResult ProcessModel(ProcessingContext context, TimerTwin digitalTwin, DateTimeOffset currentTime)
+            public override Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, TimerTwin digitalTwin, DateTimeOffset currentTime)
             {
-                return ProcessingResult.DoUpdate;
+                return Task.FromResult(ProcessingResult.DoUpdate);
             }
         }
 
         [Fact]
-        public void StartTimerFromInit()
+        public async Task StartTimerFromInit()
         {
             SimulationWorkbench env = new SimulationWorkbench(logger: null);
             var msgProcessor = new InitTimerProcessor();
@@ -212,10 +213,10 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             env.AddInstance("Car1", nameof(TimerTwin), twin1);
 
             DateTime startTime = new DateTime(2023, 1, 1);
-            var result = env.RunSimulation(startTime,
-                                           endTime: startTime.AddSeconds(30),
-                                           simulationIterationInterval: TimeSpan.FromSeconds(1),
-                                           delayBetweenTimesteps: TimeSpan.Zero);
+            var result = await env.RunSimulationAsync(startTime,
+                                                      endTime: startTime.AddSeconds(30),
+                                                      simulationIterationInterval: TimeSpan.FromSeconds(1),
+                                                      delayBetweenTimesteps: TimeSpan.Zero);
 
             Assert.Equal(SimulationStatus.EndTimeReached, result.SimulationStatus);
             Assert.Equal(1, twin1.TimerFiredCount);

@@ -37,14 +37,14 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             public int _timerFiredCount = 0;
 
 
-            public override ProcessingResult ProcessMessages(ProcessingContext context, RealTimeCarModel digitalTwin, IEnumerable<byte[]> newMessages)
+            public override Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] msgBytes)
             {
                 if (!_timerStarted)
                 {
                     context.StartTimer("foo", TimeSpan.FromSeconds(1), TimerType.OneTime, TimerFiredHandler);
                     _timerStarted = true;
                 }
-                return ProcessingResult.DoUpdate;
+                return Task.FromResult(ProcessingResult.DoUpdate);
             }
 
             private ProcessingResult TimerFiredHandler(string timerName, DigitalTwinBase instance, ProcessingContext context)
@@ -56,20 +56,20 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
         }
 
         [Fact]
-        public void FiresOnce()
+        public async Task FiresOnceAsync()
         {
             using RealTimeWorkbench env = new RealTimeWorkbench(logger: null);
             var msgProcessor = new StartSingleTimerProcessor();
             var endpoint = env.AddRealTimeModel(nameof(RealTimeCar), msgProcessor);
 
             var car1 = new RealTimeCarModel();
-            endpoint.CreateTwin("Car1", car1);
+            await endpoint.CreateTwinAsync("Car1", car1);
 
             var msg = new CarMessage { Speed = 55 };
             // serialize to JSON
             byte[] msgBytes = System.Text.Json.JsonSerializer.SerializeToUtf8Bytes(msg);
-            endpoint.Send("Car1", msgBytes); // should start timer
-            Thread.Sleep(2500);
+            await endpoint.SendAsync("Car1", msgBytes); // should start timer
+            await Task.Delay(2500);
 
             Assert.Equal(1, msgProcessor._timerFiredCount);
         }
@@ -80,14 +80,14 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             public int _timerFiredCount = 0;
 
 
-            public override ProcessingResult ProcessMessages(ProcessingContext context, RealTimeCarModel digitalTwin, IEnumerable<byte[]> newMessages)
+            public override Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] messages)
             {
                 if (!_timerStarted)
                 {
                     context.StartTimer("foo", TimeSpan.FromSeconds(1), TimerType.Recurring, TimerFiredHandler);
                     _timerStarted = true;
                 }
-                return ProcessingResult.DoUpdate;
+                return Task.FromResult(ProcessingResult.DoUpdate);
             }
 
             private ProcessingResult TimerFiredHandler(string timerName, DigitalTwinBase instance, ProcessingContext context)
@@ -102,7 +102,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
         }
 
         [Fact]
-        public void RecurringFires()
+        public async Task RecurringFires()
         {
             using RealTimeWorkbench env = new RealTimeWorkbench(logger: null);
             var msgProcessor = new StartRecurringTimerProcessor();
@@ -110,8 +110,8 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
             var msg = new CarMessage { Speed = 55 };
             byte[] msgBytes = System.Text.Json.JsonSerializer.SerializeToUtf8Bytes(msg);
-            endpoint.Send("Car1", msgBytes); // should start timer
-            Thread.Sleep(2500);
+            await endpoint.SendAsync("Car1", msgBytes); // should start timer
+            await Task.Delay(2500);
 
             Assert.Equal(2, msgProcessor._timerFiredCount);
         }
@@ -123,7 +123,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             public int _processModelCount = 0;
 
 
-            public override ProcessingResult ProcessMessages(ProcessingContext context, RealTimeCarModel digitalTwin, IEnumerable<byte[]> newMessages)
+            public override Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] msgBytes)
             {
                 if (!_timerStarted)
                 {
@@ -131,7 +131,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
                     _timerStarted = true;
                 }
                 _processModelCount++;
-                return ProcessingResult.DoUpdate;
+                return Task.FromResult(ProcessingResult.DoUpdate);
             }
 
             private ProcessingResult TimerFiredHandler(string timerName, DigitalTwinBase instance, ProcessingContext context)
@@ -147,7 +147,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
         }
 
         [Fact]
-        public void StopRecurring()
+        public async Task StopRecurring()
         {
             using RealTimeWorkbench env = new RealTimeWorkbench(logger: null);
             var msgProcessor = new StopRecurringTimerProcessor();
@@ -155,8 +155,8 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
             var msg = new CarMessage { Speed = 55 };
             byte[] msgBytes = System.Text.Json.JsonSerializer.SerializeToUtf8Bytes(msg);
-            endpoint.Send("Car1", msgBytes); // should start timer
-            Thread.Sleep(5000); // timer should stop itself after 2 seconds
+            await endpoint.SendAsync("Car1", msgBytes); // should start timer
+            await Task.Delay(5000); // timer should stop itself after 2 seconds
 
             Assert.Equal(2, msgProcessor._timerFiredCount);
 
@@ -167,7 +167,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
         }
 
         [Fact]
-        public void TimersGetDisposed()
+        public async Task TimersGetDisposed()
         {
             var msgProcessor = new StartRecurringTimerProcessor();
             using (RealTimeWorkbench env = new RealTimeWorkbench(logger: null))
@@ -176,8 +176,8 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
                 var msg = new CarMessage { Speed = 55 };
                 byte[] msgBytes = System.Text.Json.JsonSerializer.SerializeToUtf8Bytes(msg);
-                endpoint.Send("Car1", msgBytes); // should start timer
-                Thread.Sleep(2000);
+                await endpoint.SendAsync("Car1", msgBytes); // should start timer
+                await Task.Delay(2000);
 
                 Assert.True(msgProcessor._timerFiredCount > 0);
             }
@@ -207,23 +207,23 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
         class InitTimerProcessor : MessageProcessor<TimerTwin>
         {
-            public override ProcessingResult ProcessMessages(ProcessingContext context, TimerTwin digitalTwin, IEnumerable<byte[]> newMessages)
+            public override Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context, TimerTwin digitalTwin, byte[] msgBytes)
             {
-                return ProcessingResult.DoUpdate;
+                return Task.FromResult(ProcessingResult.DoUpdate);
             }
         }
 
         [Fact]
-        public void StartTimerFromInit()
+        public async Task StartTimerFromInit()
         {
             using RealTimeWorkbench env = new RealTimeWorkbench(logger: null);
             var msgProcessor = new InitTimerProcessor();
             var endpoint = env.AddRealTimeModel(nameof(TimerTwin), msgProcessor);
 
             var twin1 = new TimerTwin();
-            endpoint.CreateTwin("Twin1", twin1);
+            await endpoint.CreateTwinAsync("Twin1", twin1);
 
-            Thread.Sleep(5000);
+            await Task.Delay(5000);
 
             Assert.Equal(1, twin1.TimerFiredCount);
         }

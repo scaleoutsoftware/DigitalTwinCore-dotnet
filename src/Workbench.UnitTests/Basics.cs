@@ -16,6 +16,8 @@
 
 #endregion
 
+using System;
+using System.Threading.Tasks;
 using Scaleout.DigitalTwin.Workbench;
 using Scaleout.DigitalTwin.DevEnv.Tests.RealTimeCar;
 using Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar;
@@ -26,7 +28,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
     public class Basics
     {
         [Fact]
-        public void TwoSimObjScheduling()
+        public async Task TwoSimObjScheduling()
         {
             SimulationWorkbench env = new SimulationWorkbench(logger: null);
             env.AddSimulationModel(nameof(SimulatedCar), new SimulatedCar.CarSimulationProcessor1());
@@ -41,18 +43,18 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
                       endTime: DateTimeOffset.MaxValue, 
                       simulationIterationInterval: TimeSpan.FromSeconds(1));
 
-            var result = env.Step();
+            var result = await env.StepAsync();
             Assert.Equal(startTime, env.CurrentTime);
             Assert.Equal(startTime + TimeSpan.FromSeconds(10), result.NextSimulationTime);
             Assert.Equal(startTime + TimeSpan.FromSeconds(10), env.PeekNextTimeStep());
 
-            result = env.Step();
+            result = await env.StepAsync();
             Assert.Equal(startTime + TimeSpan.FromSeconds(10), env.CurrentTime);
             Assert.Equal(startTime + TimeSpan.FromSeconds(15), result.NextSimulationTime);
         }
 
         [Fact]
-        public void AddRealTimeViaSendMsg()
+        public async Task AddRealTimeViaSendMsg()
         {
             SimulationWorkbench env = new SimulationWorkbench(logger: null);
             env.AddSimulationModel(nameof(SimulatedCar), new SimulatedCar.CarSimulationProcessor2());
@@ -66,7 +68,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
                       endTime: DateTimeOffset.MaxValue,
                       simulationIterationInterval: TimeSpan.FromSeconds(1));
 
-            var res = env.Step(); // should cause Car1 to emit.
+            var res = await env.StepAsync(); // should cause Car1 to emit.
             Assert.Equal(SimulationStatus.Running, res.SimulationStatus);
 
             // Check that the RT obj got created.
@@ -76,7 +78,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
         }
 
         [Fact]
-        public void SendToDataSource()
+        public async Task SendToDataSource()
         {
             SimulationWorkbench env = new SimulationWorkbench(logger: null);
             env.AddSimulationModel(nameof(SimulatedCar), new CarSimulationProcessor3(), new SimulatedCarMessageProcessor());
@@ -94,7 +96,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
                      simulationIterationInterval: TimeSpan.FromSeconds(1));
 
             // Should cause sim to send a message and then rt to send back to datasource:
-            var res = env.Step();
+            var res = await env.StepAsync();
             Assert.Equal(SimulationStatus.Running, res.SimulationStatus);
 
             var simCar = env.GetInstance<SimulatedCarModel>(nameof(SimulatedCar), "Car1");
@@ -102,7 +104,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
         }
 
         [Fact]
-        public void DeleteThisTwin()
+        public async Task DeleteThisTwin()
         {
             SimulationWorkbench env = new SimulationWorkbench(logger: null);
             env.AddSimulationModel(nameof(SimulatedCar), new CarSimulationProcessor4(), new SimulatedCarMessageProcessor());
@@ -114,7 +116,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
                       endTime: DateTimeOffset.MaxValue,
                       simulationIterationInterval: TimeSpan.FromSeconds(1));
 
-            var res = env.Step(); // should call DeleteThisTwin()
+            var res = await env.StepAsync(); // should call DeleteThisTwin()
 
             // Make sure it was removed.
             var simCar = env.GetInstance<SimulatedCarModel>(nameof(SimulatedCar), "Car1");
@@ -125,20 +127,20 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
         class DeleteOtherTwinProcessor : SimulationProcessor<SimulatedCarModel>
         {
-            public override ProcessingResult ProcessModel(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+            public override async Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 // Delete another twin when speed hits zero.
                 digitalTwin.Speed = digitalTwin.Speed - 1;
                 if (digitalTwin.Speed == 0)
                 {
-                    context.SimulationController.DeleteTwin(nameof(SimulatedCar), "Car2");
+                    await context.SimulationController.DeleteTwinAsync(nameof(SimulatedCar), "Car2");
                 }
                 return ProcessingResult.DoUpdate;
             }
         }
 
         [Fact]
-        public void DeleteAnotherTwin()
+        public async Task DeleteAnotherTwin()
         {
             SimulationWorkbench env = new SimulationWorkbench(logger: null);
             env.AddSimulationModel(nameof(SimulatedCar), new DeleteOtherTwinProcessor());
@@ -154,7 +156,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
             for (int i = 0; i < 50; i++)
             {
-                var res = env.Step();
+                var res = await env.StepAsync();
                 Assert.Equal(SimulationStatus.Running, res.SimulationStatus);
             }
 
@@ -170,7 +172,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
         }
 
         [Fact]
-        public void RealtimeToRealtimeUnderSimulation()
+        public async Task RealtimeToRealtimeUnderSimulation()
         {
             SimulationWorkbench env = new SimulationWorkbench(logger: null);
             env.AddSimulationModel(nameof(SimulatedCar), new CarSimulationProcessor6());
@@ -189,7 +191,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
                      simulationIterationInterval: TimeSpan.FromSeconds(1));
 
             // Should cause sim to send a message and then rt to send another message:
-            var res = env.Step();
+            var res = await env.StepAsync();
             Assert.Equal(SimulationStatus.Running, res.SimulationStatus);
 
             //var simCar = env.GetInstance<SimulatedCarModel>(nameof(SimulatedCar), "Car1");

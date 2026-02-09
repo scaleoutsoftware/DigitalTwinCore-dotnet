@@ -17,6 +17,7 @@
 #endregion
 
 using System;
+using System.Threading.Tasks;
 
 namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
@@ -36,11 +37,11 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <returns><see cref="ProcessingResult.DoUpdate"/> if the digital twin
         /// object needs to be updated, or <see cref="ProcessingResult.NoUpdate"/> if
         /// no updates are needed.</returns>
-        public abstract ProcessingResult ProcessModel(ProcessingContext context, TDigitalTwin digitalTwin, DateTimeOffset currentTime);
+        public abstract Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, TDigitalTwin digitalTwin, DateTimeOffset currentTime);
 
-        internal override ProcessingResult ProcessModel(ProcessingContext context, DigitalTwinBase digitalTwin, DateTimeOffset currentTime)
+        internal override Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, DigitalTwinBase digitalTwin, DateTimeOffset currentTime)
         {
-            return ProcessModel(context, digitalTwin as TDigitalTwin, currentTime);
+            return ProcessModelAsync(context, digitalTwin as TDigitalTwin, currentTime);
         }
 
         /// <inheritdoc/>
@@ -62,7 +63,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <returns><see cref="ProcessingResult.DoUpdate"/> if the digital twin
         /// object needs to be updated, or <see cref="ProcessingResult.NoUpdate"/> if
         /// no updates are needed.</returns>
-        internal abstract ProcessingResult ProcessModel(ProcessingContext context, DigitalTwinBase digitalTwin, DateTimeOffset currentTime);
+        internal abstract Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, DigitalTwinBase digitalTwin, DateTimeOffset currentTime);
 
         /// <summary>
         /// The simulated time interval.
