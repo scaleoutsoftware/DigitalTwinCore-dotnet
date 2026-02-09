@@ -25,7 +25,7 @@ namespace Scaleout.DigitalTwin.Workbench
 {
     /// <summary>
     /// An alert that was sent from a MessageProcessor using
-    /// <see cref="ProcessingContext.SendAlert(string, AlertMessage)"/>.
+    /// <see cref="ProcessingContext.SendAlertAsync(string, AlertMessage)"/>.
     /// </summary>
     public class PostedAlert
     {

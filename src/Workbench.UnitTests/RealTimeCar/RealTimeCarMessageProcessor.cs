@@ -113,7 +113,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.RealTimeCar
                 if (carMsg.Speed == 42)
                 {
                     // delete Car1
-                    context.RemoveRealTimeTwin(null, "Car1");
+                    context.RemoveRealTimeTwinAsync(null, "Car1");
                 }
             }
             return ProcessingResult.DoUpdate;

@@ -23,6 +23,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Scaleout.DigitalTwin.Workbench
 {
@@ -72,7 +73,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public InstanceRegistration InstanceRegistration { get; }
 
-        public SendingResult CreateTwin(string modelName, string twinId, object newInstance)
+        public Task<SendingResult> CreateTwinAsync(string modelName, string twinId, object newInstance)
         {
             if (string.IsNullOrWhiteSpace(modelName))
                 throw new ArgumentException("modelName cannot be null or whitespace");
@@ -93,15 +94,15 @@ namespace Scaleout.DigitalTwin.Workbench
                 // TODO: enqueue for immediate processing of this time step
                 throw new NotImplementedException();
             }
-            return SendingResult.Handled;
+            return Task.FromResult(SendingResult.Handled);
         }
 
-        public SendingResult CreateTwinFromPersistenceStore(string modelName, string twinId, object defaultInstance)
+        public Task<SendingResult> CreateTwinFromPersistenceStoreAsync(string modelName, string twinId, object defaultInstance)
         {
             throw new NotSupportedException();
         }
 
-        public SendingResult CreateTwinFromPersistenceStore(string modelName, string twinId)
+        public Task<SendingResult> CreateTwinFromPersistenceStoreAsync(string modelName, string twinId)
         {
             throw new NotSupportedException();
         }
@@ -118,12 +119,12 @@ namespace Scaleout.DigitalTwin.Workbench
             return SendingResult.Handled;
         }
 
-        public SendingResult DeleteThisTwin()
+        public Task<SendingResult> DeleteThisTwinAsync()
         {
             DeleteRequested = true; // prevents simulation instance from being re-enqueud in the scheduler.
 
             _env.RemoveInstance(this.DigitalTwinModel, this.InstanceId);
-            return SendingResult.Handled;
+            return Task.FromResult(SendingResult.Handled);
         }
 
         public void RunThisTwin()
@@ -131,14 +132,14 @@ namespace Scaleout.DigitalTwin.Workbench
             _env.EnqueueImmediate(this.InstanceRegistration);
         }
 
-        public SendingResult DeleteTwin(string modelName, string twinId)
+        public Task<SendingResult> DeleteTwinAsync(string modelName, string twinId)
         {
             _env.RemoveInstance(modelName, twinId);
-            return SendingResult.Handled;
+            return Task.FromResult(SendingResult.Handled);
         }
 
 
-        public SendingResult EmitTelemetry(string modelName, byte[] message)
+        public async Task<SendingResult> EmitTelemetryAsync(string modelName, byte[] message)
         {
             bool foundModel = _env.Instances.TryGetValue(modelName, out var instances);
             if (!foundModel)
@@ -162,7 +163,7 @@ namespace Scaleout.DigitalTwin.Workbench
             });
 
 
-            if (instanceRegistration.ModelRegistration.InvokeProcessMessages == null)
+            if (instanceRegistration.ModelRegistration.InvokeProcessMessagesAsync == null)
                 throw new InvalidOperationException("Model is not configured to process messages.");
 
 
@@ -176,9 +177,12 @@ namespace Scaleout.DigitalTwin.Workbench
                                                              _logger);
 
             byte[][] messages = new byte[][] { message };
-            instanceRegistration.ModelRegistration.InvokeProcessMessages(processingContext,
+            foreach (var msg in messages)
+            {
+                await instanceRegistration.ModelRegistration.InvokeProcessMessagesAsync(processingContext,
                                                                           instanceRegistration.DigitalTwinInstance,
-                                                                          messages);
+                                                                          msg);
+            }
 
             return SendingResult.Handled;
         }
@@ -202,28 +206,29 @@ namespace Scaleout.DigitalTwin.Workbench
             return _env.EventGenerator.SimulationIterationInterval;
         }
 
-        public override void LogMessage(LogSeverity severity, string message)
+        public override Task SendUIAlertAsync(LogSeverity severity, string message)
         {
             _logger.Log(severity.ToLogLevel(), message);
+            return Task.CompletedTask;
         }
 
-        public override SendingResult SendAlert(string providerName, AlertMessage alertMessage)
+        public override Task<SendingResult> SendAlertAsync(string providerName, AlertMessage alertMessage)
         {
             throw new NotImplementedException();
         }
 
-        public override SendingResult SendAlert(AlertMessage alertMessage)
+        public override Task<SendingResult> SendAlertAsync(AlertMessage alertMessage)
         {
             throw new NotImplementedException();
         }
 
-        public override SendingResult SendToDataSource(byte[] message)
+        public override Task<SendingResult> SendToDataSourceAsync(byte[] message)
         {
             if (message == null) throw new ArgumentNullException(nameof(message));
             byte[][] messages = new byte[][] { message };
-            return SendToDataSource(messages);
+            return SendToDataSourceAsync(messages);
         }
-        public override SendingResult SendToDataSource(IEnumerable<byte[]> messages)
+        public async override Task<SendingResult> SendToDataSourceAsync(IEnumerable<byte[]> messages)
         {
             if (InstanceRegistration.DataSource == null)
                 throw new InvalidOperationException($"Data source is not available in this context. (Instance {DigitalTwinModel}\\{InstanceId}).");
@@ -233,7 +238,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
             InstanceRegistration targetInstanceRegistration = InstanceRegistration.DataSource;
 
-            if (targetInstanceRegistration.ModelRegistration.InvokeProcessMessages == null)
+            if (targetInstanceRegistration.ModelRegistration.InvokeProcessMessagesAsync == null)
                 throw new InvalidOperationException($"Model {targetInstanceRegistration.ModelRegistration.ModelName} is not configured to process messages.");
 
             int nextMessageDepth = _messageDepth + 1;
@@ -245,21 +250,24 @@ namespace Scaleout.DigitalTwin.Workbench
                                                              nextMessageDepth,
                                                              _logger);
 
-            targetInstanceRegistration.ModelRegistration.InvokeProcessMessages(processingContext,
+            foreach (var msg in messages)
+            {
+                await targetInstanceRegistration.ModelRegistration.InvokeProcessMessagesAsync(processingContext,
                                                                          targetInstanceRegistration.DigitalTwinInstance,
-                                                                         messages);
+                                                                         msg);
+            }
 
             return SendingResult.Handled;
         }
 
-        public override SendingResult SendToTwin(string targetTwinModel, string targetTwinId, byte[] message)
+        public override Task<SendingResult> SendToTwinAsync(string targetTwinModel, string targetTwinId, byte[] message)
         {
             if (message == null) throw new ArgumentNullException(nameof(message));
             byte[][] messages = new byte[][] { message };
-            return SendToTwin(targetTwinModel, targetTwinId, messages);
+            return SendToTwinAsync(targetTwinModel, targetTwinId, messages);
         }
 
-        public override SendingResult SendToTwin(string targetTwinModel, string targetTwinId, IEnumerable<byte[]> messages)
+        public async override Task<SendingResult> SendToTwinAsync(string targetTwinModel, string targetTwinId, IEnumerable<byte[]> messages)
         {
             if (messages == null)
                 throw new ArgumentNullException(nameof(messages));
@@ -289,7 +297,7 @@ namespace Scaleout.DigitalTwin.Workbench
                 return registration;
             });
 
-            if (instanceRegistration.ModelRegistration.InvokeProcessMessages == null)
+            if (instanceRegistration.ModelRegistration.InvokeProcessMessagesAsync == null)
                 throw new InvalidOperationException("Model was not configured to process messages.");
 
 
@@ -302,9 +310,12 @@ namespace Scaleout.DigitalTwin.Workbench
                                                              nextMessageDepth,
                                                              _logger);
 
-            instanceRegistration.ModelRegistration.InvokeProcessMessages(processingContext,
+            foreach (var msg in messages)
+            {
+                await instanceRegistration.ModelRegistration.InvokeProcessMessagesAsync(processingContext,
                                                                           instanceRegistration.DigitalTwinInstance,
-                                                                          messages);
+                                                                          msg);
+            }
 
             return SendingResult.Handled;
         }
@@ -353,10 +364,10 @@ namespace Scaleout.DigitalTwin.Workbench
             StopRequested = true;
         }
 
-        public override SendingResult RemoveRealTimeTwin(string targetTwinModel, string targetTwinId)
+        public override Task<SendingResult> RemoveRealTimeTwinAsync(string targetTwinModel, string targetTwinId)
         {
             _env.RemoveInstance(targetTwinModel, targetTwinId);
-            return SendingResult.Handled;
+            return Task.FromResult(SendingResult.Handled);
         }
     }
 }

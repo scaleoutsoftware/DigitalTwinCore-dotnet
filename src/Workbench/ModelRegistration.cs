@@ -20,12 +20,13 @@ using Scaleout.Modules.DigitalTwin.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Scaleout.DigitalTwin.Workbench
 {
     internal delegate ProcessingResult ProcessModelInvoker(ProcessingContext processingContext, DigitalTwinBase dtInstance, DateTimeOffset simulationTime);
 
-    internal delegate ProcessingResult ProcessMessagesInvoker(ProcessingContext processingContext, DigitalTwinBase dtInstance, IEnumerable<byte[]> messages);
+    internal delegate Task<ProcessingResult> ProcessMessagesAsyncInvoker(ProcessingContext processingContext, DigitalTwinBase dtInstance, byte[] msgBytes);
 
     internal delegate object? MessageDeserializer(byte[] message);
 
@@ -48,7 +49,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public MessageProcessor? MessageProcessor { get; set; }
 
-        public ProcessMessagesInvoker? InvokeProcessMessages { get; set; }
+        public ProcessMessagesAsyncInvoker? InvokeProcessMessagesAsync { get; set; }
 
         public CreateNew? CreateNew { get; set; }
     }

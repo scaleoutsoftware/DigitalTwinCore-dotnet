@@ -17,6 +17,7 @@
 #endregion
 
 using System;
+using System.Threading.Tasks;
 
 namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
@@ -50,7 +51,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// Delays calling the <see cref="SimulationProcessor{TDigitalTwin}.ProcessModel(ProcessingContext, TDigitalTwin, DateTimeOffset)"/>
         /// method for this instance forever. Users can interrupt this infinite delay later
         /// by calling <see cref="ISimulationController.RunThisTwin"/> for this instance within the 
-        /// <see cref="MessageProcessor{TDigitalTwin}.ProcessMessages(ProcessingContext, TDigitalTwin, System.Collections.Generic.IEnumerable{Byte[]})"/> method call.
+        /// <see cref="MessageProcessor{TDigitalTwin}.ProcessMessagesAsync(ProcessingContext, TDigitalTwin, byte[])"/> method call.
         /// </summary>
         /// <returns><see cref="SendingResult.Handled"/> in case of success, otherwise 
         /// the method returns <see cref="SendingResult.NotHandled"/>.</returns>
@@ -74,7 +75,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinProcessingException">
         /// An error occurred while processing the message by digital twin.
         /// </exception>
-        SendingResult EmitTelemetry(string modelName, byte[] message);
+        Task<SendingResult> EmitTelemetryAsync(string modelName, byte[] message);
 
 
         /// <summary>
@@ -95,7 +96,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinInstantiationException">
         /// An error occurred while creating a new digital twin instance.
         /// </exception>
-        SendingResult CreateTwin(string modelName, string twinId, object newInstance);
+        Task<SendingResult> CreateTwinAsync(string modelName, string twinId, object newInstance);
 
         /// <summary>
         /// Create a new digital twin instance of the specified simulation <paramref name="modelName"/>.
@@ -116,7 +117,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinInstantiationException">
         /// An error occurred while creating a new digital twin instance.
         /// </exception>
-        SendingResult CreateTwinFromPersistenceStore(string modelName, string twinId, object defaultInstance);
+        Task<SendingResult> CreateTwinFromPersistenceStoreAsync(string modelName, string twinId, object defaultInstance);
 
         /// <summary>
         /// Create a new digital twin instance of the specified simulation <paramref name="modelName"/>.
@@ -134,7 +135,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinInstantiationException">
         /// An error occurred while creating a new digital twin instance.
         /// </exception>
-        SendingResult CreateTwinFromPersistenceStore(string modelName, string twinId);
+        Task<SendingResult> CreateTwinFromPersistenceStoreAsync(string modelName, string twinId);
 
         /// <summary>
         /// Delete a digital twin instance of the specified simulation <paramref name="modelName"/>.
@@ -146,7 +147,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException">
         /// The exception is thrown if the current digital twin model does not support simulation.
         /// </exception>
-        SendingResult DeleteTwin(string modelName, string twinId);
+        Task<SendingResult> DeleteTwinAsync(string modelName, string twinId);
 
         /// <summary>
         /// Delete this simulation twin instance (itself).
@@ -156,7 +157,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException">
         /// The exception is thrown if the current digital twin model does not support simulation.
         /// </exception>
-        SendingResult DeleteThisTwin();
+        Task<SendingResult> DeleteThisTwinAsync();
 
         /// <summary>
         /// Adds this simulation twin instance (itself) to the end of the priority queue for

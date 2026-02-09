@@ -23,6 +23,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Scaleout.DigitalTwin.Workbench
 {
@@ -44,7 +45,7 @@ namespace Scaleout.DigitalTwin.Workbench
             _logger = logger;
         }
 
-        public SendingResult CreateTwin(string digitalTwinId, object digitalTwin)
+        public Task<SendingResult> CreateTwinAsync(string digitalTwinId, object digitalTwin)
         {
             if (digitalTwin == null)
                 throw new ArgumentNullException(nameof(digitalTwin));
@@ -63,20 +64,20 @@ namespace Scaleout.DigitalTwin.Workbench
             else
                 _logger.LogWarning("Digital twin instance {DigitalTwinId} could not be created for model {ModelName} because an instance with this ID already exists.", digitalTwinId, _registration.ModelName);
 
-            return SendingResult.Handled;
+            return Task.FromResult(SendingResult.Handled);
         }
 
-        public SendingResult CreateTwinFromPersistenceStore(string digitalTwinId, object defaultValue)
+        public Task<SendingResult> CreateTwinFromPersistenceStoreAsync(string digitalTwinId, object defaultValue)
         {
             throw new NotSupportedException();
         }
 
-        public SendingResult CreateTwinFromPersistenceStore(string digitalTwinId)
+        public Task<SendingResult> CreateTwinFromPersistenceStoreAsync(string digitalTwinId)
         {
             throw new NotSupportedException();
         }
 
-        public SendingResult DeleteTwin(string digitalTwinId)
+        public Task<SendingResult> DeleteTwinAsync(string digitalTwinId)
         {
             bool foundInstance = _modelInstances.TryRemove(digitalTwinId, out _);
             if (foundInstance)
@@ -84,19 +85,19 @@ namespace Scaleout.DigitalTwin.Workbench
             else
                 _logger.LogWarning("Digital twin instance {DigitalTwinId} could not be removed for model {ModelName} because it does not exist.", digitalTwinId, _registration.ModelName);
 
-            return SendingResult.Handled;
+            return Task.FromResult(SendingResult.Handled);
 
         }
 
-        public SendingResult Send(string digitalTwinId, byte[] message)
+        public Task<SendingResult> SendAsync(string digitalTwinId, byte[] message)
         {
             if (message == null) throw new ArgumentNullException(nameof(message));
             byte[][] messages = new byte[][] { message };
-            return Send(digitalTwinId, messages);
+            return SendAsync(digitalTwinId, messages);
         }
 
 
-        public SendingResult Send(string digitalTwinId, IEnumerable<byte[]> messages)
+        public async Task<SendingResult> SendAsync(string digitalTwinId, IEnumerable<byte[]> messages)
         {
             if (digitalTwinId == null) throw new ArgumentNullException(nameof(digitalTwinId));
             if (messages == null) throw new ArgumentNullException(nameof(messages));
@@ -115,7 +116,7 @@ namespace Scaleout.DigitalTwin.Workbench
                 return registration;
             });
 
-            if (_registration.InvokeProcessMessages == null)
+            if (_registration.InvokeProcessMessagesAsync == null)
                 throw new InvalidOperationException("Model was not configured to process messages.");
 
 
@@ -125,10 +126,12 @@ namespace Scaleout.DigitalTwin.Workbench
                                                                  _workbench,
                                                                  0,
                                                                  _logger);
-
-            _registration.InvokeProcessMessages(processingContext,
-                                                instanceRegistration.DigitalTwinInstance,
-                                                messages);
+            foreach (var message in messages)
+            {
+                await _registration.InvokeProcessMessagesAsync(processingContext,
+                                                    instanceRegistration.DigitalTwinInstance,
+                                                    message);
+            }
 
             return SendingResult.Handled;
         }

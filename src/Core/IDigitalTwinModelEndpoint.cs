@@ -17,6 +17,7 @@
 #endregion
 
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
@@ -32,7 +33,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <param name="messages">Enumerable collection of serialized messages.</param>
         /// <returns><see cref="SendingResult.Handled"/> if the message was successfully sent,
 		/// <see cref="SendingResult.NotHandled"/> otherwise.</returns>
-        SendingResult Send(string digitalTwinId, IEnumerable<byte[]> messages);
+        Task<SendingResult> SendAsync(string digitalTwinId, IEnumerable<byte[]> messages);
 
         /// <summary>
         /// Sends a JSON serialized message to a digital twin instance.
@@ -41,7 +42,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <param name="message">Serialized message.</param>
         /// <returns><see cref="SendingResult.Handled"/> if the message was successfully sent,
 		/// <see cref="SendingResult.NotHandled"/> otherwise.</returns>
-        SendingResult Send(string digitalTwinId, byte[] message);
+        Task<SendingResult> SendAsync(string digitalTwinId, byte[] message);
 
         /// <summary>
         /// Creates a new digital twin instance.
@@ -52,7 +53,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// properties and their initial values.</param>
         /// <returns><see cref="SendingResult.Handled"/> if the message was successfully sent,
 		/// <see cref="SendingResult.NotHandled"/> otherwise.</returns>
-        SendingResult CreateTwin(string digitalTwinId, object digitalTwin);
+        Task<SendingResult> CreateTwinAsync(string digitalTwinId, object digitalTwin);
 
         /// <summary>
         /// Create a new digital twin instance . This method first tries to create 
@@ -66,7 +67,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// properties and their initial values.</param>
         /// <returns><see cref="SendingResult.Handled"/> in case of success, otherwise 
         /// the method throws DigitalTwinInstantiationException with the error details.</returns>
-        SendingResult CreateTwinFromPersistenceStore(string digitalTwinId, object defaultValue);
+        Task<SendingResult> CreateTwinFromPersistenceStoreAsync(string digitalTwinId, object defaultValue);
 
         /// <summary>
         /// Create a new digital twin instance in the ScaleOut data grid. This method assumes that persistence store is 
@@ -78,7 +79,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <param name="digitalTwinId">Digital twin identifier.</param>
         /// <returns><see cref="SendingResult.Handled"/> in case of success, otherwise 
         /// the method throws DigitalTwinInstantiationException with the error details.</returns>
-        SendingResult CreateTwinFromPersistenceStore(string digitalTwinId);
+        Task<SendingResult> CreateTwinFromPersistenceStoreAsync(string digitalTwinId);
 
         /// <summary>
         /// Delete a digital twin instance from the ScaleOut data grid.
@@ -86,7 +87,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
 		/// <param name="digitalTwinId">Digital twin identifier.</param>
         /// <returns><see cref="SendingResult.Handled"/> in case of success, otherwise 
         /// the method throws DigitalTwinProcessingException with the error details.</returns>
-        SendingResult DeleteTwin(string digitalTwinId);
+        Task<SendingResult> DeleteTwinAsync(string digitalTwinId);
 
         /// <summary>
         /// Gets an <see cref="ISharedData"/> instance for accessing shared objects

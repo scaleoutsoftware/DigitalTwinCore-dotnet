@@ -285,7 +285,7 @@ namespace Scaleout.DigitalTwin.Workbench
                 // We have all the nice TDigitalTwin type information right now.
                 // Capture this type info in lambdas that do casting. We can use these lambdas later
                 // during a simulation run (when we won't have the type information).
-                registration.InvokeProcessMessages = (processingContext, twinInstance, messages) =>
+                registration.InvokeProcessMessagesAsync = async (processingContext, twinInstance, messages) =>
                 {
                     if (twinInstance == null) throw new ArgumentNullException(nameof(twinInstance));
 
@@ -293,7 +293,7 @@ namespace Scaleout.DigitalTwin.Workbench
                     if (typedTwin == null)
                         throw new ArgumentException($"Real time processor for {modelName} is for a different digital twin type. Expected: {typeof(TDigitalTwin)}; Actual: {twinInstance.GetType()}");
 
-                    ProcessingResult result = realTimeProcessor.ProcessMessages(processingContext, typedTwin, messages);
+                    ProcessingResult result = await realTimeProcessor.ProcessMessagesAsync(processingContext, typedTwin, messages);
                     if (result == ProcessingResult.Remove)
                     {
                         // Remove the instance from the model:

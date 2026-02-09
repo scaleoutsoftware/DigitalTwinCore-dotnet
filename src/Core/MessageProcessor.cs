@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
@@ -28,17 +29,17 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
 	/// <typeparam name="TDigitalTwin">User-defined type for a digital twin object.</typeparam>
 	public abstract class MessageProcessor<TDigitalTwin> : MessageProcessor where TDigitalTwin: class
 	{
-		/// <summary>
-		/// This method is called by ScaleOut StreamServer to pass new messages
-		/// to the specified digital twin object.
-		/// </summary>
-		/// <param name="context">The digital twin message processing context.</param>
-		/// <param name="digitalTwin">The target digital twin object.</param>
-		/// <param name="newMessages">New messages to process.</param>
-		/// <returns><see cref="ProcessingResult.DoUpdate"/> when the digital twin
-		/// object and the list of processed messages need to be updated and <see cref="ProcessingResult.NoUpdate"/> when
-		/// no updates are needed.</returns>
-		public abstract ProcessingResult ProcessMessages(ProcessingContext context, TDigitalTwin digitalTwin, IEnumerable<byte[]> newMessages);
+        /// <summary>
+        /// This method is called by ScaleOut StreamServer to pass new messages
+        /// to the specified digital twin object.
+        /// </summary>
+        /// <param name="context">The digital twin message processing context.</param>
+        /// <param name="digitalTwin">The target digital twin object.</param>
+        /// <param name="msgBytes">Message data to be processed.</param>
+        /// <returns><see cref="ProcessingResult.DoUpdate"/> when the digital twin
+        /// object and the list of processed messages need to be updated and <see cref="ProcessingResult.NoUpdate"/> when
+        /// no updates are needed.</returns>
+        public abstract Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context, TDigitalTwin digitalTwin, byte[] msgBytes);
 
 		/// <inheritdoc/>
 		internal override Type DigitalTwinModelType { get => typeof(TDigitalTwin); }
