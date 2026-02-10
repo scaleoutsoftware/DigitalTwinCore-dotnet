@@ -3,6 +3,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Scaleout.DigitalTwin.Workbench
 {
@@ -10,32 +11,32 @@ namespace Scaleout.DigitalTwin.Workbench
     {
         ConcurrentDictionary<string, byte[]> _data = new ConcurrentDictionary<string, byte[]>();
 
-        public ICacheResult Clear()
+        public Task<ICacheResult> ClearAsync()
         {
             _data.Clear();
-            return new WorkbenchCacheResult(null, CacheOperationStatus.CacheCleared, null);
+            return Task.FromResult<ICacheResult>(new WorkbenchCacheResult(null, CacheOperationStatus.CacheCleared, null));
         }
 
-        public ICacheResult Get(string key)
+        public Task<ICacheResult> GetAsync(string key)
         {
             if (_data.TryGetValue(key, out var result))
-                return new WorkbenchCacheResult(key, CacheOperationStatus.ObjectRetrieved, result);
+                return Task.FromResult<ICacheResult>(new WorkbenchCacheResult(key, CacheOperationStatus.ObjectRetrieved, result));
             else
-                return new WorkbenchCacheResult(key, CacheOperationStatus.ObjectDoesNotExist, null);
+                return Task.FromResult<ICacheResult>(new WorkbenchCacheResult(key, CacheOperationStatus.ObjectDoesNotExist, null));
         }
 
-        public ICacheResult Put(string key, byte[] value)
+        public Task<ICacheResult> PutAsync(string key, byte[] value)
         {
             _data[key] = value;
-            return new WorkbenchCacheResult(key, CacheOperationStatus.ObjectPut, null);
+            return Task.FromResult<ICacheResult>(new WorkbenchCacheResult(key, CacheOperationStatus.ObjectPut, null));
         }
 
-        public ICacheResult Remove(string key)
+        public Task<ICacheResult> RemoveAsync(string key)
         {
             if (_data.TryRemove(key, out var result))
-                return new WorkbenchCacheResult(key, CacheOperationStatus.ObjectRemoved, null);
+                return Task.FromResult<ICacheResult>(new WorkbenchCacheResult(key, CacheOperationStatus.ObjectRemoved, null));
             else
-                return new WorkbenchCacheResult(key, CacheOperationStatus.ObjectDoesNotExist, null);
+                return Task.FromResult<ICacheResult>(new WorkbenchCacheResult(key, CacheOperationStatus.ObjectDoesNotExist, null));
         }
     }
 }

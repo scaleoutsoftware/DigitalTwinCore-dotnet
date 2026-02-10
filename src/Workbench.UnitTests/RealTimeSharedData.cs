@@ -13,18 +13,18 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
     {
         public class SharedDataMessageProcessor : MessageProcessor<RealTimeCarModel>
         {
-            public override Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context, 
+            public async override Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context, 
                                                                         RealTimeCarModel digitalTwin, 
                                                                         byte[] msgBytes)
             {
                 // Modify global shared data:
-                var res = context.SharedGlobalData.Get("foo");
+                var res = await context.SharedGlobalData.GetAsync("foo");
                 if (res.Status == CacheOperationStatus.ObjectDoesNotExist)
                     throw new Exception($"Shared global data item not found.");
                 else if (res.Status == CacheOperationStatus.ObjectRetrieved)
                 {
                     int current = BitConverter.ToInt32(res.Value);
-                    context.SharedGlobalData.Put("foo", BitConverter.GetBytes(++current));
+                    await context.SharedGlobalData.PutAsync("foo", BitConverter.GetBytes(++current));
                 }
                 else
                 {
@@ -32,20 +32,20 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
                 }
 
                 // Modify model-specific shared data:
-                res = context.SharedModelData.Get("bar");
+                res = await context.SharedModelData.GetAsync("bar");
                 if (res.Status == CacheOperationStatus.ObjectDoesNotExist)
                     throw new Exception($"Shared model data item not found.");
                 else if (res.Status == CacheOperationStatus.ObjectRetrieved)
                 {
                     int current = BitConverter.ToInt32(res.Value);
-                    context.SharedModelData.Put("bar", BitConverter.GetBytes(++current));
+                    await context.SharedModelData.PutAsync("bar", BitConverter.GetBytes(++current));
                 }
                 else
                 {
                     throw new Exception($"Bad status {res.Status}");
                 }
 
-                return Task.FromResult(ProcessingResult.DoUpdate);
+                return ProcessingResult.DoUpdate;
             }
         }
 
@@ -55,10 +55,10 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
             RealTimeWorkbench wb = new RealTimeWorkbench();
             var endpoint = wb.AddRealTimeModel("RealTimeCar", new SharedDataMessageProcessor());
 
-            var res = endpoint.SharedGlobalData.Put("foo", BitConverter.GetBytes(0));
+            var res = await endpoint.SharedGlobalData.PutAsync("foo", BitConverter.GetBytes(0));
             Assert.Equal(CacheOperationStatus.ObjectPut, res.Status);
 
-            res = endpoint.SharedModelData.Put("bar", BitConverter.GetBytes(0));
+            res = await endpoint.SharedModelData.PutAsync("bar", BitConverter.GetBytes(0));
             Assert.Equal(CacheOperationStatus.ObjectPut, res.Status);
 
             // Causes shared data to be incremented:
@@ -66,12 +66,12 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
             byte[] msgBytes = Encoding.UTF8.GetBytes(System.Text.Json.JsonSerializer.Serialize(msg));
             await endpoint.SendAsync("Car1", msgBytes);
 
-            res = endpoint.SharedGlobalData.Get("foo");
+            res = await endpoint.SharedGlobalData.GetAsync("foo");
             Assert.Equal(CacheOperationStatus.ObjectRetrieved, res.Status);
             int value = BitConverter.ToInt32(res.Value);
             Assert.Equal(1, value);
 
-            res = endpoint.SharedModelData.Get("bar");
+            res = await endpoint.SharedModelData.GetAsync("bar");
             Assert.Equal(CacheOperationStatus.ObjectRetrieved, res.Status);
             value = BitConverter.ToInt32(res.Value);
             Assert.Equal(1, value);
@@ -81,18 +81,18 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
         {
             public int Speed { get; set; }
 
-            public override void Init(string id, string model, InitContext initContext)
+            public async override Task InitAsync(string id, string model, InitContext initContext)
             {
-                base.Init(id, model, initContext);
+                await base.InitAsync(id, model, initContext);
 
                 // Modify global shared data:
-                var res = initContext.SharedGlobalData.Get("foo");
+                var res = await initContext.SharedGlobalData.GetAsync("foo");
                 if (res.Status == CacheOperationStatus.ObjectDoesNotExist)
-                    initContext.SharedGlobalData.Put("foo", BitConverter.GetBytes(1));
+                    await initContext.SharedGlobalData.PutAsync("foo", BitConverter.GetBytes(1));
                 else if (res.Status == CacheOperationStatus.ObjectRetrieved)
                 {
                     int current = BitConverter.ToInt32(res.Value);
-                    initContext.SharedGlobalData.Put("foo", BitConverter.GetBytes(++current));
+                    await initContext.SharedGlobalData.PutAsync("foo", BitConverter.GetBytes(++current));
                 }
                 else
                 {
@@ -100,13 +100,13 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
                 }
 
                 // Modify model-specific shared data:
-                res = initContext.SharedModelData.Get("bar");
+                res = await initContext.SharedModelData.GetAsync("bar");
                 if (res.Status == CacheOperationStatus.ObjectDoesNotExist)
-                    initContext.SharedModelData.Put("bar", BitConverter.GetBytes(1));
+                    await initContext.SharedModelData.PutAsync("bar", BitConverter.GetBytes(1));
                 else if (res.Status == CacheOperationStatus.ObjectRetrieved)
                 {
                     int current = BitConverter.ToInt32(res.Value);
-                    initContext.SharedModelData.Put("bar", BitConverter.GetBytes(++current));
+                    await initContext.SharedModelData.PutAsync("bar", BitConverter.GetBytes(++current));
                 }
                 else
                 {
@@ -136,12 +136,12 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
 
             // The model's Init method should have incremented shared model
             // and global objects.
-            var res = endpoint.SharedGlobalData.Get("foo");
+            var res = await endpoint.SharedGlobalData.GetAsync("foo");
             Assert.Equal(CacheOperationStatus.ObjectRetrieved, res.Status);
             int value = BitConverter.ToInt32(res.Value);
             Assert.Equal(1, value);
 
-            res = endpoint.SharedModelData.Get("bar");
+            res = await endpoint.SharedModelData.GetAsync("bar");
             Assert.Equal(CacheOperationStatus.ObjectRetrieved, res.Status);
             value = BitConverter.ToInt32(res.Value);
             Assert.Equal(1, value);
@@ -154,11 +154,11 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
 
             // This second instance's Init method should have incremented shared model
             // and global objects again.
-            res = endpoint.SharedGlobalData.Get("foo");
+            res = await endpoint.SharedGlobalData.GetAsync("foo");
             value = BitConverter.ToInt32(res.Value);
             Assert.Equal(2, value);
 
-            res = endpoint.SharedModelData.Get("bar");
+            res = await endpoint.SharedModelData.GetAsync("bar");
             value = BitConverter.ToInt32(res.Value);
             Assert.Equal(2, value);
         }

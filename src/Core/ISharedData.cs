@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
@@ -36,7 +37,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         ///   </item>
         /// </list>
         /// </remarks>
-        ICacheResult Get(string key);
+        Task<ICacheResult> GetAsync(string key);
 
         /// <summary>
         /// Adds or updates an object in the cache.
@@ -60,7 +61,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         ///   </item>
         /// </list>
         /// </remarks>
-        ICacheResult Put(string key, byte[] value);
+        Task<ICacheResult> PutAsync(string key, byte[] value);
 
         /// <summary>
         /// Removes an object from the cache.
@@ -83,7 +84,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         ///   </item>
         /// </list>
         /// </remarks>
-        ICacheResult Remove(string key);
+        Task<ICacheResult> RemoveAsync(string key);
 
         /// <summary>
         /// Clears all objects from the cache.
@@ -105,6 +106,6 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         ///   </item>
         /// </list>
         /// </remarks>
-        ICacheResult Clear();
+        Task<ICacheResult> ClearAsync();
     }
 }
