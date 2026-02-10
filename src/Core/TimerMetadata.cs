@@ -38,6 +38,6 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
 
         /// <summary>The timer handler. Only assign a public static method or 
         /// a class instance method to this property.</summary>
-        public TimerHandler TimerHandler { get; set; }
+        public TimerAsyncHandler TimerHandler { get; set; }
     }
 }

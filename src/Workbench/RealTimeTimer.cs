@@ -49,7 +49,7 @@ namespace Scaleout.DigitalTwin.Workbench
                                  string timerName,
                                  TimerType timerType,
                                  TimeSpan interval,
-                                 TimerHandler callback,
+                                 TimerAsyncHandler callback,
                                  RealTimeWorkbench env,
                                  ILogger? logger = null)
         {

@@ -171,7 +171,7 @@ namespace Scaleout.DigitalTwin.Workbench
             return SendingResult.Handled;
         }
 
-        public override TimerActionResult StartTimer(string timerName, TimeSpan interval, TimerType type, TimerHandler timerCallback)
+        public override TimerActionResult StartTimer(string timerName, TimeSpan interval, TimerType type, TimerAsyncHandler timerCallback)
         {
             RealTimeTimer timer = new RealTimeTimer(
                                                 InstanceRegistration,

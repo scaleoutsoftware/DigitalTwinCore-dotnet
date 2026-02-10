@@ -31,7 +31,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
     /// </summary>
     /// <remarks>
     /// Each digital twin instance can have up to 5 timers that can be started via the 
-	/// <see cref="ProcessingContext.StartTimer(string, TimeSpan, TimerType, TimerHandler)"/> method call.
+	/// <see cref="ProcessingContext.StartTimer(string, TimeSpan, TimerType, TimerAsyncHandler)"/> method call.
     /// </remarks>
     /// <param name="timerName">The timer name.</param>
     /// <param name="context">The digital twin message processing context.</param>
@@ -39,7 +39,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
     /// <returns>Return <see cref="ProcessingResult.DoUpdate"/> to indicate that the digital twin
     /// object data was modified so the digital twin needs to be saved. Return 
     /// <see cref="ProcessingResult.NoUpdate"/> if the twin object was not modified and does not need to be saved.</returns>
-    public delegate ProcessingResult TimerHandler(string timerName, DigitalTwinBase instance, ProcessingContext context);
+    public delegate Task<ProcessingResult> TimerAsyncHandler(string timerName, DigitalTwinBase instance, ProcessingContext context);
 
 	/// <summary>
 	/// All digital twin objects must be subclassed from this <see cref="DigitalTwinBase"/> 

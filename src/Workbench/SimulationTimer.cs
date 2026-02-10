@@ -31,13 +31,13 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public TimeSpan Interval { get; set; }
 
-        public TimerHandler TimerCallback { get; set; }
+        public TimerAsyncHandler TimerCallback { get; set; }
 
         public SimulationTimer(InstanceRegistration instanceRegistration,
                                string timerName,
                                TimerType timerType,
                                TimeSpan interval,
-                               TimerHandler callback) 
+                               TimerAsyncHandler callback) 
             : base(instanceRegistration.DigitalTwinInstance, instanceRegistration.ModelRegistration, null)
         {
             TimerName = timerName;

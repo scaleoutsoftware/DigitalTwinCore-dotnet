@@ -41,16 +41,16 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             {
                 if (!_timerStarted)
                 {
-                    context.StartTimer("foo", TimeSpan.FromSeconds(1), TimerType.OneTime, TimerFiredHandler);
+                    context.StartTimer("foo", TimeSpan.FromSeconds(1), TimerType.OneTime, TimerFiredAsyncHandler);
                     _timerStarted = true;
                 }
                 return Task.FromResult(ProcessingResult.DoUpdate);
             }
 
-            private ProcessingResult TimerFiredHandler(string timerName, DigitalTwinBase instance, ProcessingContext context)
+            private Task<ProcessingResult> TimerFiredAsyncHandler(string timerName, DigitalTwinBase instance, ProcessingContext context)
             {
                 Interlocked.Increment(ref _timerFiredCount);
-                return ProcessingResult.DoUpdate;
+                return Task.FromResult(ProcessingResult.DoUpdate);
             }
 
         }
@@ -84,20 +84,20 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             {
                 if (!_timerStarted)
                 {
-                    context.StartTimer("foo", TimeSpan.FromSeconds(1), TimerType.Recurring, TimerFiredHandler);
+                    context.StartTimer("foo", TimeSpan.FromSeconds(1), TimerType.Recurring, TimerFiredAsyncHandler);
                     _timerStarted = true;
                 }
                 return Task.FromResult(ProcessingResult.DoUpdate);
             }
 
-            private ProcessingResult TimerFiredHandler(string timerName, DigitalTwinBase instance, ProcessingContext context)
+            private Task<ProcessingResult> TimerFiredAsyncHandler(string timerName, DigitalTwinBase instance, ProcessingContext context)
             {
                 Assert.Equal("foo", timerName);
                 Assert.Equal("Car1", instance.Id);
                 Assert.NotNull(context);
 
                 Interlocked.Increment(ref _timerFiredCount);
-                return ProcessingResult.DoUpdate;
+                return Task.FromResult(ProcessingResult.DoUpdate);
             }
         }
 
@@ -127,14 +127,14 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             {
                 if (!_timerStarted)
                 {
-                    context.StartTimer("foo", TimeSpan.FromSeconds(1), TimerType.Recurring, TimerFiredHandler);
+                    context.StartTimer("foo", TimeSpan.FromSeconds(1), TimerType.Recurring, TimerFiredAsyncHandler);
                     _timerStarted = true;
                 }
                 _processModelCount++;
                 return Task.FromResult(ProcessingResult.DoUpdate);
             }
 
-            private ProcessingResult TimerFiredHandler(string timerName, DigitalTwinBase instance, ProcessingContext context)
+            private Task<ProcessingResult> TimerFiredAsyncHandler(string timerName, DigitalTwinBase instance, ProcessingContext context)
             {
                 _timerFiredCount++;
 
@@ -142,7 +142,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
                 {
                     context.StopTimer("foo");
                 }
-                return ProcessingResult.DoUpdate;
+                return Task.FromResult(ProcessingResult.DoUpdate);
             }
         }
 
@@ -194,14 +194,14 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             public override void Init(string id, string model, InitContext initContext)
             {
                 base.Init(id, model, initContext);
-                initContext.StartTimer("foo", TimeSpan.FromSeconds(2), TimerType.OneTime, TimerFiredHandler);
+                initContext.StartTimer("foo", TimeSpan.FromSeconds(2), TimerType.OneTime, TimerFiredAsyncHandler);
             }
 
-            public static ProcessingResult TimerFiredHandler(string timerName, DigitalTwinBase instance, ProcessingContext context)
+            public static Task<ProcessingResult> TimerFiredAsyncHandler(string timerName, DigitalTwinBase instance, ProcessingContext context)
             {
                 var twin = (TimerTwin)instance;
                 twin.TimerFiredCount++;
-                return ProcessingResult.DoUpdate;
+                return Task.FromResult(ProcessingResult.DoUpdate);
             }
         }
 

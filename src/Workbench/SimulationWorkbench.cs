@@ -545,7 +545,7 @@ namespace Scaleout.DigitalTwin.Workbench
                 {
                     case SimulationTimer timerRegistration:
                         _logger.LogTrace("Firing timer {TimerName} for {ModelName}\\{InstanceId}", timerRegistration.TimerName, timerRegistration.ModelRegistration.ModelName, timerRegistration.DigitalTwinInstance.Id);
-                        _ = timerRegistration.TimerCallback(timerRegistration.TimerName, timerRegistration.DigitalTwinInstance, processingContext);
+                        await timerRegistration.TimerCallback(timerRegistration.TimerName, timerRegistration.DigitalTwinInstance, processingContext);
                         break;
                     case InstanceRegistration instanceRegistration:
                         _logger.LogTrace("Invoking ProcessModel for {ModelName}\\{InstanceId}", instanceRegistration.ModelRegistration.ModelName, instanceRegistration.DigitalTwinInstance.Id);

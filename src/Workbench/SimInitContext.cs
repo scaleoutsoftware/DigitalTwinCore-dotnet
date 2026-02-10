@@ -33,7 +33,7 @@ namespace Scaleout.DigitalTwin.Workbench
             _instanceRegistration = instanceRegistration;
             _env = env;
         }
-        public override TimerActionResult StartTimer(string timerName, TimeSpan interval, TimerType type, TimerHandler timerCallback)
+        public override TimerActionResult StartTimer(string timerName, TimeSpan interval, TimerType type, TimerAsyncHandler timerCallback)
         {
             if (timerName == null) throw new ArgumentNullException(nameof(timerName));
             if (timerCallback == null) throw new ArgumentNullException(nameof(timerCallback));

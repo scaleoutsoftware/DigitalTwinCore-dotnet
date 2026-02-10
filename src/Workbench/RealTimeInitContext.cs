@@ -38,7 +38,7 @@ namespace Scaleout.DigitalTwin.Workbench
             _env = env;
             _logger = logger;                
         }
-        public override TimerActionResult StartTimer(string timerName, TimeSpan interval, TimerType type, TimerHandler timerCallback)
+        public override TimerActionResult StartTimer(string timerName, TimeSpan interval, TimerType type, TimerAsyncHandler timerCallback)
         {
             RealTimeTimer timer = new RealTimeTimer(
                                                 _instanceRegistration,
