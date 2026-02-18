@@ -17,37 +17,31 @@
 #endregion
 
 using Microsoft.Extensions.Logging;
-using Scaleout.Modules.DigitalTwin.Abstractions;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
+using Scaleout.Modules.Abstractions;
 
 namespace Scaleout.DigitalTwin.Workbench
 {
     internal static class LogSeverityConverter
     {
         /// <summary>
-        /// Maps a ScaleOut Digital Twin APIs <see cref="LogSeverity"/> 
+        /// Maps a ScaleOut Digital Twin APIs <see cref="AlertSeverity"/> 
         /// to a .NET <see cref="LogLevel"/>.
         /// </summary>
-        /// <param name="severity"><see cref="LogSeverity"/> value.</param>
+        /// <param name="severity"><see cref="AlertSeverity"/> value.</param>
         /// <returns>The corresponding <see cref="LogLevel"/> value.</returns>
-        public static LogLevel ToLogLevel(this LogSeverity severity)
+        public static LogLevel ToLogLevel(this AlertSeverity severity)
         {
             switch (severity)
             {
-                case LogSeverity.None:
+                case AlertSeverity.None:
                     return LogLevel.None;
-                case LogSeverity.Verbose:
-                    return LogLevel.Debug;
-                case LogSeverity.Informational:
+                case AlertSeverity.Info:
                     return LogLevel.Information;
-                case LogSeverity.Warning:
+                case AlertSeverity.Warning:
                     return LogLevel.Warning;
-                case LogSeverity.Error:
+                case AlertSeverity.Error:
                     return LogLevel.Error;
-                case LogSeverity.Critical:
-                    return LogLevel.Critical;
                 default:
                     return LogLevel.Information;
             }

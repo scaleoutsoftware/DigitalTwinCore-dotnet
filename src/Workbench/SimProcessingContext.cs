@@ -18,6 +18,8 @@
 
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
+
+using Scaleout.Modules.Abstractions;
 using Scaleout.Modules.DigitalTwin.Abstractions;
 using System;
 using System.Collections.Generic;
@@ -206,7 +208,7 @@ namespace Scaleout.DigitalTwin.Workbench
             return _env.EventGenerator.SimulationIterationInterval;
         }
 
-        public override Task SendUIAlertAsync(LogSeverity severity, string message)
+        public override Task SendUIAlertAsync(AlertSeverity severity, string message)
         {
             _logger.Log(severity.ToLogLevel(), message);
             return Task.CompletedTask;
