@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.8.34322.80
+# Visual Studio Version 18
+VisualStudioVersion = 18.2.11430.68 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Scaleout.Modules.DigitalTwin.Abstractions", "Core\Scaleout.Modules.DigitalTwin.Abstractions.csproj", "{08EF74F8-05B0-4C63-B410-86710BEFF5A0}"
 EndProject
