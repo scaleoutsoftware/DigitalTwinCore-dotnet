@@ -16,27 +16,31 @@
 
 #endregion
 
-namespace Scaleout.Modules.DigitalTwin.Abstractions
+namespace Scaleout.Modules.Abstractions
 {
-
     /// <summary>
-    /// Represents a response from an <see cref="ISharedData"/> operation.
-    /// </summary>
-    public interface ICacheResult
+	/// Defines the severity levels for alert messages.
+	/// </summary>
+	public enum AlertSeverity
     {
         /// <summary>
-        /// Gets the key to the object associated with the result.
+        /// Indicates that a UI alert has an informational purpose.
         /// </summary>
-        string Key { get; }
+        Info,
 
         /// <summary>
-        /// Get the object returned from a Get operation.
+        /// Indicates that a UI alert is a module warning.
         /// </summary>
-        byte[] Value { get; }
+        Warning,
 
         /// <summary>
-        /// Gets the outcome of the cache operation.
+        /// Indicates that a UI alert is a module error.
         /// </summary>
-        CacheOperationStatus Status { get; }
+        Error,
+
+        /// <summary>
+        /// Indicates that the alert should not be displayed in the UI.
+        /// </summary>
+        None
     }
 }

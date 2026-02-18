@@ -1,6 +1,6 @@
 ﻿#region Copyright notice and license
 
-// Copyright 2023 ScaleOut Software, Inc.
+// Copyright 2023-2026 ScaleOut Software, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -19,6 +19,8 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+
+using Scaleout.Modules.Abstractions;
 
 namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
@@ -82,7 +84,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// </summary>
         /// <param name="severity">The severity level for the specified message.</param>
         /// <param name="message">The user message to log.</param>
-        public abstract Task SendUIAlertAsync(LogSeverity severity, string message);
+        public abstract Task SendUIAlertAsync(AlertSeverity severity, string message);
 
         /// <summary>
         /// Sends an alert using the specified alerting provider. 
