@@ -139,7 +139,7 @@ namespace Scaleout.DigitalTwin.Workbench.MachineLearning
                     wb.AnomalyDetectionProviders[dtModelName] = new Dictionary<string, IAnomalyDetectionProvider>();
                 }
 
-                wb.AnomalyDetectionProviders[dtModelName][referenceName] = anomalyDetectionManager;
+                wb.AnomalyDetectionProviders[dtModelName][referenceName] = (IAnomalyDetectionProvider)anomalyDetectionManager;
                 if (logger != null)
                     logger.LogInformation($"Anomaly Detection Provider {referenceName} has been successfully added to the workbench for the digital twin model: {dtModelName}.");
             }
