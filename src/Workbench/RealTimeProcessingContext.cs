@@ -19,7 +19,6 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 
-using Scaleout.Modules.Abstractions;
 using Scaleout.Modules.DigitalTwin.Abstractions;
 using System;
 using System.Collections.Generic;

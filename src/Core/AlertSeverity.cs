@@ -16,7 +16,7 @@
 
 #endregion
 
-namespace Scaleout.Modules.Abstractions
+namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
     /// <summary>
 	/// Defines the severity levels for alert messages.

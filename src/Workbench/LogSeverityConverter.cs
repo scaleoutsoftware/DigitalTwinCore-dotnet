@@ -18,7 +18,7 @@
 
 using Microsoft.Extensions.Logging;
 
-using Scaleout.Modules.Abstractions;
+using Scaleout.Modules.DigitalTwin.Abstractions;
 
 namespace Scaleout.DigitalTwin.Workbench
 {

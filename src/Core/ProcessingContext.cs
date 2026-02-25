@@ -20,7 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-using Scaleout.Modules.Abstractions;
+using Scaleout.Modules.DigitalTwin.Abstractions;
 
 namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
