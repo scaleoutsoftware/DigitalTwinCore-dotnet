@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <VersionPrefix>0.3.0.0</VersionPrefix>
+    <VersionPrefix>0.4.0.0</VersionPrefix>
     <VersionSuffix>alpha</VersionSuffix>
   </PropertyGroup>
   
@@ -21,7 +21,7 @@
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageIcon>ScaleOutDigitalTwins-Logo-128x128@2x.png</PackageIcon>
     <PackageTags>scaleout digital twin core</PackageTags>
-    <PackageReleaseNotes>Introduces support for anomaly detection in .NET models using Tensorflow</PackageReleaseNotes>
+    <PackageReleaseNotes>Fixes namespace of AlertSeverity.</PackageReleaseNotes>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <SignAssembly>True</SignAssembly>
     <Title>ScaleOut DigitalTwin Builder™ Core Types</Title>
