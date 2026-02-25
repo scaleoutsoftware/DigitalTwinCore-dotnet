@@ -370,7 +370,7 @@ namespace Scaleout.DigitalTwin.Workbench
             InstanceRegistration instanceRegistration = new InstanceRegistration(instance, modelRegistration, dataSource: null);
 
             SimInitContext initContext = new SimInitContext(instanceRegistration, this);
-            instance.InitInternal(instanceId, modelName, initContext);
+            instance.InitInternalAsync(instanceId, modelName, initContext).GetAwaiter().GetResult();
 
             bool foundInstances = _instances.TryGetValue(modelName, out var modelInstances);
             if (!foundInstances)

@@ -45,7 +45,7 @@ namespace Scaleout.DigitalTwin.Workbench
             _logger = logger;
         }
 
-        public Task<SendingResult> CreateTwinAsync(string digitalTwinId, object digitalTwin)
+        public async Task<SendingResult> CreateTwinAsync(string digitalTwinId, object digitalTwin)
         {
             if (digitalTwin == null)
                 throw new ArgumentNullException(nameof(digitalTwin));
@@ -57,14 +57,14 @@ namespace Scaleout.DigitalTwin.Workbench
             var instanceRegistration = new InstanceRegistration(newInstance, _registration, dataSource: null);
 
             var initContext = new RealTimeInitContext(instanceRegistration, _workbench, _logger);
-            newInstance.InitInternal(digitalTwinId, _registration.ModelName, initContext);
+            await newInstance.InitInternalAsync(digitalTwinId, _registration.ModelName, initContext);
             bool added = _modelInstances.TryAdd(digitalTwinId, instanceRegistration);
             if (added)
                 _logger.LogInformation("Digital twin instance {DigitalTwinId} created for model {ModelName}", digitalTwinId, _registration.ModelName);
             else
                 _logger.LogWarning("Digital twin instance {DigitalTwinId} could not be created for model {ModelName} because an instance with this ID already exists.", digitalTwinId, _registration.ModelName);
 
-            return Task.FromResult(SendingResult.Handled);
+            return SendingResult.Handled;
         }
 
         public Task<SendingResult> CreateTwinFromPersistenceStoreAsync(string digitalTwinId, object defaultValue)
@@ -112,7 +112,7 @@ namespace Scaleout.DigitalTwin.Workbench
                 var registration = new InstanceRegistration(newInstance, _registration, dataSource: null);
 
                 var initContext = new RealTimeInitContext(registration, _workbench, _logger);
-                newInstance.InitInternal(digitalTwinId, _registration.ModelName, initContext);
+                newInstance.InitInternalAsync(digitalTwinId, _registration.ModelName, initContext).GetAwaiter().GetResult();
                 return registration;
             });
 

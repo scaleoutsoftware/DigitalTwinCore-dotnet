@@ -160,7 +160,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
                 DigitalTwinBase newInstance = modelRegistration.CreateNew();
                 var registration = new InstanceRegistration(newInstance, modelRegistration, dataSource: this.InstanceRegistration);
-                newInstance.InitInternal(InstanceId, modelName, new SimInitContext(registration, _env));
+                newInstance.InitInternalAsync(InstanceId, modelName, new SimInitContext(registration, _env)).GetAwaiter().GetResult();
                 return registration;
             });
 
@@ -208,7 +208,7 @@ namespace Scaleout.DigitalTwin.Workbench
             return _env.EventGenerator.SimulationIterationInterval;
         }
 
-        public override Task SendUIAlertAsync(AlertSeverity severity, string message)
+        public override Task LogMessageAsync(AlertSeverity severity, string message)
         {
             _logger.Log(severity.ToLogLevel(), message);
             return Task.CompletedTask;
@@ -295,7 +295,7 @@ namespace Scaleout.DigitalTwin.Workbench
                 DigitalTwinBase newInstance = modelRegistration.CreateNew();
 
                 var registration = new InstanceRegistration(newInstance, modelRegistration, dataSource: null);
-                newInstance.InitInternal(targetTwinId, targetTwinModel, new SimInitContext(registration, _env));
+                newInstance.InitInternalAsync(targetTwinId, targetTwinModel, new SimInitContext(registration, _env)).GetAwaiter().GetResult();
                 return registration;
             });
 

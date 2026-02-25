@@ -117,7 +117,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// </param>
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
-        public void InitInternal(string id, string model, InitContext initContext)
+        public Task InitInternalAsync(string id, string model, InitContext initContext)
         {
             if (!Initialized)
             {
@@ -129,8 +129,8 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
                 // Call virtual Init() and InitAsync() methods in case they were overridden by customer
                 //
                 Init(id, model, initContext);
-                // Make sure their InitAsync method is finished before starting processing the 1st messages for this twin
-                InitAsync(id, model, initContext).GetAwaiter().GetResult();
+                // Kick off InitAsync before starting processing the 1st messages for this twin. Caller should await.
+                return InitAsync(id, model, initContext);
             }
             else
             {
@@ -139,6 +139,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
                 {
                     throw new InvalidOperationException("Cannot re-initialize existing digital twin object with different identifier or model type.");
                 }
+                return Task.CompletedTask;
             }
         }
     }

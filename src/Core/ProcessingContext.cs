@@ -80,11 +80,11 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
 
 
         /// <summary>
-        /// Logs user message with the specified severity level.
+        /// Logs a message that is visible in the ScaleOut Digital Twins UI.
         /// </summary>
         /// <param name="severity">The severity level for the specified message.</param>
         /// <param name="message">The user message to log.</param>
-        public abstract Task SendUIAlertAsync(AlertSeverity severity, string message);
+        public abstract Task LogMessageAsync(AlertSeverity severity, string message);
 
         /// <summary>
         /// Sends an alert using the specified alerting provider. 
