@@ -41,27 +41,6 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         Remove
     }
 
-    /// <summary>
-    /// Indicates the status of a <see cref="IMessageSender.Send(string, string, System.Collections.Generic.IEnumerable{byte[]})"/> 
-    /// operation when sending messages to or from a digital twin object.
-    /// </summary>
-    public enum SendingResult
-	{
-		/// <summary>
-		/// The messages were sent and processed successfully.
-		/// </summary>
-		Handled,
-
-		/// <summary>
-		/// An error occurred while sending or processing messages by a digital twin object or data source.
-		/// </summary>
-		NotHandled,
-
-		/// <summary>
-		/// The messages were successfully enqueued for delivery.
-		/// </summary>
-		Enqueued
-	}
 
     /// <summary>
     /// Defines the type of timer that can be created by <see cref="ProcessingContext.StartTimer(string, System.TimeSpan, TimerType, TimerAsyncHandler)"/>.
