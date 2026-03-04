@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <VersionPrefix>0.4.0.0</VersionPrefix>
+    <VersionPrefix>0.5.0.0</VersionPrefix>
     <VersionSuffix>alpha</VersionSuffix>
   </PropertyGroup>
   
@@ -16,7 +16,7 @@
     <PackageProjectUrl>https://static.scaleoutsoftware.com/docs/digital_twin_user_guide/software_toolkit/dt_builder/dotnetcore_api/dotnetcore.html</PackageProjectUrl>
     <RepositoryUrl>https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet</RepositoryUrl>
     <RepositoryType></RepositoryType>
-    <RootNamespace>Scaleout.Streaming.DigitalTwin.Core</RootNamespace>
+    <RootNamespace>Scaleout.Modules.DigitalTwin.Abstractions</RootNamespace>
     <Description>Core classes and interfaces that support ScaleOut Digital Twins™.</Description>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageIcon>ScaleOutDigitalTwins-Logo-128x128@2x.png</PackageIcon>
