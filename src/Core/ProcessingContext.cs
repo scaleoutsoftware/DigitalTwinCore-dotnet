@@ -42,9 +42,8 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// must be JSON encoded.
         /// </summary>
         /// <param name="message">JSON encoded message as <see cref="T:byte[]" />.</param>
-        /// <returns><see cref="SendingResult.Enqueued"/> when message was successfully enqueued,
-        /// <see cref="SendingResult.NotHandled"/> otherwise.</returns>
-        public abstract Task<SendingResult> SendToDataSourceAsync(byte[] message);
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public abstract Task SendToDataSourceAsync(byte[] message);
 
         /// <summary>
         /// Sends a list of messages back to a data source origination point (e.g. IoT device).
@@ -52,9 +51,9 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// must be JSON encoded.
         /// </summary>
         /// <param name="messages">JSON encoded messages as a list of <see cref="T:byte[]" />.</param>
-        /// <returns><see cref="SendingResult.Enqueued"/> when messages were successfully enqueued,
-        /// <see cref="SendingResult.NotHandled"/> otherwise.</returns>
-        public abstract Task<SendingResult> SendToDataSourceAsync(IEnumerable<byte[]> messages);
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public abstract Task SendToDataSourceAsync(IEnumerable<byte[]> messages);
+
 
 
         /// <summary>
@@ -63,9 +62,9 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <param name="targetTwinModel">Digital twin model name.</param>
         /// <param name="targetTwinId">Digital twin identifier.</param>
         /// <param name="message">JSON encoded message as <see cref="T:byte[]" />.</param>
-        /// <returns><see cref="SendingResult.Enqueued"/> when message was successfully enqueued,
-        /// <see cref="SendingResult.NotHandled"/> otherwise.</returns>
-        public abstract Task<SendingResult> SendToTwinAsync(string targetTwinModel, string targetTwinId, byte[] message);
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public abstract Task SendToTwinAsync(string targetTwinModel, string targetTwinId, byte[] message);
+
 
 
         /// <summary>
@@ -74,9 +73,9 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <param name="targetTwinModel">Digital twin model name.</param>
         /// <param name="targetTwinId">Digital twin identifier.</param>
         /// <param name="messages">JSON encoded messages as a list of <see cref="T:byte[]" />.</param>
-        /// <returns><see cref="SendingResult.Enqueued"/> when messages were successfully enqueued,
-        /// <see cref="SendingResult.NotHandled"/> otherwise.</returns>
-        public abstract Task<SendingResult> SendToTwinAsync(string targetTwinModel, string targetTwinId, IEnumerable<byte[]> messages);
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public abstract Task SendToTwinAsync(string targetTwinModel, string targetTwinId, IEnumerable<byte[]> messages);
+
 
 
         /// <summary>
@@ -84,6 +83,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// </summary>
         /// <param name="severity">The severity level for the specified message.</param>
         /// <param name="message">The user message to log.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
         public abstract Task LogMessageAsync(AlertSeverity severity, string message);
 
         /// <summary>
@@ -91,16 +91,16 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// </summary>
         /// <param name="providerName">The name of the configuration of an Alerting Provider to send the alert to.</param>
         /// <param name="alertMessage">The provided object contains information about the alert data, as well as the provider to target.</param>
-        /// <returns></returns>
-        public abstract Task<SendingResult> SendAlertAsync(string providerName, AlertMessage alertMessage);
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public abstract Task SendAlertAsync(string providerName, AlertMessage alertMessage);
 
         /// <summary>
 		/// Sends an alert using the alerting provider that is associated with the 
         /// digital twin model.
 		/// </summary>
 		/// <param name="alertMessage">The provided object contains information about the alert data, as well as the provider to target.</param>
-		/// <returns></returns>
-		public abstract Task<SendingResult> SendAlertAsync(AlertMessage alertMessage);
+		/// <returns>The task object representing the asynchronous operation.</returns>
+		public abstract Task SendAlertAsync(AlertMessage alertMessage);
 
         /// <summary>
         /// Returns a reference to registered AzureDigitalTwins provider the model is using.
@@ -169,7 +169,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// </summary>
         /// <param name="targetTwinModel">Digital twin model name.</param>
         /// <param name="targetTwinId">Digital twin identifier.</param>
-        /// <returns></returns>
-        public abstract Task<SendingResult> RemoveRealTimeTwinAsync(string targetTwinModel, string targetTwinId);
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public abstract Task RemoveRealTimeTwinAsync(string targetTwinModel, string targetTwinId);
     }
 }

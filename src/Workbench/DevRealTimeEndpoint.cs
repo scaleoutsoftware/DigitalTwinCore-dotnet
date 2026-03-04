@@ -45,7 +45,7 @@ namespace Scaleout.DigitalTwin.Workbench
             _logger = logger;
         }
 
-        public async Task<SendingResult> CreateTwinAsync(string digitalTwinId, object digitalTwin)
+        public async Task CreateTwinAsync(string digitalTwinId, object digitalTwin)
         {
             if (digitalTwin == null)
                 throw new ArgumentNullException(nameof(digitalTwin));
@@ -64,20 +64,20 @@ namespace Scaleout.DigitalTwin.Workbench
             else
                 _logger.LogWarning("Digital twin instance {DigitalTwinId} could not be created for model {ModelName} because an instance with this ID already exists.", digitalTwinId, _registration.ModelName);
 
-            return SendingResult.Handled;
+            
         }
 
-        public Task<SendingResult> CreateTwinFromPersistenceStoreAsync(string digitalTwinId, object defaultValue)
+        public Task CreateTwinFromPersistenceStoreAsync(string digitalTwinId, object defaultValue)
         {
             throw new NotSupportedException();
         }
 
-        public Task<SendingResult> CreateTwinFromPersistenceStoreAsync(string digitalTwinId)
+        public Task CreateTwinFromPersistenceStoreAsync(string digitalTwinId)
         {
             throw new NotSupportedException();
         }
 
-        public Task<SendingResult> DeleteTwinAsync(string digitalTwinId)
+        public Task DeleteTwinAsync(string digitalTwinId)
         {
             bool foundInstance = _modelInstances.TryRemove(digitalTwinId, out _);
             if (foundInstance)
@@ -85,11 +85,11 @@ namespace Scaleout.DigitalTwin.Workbench
             else
                 _logger.LogWarning("Digital twin instance {DigitalTwinId} could not be removed for model {ModelName} because it does not exist.", digitalTwinId, _registration.ModelName);
 
-            return Task.FromResult(SendingResult.Handled);
+            return Task.CompletedTask;
 
         }
 
-        public Task<SendingResult> SendAsync(string digitalTwinId, byte[] message)
+        public Task SendAsync(string digitalTwinId, byte[] message)
         {
             if (message == null) throw new ArgumentNullException(nameof(message));
             byte[][] messages = new byte[][] { message };
@@ -97,7 +97,7 @@ namespace Scaleout.DigitalTwin.Workbench
         }
 
 
-        public async Task<SendingResult> SendAsync(string digitalTwinId, IEnumerable<byte[]> messages)
+        public async Task SendAsync(string digitalTwinId, IEnumerable<byte[]> messages)
         {
             if (digitalTwinId == null) throw new ArgumentNullException(nameof(digitalTwinId));
             if (messages == null) throw new ArgumentNullException(nameof(messages));
@@ -133,7 +133,6 @@ namespace Scaleout.DigitalTwin.Workbench
                                                     message);
             }
 
-            return SendingResult.Handled;
         }
 
         public ISharedData SharedModelData => _registration.SharedModelData;

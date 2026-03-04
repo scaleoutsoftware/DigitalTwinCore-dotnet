@@ -74,7 +74,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public InstanceRegistration InstanceRegistration { get; }
 
-        public Task<SendingResult> CreateTwinAsync(string modelName, string twinId, object newInstance)
+        public Task CreateTwinAsync(string modelName, string twinId, object newInstance)
         {
             if (string.IsNullOrWhiteSpace(modelName))
                 throw new ArgumentException("modelName cannot be null or whitespace");
@@ -95,37 +95,35 @@ namespace Scaleout.DigitalTwin.Workbench
                 // TODO: enqueue for immediate processing of this time step
                 throw new NotImplementedException();
             }
-            return Task.FromResult(SendingResult.Handled);
+            return Task.CompletedTask;
         }
 
-        public Task<SendingResult> CreateTwinFromPersistenceStoreAsync(string modelName, string twinId, object defaultInstance)
+        public Task CreateTwinFromPersistenceStoreAsync(string modelName, string twinId, object defaultInstance)
         {
             throw new NotSupportedException();
         }
 
-        public Task<SendingResult> CreateTwinFromPersistenceStoreAsync(string modelName, string twinId)
+        public Task CreateTwinFromPersistenceStoreAsync(string modelName, string twinId)
         {
             throw new NotSupportedException();
         }
 
-        public SendingResult Delay(TimeSpan delay)
+        public void Delay(TimeSpan delay)
         {
             this.RequestedSimulationCycleDelay = delay;
-            return SendingResult.Handled;
         }
 
-        public SendingResult DelayIndefinitely()
+        public void DelayIndefinitely()
         {
             this.RequestedSimulationCycleDelay = TimeSpan.MaxValue;
-            return SendingResult.Handled;
         }
 
-        public Task<SendingResult> DeleteThisTwinAsync()
+        public Task DeleteThisTwinAsync()
         {
             DeleteRequested = true; // prevents simulation instance from being re-enqueud in the scheduler.
 
             _env.RemoveInstance(this.DigitalTwinModel, this.InstanceId);
-            return Task.FromResult(SendingResult.Handled);
+            return Task.CompletedTask;
         }
 
         public void RunThisTwin()
@@ -133,14 +131,14 @@ namespace Scaleout.DigitalTwin.Workbench
             _env.EnqueueImmediate(this.InstanceRegistration);
         }
 
-        public Task<SendingResult> DeleteTwinAsync(string modelName, string twinId)
+        public Task DeleteTwinAsync(string modelName, string twinId)
         {
             _env.RemoveInstance(modelName, twinId);
-            return Task.FromResult(SendingResult.Handled);
+            return Task.CompletedTask;
         }
 
 
-        public async Task<SendingResult> EmitTelemetryAsync(string modelName, byte[] message)
+        public async Task EmitTelemetryAsync(string modelName, byte[] message)
         {
             bool foundModel = _env.Instances.TryGetValue(modelName, out var instances);
             if (!foundModel)
@@ -185,7 +183,6 @@ namespace Scaleout.DigitalTwin.Workbench
                                                                           msg);
             }
 
-            return SendingResult.Handled;
         }
 
         /// <inheritdoc/>
@@ -213,23 +210,23 @@ namespace Scaleout.DigitalTwin.Workbench
             return Task.CompletedTask;
         }
 
-        public override Task<SendingResult> SendAlertAsync(string providerName, AlertMessage alertMessage)
+        public override Task SendAlertAsync(string providerName, AlertMessage alertMessage)
         {
             throw new NotImplementedException();
         }
 
-        public override Task<SendingResult> SendAlertAsync(AlertMessage alertMessage)
+        public override Task SendAlertAsync(AlertMessage alertMessage)
         {
             throw new NotImplementedException();
         }
 
-        public override Task<SendingResult> SendToDataSourceAsync(byte[] message)
+        public override Task SendToDataSourceAsync(byte[] message)
         {
             if (message == null) throw new ArgumentNullException(nameof(message));
             byte[][] messages = new byte[][] { message };
             return SendToDataSourceAsync(messages);
         }
-        public async override Task<SendingResult> SendToDataSourceAsync(IEnumerable<byte[]> messages)
+        public async override Task SendToDataSourceAsync(IEnumerable<byte[]> messages)
         {
             if (InstanceRegistration.DataSource == null)
                 throw new InvalidOperationException($"Data source is not available in this context. (Instance {DigitalTwinModel}\\{InstanceId}).");
@@ -258,17 +255,16 @@ namespace Scaleout.DigitalTwin.Workbench
                                                                          msg);
             }
 
-            return SendingResult.Handled;
         }
 
-        public override Task<SendingResult> SendToTwinAsync(string targetTwinModel, string targetTwinId, byte[] message)
+        public override Task SendToTwinAsync(string targetTwinModel, string targetTwinId, byte[] message)
         {
             if (message == null) throw new ArgumentNullException(nameof(message));
             byte[][] messages = new byte[][] { message };
             return SendToTwinAsync(targetTwinModel, targetTwinId, messages);
         }
 
-        public async override Task<SendingResult> SendToTwinAsync(string targetTwinModel, string targetTwinId, IEnumerable<byte[]> messages)
+        public async override Task SendToTwinAsync(string targetTwinModel, string targetTwinId, IEnumerable<byte[]> messages)
         {
             if (messages == null)
                 throw new ArgumentNullException(nameof(messages));
@@ -318,7 +314,6 @@ namespace Scaleout.DigitalTwin.Workbench
                                                                           msg);
             }
 
-            return SendingResult.Handled;
         }
 
         public override TimerActionResult StartTimer(string timerName, TimeSpan interval, TimerType type, TimerAsyncHandler timerCallback)
@@ -365,10 +360,10 @@ namespace Scaleout.DigitalTwin.Workbench
             StopRequested = true;
         }
 
-        public override Task<SendingResult> RemoveRealTimeTwinAsync(string targetTwinModel, string targetTwinId)
+        public override Task RemoveRealTimeTwinAsync(string targetTwinModel, string targetTwinId)
         {
             _env.RemoveInstance(targetTwinModel, targetTwinId);
-            return Task.FromResult(SendingResult.Handled);
+            return Task.CompletedTask;
         }
     }
 }

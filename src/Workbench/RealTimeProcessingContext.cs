@@ -84,40 +84,40 @@ namespace Scaleout.DigitalTwin.Workbench
             return Task.CompletedTask;
         }
 
-        public override Task<SendingResult> SendAlertAsync(string providerName, AlertMessage alertMessage)
+        public override Task SendAlertAsync(string providerName, AlertMessage alertMessage)
         {
             _env.RecordAlert(providerName, alertMessage);
-            return Task.FromResult(SendingResult.Handled);
+            return Task.CompletedTask;
         }
 
-        public override Task<SendingResult> SendAlertAsync(AlertMessage alertMessage)
+        public override Task SendAlertAsync(AlertMessage alertMessage)
         {
             return SendAlertAsync("default", alertMessage);
         }
 
-        public override Task<SendingResult> SendToDataSourceAsync(byte[] message)
+        public override Task SendToDataSourceAsync(byte[] message)
         {
             _env.SendToDataSouce(InstanceId, DigitalTwinModel, message);
-            return Task.FromResult(SendingResult.Handled);
+            return Task.CompletedTask;
         }
 
-        public override Task<SendingResult> SendToDataSourceAsync(IEnumerable<byte[]> messages)
+        public override Task SendToDataSourceAsync(IEnumerable<byte[]> messages)
         {
             foreach (var msg in messages)
             {
                 SendToDataSourceAsync(msg);
             }
-            return Task.FromResult(SendingResult.Handled);
+            return Task.CompletedTask;
         }
 
-        public override Task<SendingResult> SendToTwinAsync(string targetTwinModel, string targetTwinId, byte[] message)
+        public override Task SendToTwinAsync(string targetTwinModel, string targetTwinId, byte[] message)
         {
             if (message == null) throw new ArgumentNullException(nameof(message));
             byte[][] messages = new byte[][] { message };
             return SendToTwinAsync(targetTwinModel, targetTwinId, messages);
         }
 
-        public async override Task<SendingResult> SendToTwinAsync(string targetTwinModel, string targetTwinId, IEnumerable<byte[]> messages)
+        public async override Task SendToTwinAsync(string targetTwinModel, string targetTwinId, IEnumerable<byte[]> messages)
         {
             if (messages == null)
                 throw new ArgumentNullException(nameof(messages));
@@ -169,7 +169,6 @@ namespace Scaleout.DigitalTwin.Workbench
                                                                           message);
             }
 
-            return SendingResult.Handled;
         }
 
         public override TimerActionResult StartTimer(string timerName, TimeSpan interval, TimerType type, TimerAsyncHandler timerCallback)
@@ -208,7 +207,7 @@ namespace Scaleout.DigitalTwin.Workbench
             }
         }
 
-        public override Task<SendingResult> RemoveRealTimeTwinAsync(string targetTwinModel, string targetTwinId)
+        public override Task RemoveRealTimeTwinAsync(string targetTwinModel, string targetTwinId)
         {
             // Undocumented feature of the real ProcessingContextInternal class: If the targetTwinModel is null/empty,
             // assuming we're working on another instanceRegistration in the same model.
@@ -221,7 +220,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
             instances.TryRemove(targetTwinId, out _);
 
-            return Task.FromResult(SendingResult.Handled);
+            return Task.CompletedTask;
         }
     }
 }
