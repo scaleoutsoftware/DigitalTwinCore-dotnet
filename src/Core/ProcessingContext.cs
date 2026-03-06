@@ -84,7 +84,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <param name="severity">The severity level for the specified message.</param>
         /// <param name="message">The user message to log.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public abstract Task LogMessageAsync(AlertSeverity severity, string message);
+        public abstract Task LogMessageAsync(LogSeverity severity, string message);
 
         /// <summary>
         /// Sends an alert using the specified alerting provider. 

@@ -78,7 +78,7 @@ namespace Scaleout.DigitalTwin.Workbench
             return DateTimeOffset.UtcNow;
         }
 
-        public override Task LogMessageAsync(AlertSeverity severity, string message)
+        public override Task LogMessageAsync(LogSeverity severity, string message)
         {
             _logger.Log(severity.ToLogLevel(), message);
             return Task.CompletedTask;

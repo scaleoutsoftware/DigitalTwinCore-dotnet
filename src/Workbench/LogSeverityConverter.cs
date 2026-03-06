@@ -25,23 +25,27 @@ namespace Scaleout.DigitalTwin.Workbench
     internal static class LogSeverityConverter
     {
         /// <summary>
-        /// Maps a ScaleOut Digital Twin APIs <see cref="AlertSeverity"/> 
+        /// Maps a ScaleOut Digital Twin APIs <see cref="LogSeverity"/> 
         /// to a .NET <see cref="LogLevel"/>.
         /// </summary>
-        /// <param name="severity"><see cref="AlertSeverity"/> value.</param>
+        /// <param name="severity"><see cref="LogSeverity"/> value.</param>
         /// <returns>The corresponding <see cref="LogLevel"/> value.</returns>
-        public static LogLevel ToLogLevel(this AlertSeverity severity)
+        public static LogLevel ToLogLevel(this LogSeverity severity)
         {
             switch (severity)
             {
-                case AlertSeverity.None:
+                case LogSeverity.None:
                     return LogLevel.None;
-                case AlertSeverity.Info:
+                case LogSeverity.Verbose:
+                    return LogLevel.Trace;
+                case LogSeverity.Informational:
                     return LogLevel.Information;
-                case AlertSeverity.Warning:
+                case LogSeverity.Warning:
                     return LogLevel.Warning;
-                case AlertSeverity.Error:
+                case LogSeverity.Error:
                     return LogLevel.Error;
+                case LogSeverity.Critical:
+                    return LogLevel.Critical;
                 default:
                     return LogLevel.Information;
             }
