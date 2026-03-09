@@ -28,7 +28,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.RealTimeCar
 {
     public class RealTimeCarMessageProcessor1 : MessageProcessor<RealTimeCarModel>
     {
-        public override Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] msgBytes)
+        public override Task<ProcessingResult> ProcessMessageAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] msgBytes)
         {
             CarMessage? carMsg = System.Text.Json.JsonSerializer.Deserialize<CarMessage>(msgBytes);
             Assert.NotNull(carMsg);
@@ -39,7 +39,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.RealTimeCar
 
     public class RealTimeCarMessageProcessor2 : MessageProcessor<RealTimeCarModel>
     {
-        public override async Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] msgBytes)
+        public override async Task<ProcessingResult> ProcessMessageAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] msgBytes)
         {
             CarMessage? carMsg = System.Text.Json.JsonSerializer.Deserialize<CarMessage>(msgBytes);
             Assert.NotNull(carMsg);
@@ -55,7 +55,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.RealTimeCar
     {
         public int MessagesReceived = 0;
 
-        public override async Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] msgBytes)
+        public override async Task<ProcessingResult> ProcessMessageAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] msgBytes)
         {
             if (MessagesReceived > 0)
             {
@@ -76,7 +76,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.RealTimeCar
 
     public class RealTimeCarMessageProcessor4 : MessageProcessor<RealTimeCarModel>
     {
-        public override async Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] msgBytes)
+        public override async Task<ProcessingResult> ProcessMessageAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] msgBytes)
         {
             CarMessage? carMsg = System.Text.Json.JsonSerializer.Deserialize<CarMessage>(msgBytes);
             Assert.NotNull(carMsg);
@@ -92,7 +92,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.RealTimeCar
 
     public class RealTimeCarMessageProcessor5 : MessageProcessor<RealTimeCarModel>
     {
-        public override async Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] msgBytes)
+        public override async Task<ProcessingResult> ProcessMessageAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] msgBytes)
         {
             CarMessage? carMsg = System.Text.Json.JsonSerializer.Deserialize<CarMessage>(msgBytes);
             Assert.NotNull(carMsg);
@@ -107,7 +107,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.RealTimeCar
 
     public class RealTimeCarMessageProcessor6 : MessageProcessor<RealTimeCarModel>
     {
-        public override Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] msgBytes)
+        public override Task<ProcessingResult> ProcessMessageAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] msgBytes)
         {
             CarMessage? carMsg = System.Text.Json.JsonSerializer.Deserialize<CarMessage>(msgBytes);
             Assert.NotNull(carMsg);

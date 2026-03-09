@@ -154,7 +154,7 @@ namespace Scaleout.DigitalTwin.Workbench
                 if (typedTwin == null)
                     throw new ArgumentException($"Real time processor for {modelName} is for a different digital twin type. Expected: {typeof(TDigitalTwin)}; Actual: {twinInstance.GetType()}");
 
-                ProcessingResult result = await processor.ProcessMessagesAsync(processingContext, typedTwin, messages);
+                ProcessingResult result = await processor.ProcessMessageAsync(processingContext, typedTwin, messages);
                 if (result == ProcessingResult.Remove)
                 {
                     // Remove the instance from the model:

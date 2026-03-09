@@ -38,7 +38,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <returns><see cref="ProcessingResult.DoUpdate"/> when the digital twin
         /// object and the list of processed messages need to be updated and <see cref="ProcessingResult.NoUpdate"/> when
         /// no updates are needed.</returns>
-        public abstract Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context, TDigitalTwin digitalTwin, byte[] msgBytes);
+        public abstract Task<ProcessingResult> ProcessMessageAsync(ProcessingContext context, TDigitalTwin digitalTwin, byte[] msgBytes);
 
 		/// <inheritdoc/>
 		internal override Type DigitalTwinModelType { get => typeof(TDigitalTwin); }

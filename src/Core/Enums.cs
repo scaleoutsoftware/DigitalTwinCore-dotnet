@@ -20,7 +20,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
     /// <summary>
     /// Specifies whether or not a Digital Twin should be updated after a call to a
-	/// <see cref="MessageProcessor{TDigitalTwin}.ProcessMessagesAsync(ProcessingContext, TDigitalTwin, byte[])"/>
+	/// <see cref="MessageProcessor{TDigitalTwin}.ProcessMessageAsync(ProcessingContext, TDigitalTwin, byte[])"/>
 	/// implementation has returned.
     /// </summary>
     public enum ProcessingResult

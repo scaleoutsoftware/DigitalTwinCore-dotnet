@@ -37,7 +37,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             public int _timerFiredCount = 0;
 
 
-            public override Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] msgBytes)
+            public override Task<ProcessingResult> ProcessMessageAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] msgBytes)
             {
                 if (!_timerStarted)
                 {
@@ -80,7 +80,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             public int _timerFiredCount = 0;
 
 
-            public override Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] messages)
+            public override Task<ProcessingResult> ProcessMessageAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] messages)
             {
                 if (!_timerStarted)
                 {
@@ -123,7 +123,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             public int _processModelCount = 0;
 
 
-            public override Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] msgBytes)
+            public override Task<ProcessingResult> ProcessMessageAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] msgBytes)
             {
                 if (!_timerStarted)
                 {
@@ -207,7 +207,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
         class InitTimerProcessor : MessageProcessor<TimerTwin>
         {
-            public override Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context, TimerTwin digitalTwin, byte[] msgBytes)
+            public override Task<ProcessingResult> ProcessMessageAsync(ProcessingContext context, TimerTwin digitalTwin, byte[] msgBytes)
             {
                 return Task.FromResult(ProcessingResult.DoUpdate);
             }

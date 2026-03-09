@@ -13,7 +13,7 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
     {
         public class SharedDataMessageProcessor : MessageProcessor<RealTimeCarModel>
         {
-            public async override Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context, 
+            public async override Task<ProcessingResult> ProcessMessageAsync(ProcessingContext context, 
                                                                         RealTimeCarModel digitalTwin, 
                                                                         byte[] msgBytes)
             {
@@ -117,7 +117,7 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
 
         public class TrainMessageProcessor : MessageProcessor<RealTimeTrainModel>
         {
-            public override Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context,
+            public override Task<ProcessingResult> ProcessMessageAsync(ProcessingContext context,
                                                                         RealTimeTrainModel digitalTwin,
                                                                         byte[] msgBytes)
             {

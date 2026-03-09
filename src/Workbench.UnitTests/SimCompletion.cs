@@ -215,7 +215,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
         class RunThisTwinMsgProcessor : MessageProcessor<SimulatedCarModel>
         {
-            public override Task<ProcessingResult> ProcessMessagesAsync(ProcessingContext context, SimulatedCarModel digitalTwin, byte[] msgBytes)
+            public override Task<ProcessingResult> ProcessMessageAsync(ProcessingContext context, SimulatedCarModel digitalTwin, byte[] msgBytes)
             {
                 var statusMessage = System.Text.Json.JsonSerializer.Deserialize<StatusMessage>(msgBytes);
                 Assert.NotNull(statusMessage);

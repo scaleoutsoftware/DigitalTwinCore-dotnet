@@ -49,7 +49,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// Delays calling the <see cref="SimulationProcessor{TDigitalTwin}.ProcessModelAsync(ProcessingContext, TDigitalTwin, DateTimeOffset)"/>
         /// method for this instance forever. Users can interrupt this infinite delay later
         /// by calling <see cref="ISimulationController.RunThisTwin"/> for this instance within the 
-        /// <see cref="MessageProcessor{TDigitalTwin}.ProcessMessagesAsync(ProcessingContext, TDigitalTwin, byte[])"/> method call.
+        /// <see cref="MessageProcessor{TDigitalTwin}.ProcessMessageAsync(ProcessingContext, TDigitalTwin, byte[])"/> method call.
         /// </summary>
         /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException">
         /// The exception is thrown if the current digital twin model does not support simulation.
