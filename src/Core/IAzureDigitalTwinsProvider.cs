@@ -21,7 +21,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using Scaleout.Modules.DigitalTwin.Abstractions.Exceptions;
 
-namespace Scaleout.Modules.Abstractions
+namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
     /// <summary>
     /// Defines the methods available to ScaleOut Digital Twins for interacting with

@@ -63,7 +63,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public override string DigitalTwinModel { get; }
 
-        public override IDigitalTwinModelProvider AzureDigitalTwinsProvider => throw new NotSupportedException();
+        public override IAzureDigitalTwinsProvider AzureDigitalTwinsProvider => throw new NotSupportedException();
 
         public override Dictionary<string, IAnomalyDetectionProvider> AnomalyDetectionProviders { get; }
 
@@ -171,7 +171,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
         }
 
-        public override TimerActionResult StartTimer(string timerName, TimeSpan interval, TimerType type, TimerAsyncHandler timerCallback)
+        public override Task<TimerActionResult> StartTimerAsync(string timerName, TimeSpan interval, TimerType type, TimerAsyncHandler timerCallback)
         {
             RealTimeTimer timer = new RealTimeTimer(
                                                 InstanceRegistration,
@@ -185,25 +185,25 @@ namespace Scaleout.DigitalTwin.Workbench
             if (added)
             {
                 timer.Start();
-                return TimerActionResult.Success;
+                return Task.FromResult(TimerActionResult.Success);
             }
             else
             {
-                return TimerActionResult.FailedTimerAlreadyExists;
+                return Task.FromResult(TimerActionResult.FailedTimerAlreadyExists);
             }
             
         }
 
-        public override TimerActionResult StopTimer(string timerName)
+        public override Task<TimerActionResult> StopTimerAsync(string timerName)
         {
             bool found = _env.Timers.TryGetValue(timerName, out var timerReg);
             if (!found)
-                return TimerActionResult.FailedNoSuchTimer;
+                return Task.FromResult(TimerActionResult.FailedNoSuchTimer);
             else
             {
                 timerReg.Stop().GetAwaiter().GetResult();
                 _env.Timers.Remove(timerName);
-                return TimerActionResult.Success;
+                return Task.FromResult(TimerActionResult.Success);
             }
         }
 

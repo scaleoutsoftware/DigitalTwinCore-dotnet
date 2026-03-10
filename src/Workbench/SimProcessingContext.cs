@@ -61,7 +61,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public bool DeleteRequested { get; set; } = false;
 
-        public override IDigitalTwinModelProvider AzureDigitalTwinsProvider => throw new NotImplementedException();
+        public override IAzureDigitalTwinsProvider AzureDigitalTwinsProvider => throw new NotImplementedException();
 
         public override Dictionary<string, IAnomalyDetectionProvider> AnomalyDetectionProviders => throw new NotImplementedException();
 
@@ -120,7 +120,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public Task DeleteThisTwinAsync()
         {
-            DeleteRequested = true; // prevents simulation instance from being re-enqueud in the scheduler.
+            DeleteRequested = true; // prevents simulation instance from being re-enqueued in the scheduler.
 
             _env.RemoveInstance(this.DigitalTwinModel, this.InstanceId);
             return Task.CompletedTask;
@@ -328,7 +328,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
         }
 
-        public override TimerActionResult StartTimer(string timerName, TimeSpan interval, TimerType type, TimerAsyncHandler timerCallback)
+        public override Task<TimerActionResult> StartTimerAsync(string timerName, TimeSpan interval, TimerType type, TimerAsyncHandler timerCallback)
         {
             if (timerName == null) throw new ArgumentNullException(nameof(timerName));
             if (timerCallback == null) throw new ArgumentNullException(nameof(timerCallback));
@@ -343,27 +343,27 @@ namespace Scaleout.DigitalTwin.Workbench
             if (added)
             {
                 if (_env.EventGenerator == null)
-                    return TimerActionResult.FailedInternalError;
+                    return Task.FromResult(TimerActionResult.FailedInternalError);
 
                 _env.EventGenerator.EnqueueEvent(timerRegistration, _env.CurrentTime + timerRegistration.Interval);
-                return TimerActionResult.Success;
+                return Task.FromResult(TimerActionResult.Success);
             }
             else
             {
-                return TimerActionResult.FailedTimerAlreadyExists;
+                return Task.FromResult(TimerActionResult.FailedTimerAlreadyExists);
             }
         }
 
-        public override TimerActionResult StopTimer(string timerName)
+        public override Task<TimerActionResult> StopTimerAsync(string timerName)
         {
             bool found = _env.Timers.TryGetValue(timerName, out var timerReg);
             if (!found)
-                return TimerActionResult.FailedNoSuchTimer;
+                return Task.FromResult(TimerActionResult.FailedNoSuchTimer);
             else
             {
                 timerReg.IsDeleted = true;
                 _env.Timers.Remove(timerName);
-                return TimerActionResult.Success;
+                return Task.FromResult(TimerActionResult.Success);
             }
         }
 

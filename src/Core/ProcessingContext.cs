@@ -16,11 +16,10 @@
 
 #endregion
 
+using Scaleout.Modules.DigitalTwin.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-
-using Scaleout.Modules.DigitalTwin.Abstractions;
 
 namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
@@ -108,7 +107,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// Digital Twins service, and the model must be configured to use it in appsettings.json.
         /// </summary>
         /// <returns>The AzureDigitalTwins provider used by the model.</returns>
-        public abstract IDigitalTwinModelProvider AzureDigitalTwinsProvider { get; }
+        public abstract IAzureDigitalTwinsProvider AzureDigitalTwinsProvider { get; }
 
         /// <summary>
         /// Returns the collection of registered anomaly detection providers the model has access to.
@@ -125,7 +124,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <returns><see cref="TimerActionResult.Success"/> if the timer was started successfully, otherwise one of the following 
         /// error codes is returned: <see cref="TimerActionResult.FailedTooManyTimers"/> when the maximum number of timers is reached or 
         /// <see cref="TimerActionResult.FailedInternalError"/> if an error occurred during the method call.</returns>
-        public abstract TimerActionResult StartTimer(string timerName, TimeSpan interval, TimerType type, TimerAsyncHandler timerCallback);
+        public abstract Task<TimerActionResult> StartTimerAsync(string timerName, TimeSpan interval, TimerType type, TimerAsyncHandler timerCallback);
 
         /// <summary>
         /// Stops the specified timer.
@@ -134,7 +133,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <returns><see cref="TimerActionResult.Success"/> if the timer was stopped successfully, otherwise one of the following 
         /// error codes is returned: <see cref="TimerActionResult.FailedNoSuchTimer"/> when the specified timer was not found or 
         /// <see cref="TimerActionResult.FailedInternalError"/> if an error occurred during the method call.</returns>
-        public abstract TimerActionResult StopTimer(string timerName);
+        public abstract Task<TimerActionResult> StopTimerAsync(string timerName);
 
         /// <summary>
         /// Returns the <see cref="ISimulationController"/> interface to control

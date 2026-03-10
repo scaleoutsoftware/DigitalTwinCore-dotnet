@@ -552,6 +552,8 @@ namespace Scaleout.DigitalTwin.Workbench
 
                 if (simEvent.ModelRegistration.InvokeProcessModelAsync == null)
                     throw new InvalidOperationException("Model was not configured to process simulation events.");
+                if (simEvent.ModelRegistration.InvokeInitSimulation == null)
+                    throw new InvalidOperationException("Model was not configured to initialize simulation.");
 
                 // NOTE: The returned ProcessingResult is ignored after invoking the callbacks below.
                 // (Since we're working with inproc instances, all changes to the instance will be

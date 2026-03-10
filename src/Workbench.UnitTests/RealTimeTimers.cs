@@ -37,14 +37,14 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             public int _timerFiredCount = 0;
 
 
-            public override Task<ProcessingResult> ProcessMessageAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] msgBytes)
+            public override async Task<ProcessingResult> ProcessMessageAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] msgBytes)
             {
                 if (!_timerStarted)
                 {
-                    context.StartTimer("foo", TimeSpan.FromSeconds(1), TimerType.OneTime, TimerFiredAsyncHandler);
+                    await context.StartTimerAsync("foo", TimeSpan.FromSeconds(1), TimerType.OneTime, TimerFiredAsyncHandler);
                     _timerStarted = true;
                 }
-                return Task.FromResult(ProcessingResult.DoUpdate);
+                return ProcessingResult.DoUpdate;
             }
 
             private Task<ProcessingResult> TimerFiredAsyncHandler(string timerName, DigitalTwinBase instance, ProcessingContext context)
@@ -80,14 +80,14 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             public int _timerFiredCount = 0;
 
 
-            public override Task<ProcessingResult> ProcessMessageAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] messages)
+            public override async Task<ProcessingResult> ProcessMessageAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] messages)
             {
                 if (!_timerStarted)
                 {
-                    context.StartTimer("foo", TimeSpan.FromSeconds(1), TimerType.Recurring, TimerFiredAsyncHandler);
+                    await context.StartTimerAsync("foo", TimeSpan.FromSeconds(1), TimerType.Recurring, TimerFiredAsyncHandler);
                     _timerStarted = true;
                 }
-                return Task.FromResult(ProcessingResult.DoUpdate);
+                return ProcessingResult.DoUpdate;
             }
 
             private Task<ProcessingResult> TimerFiredAsyncHandler(string timerName, DigitalTwinBase instance, ProcessingContext context)
@@ -123,26 +123,26 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             public int _processModelCount = 0;
 
 
-            public override Task<ProcessingResult> ProcessMessageAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] msgBytes)
+            public override async Task<ProcessingResult> ProcessMessageAsync(ProcessingContext context, RealTimeCarModel digitalTwin, byte[] msgBytes)
             {
                 if (!_timerStarted)
                 {
-                    context.StartTimer("foo", TimeSpan.FromSeconds(1), TimerType.Recurring, TimerFiredAsyncHandler);
+                    await context.StartTimerAsync("foo", TimeSpan.FromSeconds(1), TimerType.Recurring, TimerFiredAsyncHandler);
                     _timerStarted = true;
                 }
                 _processModelCount++;
-                return Task.FromResult(ProcessingResult.DoUpdate);
+                return ProcessingResult.DoUpdate;
             }
 
-            private Task<ProcessingResult> TimerFiredAsyncHandler(string timerName, DigitalTwinBase instance, ProcessingContext context)
+            private async Task<ProcessingResult> TimerFiredAsyncHandler(string timerName, DigitalTwinBase instance, ProcessingContext context)
             {
                 _timerFiredCount++;
 
                 if (_timerFiredCount == 2)
                 {
-                    context.StopTimer("foo");
+                    await context.StopTimerAsync("foo");
                 }
-                return Task.FromResult(ProcessingResult.DoUpdate);
+                return ProcessingResult.DoUpdate;
             }
         }
 
