@@ -1,6 +1,6 @@
 ﻿#region Copyright notice and license
 
-// Copyright 2023 ScaleOut Software, Inc.
+// Copyright 2023-2025 ScaleOut Software, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -204,6 +204,18 @@ namespace Scaleout.DigitalTwin.Workbench
             return _env.EventGenerator.SimulationIterationInterval;
         }
 
+        /// <inheritdoc/>
+        public DateTimeOffset SimulationStartTime
+        {
+            get
+            {
+                if (_env == null || _env.EventGenerator == null)
+                    throw new InvalidOperationException("Not running a simulation.");
+
+                return _env.EventGenerator.StartTime;
+            }
+        }
+
         public override Task LogMessageAsync(LogSeverity severity, string message)
         {
             _logger.Log(severity.ToLogLevel(), message);
@@ -362,6 +374,11 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public override Task RemoveRealTimeTwinAsync(string targetTwinModel, string targetTwinId)
         {
+            // Undocumented feature of the real ProcessingContextInternal class: If the targetTwinModel is null/empty,
+            // assuming we're sending a message to another instance in the same model.
+            if (string.IsNullOrEmpty(targetTwinModel))
+                targetTwinModel = this.DigitalTwinModel;
+
             _env.RemoveInstance(targetTwinModel, targetTwinId);
             return Task.CompletedTask;
         }

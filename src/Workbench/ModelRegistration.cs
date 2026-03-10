@@ -1,6 +1,6 @@
 ﻿#region Copyright notice and license
 
-// Copyright 2023 ScaleOut Software, Inc.
+// Copyright 2023-2025 ScaleOut Software, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -24,6 +24,8 @@ using System.Threading.Tasks;
 
 namespace Scaleout.DigitalTwin.Workbench
 {
+    internal delegate ProcessingResult InitSimulationInvoker(InitSimulationContext initSimulationContext, DigitalTwinBase dtInstance, DateTimeOffset simulationTime);
+
     internal delegate Task<ProcessingResult> ProcessModelAsyncInvoker(ProcessingContext processingContext, DigitalTwinBase dtInstance, DateTimeOffset simulationTime);
 
     internal delegate Task<ProcessingResult> ProcessMessagesAsyncInvoker(ProcessingContext processingContext, DigitalTwinBase dtInstance, byte[] msgBytes);
@@ -44,6 +46,8 @@ namespace Scaleout.DigitalTwin.Workbench
         public SimulationProcessor? SimulationProcessor { get; set; }
 
         public ISharedData SharedModelData { get; set; }
+
+        public InitSimulationInvoker? InvokeInitSimulation;
 
         public ProcessModelAsyncInvoker? InvokeProcessModelAsync { get; set; }
 

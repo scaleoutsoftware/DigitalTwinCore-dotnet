@@ -160,5 +160,11 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// Stop the currently running simulation.
         /// </summary>
         void StopSimulation();
+
+        /// <summary>
+        /// Returns the simulation start time in UTC.
+        /// </summary>
+        /// <returns>The simulation start time.</returns>
+        DateTimeOffset SimulationStartTime { get; }
     }
 }

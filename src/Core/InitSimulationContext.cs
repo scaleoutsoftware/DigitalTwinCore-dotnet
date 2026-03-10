@@ -1,6 +1,6 @@
 ﻿#region Copyright notice and license
 
-// Copyright 2023-2025 ScaleOut Software, Inc.
+// Copyright 2024-2025 ScaleOut Software, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,33 +16,24 @@
 
 #endregion
 
-using Scaleout.Modules.DigitalTwin.Abstractions;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Scaleout.DigitalTwin.Workbench
+namespace Scaleout.Streaming.DigitalTwin.Core
 {
     /// <summary>
-    /// An alert that was sent from a MessageProcessor using
-    /// <see cref="ProcessingContext.SendAlertAsync(string, AlertMessage)"/>.
+    /// Context object that provides operations that are available
+	/// when a new simulation starts
     /// </summary>
-    public class PostedAlert
+    public abstract class InitSimulationContext
     {
-        internal PostedAlert(string alertProviderName, AlertMessage alertMessage)
-        {
-            AlertProviderName = alertProviderName;
-            AlertMessage = alertMessage;
-        }
+        /// <summary>
+        /// Gets an <see cref="ISharedData"/> instance for accessing shared objects
+        /// that are associated with the model being processed.
+        /// </summary>
+        public abstract ISharedData SharedModelData { get; }
 
         /// <summary>
-        /// Alert provider's name.
+        /// Gets an <see cref="ISharedData"/> instance for accessing objects
+        /// that are shared globally between all models.
         /// </summary>
-        public string AlertProviderName { get; }
-
-        /// <summary>
-        /// The message sent to the alert provider.
-        /// </summary>
-        public AlertMessage AlertMessage { get; }
+        public abstract ISharedData SharedGlobalData { get; }
     }
 }
