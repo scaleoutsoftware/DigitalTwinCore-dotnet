@@ -43,12 +43,12 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
 
 
     /// <summary>
-    /// Defines the type of timer that can be created by <see cref="ProcessingContext.StartTimer(string, System.TimeSpan, TimerType, TimerAsyncHandler)"/>.
+    /// Defines the type of timer that can be created by <see cref="ProcessingContext.StartTimerAsync(string, System.TimeSpan, TimerType, TimerAsyncHandler)"/>.
     /// </summary>
     public enum TimerType
 	{
 		/// <summary>The timer is fired periodically with the specified interval 
-		/// until the <see cref="ProcessingContext.StopTimer(string)"/> is called.</summary>
+		/// until the <see cref="ProcessingContext.StopTimerAsync(string)"/> is called.</summary>
 		Recurring,
 
 		/// <summary>The timer is fired once after the specified time interval is elapsed.</summary>

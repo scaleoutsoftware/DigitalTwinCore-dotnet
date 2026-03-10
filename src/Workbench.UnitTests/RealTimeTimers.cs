@@ -191,10 +191,10 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
         class TimerTwin : DigitalTwinBase
         {
             public int TimerFiredCount;
-            public override void Init(string id, string model, InitContext initContext)
+            public override async Task InitAsync(string id, string model, InitContext initContext)
             {
-                base.Init(id, model, initContext);
-                initContext.StartTimer("foo", TimeSpan.FromSeconds(2), TimerType.OneTime, TimerFiredAsyncHandler);
+                await base.InitAsync(id, model, initContext);
+                await initContext.StartTimerAsync("foo", TimeSpan.FromSeconds(2), TimerType.OneTime, TimerFiredAsyncHandler);
             }
 
             public static Task<ProcessingResult> TimerFiredAsyncHandler(string timerName, DigitalTwinBase instance, ProcessingContext context)

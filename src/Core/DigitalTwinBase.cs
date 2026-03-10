@@ -28,7 +28,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
     /// </summary>
     /// <remarks>
     /// Each digital twin instance can have up to 5 timers that can be started via the 
-    /// <see cref="ProcessingContext.StartTimer(string, TimeSpan, TimerType, TimerAsyncHandler)"/> method call.
+    /// <see cref="ProcessingContext.StartTimerAsync(string, TimeSpan, TimerType, TimerAsyncHandler)"/> method call.
     /// </remarks>
     /// <param name="timerName">The timer name.</param>
     /// <param name="context">The digital twin message processing context.</param>

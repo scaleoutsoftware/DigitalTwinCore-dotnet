@@ -20,6 +20,7 @@ using Scaleout.Modules.DigitalTwin.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Scaleout.DigitalTwin.Workbench
 {
@@ -33,7 +34,7 @@ namespace Scaleout.DigitalTwin.Workbench
             _instanceRegistration = instanceRegistration;
             _env = env;
         }
-        public override TimerActionResult StartTimer(string timerName, TimeSpan interval, TimerType type, TimerAsyncHandler timerCallback)
+        public override Task<TimerActionResult> StartTimerAsync(string timerName, TimeSpan interval, TimerType type, TimerAsyncHandler timerCallback)
         {
             if (timerName == null) throw new ArgumentNullException(nameof(timerName));
             if (timerCallback == null) throw new ArgumentNullException(nameof(timerCallback));
@@ -58,11 +59,11 @@ namespace Scaleout.DigitalTwin.Workbench
                 {
                     _env.EventGenerator.EnqueueEvent(timerRegistration, _env.CurrentTime + timerRegistration.Interval);
                 }
-                return TimerActionResult.Success;
+                return Task.FromResult(TimerActionResult.Success);
             }
             else
             {
-                return TimerActionResult.FailedTimerAlreadyExists;
+                return Task.FromResult(TimerActionResult.FailedTimerAlreadyExists);
             }
         }
 
