@@ -16,7 +16,7 @@
 
 #endregion
 
-namespace Scaleout.Streaming.DigitalTwin.Core
+namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
     /// <summary>
     /// Context object that provides operations that are available

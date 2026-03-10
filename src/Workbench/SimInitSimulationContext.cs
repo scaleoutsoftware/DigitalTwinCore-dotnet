@@ -16,7 +16,7 @@
 
 #endregion
 
-using Scaleout.Streaming.DigitalTwin.Core;
+using Scaleout.Modules.DigitalTwin.Abstractions;
 
 namespace Scaleout.DigitalTwin.Workbench
 {
