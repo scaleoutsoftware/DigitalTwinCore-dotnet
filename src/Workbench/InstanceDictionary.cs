@@ -27,7 +27,7 @@ using System.Text;
 namespace Scaleout.DigitalTwin.Workbench
 {
     internal class InstanceDictionary<TDigitalTwin> : IReadOnlyDictionary<string, TDigitalTwin>
-        where TDigitalTwin : DigitalTwinBase
+        where TDigitalTwin : DigitalTwinBase<TDigitalTwin>, new()
     {
         IDictionary<string, InstanceRegistration> _instanceRegistrations;
 
@@ -35,14 +35,24 @@ namespace Scaleout.DigitalTwin.Workbench
         {
             _instanceRegistrations = instanceRegistrations;
         }
-        public TDigitalTwin this[string key] => (TDigitalTwin)_instanceRegistrations[key].DigitalTwinInstance;
+        public TDigitalTwin this[string key]
+        {
+            get {
+                var typedRegistration = _instanceRegistrations[key] as InstanceRegistration<TDigitalTwin>;
+                if (typedRegistration == null)
+                    throw new Exception($"Instance registration is not the the expected type.");
+
+                return typedRegistration.DigitalTwinInstance;
+            }
+           
+        }
 
         public IEnumerable<string> Keys => _instanceRegistrations.Keys;
 
         public IEnumerable<TDigitalTwin> Values => 
             _instanceRegistrations.Values
-                    .Select(ir => ir.DigitalTwinInstance)
-                    .Cast<TDigitalTwin>();
+                    .Cast<InstanceRegistration<TDigitalTwin>>()
+                    .Select(ir => ir.DigitalTwinInstance);
 
         public int Count => _instanceRegistrations.Count;
 
@@ -55,7 +65,11 @@ namespace Scaleout.DigitalTwin.Workbench
         {
             foreach (var item in _instanceRegistrations)
             {
-                yield return new KeyValuePair<string, TDigitalTwin>(item.Key, (TDigitalTwin)item.Value.DigitalTwinInstance);
+                var typedRegistration = item.Value as InstanceRegistration<TDigitalTwin>;
+                if (typedRegistration == null)
+                    throw new Exception($"Instance registration is not the the expected type.");
+
+                yield return new KeyValuePair<string, TDigitalTwin>(item.Key, typedRegistration.DigitalTwinInstance);
             }
         }
 
@@ -63,7 +77,10 @@ namespace Scaleout.DigitalTwin.Workbench
         {
             if (_instanceRegistrations.TryGetValue(key, out InstanceRegistration ir))
             {
-                value = (TDigitalTwin)ir.DigitalTwinInstance;
+                var typedRegistration = ir as InstanceRegistration<TDigitalTwin>;
+                if (typedRegistration == null)
+                    throw new Exception($"Instance registration is not the the expected type.");
+                value = typedRegistration.DigitalTwinInstance;
                 return true;
             }
             else

@@ -21,11 +21,10 @@ using System;
 namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
     /// <summary>
-    /// Used by the <see cref="DigitalTwinBase"/> class to store
+    /// Used by the <see cref="DigitalTwinBase{TDigitalTwin}"/> class to store
     /// information about a timer associated with a Digital Twin instance.
     /// </summary>
-    [Serializable]
-    sealed public class TimerMetadata
+    sealed public class TimerMetadata<TDigitalTwin> where TDigitalTwin : DigitalTwinBase<TDigitalTwin>
     {
         /// <summary>The timer Id.</summary>
         public int Id { get; set; }
@@ -38,6 +37,6 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
 
         /// <summary>The timer handler. Only assign a public static method or 
         /// a class instance method to this property.</summary>
-        public TimerAsyncHandler TimerHandler { get; set; }
+        public TimerAsyncHandler<TDigitalTwin> TimerHandler { get; set; }
     }
 }

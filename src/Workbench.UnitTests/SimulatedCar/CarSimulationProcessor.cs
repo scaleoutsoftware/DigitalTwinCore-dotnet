@@ -30,7 +30,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar
 
     class DoNothingProcessor : SimulationProcessor<SimulatedCarModel>
     {
-        public override Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+        public override Task<ProcessingResult> ProcessModelAsync(ProcessingContext<SimulatedCarModel> context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
         {
             return Task.FromResult(ProcessingResult.DoUpdate);
         }
@@ -43,7 +43,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar
             return ProcessingResult.NoUpdate;
         }
 
-        public override Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+        public override Task<ProcessingResult> ProcessModelAsync(ProcessingContext<SimulatedCarModel> context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
         {
             digitalTwin.Speed = RandomNumberGenerator.GetInt32(45, 65);
             context.SimulationController.Delay(digitalTwin.DelayTime);
@@ -54,7 +54,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar
     public class CarSimulationProcessor2 : SimulationProcessor<SimulatedCarModel>
     {
         
-        public async override Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+        public async override Task<ProcessingResult> ProcessModelAsync(ProcessingContext<SimulatedCarModel> context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
         {
             CarMessage msg = new CarMessage() { Speed = digitalTwin.Speed };
             byte[] msgBytes = System.Text.Json.JsonSerializer.SerializeToUtf8Bytes(msg);
@@ -66,7 +66,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar
 
     public class CarSimulationProcessor3 : SimulationProcessor<SimulatedCarModel>
     {
-        public async override Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+        public async override Task<ProcessingResult> ProcessModelAsync(ProcessingContext<SimulatedCarModel> context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
         {
             digitalTwin.Speed = 75;
             CarMessage msg = new CarMessage() { Speed = digitalTwin.Speed };
@@ -78,7 +78,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar
 
     public class CarSimulationProcessor4 : SimulationProcessor<SimulatedCarModel>
     {
-        public async override Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+        public async override Task<ProcessingResult> ProcessModelAsync(ProcessingContext<SimulatedCarModel> context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
         {
             await context.SimulationController.DeleteThisTwinAsync();
             return ProcessingResult.DoUpdate;        }
@@ -86,7 +86,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar
 
     public class CarSimulationProcessor5 : SimulationProcessor<SimulatedCarModel>
     {
-        public async override Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+        public async override Task<ProcessingResult> ProcessModelAsync(ProcessingContext<SimulatedCarModel> context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
         {
             // use speed as a countdown to zero, then delete the DT instance.
             digitalTwin.Speed = digitalTwin.Speed - 1;
@@ -100,7 +100,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar
 
     public class CarSimulationProcessor6 : SimulationProcessor<SimulatedCarModel>
     {
-        public async override Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+        public async override Task<ProcessingResult> ProcessModelAsync(ProcessingContext<SimulatedCarModel> context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
         {
             digitalTwin.Speed = 75;
             CarMessage msg = new CarMessage() { Speed = digitalTwin.Speed };

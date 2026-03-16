@@ -28,7 +28,8 @@ using System.Threading.Tasks;
 
 namespace Scaleout.DigitalTwin.Workbench
 {
-    internal class SimProcessingContext : ProcessingContext, ISimulationController
+    internal class SimProcessingContext<TDigitalTwin> : ProcessingContext<TDigitalTwin>, ISimulationController
+        where TDigitalTwin : DigitalTwinBase<TDigitalTwin>, new()
     {
         private SimulationWorkbench _env;
         private ILogger _logger;
@@ -38,7 +39,7 @@ namespace Scaleout.DigitalTwin.Workbench
         const int MAX_MESSAGE_DEPTH = 100;
         private int _messageDepth;
 
-        internal SimProcessingContext(InstanceRegistration instanceRegistration,
+        internal SimProcessingContext(InstanceRegistration<TDigitalTwin> instanceRegistration,
                                       SimulationWorkbench env,
                                       int messageDepth,
                                       ILogger? logger = null)
@@ -57,7 +58,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
         internal TimeSpan RequestedSimulationCycleDelay { get; set; } = TimeSpan.Zero;
 
-        internal bool StopRequested { get; set; } = false;
+        public bool StopRequested { get; set; } = false;
 
         public bool DeleteRequested { get; set; } = false;
 
@@ -72,7 +73,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public override ISharedData SharedGlobalData => _env.SharedGlobalData;
 
-        public InstanceRegistration InstanceRegistration { get; }
+        public InstanceRegistration<TDigitalTwin> InstanceRegistration { get; }
 
         public Task CreateTwinAsync(string modelName, string twinId, object newInstance)
         {
@@ -83,11 +84,11 @@ namespace Scaleout.DigitalTwin.Workbench
             if (newInstance == null)
                 throw new ArgumentNullException(nameof(newInstance));
 
-            DigitalTwinBase? dtInstance = newInstance as DigitalTwinBase;
+            TDigitalTwin? dtInstance = newInstance as TDigitalTwin;
             if (dtInstance == null)
                 throw new ArgumentException("newInstance must be a model that derives from DigitalTwinBase");
 
-            _env.AddInstance(modelName, twinId, dtInstance);
+            _env.AddInstance<TDigitalTwin>(modelName, twinId, dtInstance);
 
             ModelRegistration modelRegistration = _env.Models[modelName];
             if (modelRegistration.SimulationProcessor != null)
@@ -140,47 +141,31 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public async Task EmitTelemetryAsync(string modelName, byte[] message)
         {
-            bool foundModel = _env.Instances.TryGetValue(modelName, out var instances);
+            bool foundModel = _env.Instances.TryGetValue(modelName, out var targetModelInstances);
             if (!foundModel)
                 throw new KeyNotFoundException($"Model {modelName} not found. Register it first with the {nameof(SimulationWorkbench)} before sending telemetry to it.");
 
-            //bool foundInstance = instances.TryGetValue(InstanceId, out var targetInstanceRegistration);
-
-            var instanceRegistration = instances.GetOrAdd(InstanceId, key =>
+            var targetInstanceRegistration = targetModelInstances.GetOrAdd(InstanceId, key =>
             {
                 // Create a new one:
                 bool foundModelRegistration = _env.Models.TryGetValue(modelName, out var modelRegistration);
                 if (!foundModel)
                     throw new KeyNotFoundException($"Model {modelName} not found when trying to create new instance.");
-                if (modelRegistration.CreateNew == null)
-                    throw new InvalidOperationException($"Model {modelName} is not able to create new instances.");
-
-                DigitalTwinBase newInstance = modelRegistration.CreateNew();
-                var registration = new InstanceRegistration(newInstance, modelRegistration, dataSource: this.InstanceRegistration);
-                newInstance.InitInternalAsync(InstanceId, modelName, new SimInitContext(registration, _env)).GetAwaiter().GetResult();
-                return registration;
+                
+                return modelRegistration.CreateNewInitializedInstanceAsync(InstanceId, dataSource: this.InstanceRegistration, _logger).GetAwaiter().GetResult();
             });
-
-
-            if (instanceRegistration.ModelRegistration.InvokeProcessMessagesAsync == null)
-                throw new InvalidOperationException("Model is not configured to process messages.");
-
 
             int nextMessageDepth = _messageDepth + 1;
             if (nextMessageDepth == MAX_MESSAGE_DEPTH)
                 throw new InvalidOperationException($"Max message depth of {MAX_MESSAGE_DEPTH} has been hit. Sending from {this.DigitalTwinModel}\\{InstanceId} to {modelName}\\{InstanceId}");
 
-            var processingContext = new SimProcessingContext(instanceRegistration,
-                                                             _env,
-                                                             nextMessageDepth,
-                                                             _logger);
-
             byte[][] messages = new byte[][] { message };
             foreach (var msg in messages)
             {
-                await instanceRegistration.ModelRegistration.InvokeProcessMessagesAsync(processingContext,
-                                                                          instanceRegistration.DigitalTwinInstance,
-                                                                          msg);
+                await targetInstanceRegistration.ModelRegistration.ProcessMessageAsync(targetInstanceRegistration,
+                                                                                       msg,
+                                                                                       nextMessageDepth,
+                                                                                       _logger);
             }
 
         }
@@ -248,25 +233,17 @@ namespace Scaleout.DigitalTwin.Workbench
 
             InstanceRegistration targetInstanceRegistration = InstanceRegistration.DataSource;
 
-            if (targetInstanceRegistration.ModelRegistration.InvokeProcessMessagesAsync == null)
-                throw new InvalidOperationException($"Model {targetInstanceRegistration.ModelRegistration.ModelName} is not configured to process messages.");
-
             int nextMessageDepth = _messageDepth + 1;
             if (nextMessageDepth == MAX_MESSAGE_DEPTH)
-                throw new InvalidOperationException($"Max message depth of {MAX_MESSAGE_DEPTH} has been hit. Sending from {this.DigitalTwinModel}\\{InstanceId} to {targetInstanceRegistration.ModelRegistration.ModelName}\\{targetInstanceRegistration.DigitalTwinInstance.Id}.");
-
-            var processingContext = new SimProcessingContext(targetInstanceRegistration,
-                                                             _env,
-                                                             nextMessageDepth,
-                                                             _logger);
+                throw new InvalidOperationException($"Max message depth of {MAX_MESSAGE_DEPTH} has been hit. Sending from {this.DigitalTwinModel}\\{InstanceId} to {targetInstanceRegistration.ModelRegistration.ModelName}\\{targetInstanceRegistration.InstanceId}.");
 
             foreach (var msg in messages)
             {
-                await targetInstanceRegistration.ModelRegistration.InvokeProcessMessagesAsync(processingContext,
-                                                                         targetInstanceRegistration.DigitalTwinInstance,
-                                                                         msg);
+                await targetInstanceRegistration.ModelRegistration.ProcessMessageAsync(targetInstanceRegistration,
+                                                                                       msg,
+                                                                                       nextMessageDepth,
+                                                                                       _logger);
             }
-
         }
 
         public override Task SendToTwinAsync(string targetTwinModel, string targetTwinId, byte[] message)
@@ -290,51 +267,41 @@ namespace Scaleout.DigitalTwin.Workbench
             if (!foundModel)
                 throw new KeyNotFoundException($"Model {targetTwinModel} not found. Register it first with the {nameof(SimulationWorkbench)} before sending message to it.");
 
-            var instanceRegistration = instances.GetOrAdd(targetTwinId, key =>
+            var targetInstanceRegistration = instances.GetOrAdd(targetTwinId, key =>
             {
                 // Create a new one:
-                bool foundModelRegistration = _env.Models.TryGetValue(targetTwinModel, out var modelRegistration);
+                bool foundModelRegistration = _env.Models.TryGetValue(targetTwinModel, out var targetModelRegistration);
                 if (!foundModel)
                     throw new KeyNotFoundException($"Model {targetTwinModel} not found when trying to create new instance.");
-                if (modelRegistration.CreateNew == null)
-                    throw new InvalidOperationException($"Model {targetTwinModel} is not able to create new instances.");
 
-                DigitalTwinBase newInstance = modelRegistration.CreateNew();
-
-                var registration = new InstanceRegistration(newInstance, modelRegistration, dataSource: null);
-                newInstance.InitInternalAsync(targetTwinId, targetTwinModel, new SimInitContext(registration, _env)).GetAwaiter().GetResult();
+                var registration = targetModelRegistration.CreateNewInitializedInstanceAsync(InstanceId, 
+                                                                                             dataSource: this.InstanceRegistration, 
+                                                                                             _logger)
+                                                                                             .GetAwaiter().GetResult();
                 return registration;
             });
-
-            if (instanceRegistration.ModelRegistration.InvokeProcessMessagesAsync == null)
-                throw new InvalidOperationException("Model was not configured to process messages.");
-
 
             int nextMessageDepth = _messageDepth + 1;
             if (nextMessageDepth == MAX_MESSAGE_DEPTH)
                 throw new InvalidOperationException($"Max message depth of {MAX_MESSAGE_DEPTH} has been hit. Sending from {this.DigitalTwinModel}\\{InstanceId} to {targetTwinModel}\\{targetTwinId}");
 
-            var processingContext = new SimProcessingContext(instanceRegistration,
-                                                             _env,
-                                                             nextMessageDepth,
-                                                             _logger);
-
             foreach (var msg in messages)
             {
-                await instanceRegistration.ModelRegistration.InvokeProcessMessagesAsync(processingContext,
-                                                                          instanceRegistration.DigitalTwinInstance,
-                                                                          msg);
+                await targetInstanceRegistration.ModelRegistration.ProcessMessageAsync(targetInstanceRegistration,
+                                                                                       msg,
+                                                                                       nextMessageDepth,
+                                                                                       _logger);
             }
 
         }
 
-        public override Task<TimerActionResult> StartTimerAsync(string timerName, TimeSpan interval, TimerType type, TimerAsyncHandler timerCallback)
+        public override Task<TimerActionResult> StartTimerAsync(string timerName, TimeSpan interval, TimerType type, TimerAsyncHandler<TDigitalTwin> timerCallback)
         {
             if (timerName == null) throw new ArgumentNullException(nameof(timerName));
             if (timerCallback == null) throw new ArgumentNullException(nameof(timerCallback));
             if (interval <= TimeSpan.Zero) throw new ArgumentOutOfRangeException(nameof(interval));
 
-            SimulationTimer timerRegistration = new SimulationTimer(InstanceRegistration,
+            SimulationTimer<TDigitalTwin> timerRegistration = new SimulationTimer<TDigitalTwin>(InstanceRegistration,
                                                                     timerName,
                                                                     type,
                                                                     interval,
@@ -382,5 +349,8 @@ namespace Scaleout.DigitalTwin.Workbench
             _env.RemoveInstance(targetTwinModel, targetTwinId);
             return Task.CompletedTask;
         }
+
+        
+        
     }
 }

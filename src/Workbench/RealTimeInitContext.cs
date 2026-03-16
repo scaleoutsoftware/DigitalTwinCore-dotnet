@@ -25,13 +25,14 @@ using System.Threading.Tasks;
 
 namespace Scaleout.DigitalTwin.Workbench
 {
-    internal class RealTimeInitContext : InitContext
+    internal class RealTimeInitContext<TDigitalTwin> : InitContext<TDigitalTwin>
+        where TDigitalTwin : DigitalTwinBase<TDigitalTwin>, new()
     {
-        InstanceRegistration _instanceRegistration;
+        InstanceRegistration<TDigitalTwin> _instanceRegistration;
         RealTimeWorkbench _env;
         ILogger _logger;
 
-        public RealTimeInitContext(InstanceRegistration instanceRegistration,
+        public RealTimeInitContext(InstanceRegistration<TDigitalTwin> instanceRegistration,
                                    RealTimeWorkbench env,
                                    ILogger logger)
         {
@@ -39,16 +40,17 @@ namespace Scaleout.DigitalTwin.Workbench
             _env = env;
             _logger = logger;                
         }
-        public override Task<TimerActionResult> StartTimerAsync(string timerName, TimeSpan interval, TimerType type, TimerAsyncHandler timerCallback)
+
+        public override Task<TimerActionResult> StartTimerAsync(string timerName, TimeSpan interval, TimerType type, TimerAsyncHandler<TDigitalTwin> timerCallback)
         {
-            RealTimeTimer timer = new RealTimeTimer(
-                                                _instanceRegistration,
-                                                timerName,
-                                                type,
-                                                interval,
-                                                timerCallback,
-                                                _env,
-                                                _logger);
+            RealTimeTimer timer = new RealTimeTimer<TDigitalTwin>(
+                                               _instanceRegistration,
+                                               timerName,
+                                               type,
+                                               interval,
+                                               timerCallback,
+                                               _env,
+                                               _logger);
             bool added = _env.Timers.TryAdd(timerName, timer);
             if (added)
             {

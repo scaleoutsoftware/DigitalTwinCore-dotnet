@@ -25,7 +25,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
     /// Abstract base class for logic that gets triggered for every time interval in a simulation.
     /// </summary>
     /// <typeparam name="TDigitalTwin">User-defined type for a digital twin object.</typeparam>
-    public abstract class SimulationProcessor<TDigitalTwin> : SimulationProcessor where TDigitalTwin: DigitalTwinBase
+    public abstract class SimulationProcessor<TDigitalTwin> : SimulationProcessor where TDigitalTwin: DigitalTwinBase<TDigitalTwin>
     {
         /// <summary>
         /// The method called by the ScaleOut service every time the simulation time 
@@ -37,12 +37,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <returns><see cref="ProcessingResult.DoUpdate"/> if the digital twin
         /// object needs to be updated, or <see cref="ProcessingResult.NoUpdate"/> if
         /// no updates are needed.</returns>
-        public abstract Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, TDigitalTwin digitalTwin, DateTimeOffset currentTime);
-
-        internal override Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, DigitalTwinBase digitalTwin, DateTimeOffset currentTime)
-        {
-            return ProcessModelAsync(context, (TDigitalTwin)digitalTwin, currentTime);
-        }
+        public abstract Task<ProcessingResult> ProcessModelAsync(ProcessingContext<TDigitalTwin> context, TDigitalTwin digitalTwin, DateTimeOffset currentTime);
 
         /// <summary>
         /// This method called by the ScaleOut service when the simulation starts.
@@ -58,11 +53,6 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
             return ProcessingResult.NoUpdate;
         }
 
-        internal override ProcessingResult OnInitSimulation(InitSimulationContext context, DigitalTwinBase digitalTwin, DateTimeOffset startTime)
-        {
-            return OnInitSimulation(context, (TDigitalTwin)digitalTwin, startTime);
-        }
-
         /// <inheritdoc/>
         internal override TimeSpan SimulationInterval { get; }
     }
@@ -72,29 +62,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
     /// </summary>
     public abstract class SimulationProcessor
     {
-        /// <summary>
-        /// This method called by the ScaleOut service when the simulation starts. It is used by ScaleOut Digital Twin runtime.
-        /// </summary>
-        /// <param name="context">Initial simulation processing context that allows to access shared data.</param>
-        /// <param name="digitalTwin">Targeted digital twin instance.</param>
-        /// <param name="startTime">The simulation start time.</param>
-        /// <returns><see cref="ProcessingResult.DoUpdate"/> if the digital twin
-        /// object needs to be updated, or <see cref="ProcessingResult.NoUpdate"/> if
-        /// no updates are needed.</returns>
-        internal abstract ProcessingResult OnInitSimulation(InitSimulationContext context, DigitalTwinBase digitalTwin, DateTimeOffset startTime);
-
-        /// <summary>
-        /// The method called by the ScaleOut service every time the simulation time 
-        /// interval has elapsed.
-        /// </summary>
-        /// <param name="context">Digital twin model processing context.</param>
-        /// <param name="digitalTwin">Targeted digital twin instance.</param>
-        /// <param name="currentTime">The current simulation time.</param>
-        /// <returns><see cref="ProcessingResult.DoUpdate"/> if the digital twin
-        /// object needs to be updated, or <see cref="ProcessingResult.NoUpdate"/> if
-        /// no updates are needed.</returns>
-        internal abstract Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, DigitalTwinBase digitalTwin, DateTimeOffset currentTime);
-
+        
         /// <summary>
         /// The simulated time interval.
         /// </summary>

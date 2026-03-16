@@ -27,14 +27,15 @@ using System.Threading.Tasks;
 
 namespace Scaleout.DigitalTwin.Workbench
 {
-    internal class DevRealTimeEndpoint : IDigitalTwinModelEndpoint
+    internal class DevRealTimeEndpoint<TDigitalTwin> : IDigitalTwinModelEndpoint
+        where TDigitalTwin : DigitalTwinBase<TDigitalTwin>, new()
     {
         private readonly RealTimeWorkbench _workbench;
         private readonly ModelRegistration _registration;
         private readonly ConcurrentDictionary<string, InstanceRegistration> _modelInstances;
         private readonly ILogger _logger;
 
-        public DevRealTimeEndpoint(RealTimeWorkbench workbench, 
+        public DevRealTimeEndpoint(RealTimeWorkbench workbench,
                                    ModelRegistration modelRegistration,
                                    ConcurrentDictionary<string, InstanceRegistration> modelInstances,
                                    ILogger logger)
@@ -50,21 +51,19 @@ namespace Scaleout.DigitalTwin.Workbench
             if (digitalTwin == null)
                 throw new ArgumentNullException(nameof(digitalTwin));
             
-            DigitalTwinBase? newInstance = digitalTwin as DigitalTwinBase;
-            if (newInstance == null)
-                throw new ArgumentException("digitalTwin must inherit from DigitalTwinBase");
+            TDigitalTwin? typedDigitalTwin = digitalTwin as TDigitalTwin;
+            if (typedDigitalTwin == null)
+                throw new ArgumentException($"digitalTwin must be a {typeof(TDigitalTwin)}");
 
-            var instanceRegistration = new InstanceRegistration(newInstance, _registration, dataSource: null);
+            var instanceRegistration = new InstanceRegistration<TDigitalTwin>(digitalTwinId, typedDigitalTwin, _registration, dataSource: null);
 
-            var initContext = new RealTimeInitContext(instanceRegistration, _workbench, _logger);
-            await newInstance.InitInternalAsync(digitalTwinId, _registration.ModelName, initContext);
+            InitContext<TDigitalTwin> initContext = new RealTimeInitContext<TDigitalTwin>(instanceRegistration, _workbench, _logger);
+            await typedDigitalTwin.InitInternalAsync(digitalTwinId, _registration.ModelName, initContext);
             bool added = _modelInstances.TryAdd(digitalTwinId, instanceRegistration);
             if (added)
                 _logger.LogInformation("Digital twin instance {DigitalTwinId} created for model {ModelName}", digitalTwinId, _registration.ModelName);
             else
                 _logger.LogWarning("Digital twin instance {DigitalTwinId} could not be created for model {ModelName} because an instance with this ID already exists.", digitalTwinId, _registration.ModelName);
-
-            
         }
 
         public Task CreateTwinFromPersistenceStoreAsync(string digitalTwinId, object defaultValue)
@@ -104,33 +103,15 @@ namespace Scaleout.DigitalTwin.Workbench
 
             var instanceRegistration = _modelInstances.GetOrAdd(digitalTwinId, key =>
             {
-                // Create a new one:
-                if (_registration.CreateNew == null)
-                    throw new InvalidOperationException($"Model {_registration.ModelName} is not able to create new instances.");
-
-                DigitalTwinBase newInstance = _registration.CreateNew();
-                var registration = new InstanceRegistration(newInstance, _registration, dataSource: null);
-
-                var initContext = new RealTimeInitContext(registration, _workbench, _logger);
-                newInstance.InitInternalAsync(digitalTwinId, _registration.ModelName, initContext).GetAwaiter().GetResult();
-                return registration;
+                return _registration.CreateNewInitializedInstanceAsync(digitalTwinId, null, _logger).GetAwaiter().GetResult();
             });
 
-            if (_registration.InvokeProcessMessagesAsync == null)
-                throw new InvalidOperationException("Model was not configured to process messages.");
-
-
-
-            var processingContext = new RealTimeProcessingContext(null, // no data source when just sending from an endpoint.
-                                                                 instanceRegistration,
-                                                                 _workbench,
-                                                                 0,
-                                                                 _logger);
             foreach (var message in messages)
             {
-                await _registration.InvokeProcessMessagesAsync(processingContext,
-                                                    instanceRegistration.DigitalTwinInstance,
-                                                    message);
+                await instanceRegistration.ModelRegistration.ProcessMessageAsync(instanceRegistration,
+                                                                                 message,
+                                                                                 0,
+                                                                                 _logger);
             }
 
         }

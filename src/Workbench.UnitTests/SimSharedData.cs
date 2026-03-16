@@ -30,7 +30,7 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
         class SharedDataProcessor : SimulationProcessor<SimulatedCarModel>
         {
 
-            public async override Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+            public async override Task<ProcessingResult> ProcessModelAsync(ProcessingContext<SimulatedCarModel> context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 // Modify global shared data:
                 var res = await context.SharedGlobalData.GetAsync("foo");

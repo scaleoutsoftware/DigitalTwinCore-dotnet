@@ -25,7 +25,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
     /// Context object that provides operations that are available
 	/// when a digital twin instance is being created.
     /// </summary>
-    public abstract class InitContext
+    public abstract class InitContext<TDigitalTwin> where TDigitalTwin : DigitalTwinBase<TDigitalTwin>
     {
         /// <summary>
 		/// Starts a new timer for the digital twin being created.
@@ -37,7 +37,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
 		/// <returns><see cref="TimerActionResult.Success"/> if the timer was started successfully, otherwise one of the following 
 		/// error codes is returned: <see cref="TimerActionResult.FailedTooManyTimers"/> when the maximum number of timers is reached or 
 		/// <see cref="TimerActionResult.FailedInternalError"/> if an error occurred during the method call.</returns>
-        public abstract Task<TimerActionResult> StartTimerAsync(string timerName, TimeSpan interval, TimerType type, TimerAsyncHandler timerCallback);
+        public abstract Task<TimerActionResult> StartTimerAsync(string timerName, TimeSpan interval, TimerType type, TimerAsyncHandler<TDigitalTwin> timerCallback);
 
         /// <summary>
         /// Gets an <see cref="ISharedData"/> instance for accessing shared objects

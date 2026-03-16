@@ -46,10 +46,10 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         void Delay(TimeSpan delay);
 
         /// <summary>
-        /// Delays calling the <see cref="SimulationProcessor{TDigitalTwin}.ProcessModelAsync(ProcessingContext, TDigitalTwin, DateTimeOffset)"/>
+        /// Delays calling the <see cref="SimulationProcessor{TDigitalTwin}.ProcessModelAsync(ProcessingContext{TDigitalTwin}, TDigitalTwin, DateTimeOffset)"/>
         /// method for this instance forever. Users can interrupt this infinite delay later
         /// by calling <see cref="ISimulationController.RunThisTwin"/> for this instance within the 
-        /// <see cref="MessageProcessor{TDigitalTwin}.ProcessMessageAsync(ProcessingContext, TDigitalTwin, byte[])"/> method call.
+        /// <see cref="MessageProcessor{TDigitalTwin}.ProcessMessageAsync(ProcessingContext{TDigitalTwin}, TDigitalTwin, byte[])"/> method call.
         /// </summary>
         /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException">
         /// The exception is thrown if the current digital twin model does not support simulation.
@@ -151,7 +151,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
 
         /// <summary>
         /// Adds this simulation twin instance (itself) to the end of the priority queue for
-        /// running the <see cref="SimulationProcessor{TDigitalTwin}.ProcessModelAsync(ProcessingContext, TDigitalTwin, DateTimeOffset)"/> 
+        /// running the <see cref="SimulationProcessor{TDigitalTwin}.ProcessModelAsync(ProcessingContext{TDigitalTwin}, TDigitalTwin, DateTimeOffset)"/> 
         /// method for it at the current simulation time.
         /// </summary>
         void RunThisTwin();

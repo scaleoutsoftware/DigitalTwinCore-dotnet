@@ -57,7 +57,7 @@ namespace Scaleout.DigitalTwin.Workbench
     {
         private ConcurrentDictionary<string, ModelRegistration> _models = new ConcurrentDictionary<string, ModelRegistration>();
         private ConcurrentDictionary<string, ConcurrentDictionary<string, InstanceRegistration>> _instances = new ConcurrentDictionary<string, ConcurrentDictionary<string, InstanceRegistration>>();
-        private ConcurrentDictionary<string, SimulationTimer> _timers = new ConcurrentDictionary<string, SimulationTimer>();
+        private ConcurrentDictionary<string, InstanceRegistration> _timers = new ConcurrentDictionary<string, InstanceRegistration>();
         private WorkbenchSharedData _sharedGlobalData = new WorkbenchSharedData();
         private ILogger _logger;
         private SimulationState _simulationState = SimulationState.Initializing;
@@ -83,7 +83,7 @@ namespace Scaleout.DigitalTwin.Workbench
             get => _instances;
         }
 
-        internal IDictionary<string, SimulationTimer> Timers 
+        internal IDictionary<string, InstanceRegistration> Timers 
         { 
             get => _timers; 
         }
@@ -161,7 +161,7 @@ namespace Scaleout.DigitalTwin.Workbench
         /// <returns>Digital twin instance, or null if the instance was not found</returns>
         /// <exception cref="InvalidOperationException">The specified model was not registered.</exception>
         public TDigitalTwin? GetInstance<TDigitalTwin>(string modelName, string instanceId) 
-            where TDigitalTwin : DigitalTwinBase 
+            where TDigitalTwin : DigitalTwinBase<TDigitalTwin>, new()
         {
             bool foundModel = _instances.TryGetValue(modelName, out var instances);
             if (!foundModel)
@@ -174,7 +174,11 @@ namespace Scaleout.DigitalTwin.Workbench
             if (instanceRegistration.IsDeleted)
                 return null;
 
-            return (TDigitalTwin)instanceRegistration.DigitalTwinInstance;
+            InstanceRegistration<TDigitalTwin>? typedInstanceRegistration = instanceRegistration as InstanceRegistration<TDigitalTwin>;
+            if (typedInstanceRegistration == null)
+                throw new InvalidOperationException($"Instance {instanceId} under model {modelName} is for a different digital twin type.");
+
+            return typedInstanceRegistration.DigitalTwinInstance;
         }
 
         /// <summary>
@@ -185,7 +189,7 @@ namespace Scaleout.DigitalTwin.Workbench
         /// <returns>A read-only dictionary of digital twin instances, keyed by ID.</returns>
         /// <exception cref="InvalidOperationException">The specified model was not registered.</exception>
         public IReadOnlyDictionary<string, TDigitalTwin> GetInstances<TDigitalTwin>(string modelName)
-            where TDigitalTwin : DigitalTwinBase
+            where TDigitalTwin : DigitalTwinBase<TDigitalTwin>, new()
         {
             bool foundModel = _instances.TryGetValue(modelName, out var instances);
             if (!foundModel)
@@ -197,7 +201,7 @@ namespace Scaleout.DigitalTwin.Workbench
         /// <summary>
         /// Adds a real-time model (with a message processor) to the workbench.
         /// </summary>
-        /// <typeparam name="TDigitalTwin">Type of digital twin model (derived from <see cref="DigitalTwinBase"/>).</typeparam>
+        /// <typeparam name="TDigitalTwin">Type of digital twin model (derived from <see cref="DigitalTwinBase{TDigitalTwin}"/>).</typeparam>
         /// <param name="modelName">Name of the model.</param>
         /// <param name="processor">The model's <see cref="MessageProcessor{TDigitalTwin}"/> implementation.</param>
         /// <exception cref="ArgumentNullException">The provided message processor was null.</exception>
@@ -205,7 +209,7 @@ namespace Scaleout.DigitalTwin.Workbench
         /// <exception cref="ArgumentException">A model with the same name already exists in this workbench.</exception>
         /// <exception cref="InvalidOperationException">A model cannot be added after a simulation has been started (using InitializeSimulation() or RunSimulation()).</exception>
         public void AddRealTimeModel<TDigitalTwin>(string modelName, MessageProcessor<TDigitalTwin> processor)
-            where TDigitalTwin : DigitalTwinBase, new()
+            where TDigitalTwin : DigitalTwinBase<TDigitalTwin>, new()
         {
             if (processor == null)
                 throw new ArgumentNullException(nameof(processor));
@@ -218,7 +222,7 @@ namespace Scaleout.DigitalTwin.Workbench
         /// <summary>
         /// Adds a simulation model (with a simulation processor) to the workbench.
         /// </summary>
-        /// <typeparam name="TDigitalTwin">Type of digital twin model (derived from <see cref="DigitalTwinBase"/>).</typeparam>
+        /// <typeparam name="TDigitalTwin">Type of digital twin model (derived from <see cref="DigitalTwinBase{TDigitalTwin}"/>).</typeparam>
         /// <param name="modelName">Name of the model.</param>
         /// <param name="processor">The model's <see cref="SimulationProcessor{TDigitalTwin}"/> implementation.</param>
         /// <exception cref="ArgumentNullException">The provided simulation processor was null.</exception>
@@ -226,7 +230,7 @@ namespace Scaleout.DigitalTwin.Workbench
         /// <exception cref="ArgumentException">A model with the same name already exists in this workbench.</exception>
         /// <exception cref="InvalidOperationException">A model cannot be added after a simulation has been started (using InitializeSimulation() or RunSimulation()).</exception>
         public void AddSimulationModel<TDigitalTwin>(string modelName, SimulationProcessor<TDigitalTwin> processor)
-            where TDigitalTwin : DigitalTwinBase, new()
+            where TDigitalTwin : DigitalTwinBase<TDigitalTwin>, new()
 
         {
             if (processor == null)
@@ -241,7 +245,7 @@ namespace Scaleout.DigitalTwin.Workbench
         /// <summary>
         /// Adds a simulation model (with both a simulation processor and a message processor) to the workbench.
         /// </summary>
-        /// <typeparam name="TDigitalTwin">Type of digital twin model (derived from <see cref="DigitalTwinBase"/>).</typeparam>
+        /// <typeparam name="TDigitalTwin">Type of digital twin model (derived from <see cref="DigitalTwinBase{TDigitalTwin}"/>).</typeparam>
         /// <param name="modelName">Name of the model.</param>
         /// <param name="simulationProcessor">The model's <see cref="SimulationProcessor{TDigitalTwin}"/> implementation.</param>
         /// <param name="messageProcessor">The model's <see cref="MessageProcessor{TDigitalTwin}"/> implementation.</param>
@@ -252,7 +256,7 @@ namespace Scaleout.DigitalTwin.Workbench
         public void AddSimulationModel<TDigitalTwin>(string modelName, 
                                                                SimulationProcessor<TDigitalTwin> simulationProcessor,
                                                                MessageProcessor<TDigitalTwin> messageProcessor)
-            where TDigitalTwin : DigitalTwinBase, new()
+            where TDigitalTwin : DigitalTwinBase<TDigitalTwin>, new()
         {
             if (simulationProcessor == null)
                 throw new ArgumentNullException(nameof(simulationProcessor));
@@ -266,7 +270,7 @@ namespace Scaleout.DigitalTwin.Workbench
         }
 
         private void AddModel<TDigitalTwin>(string modelName, SimulationProcessor<TDigitalTwin>? simProcessor, MessageProcessor<TDigitalTwin>? realTimeProcessor)
-            where TDigitalTwin : DigitalTwinBase, new()
+            where TDigitalTwin : DigitalTwinBase<TDigitalTwin>, new()
         {
             if (_simulationState > SimulationState.Initializing)
                 throw new InvalidOperationException($"Cannot add model after starting simulation with {nameof(InitializeSimulation)} or {nameof(RunSimulationAsync)}.");
@@ -277,78 +281,9 @@ namespace Scaleout.DigitalTwin.Workbench
             if (_models.ContainsKey(modelName))
                 throw new ArgumentException($"A model named {modelName} already exists.");
 
-            ModelRegistration registration = new ModelRegistration(modelName, sharedModelData: new WorkbenchSharedData());
-
-            if (realTimeProcessor != null)
-            {
-                registration.MessageProcessor = realTimeProcessor;
-
-                // We have all the nice TDigitalTwin type information right now.
-                // Capture this type info in lambdas that do casting. We can use these lambdas later
-                // during a simulation run (when we won't have the type information).
-                registration.InvokeProcessMessagesAsync = async (processingContext, twinInstance, messages) =>
-                {
-                    if (twinInstance == null) throw new ArgumentNullException(nameof(twinInstance));
-
-                    TDigitalTwin? typedTwin = twinInstance as TDigitalTwin;
-                    if (typedTwin == null)
-                        throw new ArgumentException($"Real time processor for {modelName} is for a different digital twin type. Expected: {typeof(TDigitalTwin)}; Actual: {twinInstance.GetType()}");
-
-                    ProcessingResult result = await realTimeProcessor.ProcessMessageAsync(processingContext, typedTwin, messages);
-                    if (result == ProcessingResult.Remove)
-                    {
-                        // Remove the instance from the model:
-                        _instances[modelName].TryRemove(twinInstance.Id, out var _);
-                    }
-                    return result;
-                };
-
-            }
-
-            if (simProcessor != null)
-            {
-                registration.SimulationProcessor = simProcessor;
-
-                // We have the nice TDigitalTwin type information now, so capture it in a lambda
-                // that does casting and makes the ProcessModel call. We can call this lambda later
-                // during a simulation run (when we won't have the instanceRegistration's type information).
-                registration.InvokeProcessModelAsync = async (processingContext, twinInstance, simTime) =>
-                {
-                    if (twinInstance == null) throw new ArgumentNullException(nameof(twinInstance));
-
-                    TDigitalTwin? typedTwin = twinInstance as TDigitalTwin;
-                    if (typedTwin == null)
-                        throw new ArgumentException($"Simulation processor for {modelName} is for a different digital twin type. Expected: {typeof(TDigitalTwin)}; Actual: {twinInstance.GetType()}");
-
-                    var result = await simProcessor.ProcessModelAsync(processingContext, typedTwin, simTime);
-                    if (result == ProcessingResult.Remove)
-                    {
-                        // Remove the instance from the model:
-                        _instances[modelName].TryRemove(twinInstance.Id, out var _);
-                    }
-                    return result;
-                };
-
-                // We have the nice TDigitalTwin type information now, so capture it in a lambda
-                // that does casting and makes the ProcessModel call. We can call this lambda later
-                // during a simulation run (when we won't have the instanceRegistration's type information).
-                registration.InvokeInitSimulation = (initSimulationContext, twinInstance, simTime) =>
-                {
-                    if (twinInstance == null) throw new ArgumentNullException(nameof(twinInstance));
-
-                    TDigitalTwin? typedTwin = twinInstance as TDigitalTwin;
-                    if (typedTwin == null)
-                        throw new ArgumentException($"Simulation processor for {modelName} is for a different digital twin type. Expected: {typeof(TDigitalTwin)}; Actual: {twinInstance.GetType()}");
-
-                    return simProcessor.OnInitSimulation(initSimulationContext, typedTwin, simTime);
-                };
-            }
-
-            registration.CreateNew = () =>
-            {
-                return new TDigitalTwin();
-            };
-
+            ModelRegistration registration = new SimulationWorkbenchModelRegistration<TDigitalTwin>(modelName, sharedModelData: new WorkbenchSharedData(), this);
+            registration.MessageProcessor = realTimeProcessor;
+            registration.SimulationProcessor = simProcessor;
 
             bool added = _models.TryAdd(modelName, registration);
             if (!added)
@@ -371,7 +306,8 @@ namespace Scaleout.DigitalTwin.Workbench
         /// <param name="instance">The digital twin instance.</param>
         /// <exception cref="InvalidOperationException">The provided <paramref name="modelName"/> has not been registered as a simulation or realtime model.</exception>
         /// <exception cref="InvalidOperationException">The instance cannot be added because the simulation was already started (using InitializeSimulation() or RunSimulation()).</exception>
-        public void AddInstance(string instanceId, string modelName, DigitalTwinBase instance)
+        public void AddInstance<TDigitalTwin>(string instanceId, string modelName, TDigitalTwin instance)
+            where TDigitalTwin : DigitalTwinBase<TDigitalTwin>, new()
         {
             if (_simulationState > SimulationState.Initializing)
                 throw new InvalidOperationException($"Cannot add instances after starting simulation with {nameof(InitializeSimulation)} or {nameof(RunSimulationAsync)}.");
@@ -381,9 +317,8 @@ namespace Scaleout.DigitalTwin.Workbench
             if (!foundModel )
                 throw new InvalidOperationException($"{modelName} has not been registered as a simulation or realtime model. Call AddSimulationModel or AddRealTimeModel first.");
 
-            InstanceRegistration instanceRegistration = new InstanceRegistration(instance, modelRegistration, dataSource: null);
-
-            SimInitContext initContext = new SimInitContext(instanceRegistration, this);
+            var instanceRegistration = new InstanceRegistration<TDigitalTwin>(instanceId, instance, modelRegistration, dataSource: null);
+            InitContext<TDigitalTwin> initContext = new SimInitContext<TDigitalTwin>(instanceRegistration, this);
             instance.InitInternalAsync(instanceId, modelName, initContext).GetAwaiter().GetResult();
 
             bool foundInstances = _instances.TryGetValue(modelName, out var modelInstances);
@@ -393,7 +328,6 @@ namespace Scaleout.DigitalTwin.Workbench
             }
 
             modelInstances[instanceId] = instanceRegistration;
-
         }
 
         /// <summary>
@@ -498,7 +432,8 @@ namespace Scaleout.DigitalTwin.Workbench
             // (via a DigitalTwinBase.Init override). Enqueue them now:
             foreach (var timerRegistration in Timers.Values)
             {
-                EventGenerator.EnqueueEvent(timerRegistration, startTime + timerRegistration.Interval);
+                ISimulationTimer? timer = timerRegistration as ISimulationTimer ?? throw new InvalidOperationException("Unexpected registration type in timers dictionary: " + timerRegistration.GetType());
+                EventGenerator.EnqueueEvent(timerRegistration, startTime + timer.Interval);
             }
 
             if (instanceCount == 0)
@@ -541,46 +476,34 @@ namespace Scaleout.DigitalTwin.Workbench
                     continue;
                 }    
 
-                string modelName = simEvent.DigitalTwinInstance.Model;
-                string instanceId = simEvent.DigitalTwinInstance.Id;
+                string modelName = simEvent.ModelRegistration.ModelName;
+                string instanceId = simEvent.InstanceId;
 
-                var processingContext = new SimProcessingContext(simEvent,
-                                                                 this,
-                                                                 messageDepth: 0,
-                                                                 logger: _logger
-                                                                 );
+                SimProcessingResult simProcessingResult;
 
-                if (simEvent.ModelRegistration.InvokeProcessModelAsync == null)
-                    throw new InvalidOperationException("Model was not configured to process simulation events.");
-                if (simEvent.ModelRegistration.InvokeInitSimulation == null)
-                    throw new InvalidOperationException("Model was not configured to initialize simulation.");
-
-                // NOTE: The returned ProcessingResult is ignored after invoking the callbacks below.
-                // (Since we're working with inproc instances, all changes to the instance will be
-                //  visible in the next time step.)
                 switch (simEvent)
                 {
-                    case SimulationTimer timerRegistration:
-                        _logger.LogTrace("Firing timer {TimerName} for {ModelName}\\{InstanceId}", timerRegistration.TimerName, timerRegistration.ModelRegistration.ModelName, timerRegistration.DigitalTwinInstance.Id);
-                        await timerRegistration.TimerCallback(timerRegistration.TimerName, timerRegistration.DigitalTwinInstance, processingContext);
+                    case ISimulationTimer timerRegistration:
+                        _logger.LogTrace("Firing timer {TimerName} for {ModelName}\\{InstanceId}", timerRegistration.TimerName, simEvent.ModelRegistration.ModelName, simEvent.InstanceId);
+                        simProcessingResult = await timerRegistration.InvokeTimerAsync();
                         break;
                     case InstanceRegistration instanceRegistration:
-                        _logger.LogTrace("Invoking ProcessModel for {ModelName}\\{InstanceId}", instanceRegistration.ModelRegistration.ModelName, instanceRegistration.DigitalTwinInstance.Id);
+                        _logger.LogTrace("Invoking ProcessModel for {ModelName}\\{InstanceId}", instanceRegistration.ModelRegistration.ModelName, instanceRegistration.InstanceId);
                         if (simEvent.IsFirstSimStep)
                         {
                             SimInitSimulationContext simInitContext = new SimInitSimulationContext(instanceRegistration, this);
-                            _ = instanceRegistration.ModelRegistration.InvokeInitSimulation(simInitContext, simEvent.DigitalTwinInstance, EventGenerator.SimulationTime);
+                            _ = instanceRegistration.ModelRegistration.InitSimulation(simInitContext, instanceRegistration, EventGenerator.SimulationTime);
                             simEvent.IsFirstSimStep = false;
                         }
 
-                        await instanceRegistration.ModelRegistration.InvokeProcessModelAsync(processingContext, simEvent.DigitalTwinInstance, EventGenerator.SimulationTime);
+                        simProcessingResult = await instanceRegistration.ModelRegistration.ProcessModelAsync(instanceRegistration, EventGenerator.SimulationTime, messageDepth: 0, _logger);
                         break;
                     default:
                         throw new NotSupportedException($"Unexpected registration type {simEvent.GetType()}");
                 }
                 
-
-                if (processingContext.DeleteRequested)
+                
+                if (simProcessingResult.DeleteRequested)
                 {
                     RemoveInstance(modelName, instanceId);
 
@@ -589,16 +512,16 @@ namespace Scaleout.DigitalTwin.Workbench
                     continue;
                 }
 
-                if (processingContext.StopRequested)
+                if (simProcessingResult.StopRequested)
                 {
                     stopRequested = true;
                 }
 
                 DateTimeOffset nextStepTimeForInstance;
-                SimulationTimer? timerEvent = simEvent as SimulationTimer;
+                ISimulationTimer? timerEvent = simEvent as ISimulationTimer;
                 if (timerEvent != null)
                 {
-                    if (timerEvent.TimerType == TimerType.Recurring && !timerEvent.IsDeleted)
+                    if (timerEvent.TimerType == TimerType.Recurring && !simEvent.IsDeleted)
                     {
                         // We just fired a recurring timer event. Enqueue for the timer's next interval.
                         long requestedWaitMillis = (long)timerEvent.Interval.TotalMilliseconds;
@@ -621,12 +544,12 @@ namespace Scaleout.DigitalTwin.Workbench
                         Timers.Remove(timerEvent.TimerName);
                     }
                 }
-                else if (processingContext.RequestedSimulationCycleDelay == TimeSpan.Zero)
+                else if (simProcessingResult.RequestedSimulationCycleDelay == TimeSpan.Zero)
                 {
                     // Normal simulation event, and user didn't ask for a delay. Use the default interval.
                     nextStepTimeForInstance = EventGenerator.SimulationTime + EventGenerator.SimulationIterationInterval;
                 }
-                else if (processingContext.RequestedSimulationCycleDelay == TimeSpan.MaxValue)
+                else if (simProcessingResult.RequestedSimulationCycleDelay == TimeSpan.MaxValue)
                 {
                     // User doesn't want this instance to be subject to more simulation events
                     // (but does *not* want the instance deleted).
@@ -635,7 +558,7 @@ namespace Scaleout.DigitalTwin.Workbench
                 else
                 {
                     // Normal simulation event, and user asked for a delay
-                    long requestedWaitMillis = (long)processingContext.RequestedSimulationCycleDelay.TotalMilliseconds;
+                    long requestedWaitMillis = (long)simProcessingResult.RequestedSimulationCycleDelay.TotalMilliseconds;
                     long intervalMillis = (long)EventGenerator.SimulationIterationInterval.TotalMilliseconds;
 
                     long intervalCount = requestedWaitMillis / intervalMillis;

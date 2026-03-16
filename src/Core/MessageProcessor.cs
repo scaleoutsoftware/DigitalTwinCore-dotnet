@@ -26,8 +26,8 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
 	/// processes incoming messages for a digital twin object.
 	/// </summary>
 	/// <typeparam name="TDigitalTwin">User-defined type for a digital twin object.</typeparam>
-	public abstract class MessageProcessor<TDigitalTwin> : MessageProcessor where TDigitalTwin: class
-	{
+	public abstract class MessageProcessor<TDigitalTwin> : MessageProcessor where TDigitalTwin: DigitalTwinBase<TDigitalTwin>
+    {
         /// <summary>
         /// This method is called by ScaleOut StreamServer to pass new messages
         /// to the specified digital twin object.
@@ -38,7 +38,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <returns><see cref="ProcessingResult.DoUpdate"/> when the digital twin
         /// object and the list of processed messages need to be updated and <see cref="ProcessingResult.NoUpdate"/> when
         /// no updates are needed.</returns>
-        public abstract Task<ProcessingResult> ProcessMessageAsync(ProcessingContext context, TDigitalTwin digitalTwin, byte[] msgBytes);
+        public abstract Task<ProcessingResult> ProcessMessageAsync(ProcessingContext<TDigitalTwin> context, TDigitalTwin digitalTwin, byte[] msgBytes);
 
 		/// <inheritdoc/>
 		internal override Type DigitalTwinModelType { get => typeof(TDigitalTwin); }

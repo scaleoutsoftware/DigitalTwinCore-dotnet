@@ -16,45 +16,40 @@
 
 #endregion
 
+using Microsoft.Extensions.Logging;
 using Scaleout.Modules.DigitalTwin.Abstractions;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Scaleout.DigitalTwin.Workbench
 {
-    internal delegate ProcessingResult InitSimulationInvoker(InitSimulationContext initSimulationContext, DigitalTwinBase dtInstance, DateTimeOffset simulationTime);
-
-    internal delegate Task<ProcessingResult> ProcessModelAsyncInvoker(ProcessingContext processingContext, DigitalTwinBase dtInstance, DateTimeOffset simulationTime);
-
-    internal delegate Task<ProcessingResult> ProcessMessagesAsyncInvoker(ProcessingContext processingContext, DigitalTwinBase dtInstance, byte[] msgBytes);
-
-    internal delegate object? MessageDeserializer(byte[] message);
-
-    internal delegate DigitalTwinBase CreateNew();
-
-    internal class ModelRegistration
+    internal abstract class ModelRegistration
     {
-        public ModelRegistration(string modelName, ISharedData sharedModelData)
+        public ModelRegistration(string modelName, ISharedData sharedModelData, RealTimeWorkbench? realTimeWorkbench, SimulationWorkbench? simulationWorkbench)
         {
             ModelName = modelName;
             SharedModelData = sharedModelData;
+            SimulationWorkbench = simulationWorkbench;
+            RealTimeWorkbench = realTimeWorkbench;
         }
+
+        public SimulationWorkbench? SimulationWorkbench { get; }
+
+        public RealTimeWorkbench? RealTimeWorkbench { get; }
+
         public string ModelName { get; }
 
         public SimulationProcessor? SimulationProcessor { get; set; }
+        public MessageProcessor? MessageProcessor { get; set; }
 
         public ISharedData SharedModelData { get; set; }
 
-        public InitSimulationInvoker? InvokeInitSimulation;
-
-        public ProcessModelAsyncInvoker? InvokeProcessModelAsync { get; set; }
-
-        public MessageProcessor? MessageProcessor { get; set; }
-
-        public ProcessMessagesAsyncInvoker? InvokeProcessMessagesAsync { get; set; }
-
-        public CreateNew? CreateNew { get; set; }
+        public abstract ProcessingResult InitSimulation(InitSimulationContext initSimulationContext, InstanceRegistration instanceRegistration, DateTimeOffset simulationTime);
+        public abstract Task<SimProcessingResult> ProcessModelAsync(InstanceRegistration instanceRegistration, DateTimeOffset simulationTime, int messageDepth, ILogger? logger = null);
+        public abstract Task<ProcessingResult> ProcessMessageAsync(InstanceRegistration instanceRegistration, byte[] msgBytes, int messageDepth, ILogger? logger = null);
+        public abstract Task<InstanceRegistration> CreateNewInitializedInstanceAsync(string instanceId, InstanceRegistration? dataSource, ILogger logger);
     }
 }

@@ -25,7 +25,7 @@ using System.Threading.Tasks;
 
 namespace Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar
 {
-    public class SimulatedCarModel : DigitalTwinBase
+    public class SimulatedCarModel : DigitalTwinBase<SimulatedCarModel>
     {
         public int Speed { get; set; } = 55;
 

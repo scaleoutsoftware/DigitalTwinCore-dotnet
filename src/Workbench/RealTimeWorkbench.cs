@@ -44,7 +44,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
         /// <summary>
         /// Event raised when a message processor implementation sends a message back to its
-        /// data source using <see cref="ProcessingContext.SendToDataSourceAsync(byte[])"/>.
+        /// data source using <see cref="ProcessingContext{TDigitalTwin}.SendToDataSourceAsync(byte[])"/>.
         /// </summary>
         public event EventHandler<SendToDataSourceEventArgs>? DataSourceMessageReceived;
 
@@ -118,7 +118,7 @@ namespace Scaleout.DigitalTwin.Workbench
         /// Adds a real-time model (with a message processor) to the workbench. The
         /// returned endpoint can be used to send messages to instances in the model.
         /// </summary>
-        /// <typeparam name="TDigitalTwin">Type of digital twin model (derived from <see cref="DigitalTwinBase"/>).</typeparam>
+        /// <typeparam name="TDigitalTwin">Type of digital twin model (derived from <see cref="DigitalTwinBase{TDigitalTwin}"/>).</typeparam>
         /// <param name="modelName">Name of the model.</param>
         /// <param name="processor">The model's <see cref="MessageProcessor{TDigitalTwin}"/> implementation.</param>
         /// <returns><see cref="IDigitalTwinModelEndpoint"/> that can be used to send messages to an instance of the model.</returns>
@@ -126,7 +126,7 @@ namespace Scaleout.DigitalTwin.Workbench
         /// <exception cref="ArgumentException">The model name is invalid (null or whitespace).</exception>
         /// <exception cref="ArgumentException">A model with the same name already exists in this workbench.</exception>
         public IDigitalTwinModelEndpoint AddRealTimeModel<TDigitalTwin>(string modelName, MessageProcessor<TDigitalTwin> processor)
-            where TDigitalTwin : DigitalTwinBase, new()
+            where TDigitalTwin : DigitalTwinBase<TDigitalTwin>, new()
         {
             if (_disposed)
                 throw new InvalidOperationException($"{nameof(RealTimeWorkbench)} has been disposed");
@@ -140,35 +140,10 @@ namespace Scaleout.DigitalTwin.Workbench
             if (_models.ContainsKey(modelName))
                 throw new ArgumentException($"A model named {modelName} already exists.");
 
-            ModelRegistration registration = new ModelRegistration(modelName, sharedModelData: new WorkbenchSharedData());
+            ModelRegistration registration = new RealTimeWorkbenchModelRegistration<TDigitalTwin>(modelName, sharedModelData: new WorkbenchSharedData(), this);
             registration.MessageProcessor = processor;
 
-            // We have all the nice TDigitalTwin type information right now.
-            // Capture this type info in lambdas that do casting. We can use these lambdas later
-            // during a simulation run (when we won't have the type information).
-            registration.InvokeProcessMessagesAsync = async (processingContext, twinInstance, messages) =>
-            {
-                if (twinInstance == null) throw new ArgumentNullException(nameof(twinInstance));
-
-                TDigitalTwin? typedTwin = twinInstance as TDigitalTwin;
-                if (typedTwin == null)
-                    throw new ArgumentException($"Real time processor for {modelName} is for a different digital twin type. Expected: {typeof(TDigitalTwin)}; Actual: {twinInstance.GetType()}");
-
-                ProcessingResult result = await processor.ProcessMessageAsync(processingContext, typedTwin, messages);
-                if (result == ProcessingResult.Remove)
-                {
-                    // Remove the instance from the model:
-                    _instances[modelName].TryRemove(twinInstance.Id, out var _);
-                }
-                return result;
-            };
-
-            registration.CreateNew = () =>
-            {
-                return new TDigitalTwin();
-            };
-
-
+            
             bool added = _models.TryAdd(modelName, registration);
             if (!added)
             {
@@ -182,7 +157,7 @@ namespace Scaleout.DigitalTwin.Workbench
                 throw new InvalidOperationException($"Instances under model {modelName} already exist.");
             }
 
-            return new DevRealTimeEndpoint(this, registration, modelInstances, _logger);
+            return new DevRealTimeEndpoint<TDigitalTwin>(this, registration, modelInstances, _logger);
         }
 
         /// <summary>
@@ -219,7 +194,7 @@ namespace Scaleout.DigitalTwin.Workbench
         /// <returns>A read-only dictionary of digital twin instances, keyed by ID.</returns>
         /// <exception cref="InvalidOperationException">The specified model was not registered.</exception>
         public IReadOnlyDictionary<string, TDigitalTwin> GetInstances<TDigitalTwin>(string modelName)
-            where TDigitalTwin : DigitalTwinBase
+            where TDigitalTwin : DigitalTwinBase<TDigitalTwin>, new()
         {
             bool foundModel = _instances.TryGetValue(modelName, out var instances);
             if (!foundModel)

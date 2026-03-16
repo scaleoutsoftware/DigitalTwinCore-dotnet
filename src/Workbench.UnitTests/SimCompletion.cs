@@ -107,7 +107,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
         class DelayInfiniteProcessor : SimulationProcessor<SimulatedCarModel>
         {
-            public override Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+            public override Task<ProcessingResult> ProcessModelAsync(ProcessingContext<SimulatedCarModel> context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 // Delay forever when speed hits zero.
                 digitalTwin.Speed = digitalTwin.Speed - 1;
@@ -150,7 +150,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
         class RequestStopProcessor : SimulationProcessor<SimulatedCarModel>
         {
-            public override Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+            public override Task<ProcessingResult> ProcessModelAsync(ProcessingContext<SimulatedCarModel> context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 // Delay forever when speed hits zero.
                 digitalTwin.Speed = digitalTwin.Speed - 1;
@@ -193,7 +193,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
         class RunThisTwinSimProcessor : SimulationProcessor<SimulatedCarModel>
         {
-            public async override Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+            public async override Task<ProcessingResult> ProcessModelAsync(ProcessingContext<SimulatedCarModel> context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 // Delay forever when speed hits zero.
                 digitalTwin.Speed = digitalTwin.Speed - 1;
@@ -215,7 +215,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
         class RunThisTwinMsgProcessor : MessageProcessor<SimulatedCarModel>
         {
-            public override Task<ProcessingResult> ProcessMessageAsync(ProcessingContext context, SimulatedCarModel digitalTwin, byte[] msgBytes)
+            public override Task<ProcessingResult> ProcessMessageAsync(ProcessingContext<SimulatedCarModel> context, SimulatedCarModel digitalTwin, byte[] msgBytes)
             {
                 var statusMessage = System.Text.Json.JsonSerializer.Deserialize<StatusMessage>(msgBytes);
                 Assert.NotNull(statusMessage);

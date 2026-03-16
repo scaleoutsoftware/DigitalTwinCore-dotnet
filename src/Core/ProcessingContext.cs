@@ -28,7 +28,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
     /// It allows sending messages back to a data source where the messages 
     /// are originated from.
     /// </summary>
-    public abstract class ProcessingContext
+    public abstract class ProcessingContext<TDigitalTwin> where TDigitalTwin : DigitalTwinBase<TDigitalTwin>
     {
         /// <summary>
         /// Digital twin model name.
@@ -120,11 +120,12 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <param name="timerName">The timer name.</param>
         /// <param name="interval">The timer interval.</param>
         /// <param name="type">The type of the timer.</param>
-        /// <param name="timerCallback">A delegate representing a user-defined timer callback static method to be executed.</param>
+        /// <param name="timerCallback">A function representing a user-defined timer callback method to be executed.</param>
         /// <returns><see cref="TimerActionResult.Success"/> if the timer was started successfully, otherwise one of the following 
         /// error codes is returned: <see cref="TimerActionResult.FailedTooManyTimers"/> when the maximum number of timers is reached or 
         /// <see cref="TimerActionResult.FailedInternalError"/> if an error occurred during the method call.</returns>
-        public abstract Task<TimerActionResult> StartTimerAsync(string timerName, TimeSpan interval, TimerType type, TimerAsyncHandler timerCallback);
+        public abstract Task<TimerActionResult> StartTimerAsync(string timerName, TimeSpan interval, TimerType type, 
+                                                                TimerAsyncHandler<TDigitalTwin> timerCallback);
 
         /// <summary>
         /// Stops the specified timer.

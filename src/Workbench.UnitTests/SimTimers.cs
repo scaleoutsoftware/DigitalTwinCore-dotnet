@@ -37,7 +37,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             public int _timerFiredCount = 0;
             
 
-            public override async Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+            public override async Task<ProcessingResult> ProcessModelAsync(ProcessingContext<SimulatedCarModel> context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 if (!_timerStarted)
                 {
@@ -47,7 +47,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
                 return ProcessingResult.DoUpdate;
             }
 
-            private Task<ProcessingResult> TimerFiredAsyncHandler(string timerName, DigitalTwinBase instance, ProcessingContext context)
+            private Task<ProcessingResult> TimerFiredAsyncHandler(string timerName, SimulatedCarModel instance, ProcessingContext<SimulatedCarModel> context)
             {
                 Interlocked.Increment(ref _timerFiredCount);
                 return Task.FromResult(ProcessingResult.DoUpdate);
@@ -81,7 +81,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             public int _timerFiredCount = 0;
 
 
-            public override async Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+            public override async Task<ProcessingResult> ProcessModelAsync(ProcessingContext<SimulatedCarModel> context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 if (!_timerStarted)
                 {
@@ -91,7 +91,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
                 return ProcessingResult.DoUpdate;
             }
 
-            private Task<ProcessingResult> TimerFiredAsyncHandler(string timerName, DigitalTwinBase instance, ProcessingContext context)
+            private Task<ProcessingResult> TimerFiredAsyncHandler(string timerName, SimulatedCarModel instance, ProcessingContext<SimulatedCarModel> context)
             {
                 Assert.Equal("foo", timerName);
                 Assert.Equal("Car1", instance.Id);
@@ -129,7 +129,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             public int _processModelCount = 0;
 
 
-            public override async Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+            public override async Task<ProcessingResult> ProcessModelAsync(ProcessingContext<SimulatedCarModel> context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 if (!_timerStarted)
                 {
@@ -140,7 +140,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
                 return ProcessingResult.DoUpdate;
             }
 
-            private async Task<ProcessingResult> TimerFiredAsyncHandler(string timerName, DigitalTwinBase instance, ProcessingContext context)
+            private async Task<ProcessingResult> TimerFiredAsyncHandler(string timerName, SimulatedCarModel instance, ProcessingContext<SimulatedCarModel> context)
             {
                 _timerFiredCount++;
 
@@ -177,16 +177,16 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             Assert.Single(instances);
         }
 
-        class TimerTwin : DigitalTwinBase
+        class TimerTwin : DigitalTwinBase<TimerTwin>
         {
             public int TimerFiredCount; 
-            public override async Task InitAsync(string id, string model, InitContext initContext)
+            public override async Task InitAsync(string id, string model, InitContext<TimerTwin> initContext)
             {
                 await base.InitAsync(id, model, initContext);
                 await initContext.StartTimerAsync("foo", TimeSpan.FromSeconds(5), TimerType.OneTime, TimerFiredAsyncHandler);
             }
 
-            public static Task<ProcessingResult> TimerFiredAsyncHandler(string timerName, DigitalTwinBase instance, ProcessingContext context)
+            public static Task<ProcessingResult> TimerFiredAsyncHandler(string timerName, TimerTwin instance, ProcessingContext<TimerTwin> context)
             {
                 var twin = (TimerTwin)instance;
                 twin.TimerFiredCount++;
@@ -196,7 +196,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
         class InitTimerProcessor : SimulationProcessor<TimerTwin>
         {
-            public override Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, TimerTwin digitalTwin, DateTimeOffset currentTime)
+            public override Task<ProcessingResult> ProcessModelAsync(ProcessingContext<TimerTwin> context, TimerTwin digitalTwin, DateTimeOffset currentTime)
             {
                 return Task.FromResult(ProcessingResult.DoUpdate);
             }

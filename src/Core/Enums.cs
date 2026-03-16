@@ -20,7 +20,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
     /// <summary>
     /// Specifies whether or not a Digital Twin should be updated after a call to a
-	/// <see cref="MessageProcessor{TDigitalTwin}.ProcessMessageAsync(ProcessingContext, TDigitalTwin, byte[])"/>
+	/// <see cref="MessageProcessor{TDigitalTwin}.ProcessMessageAsync(ProcessingContext{TDigitalTwin}, TDigitalTwin, byte[])"/>
 	/// implementation has returned.
     /// </summary>
     public enum ProcessingResult
@@ -42,13 +42,13 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
     }
 
 
-    /// <summary>
-    /// Defines the type of timer that can be created by <see cref="ProcessingContext.StartTimerAsync(string, System.TimeSpan, TimerType, TimerAsyncHandler)"/>.
-    /// </summary>
-    public enum TimerType
+	/// <summary>
+	/// Defines the type of timer that can be created by <see cref="ProcessingContext{TDigitalTwin}.StartTimerAsync(string, System.TimeSpan, TimerType, TimerAsyncHandler{TDigitalTwin})"/>.
+	/// </summary>
+	public enum TimerType
 	{
 		/// <summary>The timer is fired periodically with the specified interval 
-		/// until the <see cref="ProcessingContext.StopTimerAsync(string)"/> is called.</summary>
+		/// until the <see cref="ProcessingContext{TDigitalTwin}.StopTimerAsync(string)"/> is called.</summary>
 		Recurring,
 
 		/// <summary>The timer is fired once after the specified time interval is elapsed.</summary>

@@ -127,7 +127,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
 
         class DeleteOtherTwinProcessor : SimulationProcessor<SimulatedCarModel>
         {
-            public override async Task<ProcessingResult> ProcessModelAsync(ProcessingContext context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
+            public override async Task<ProcessingResult> ProcessModelAsync(ProcessingContext<SimulatedCarModel> context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
             {
                 // Delete another twin when speed hits zero.
                 digitalTwin.Speed = digitalTwin.Speed - 1;

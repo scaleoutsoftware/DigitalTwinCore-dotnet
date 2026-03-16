@@ -23,23 +23,36 @@ using System.Text;
 
 namespace Scaleout.DigitalTwin.Workbench
 {
-    internal class InstanceRegistration
+    internal abstract class InstanceRegistration
     {
-        public InstanceRegistration(DigitalTwinBase digitalTwinInstance, ModelRegistration modelRegistration, InstanceRegistration? dataSource)
+        public InstanceRegistration(string instanceId, ModelRegistration modelRegistration, InstanceRegistration? dataSource)
         {
-            DigitalTwinInstance = digitalTwinInstance;
+            InstanceId = instanceId;
             ModelRegistration = modelRegistration;
             DataSource = dataSource;
         }
 
-        public DigitalTwinBase DigitalTwinInstance { get; }
+        public string InstanceId { get; }
 
         public ModelRegistration ModelRegistration { get; }
 
         public bool IsDeleted { get; set; } = false;
-		
-        public InstanceRegistration? DataSource { get; set; }		
+
+        public InstanceRegistration? DataSource { get; set; }
 
         public bool IsFirstSimStep { get; set; } = false;
+    }
+
+    internal class InstanceRegistration<TDigitalTwin> : InstanceRegistration 
+        where TDigitalTwin : DigitalTwinBase<TDigitalTwin>, new()
+    {
+        public TDigitalTwin DigitalTwinInstance { get; }
+
+        public InstanceRegistration(string instanceId, TDigitalTwin digitalTwinInstance, ModelRegistration modelRegistration, InstanceRegistration? dataSource)
+            : base(instanceId, modelRegistration, dataSource)
+        {
+            DigitalTwinInstance = digitalTwinInstance;
+        }
+
     }
 }

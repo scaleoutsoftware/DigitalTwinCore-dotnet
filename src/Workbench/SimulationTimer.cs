@@ -20,10 +20,20 @@ using Scaleout.Modules.DigitalTwin.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Scaleout.DigitalTwin.Workbench
 {
-    internal class SimulationTimer : InstanceRegistration
+    internal interface ISimulationTimer
+    {
+        string TimerName { get; }
+        TimerType TimerType { get; }
+        TimeSpan Interval { get; }
+        Task<SimProcessingResult> InvokeTimerAsync();
+    }
+
+    internal class SimulationTimer<TDigitalTwin> : InstanceRegistration<TDigitalTwin>, ISimulationTimer
+        where TDigitalTwin : DigitalTwinBase<TDigitalTwin>, new()
     {
         public string TimerName { get; set; }
 
@@ -31,19 +41,36 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public TimeSpan Interval { get; set; }
 
-        public TimerAsyncHandler TimerCallback { get; set; }
+        public TimerAsyncHandler<TDigitalTwin> TimerCallback { get; set; }
 
-        public SimulationTimer(InstanceRegistration instanceRegistration,
+        public SimulationTimer(InstanceRegistration<TDigitalTwin> instanceRegistration,
                                string timerName,
                                TimerType timerType,
                                TimeSpan interval,
-                               TimerAsyncHandler callback) 
-            : base(instanceRegistration.DigitalTwinInstance, instanceRegistration.ModelRegistration, null)
+                               TimerAsyncHandler<TDigitalTwin> callback) 
+            : base(instanceRegistration.InstanceId, instanceRegistration.DigitalTwinInstance, instanceRegistration.ModelRegistration, null)
         {
             TimerName = timerName;
             TimerType = timerType;
             Interval = interval;
             TimerCallback = callback;
+        }
+
+        public async Task<SimProcessingResult> InvokeTimerAsync()
+        {
+            if (ModelRegistration.SimulationWorkbench == null)
+                throw new InvalidOperationException("Model was not registered in SimulationWorkbench.");
+
+            var processingContext = new SimProcessingContext<TDigitalTwin>(this, ModelRegistration.SimulationWorkbench, messageDepth: 0, logger: null);
+            ProcessingResult processingResult = await TimerCallback(TimerName, DigitalTwinInstance, processingContext);
+
+            return new SimProcessingResult
+            {
+                ProcessingResult = processingResult,
+                DeleteRequested = processingContext.DeleteRequested,
+                StopRequested = processingContext.StopRequested,
+                RequestedSimulationCycleDelay = processingContext.RequestedSimulationCycleDelay
+            };  
         }
     }
 }

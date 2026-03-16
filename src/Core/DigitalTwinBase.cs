@@ -28,7 +28,8 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
     /// </summary>
     /// <remarks>
     /// Each digital twin instance can have up to 5 timers that can be started via the 
-    /// <see cref="ProcessingContext.StartTimerAsync(string, TimeSpan, TimerType, TimerAsyncHandler)"/> method call.
+    /// <see cref="ProcessingContext{TDigitalTwin}.StartTimerAsync(string, TimeSpan, TimerType, TimerAsyncHandler{TDigitalTwin})"/> 
+    /// method call.
     /// </remarks>
     /// <param name="timerName">The timer name.</param>
     /// <param name="context">The digital twin message processing context.</param>
@@ -36,13 +37,14 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
     /// <returns>Return <see cref="ProcessingResult.DoUpdate"/> to indicate that the digital twin
     /// object data was modified so the digital twin needs to be saved. Return 
     /// <see cref="ProcessingResult.NoUpdate"/> if the twin object was not modified and does not need to be saved.</returns>
-    public delegate Task<ProcessingResult> TimerAsyncHandler(string timerName, DigitalTwinBase instance, ProcessingContext context);
+    public delegate Task<ProcessingResult> TimerAsyncHandler<TDigitalTwin>(string timerName, TDigitalTwin instance, ProcessingContext<TDigitalTwin> context) 
+        where TDigitalTwin : DigitalTwinBase<TDigitalTwin>;
 
     /// <summary>
-    /// All digital twin objects must be subclassed from this <see cref="DigitalTwinBase"/> 
-    /// abstract base class to be integrated into the ScaleOut StreamServer message processing pipeline.
+    /// All digital twin objects must be subclassed from this 
+    /// abstract base class to be integrated into the ScaleOut Digital Twins message processing pipeline.
     /// </summary>
-    public abstract class DigitalTwinBase
+    public abstract class DigitalTwinBase<TDigitalTwin> where TDigitalTwin : DigitalTwinBase<TDigitalTwin>
     {
         // Indicates whether this DT instance was already initialized (e.g. the Init method was called once).
         private bool Initialized = false;
@@ -77,7 +79,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// Context object providing operations that are available
         /// when a digital twin instance is being created.
         /// </param>
-        public virtual void Init(string id, string model, InitContext initContext)
+        public virtual void Init(string id, string model, InitContext<TDigitalTwin> initContext)
         {
             Init(id, model);
         }
@@ -100,13 +102,14 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// Context object providing operations that are available
         /// when a digital twin instance is being created.
         /// </param>
-        public virtual Task InitAsync(string id, string model, InitContext initContext)
+        public virtual Task InitAsync(string id, string model, InitContext<TDigitalTwin> initContext)
         {
             return InitAsync(id, model); 
 		}
 
         /// <summary>
-        /// Initializes <see cref="DigitalTwinBase.Id"/> and <see cref="DigitalTwinBase.Model"/>
+        /// Initializes <see cref="DigitalTwinBase{TDerived}.Id"/> 
+        /// and <see cref="DigitalTwinBase{TDerived}.Model"/>
         /// properties at the time of object creation.
         /// </summary>
         /// <param name="id">Digital twin identifier.</param>
@@ -117,7 +120,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// </param>
         [Browsable(false)]
         [EditorBrowsable(EditorBrowsableState.Never)]
-        public Task InitInternalAsync(string id, string model, InitContext initContext)
+        public Task InitInternalAsync(string id, string model, InitContext<TDigitalTwin> initContext)
         {
             if (!Initialized)
             {

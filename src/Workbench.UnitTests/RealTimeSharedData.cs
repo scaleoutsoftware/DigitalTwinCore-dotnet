@@ -1,5 +1,6 @@
 ﻿using Scaleout.DigitalTwin.DevEnv.Tests.Messages;
 using Scaleout.DigitalTwin.DevEnv.Tests.RealTimeCar;
+using Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar;
 using Scaleout.Modules.DigitalTwin.Abstractions;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
     {
         public class SharedDataMessageProcessor : MessageProcessor<RealTimeCarModel>
         {
-            public async override Task<ProcessingResult> ProcessMessageAsync(ProcessingContext context, 
+            public async override Task<ProcessingResult> ProcessMessageAsync(ProcessingContext<RealTimeCarModel> context, 
                                                                         RealTimeCarModel digitalTwin, 
                                                                         byte[] msgBytes)
             {
@@ -77,11 +78,11 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
             Assert.Equal(1, value);
         }
 
-        public class RealTimeTrainModel : DigitalTwinBase
+        public class RealTimeTrainModel : DigitalTwinBase<RealTimeTrainModel>
         {
             public int Speed { get; set; }
 
-            public async override Task InitAsync(string id, string model, InitContext initContext)
+            public async override Task InitAsync(string id, string model, InitContext<RealTimeTrainModel> initContext)
             {
                 await base.InitAsync(id, model, initContext);
 
@@ -117,7 +118,7 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
 
         public class TrainMessageProcessor : MessageProcessor<RealTimeTrainModel>
         {
-            public override Task<ProcessingResult> ProcessMessageAsync(ProcessingContext context,
+            public override Task<ProcessingResult> ProcessMessageAsync(ProcessingContext<RealTimeTrainModel> context,
                                                                         RealTimeTrainModel digitalTwin,
                                                                         byte[] msgBytes)
             {

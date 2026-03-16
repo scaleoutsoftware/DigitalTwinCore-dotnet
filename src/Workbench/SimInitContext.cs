@@ -24,23 +24,24 @@ using System.Threading.Tasks;
 
 namespace Scaleout.DigitalTwin.Workbench
 {
-    internal class SimInitContext : InitContext
+    internal class SimInitContext<TDigitalTwin> : InitContext<TDigitalTwin>
+        where TDigitalTwin : DigitalTwinBase<TDigitalTwin>, new()
     {
-        InstanceRegistration _instanceRegistration;
+        InstanceRegistration<TDigitalTwin> _instanceRegistration;
         SimulationWorkbench _env;
 
-        public SimInitContext(InstanceRegistration instanceRegistration, SimulationWorkbench env)
+        public SimInitContext(InstanceRegistration<TDigitalTwin> instanceRegistration, SimulationWorkbench env)
         {
             _instanceRegistration = instanceRegistration;
             _env = env;
         }
-        public override Task<TimerActionResult> StartTimerAsync(string timerName, TimeSpan interval, TimerType type, TimerAsyncHandler timerCallback)
+        public override Task<TimerActionResult> StartTimerAsync(string timerName, TimeSpan interval, TimerType type, TimerAsyncHandler<TDigitalTwin> timerCallback)
         {
             if (timerName == null) throw new ArgumentNullException(nameof(timerName));
             if (timerCallback == null) throw new ArgumentNullException(nameof(timerCallback));
             if (interval <= TimeSpan.Zero) throw new ArgumentOutOfRangeException(nameof(interval));
 
-            SimulationTimer timerRegistration = new SimulationTimer(_instanceRegistration,
+            var timerRegistration = new SimulationTimer<TDigitalTwin>(_instanceRegistration,
                                                                     timerName,
                                                                     type,
                                                                     interval,

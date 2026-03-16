@@ -25,7 +25,7 @@ using System.Threading.Tasks;
 
 namespace Scaleout.DigitalTwin.DevEnv.Tests.RealTimeCar
 {
-    public class RealTimeCarModel : DigitalTwinBase
+    public class RealTimeCarModel : DigitalTwinBase<RealTimeCarModel>
     {
         public int Speed { get; set; }
     }

@@ -27,7 +27,7 @@ using System.Threading.Tasks;
 
 namespace Scaleout.DigitalTwin.Workbench
 {
-    internal class RealTimeTimer
+    internal abstract class RealTimeTimer
     {
         public string TimerName { get; }
 
@@ -35,33 +35,58 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public TimeSpan Interval { get; }
 
-        public InstanceRegistration InstanceRegistration { get; }
+        protected ILogger _logger;
 
-        private ILogger _logger;
+        protected CancellationTokenSource _cancellationTokenSource;
 
-        private CancellationTokenSource _cancellationTokenSource;
+        protected RealTimeWorkbench _env;
 
-        private RealTimeWorkbench _env;
+        protected Task _timerTask = null!; // Always initialized in derived class constructor
 
-        private Task _timerTask;
-
-        public RealTimeTimer(InstanceRegistration instanceRegistration,
+        public RealTimeTimer(
                                  string timerName,
                                  TimerType timerType,
                                  TimeSpan interval,
-                                 TimerAsyncHandler callback,
                                  RealTimeWorkbench env,
                                  ILogger? logger = null)
         {
             TimerName = timerName;
             TimerType = timerType;
             Interval = interval;
-            InstanceRegistration = instanceRegistration;
             _cancellationTokenSource = new CancellationTokenSource();
             _env = env;
             _logger = logger ?? NullLogger.Instance;
+        }
 
+
+        public void Start()
+        {
+            _timerTask.Start();
+        }
+
+        public Task Stop()
+        {
+            _cancellationTokenSource.Cancel();
+            return _timerTask;
+        }
+    }
+
+    internal class RealTimeTimer<TDigitalTwin> : RealTimeTimer 
+        where TDigitalTwin : DigitalTwinBase<TDigitalTwin>, new()
+    {
+        InstanceRegistration<TDigitalTwin> _instanceRegistration;
+        public RealTimeTimer(InstanceRegistration<TDigitalTwin> instanceRegistration,
+                      string timerName,
+                                 TimerType timerType,
+                                 TimeSpan interval,
+                                 TimerAsyncHandler<TDigitalTwin> callback,
+                                 RealTimeWorkbench env,
+                                 ILogger? logger = null)
+            : base(timerName, timerType, interval, env, logger)
+        {
+            _instanceRegistration = instanceRegistration;
             var ct = _cancellationTokenSource.Token;
+
             _timerTask = new Task(async () =>
             {
                 while (!ct.IsCancellationRequested)
@@ -76,11 +101,10 @@ namespace Scaleout.DigitalTwin.Workbench
                     }
                     if (ct.IsCancellationRequested)
                         break;
-                    
+
                     try
                     {
-                        ProcessingContext processingContext = new RealTimeProcessingContext(
-                            messageSourceContext: null, // no data source when just firing a timer
+                        var processingContext = new RealTimeProcessingContext<TDigitalTwin>(
                             instanceRegistration,
                             env,
                             0,
@@ -100,20 +124,5 @@ namespace Scaleout.DigitalTwin.Workbench
                 }
             });
         }
-
-
-        public void Start()
-        {
-            _timerTask.Start();
-        }
-
-        public Task Stop()
-        {
-            _cancellationTokenSource.Cancel();
-            return _timerTask;
-        }
-
-       
-
     }
 }
