@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <VersionPrefix>0.11.0.0</VersionPrefix>
+    <VersionPrefix>0.12.0.0</VersionPrefix>
     <VersionSuffix>alpha</VersionSuffix>
   </PropertyGroup>
   
@@ -20,7 +20,7 @@
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageIcon>ScaleOutDigitalTwins-Logo-128x128@2x.png</PackageIcon>
     <PackageTags>scaleout digital twin core</PackageTags>
-    <PackageReleaseNotes>Fixes enum severity parameter used by ProcessingContext.LogMessageAsync()</PackageReleaseNotes>
+    <PackageReleaseNotes>Moves SourceNamespaceAppId and NextSimulationTimeUnixMsec back into DigitalTwinBase.</PackageReleaseNotes>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <SignAssembly>True</SignAssembly>
     <Title>ScaleOut DigitalTwin Builder™ Core Types</Title>
