@@ -16,6 +16,7 @@
 
 #endregion
 
+using Newtonsoft.Json;
 using System;
 using System.ComponentModel;
 using System.Threading.Tasks;
@@ -58,6 +59,18 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// Digital twin model type (e.g. "WindTurbine", "TemperatureSensor").
         /// </summary>
         public string Model { get; set; }
+
+        /// <summary>
+		/// For internal use only. ScaleOut AppId of instance's datasource, or zero if not available. Used
+        /// for <see cref="ProcessingContext{TDigitalTwin}.SendToDataSourceAsync(byte[])"/> operations.
+		/// </summary>
+		public uint SourceNamespaceAppId { get; set; }
+
+        /// <summary>
+        /// The next simulation time. Used when a digital twin instance is being used
+        /// in a simulation and the next simulation time needs to be tracked on the instance.
+        /// </summary>
+        public ulong NextSimulationTimeUnixMsec { get; set; } = 0;
 
         /// <summary>
         /// Override to implement initialization logic for a digital twin instance
