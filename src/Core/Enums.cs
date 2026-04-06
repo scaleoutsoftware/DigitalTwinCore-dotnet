@@ -75,4 +75,28 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
 		/// <summary>Failed to start/stop timer due to an internal error.</summary>
 		FailedInternalError = 4
 	}
+
+    /// <summary>
+    /// Result codes for <see cref="IDigitalTwinModelEndpoint.CreateTwinAsync(string, object)"/>.
+    /// </summary>
+    public enum CreateResult
+	{
+		/// <summary>The digital twin instance was created successfully.</summary>
+		Success = 0,
+
+		/// <summary>A digital twin instance with the specified ID already exists.</summary>
+		AlreadyExists = 1
+    }
+
+    /// <summary>
+    /// Result codes for <see cref="IDigitalTwinModelEndpoint.DeleteTwinAsync(string)"/> and
+	/// <see cref="ProcessingContext{TDigitalTwin}.RemoveRealTimeTwinAsync(string, string)"/>.
+    /// </summary>
+    public enum DeleteResult
+	{
+		/// <summary>The digital twin instance was deleted successfully.</summary>
+		Success = 0,
+		/// <summary>A digital twin instance with the specified ID was not found.</summary>
+		NotFound = 1
+    }
 }
