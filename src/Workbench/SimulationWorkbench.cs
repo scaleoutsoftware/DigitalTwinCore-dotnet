@@ -337,7 +337,7 @@ namespace Scaleout.DigitalTwin.Workbench
         /// <param name="modelName">Name of a model that has been registered with this workbench instance using <see cref="AddSimulationModel{TDigitalTwin}(string, SimulationProcessor{TDigitalTwin})"/> or <see cref="AddRealTimeModel{TDigitalTwin}(string, MessageProcessor{TDigitalTwin})"/>.</param>
         /// <exception cref="InvalidOperationException">The provided <paramref name="modelName"/> has not been registered as a simulation or realtime model.</exception>
         /// <exception cref="InvalidOperationException">The instance cannot be removed because the simulation was already started (using InitializeSimulation() or RunSimulation()).</exception>
-        internal void RemoveInstance(string modelName, string instanceId)
+        internal DeleteResult RemoveInstance(string modelName, string instanceId)
         {
             bool foundModel = _instances.TryGetValue(modelName, out var modelInstances);
             if (foundModel)
@@ -346,7 +346,16 @@ namespace Scaleout.DigitalTwin.Workbench
                 if (foundInstance)
                 {
                     removedInstance.IsDeleted = true;
+                    return DeleteResult.Success;
                 }
+                else
+                {
+                    return DeleteResult.NotFound;
+                }
+            }
+            else
+            {
+                throw new InvalidOperationException($"{modelName} has not been registered as a simulation or realtime model. Call AddSimulationModel or AddRealTimeModel first.");
             }
         }
 

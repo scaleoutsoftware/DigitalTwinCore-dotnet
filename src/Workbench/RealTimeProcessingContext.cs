@@ -189,7 +189,7 @@ namespace Scaleout.DigitalTwin.Workbench
             }
         }
 
-        public override Task RemoveRealTimeTwinAsync(string targetTwinModel, string targetTwinId)
+        public override Task<DeleteResult> RemoveRealTimeTwinAsync(string targetTwinModel, string targetTwinId)
         {
             // Undocumented feature of the real ProcessingContextInternal class: If the targetTwinModel is null/empty,
             // assuming we're working on another instanceRegistration in the same model.
@@ -200,9 +200,11 @@ namespace Scaleout.DigitalTwin.Workbench
             if (!foundModel)
                 throw new KeyNotFoundException($"Model {targetTwinModel} not found. Register it first with the {nameof(RealTimeWorkbench)} before sending message to it.");
 
-            instances.TryRemove(targetTwinId, out _);
+            if (instances.TryRemove(targetTwinId, out _))
+                return Task.FromResult(DeleteResult.Success);
+            else
+                return Task.FromResult(DeleteResult.NotFound);
 
-            return Task.CompletedTask;
         }
     }
 }

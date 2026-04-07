@@ -339,15 +339,15 @@ namespace Scaleout.DigitalTwin.Workbench
             StopRequested = true;
         }
 
-        public override Task RemoveRealTimeTwinAsync(string targetTwinModel, string targetTwinId)
+        public override Task<DeleteResult> RemoveRealTimeTwinAsync(string targetTwinModel, string targetTwinId)
         {
             // Undocumented feature of the real ProcessingContextInternal class: If the targetTwinModel is null/empty,
             // assuming we're sending a message to another instance in the same model.
             if (string.IsNullOrEmpty(targetTwinModel))
                 targetTwinModel = this.DigitalTwinModel;
 
-            _env.RemoveInstance(targetTwinModel, targetTwinId);
-            return Task.CompletedTask;
+            return Task.FromResult(_env.RemoveInstance(targetTwinModel, targetTwinId));
+
         }
 
         

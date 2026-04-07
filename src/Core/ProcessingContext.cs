@@ -169,7 +169,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// </summary>
         /// <param name="targetTwinModel">Digital twin model name.</param>
         /// <param name="targetTwinId">Digital twin identifier.</param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public abstract Task RemoveRealTimeTwinAsync(string targetTwinModel, string targetTwinId);
+        /// <returns><see cref="DeleteResult"/> indicating the result of the delete operation.</returns>
+        public abstract Task<DeleteResult> RemoveRealTimeTwinAsync(string targetTwinModel, string targetTwinId);
     }
 }

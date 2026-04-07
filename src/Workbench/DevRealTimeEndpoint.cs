@@ -46,7 +46,7 @@ namespace Scaleout.DigitalTwin.Workbench
             _logger = logger;
         }
 
-        public async Task CreateTwinAsync(string digitalTwinId, object digitalTwin)
+        public async Task<CreateResult> CreateTwinAsync(string digitalTwinId, object digitalTwin)
         {
             if (digitalTwin == null)
                 throw new ArgumentNullException(nameof(digitalTwin));
@@ -61,31 +61,36 @@ namespace Scaleout.DigitalTwin.Workbench
             await typedDigitalTwin.InitInternalAsync(digitalTwinId, _registration.ModelName, initContext);
             bool added = _modelInstances.TryAdd(digitalTwinId, instanceRegistration);
             if (added)
-                _logger.LogInformation("Digital twin instance {DigitalTwinId} created for model {ModelName}", digitalTwinId, _registration.ModelName);
+            {
+                return CreateResult.Success;
+            }
             else
-                _logger.LogWarning("Digital twin instance {DigitalTwinId} could not be created for model {ModelName} because an instance with this ID already exists.", digitalTwinId, _registration.ModelName);
+            {
+                return CreateResult.AlreadyExists;
+            }
         }
 
-        public Task CreateTwinFromPersistenceStoreAsync(string digitalTwinId, object defaultValue)
+        public Task<CreateResult> CreateTwinFromPersistenceStoreAsync(string digitalTwinId, object defaultValue)
         {
             throw new NotSupportedException();
         }
 
-        public Task CreateTwinFromPersistenceStoreAsync(string digitalTwinId)
+        public Task<CreateResult> CreateTwinFromPersistenceStoreAsync(string digitalTwinId)
         {
             throw new NotSupportedException();
         }
 
-        public Task DeleteTwinAsync(string digitalTwinId)
+        public Task<DeleteResult> DeleteTwinAsync(string digitalTwinId)
         {
             bool foundInstance = _modelInstances.TryRemove(digitalTwinId, out _);
             if (foundInstance)
-                _logger.LogInformation("Digital twin instance {DigitalTwinId} removed for model {ModelName}", digitalTwinId, _registration.ModelName);
+            {
+                return Task.FromResult(DeleteResult.Success);
+            }
             else
-                _logger.LogWarning("Digital twin instance {DigitalTwinId} could not be removed for model {ModelName} because it does not exist.", digitalTwinId, _registration.ModelName);
-
-            return Task.CompletedTask;
-
+            {
+                return Task.FromResult(DeleteResult.NotFound);
+            }
         }
 
         public Task SendAsync(string digitalTwinId, byte[] message)
