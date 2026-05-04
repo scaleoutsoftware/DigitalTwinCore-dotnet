@@ -29,16 +29,11 @@ namespace Scaleout.DigitalTwin.Workbench
     /// </summary>
     public class PostedAlert
     {
-        internal PostedAlert(string alertProviderName, AlertMessage alertMessage)
+        internal PostedAlert(AlertMessage alertMessage)
         {
-            AlertProviderName = alertProviderName;
             AlertMessage = alertMessage;
         }
 
-        /// <summary>
-        /// Alert provider's name.
-        /// </summary>
-        public string AlertProviderName { get; }
 
         /// <summary>
         /// The message sent to the alert provider.

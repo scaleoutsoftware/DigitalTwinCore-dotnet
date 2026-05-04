@@ -86,14 +86,6 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         public abstract Task LogMessageAsync(LogSeverity severity, string message);
 
         /// <summary>
-        /// Sends an alert using the specified alerting provider. 
-        /// </summary>
-        /// <param name="providerName">The name of the configuration of an Alerting Provider to send the alert to.</param>
-        /// <param name="alertMessage">The provided object contains information about the alert data, as well as the provider to target.</param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public abstract Task SendAlertAsync(string providerName, AlertMessage alertMessage);
-
-        /// <summary>
 		/// Sends an alert using the alerting provider that is associated with the 
         /// digital twin model.
 		/// </summary>

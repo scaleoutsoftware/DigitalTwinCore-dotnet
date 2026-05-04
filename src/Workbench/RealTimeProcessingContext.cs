@@ -82,15 +82,10 @@ namespace Scaleout.DigitalTwin.Workbench
             return Task.CompletedTask;
         }
 
-        public override Task SendAlertAsync(string providerName, AlertMessage alertMessage)
-        {
-            _env.RecordAlert(providerName, alertMessage);
-            return Task.CompletedTask;
-        }
-
         public override Task SendAlertAsync(AlertMessage alertMessage)
         {
-            return SendAlertAsync("default", alertMessage);
+            _env.RecordAlert(alertMessage);
+            return Task.CompletedTask;
         }
 
         public override Task SendToDataSourceAsync(byte[] message)

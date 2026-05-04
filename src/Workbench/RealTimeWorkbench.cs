@@ -177,9 +177,9 @@ namespace Scaleout.DigitalTwin.Workbench
             }
         }
 
-        internal void RecordAlert(string providerName, AlertMessage alertMessage)
+        internal void RecordAlert(AlertMessage alertMessage)
         {
-            PostedAlert postedAlert = new PostedAlert(providerName, alertMessage);
+            PostedAlert postedAlert = new PostedAlert(alertMessage);
             lock (_postedAlerts)
             {
                 _postedAlerts.Add(postedAlert);

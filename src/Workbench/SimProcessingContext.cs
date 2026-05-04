@@ -207,11 +207,6 @@ namespace Scaleout.DigitalTwin.Workbench
             return Task.CompletedTask;
         }
 
-        public override Task SendAlertAsync(string providerName, AlertMessage alertMessage)
-        {
-            throw new NotImplementedException();
-        }
-
         public override Task SendAlertAsync(AlertMessage alertMessage)
         {
             throw new NotImplementedException();
