@@ -52,30 +52,6 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         Task<CreateResult> CreateTwinAsync(string digitalTwinId, object digitalTwin);
 
         /// <summary>
-        /// Create a new digital twin instance. This method first tries to create 
-        /// a new twin instance from a persistence store if it is enabled. If a persistence store is not enabled or
-        /// if the twin instance is not found there, the property values of the specified fallback 
-        /// <paramref name="defaultValue"/> are used to create and initialize a new twin instance.
-        /// </summary>
-        /// <param name="digitalTwinId">Digital twin identifier.</param>
-        /// <param name="defaultValue">Digital twin instance to create. It could an object of a real
-        /// digital twin model type or simply an anonymous object with a set of digital twin model's 
-        /// properties and their initial values.</param>
-        /// <returns>The <see cref="CreateResult"/> indicating the result of the operation.</returns>
-        Task<CreateResult> CreateTwinFromPersistenceStoreAsync(string digitalTwinId, object defaultValue);
-
-        /// <summary>
-        /// Create a new digital twin instance in the ScaleOut data grid. This method assumes that persistence store is 
-        /// enabled for the target model and the twin instance with the specified <paramref name="digitalTwinId"/> 
-        /// exists there. In this case, a new twin instance is created and initialized from the persistence store.
-        /// Otherwise, the <see cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinInstantiationException"/>
-        /// is thrown.
-        /// </summary>
-        /// <param name="digitalTwinId">Digital twin identifier.</param>
-        /// <returns>The <see cref="CreateResult"/> indicating the result of the operation.</returns>
-        Task<CreateResult> CreateTwinFromPersistenceStoreAsync(string digitalTwinId);
-
-        /// <summary>
         /// Delete a digital twin instance from the ScaleOut data grid.
         /// </summary>
 		/// <param name="digitalTwinId">Digital twin identifier.</param>
