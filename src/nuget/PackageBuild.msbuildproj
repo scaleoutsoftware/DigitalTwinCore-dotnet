@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.Build.Traversal/4.1.82">
+  <!-- Use this as a target project for packing NuGet packages. 
+       Background: We can't run pack on the entire solution file because there's stuff 
+       in there that can't be easily skipped (VS extensions, templates, test, etc). So we use this
+       MSBuild "Traversal" project to only include the subset of projects we want to pack. 
+       See: https://github.com/microsoft/MSBuildSdks/blob/main/src/Traversal/README.md
+       
+       In the future we might consider using Nugetizer, 
+	   which is a tool that could give us more flexibility over packaging:
+       - https://github.com/devlooped/nugetizer
+       - https://www.clarius.org/nugetizer/
+  -->
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Scaleout.Modules.DigitalTwin.Abstractions.csproj" />
+    <ProjectReference Include="..\Workbench\Scaleout.DigitalTwin.Workbench.csproj" />
+  </ItemGroup>
+</Project>
