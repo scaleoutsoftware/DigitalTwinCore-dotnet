@@ -19,9 +19,6 @@
 using Microsoft.Extensions.Logging;
 using Scaleout.Modules.DigitalTwin.Abstractions;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Scaleout.DigitalTwin.Workbench
