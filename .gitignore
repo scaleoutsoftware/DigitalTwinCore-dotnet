@@ -1,4 +1,2 @@
 PackageBuild/
 
-# Ignore the root docs folder--this is where docfx puts its build output.
-/docs
