@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Interface ISimulationController | ScaleOut Digital Twins&amp;trade; .NET API Reference </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Interface ISimulationController | ScaleOut Digital Twins&amp;trade; .NET API Reference ">
+      
+      <meta name="description" content="The methods of this interface allow user to control all aspects of digital twin&#39;s model simulation process.">
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/new/master/apiSpec/new?filename=Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController.md&amp;value=---%0Auid%3A%20Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/ScaleOutDigitalTwins-Logo.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController">
+
+
+
+  <h1 id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController" class="text-break">
+Interface ISimulationController  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ISimulationController.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Scaleout.html">Scaleout</a>.<a class="xref" href="Scaleout.Modules.html">Modules</a>.<a class="xref" href="Scaleout.Modules.DigitalTwin.html">DigitalTwin</a>.<a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.html">Abstractions</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Scaleout.Modules.DigitalTwin.Abstractions.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The methods of this interface allow user to control all aspects of
+digital twin's model simulation process.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface ISimulationController</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_SimulationStartTime_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.SimulationStartTime*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_SimulationStartTime" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.SimulationStartTime">
+  SimulationStartTime
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ISimulationController.cs/#L168"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the simulation start time in UTC.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">DateTimeOffset SimulationStartTime { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
+    <dd><p>The simulation start time.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_CreateTwinAsync_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateTwinAsync*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_CreateTwinAsync_System_String_System_String_System_Object_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateTwinAsync(System.String,System.String,System.Object)">
+  CreateTwinAsync(string, string, object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ISimulationController.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Create a new digital twin instance of the specified simulation <code class="paramref">modelName</code>.
+This method forces to use the specified object instance over the one that could be found
+in the persistence store if it is enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task CreateTwinAsync(string modelName, string twinId, object newInstance)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>modelName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Digital twin model name.</p>
+</dd>
+    <dt><code>twinId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Digital twin identifier.</p>
+</dd>
+    <dt><code>newInstance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>Digital twin instance to create. It could be an object of a real
+digital twin model type or simply an anonymous object with a set of digital twin model's
+properties and their initial values.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException.html">ModelSimulationException</a></dt>
+    <dd><p>The exception is thrown if the current digital twin model does not support simulation.</p>
+</dd>
+    <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinInstantiationException.html">DigitalTwinInstantiationException</a></dt>
+    <dd><p>An error occurred while creating a new digital twin instance.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_CreateTwinFromPersistenceStoreAsync_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateTwinFromPersistenceStoreAsync*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_CreateTwinFromPersistenceStoreAsync_System_String_System_String_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateTwinFromPersistenceStoreAsync(System.String,System.String)">
+  CreateTwinFromPersistenceStoreAsync(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ISimulationController.cs/#L130"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Create a new digital twin instance of the specified simulation <code class="paramref">modelName</code>.
+This method assumes that persistence store is enabled for the <code class="paramref">modelName</code> and
+twin instance with the specified <code class="paramref">twinId</code> exists there. In this case,
+a new twin instance is created and initialized from the persistence store.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task CreateTwinFromPersistenceStoreAsync(string modelName, string twinId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>modelName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Digital twin model name.</p>
+</dd>
+    <dt><code>twinId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Digital twin identifier.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException.html">ModelSimulationException</a></dt>
+    <dd><p>The exception is thrown if the current digital twin model does not support simulation.</p>
+</dd>
+    <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinInstantiationException.html">DigitalTwinInstantiationException</a></dt>
+    <dd><p>An error occurred while creating a new digital twin instance.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_CreateTwinFromPersistenceStoreAsync_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateTwinFromPersistenceStoreAsync*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_CreateTwinFromPersistenceStoreAsync_System_String_System_String_System_Object_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateTwinFromPersistenceStoreAsync(System.String,System.String,System.Object)">
+  CreateTwinFromPersistenceStoreAsync(string, string, object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ISimulationController.cs/#L113"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Create a new digital twin instance of the specified simulation <code class="paramref">modelName</code>.
+This method first tries to create a new twin instance from a persistence store if it is enabled.
+If a persistence store is not enabled or if the twin instance is not found there, then the property values
+of the specified fallback <code class="paramref">defaultInstance</code> are used to create and initialize a new twin instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task CreateTwinFromPersistenceStoreAsync(string modelName, string twinId, object defaultInstance)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>modelName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Digital twin model name.</p>
+</dd>
+    <dt><code>twinId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Digital twin identifier.</p>
+</dd>
+    <dt><code>defaultInstance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>Digital twin instance to create. It could an object of a real
+digital twin model type or simply an anonymous object with a set of digital twin model's
+properties and their initial values.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException.html">ModelSimulationException</a></dt>
+    <dd><p>The exception is thrown if the current digital twin model does not support simulation.</p>
+</dd>
+    <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinInstantiationException.html">DigitalTwinInstantiationException</a></dt>
+    <dd><p>An error occurred while creating a new digital twin instance.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_Delay_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.Delay*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_Delay_System_TimeSpan_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.Delay(System.TimeSpan)">
+  Delay(TimeSpan)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ISimulationController.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Delays the wake-up for the current instance for the specified <code class="paramref">delay</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void Delay(TimeSpan delay)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>delay</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></dt>
+    <dd><p><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a> for simulation time delay.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException.html">ModelSimulationException</a></dt>
+    <dd><p>The exception is thrown if the current digital twin model does not support simulation.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_DelayIndefinitely_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DelayIndefinitely*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_DelayIndefinitely" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DelayIndefinitely">
+  DelayIndefinitely()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ISimulationController.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Delays calling the <a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.SimulationProcessor-1.html#Scaleout_Modules_DigitalTwin_Abstractions_SimulationProcessor_1_ProcessModelAsync_Scaleout_Modules_DigitalTwin_Abstractions_ProcessingContext__0___0_System_DateTimeOffset_">ProcessModelAsync(ProcessingContext&lt;TDigitalTwin&gt;, TDigitalTwin, DateTimeOffset)</a>
+method for this instance forever. Users can interrupt this infinite delay later
+by calling <a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html#Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_RunThisTwin">RunThisTwin()</a> for this instance within the
+<a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.MessageProcessor-1.html#Scaleout_Modules_DigitalTwin_Abstractions_MessageProcessor_1_ProcessMessageAsync_Scaleout_Modules_DigitalTwin_Abstractions_ProcessingContext__0___0_System_Byte___">ProcessMessageAsync(ProcessingContext&lt;TDigitalTwin&gt;, TDigitalTwin, byte[])</a> method call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void DelayIndefinitely()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException.html">ModelSimulationException</a></dt>
+    <dd><p>The exception is thrown if the current digital twin model does not support simulation.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_DeleteThisTwinAsync_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteThisTwinAsync*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_DeleteThisTwinAsync" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteThisTwinAsync">
+  DeleteThisTwinAsync()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ISimulationController.cs/#L150"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Delete this simulation twin instance (itself).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task DeleteThisTwinAsync()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException.html">ModelSimulationException</a></dt>
+    <dd><p>The exception is thrown if the current digital twin model does not support simulation.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_DeleteTwinAsync_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteTwinAsync*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_DeleteTwinAsync_System_String_System_String_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteTwinAsync(System.String,System.String)">
+  DeleteTwinAsync(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ISimulationController.cs/#L141"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Delete a digital twin instance of the specified simulation <code class="paramref">modelName</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task DeleteTwinAsync(string modelName, string twinId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>modelName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Digital twin model name.</p>
+</dd>
+    <dt><code>twinId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Digital twin identifier.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException.html">ModelSimulationException</a></dt>
+    <dd><p>The exception is thrown if the current digital twin model does not support simulation.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_EmitTelemetryAsync_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.EmitTelemetryAsync*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_EmitTelemetryAsync_System_String_System_Byte___" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.EmitTelemetryAsync(System.String,System.Byte[])">
+  EmitTelemetryAsync(string, byte[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ISimulationController.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sends a telemetry message to the corresponding real-time digital twin instance.
+The twin ids for both, sending digital twin in a simulation model and the receiving twin
+in the real-time model are the same.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task EmitTelemetryAsync(string modelName, byte[] message)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>modelName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Real-time digital twin model name.</p>
+</dd>
+    <dt><code>message</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>The JSON-serialized message to send.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The task object representing the asynchronous operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException.html">ModelSimulationException</a></dt>
+    <dd><p>The exception is thrown if the current digital twin model does not support simulation.</p>
+</dd>
+    <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinProcessingException.html">DigitalTwinProcessingException</a></dt>
+    <dd><p>An error occurred while processing the message by digital twin.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_GetSimulationTimeIncrement_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.GetSimulationTimeIncrement*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_GetSimulationTimeIncrement" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.GetSimulationTimeIncrement">
+  GetSimulationTimeIncrement()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ISimulationController.cs/#L37"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Get a simulation time increment.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TimeSpan GetSimulationTimeIncrement()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></dt>
+    <dd><p><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timespan">TimeSpan</a> for the simulation time increment.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException.html">ModelSimulationException</a></dt>
+    <dd><p>The exception is thrown if the current digital twin model does not support simulation.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_RunThisTwin_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.RunThisTwin*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_RunThisTwin" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.RunThisTwin">
+  RunThisTwin()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ISimulationController.cs/#L157"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Adds this simulation twin instance (itself) to the end of the priority queue for
+running the <a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.SimulationProcessor-1.html#Scaleout_Modules_DigitalTwin_Abstractions_SimulationProcessor_1_ProcessModelAsync_Scaleout_Modules_DigitalTwin_Abstractions_ProcessingContext__0___0_System_DateTimeOffset_">ProcessModelAsync(ProcessingContext&lt;TDigitalTwin&gt;, TDigitalTwin, DateTimeOffset)</a>
+method for it at the current simulation time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void RunThisTwin()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_StopSimulation_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.StopSimulation*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_StopSimulation" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.StopSimulation">
+  StopSimulation()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ISimulationController.cs/#L162"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Stop the currently running simulation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void StopSimulation()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/ISimulationController.cs/#L28" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2024-2025 ScaleOut Software, Inc.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

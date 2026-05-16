@@ -1,0 +1,756 @@
+{
+  "source_base_path": "C:/Users/markw/dev/github/DigitalTwinCore-dotnet/src/docfx",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.DigitalTwin.Workbench.MachineLearning.RealTimeWorkbenchExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.DigitalTwin.Workbench.MachineLearning.RealTimeWorkbenchExtension.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.DigitalTwin.Workbench.MachineLearning.RealTimeWorkbenchExtension",
+      "Summary": "<p sourcefile=\"api/Scaleout.DigitalTwin.Workbench.MachineLearning.RealTimeWorkbenchExtension.yml\" sourcestartlinenumber=\"1\">This is an extension of the RealTimeWorkbench specific to Machine Learning Algorithms.\nIt adds support for Anomaly Detection Providers built using the ScaleOut Machine Learning Training Tool</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.DigitalTwin.Workbench.MachineLearning.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.DigitalTwin.Workbench.MachineLearning.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.DigitalTwin.Workbench.MachineLearning",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.DigitalTwin.Workbench.PostedAlert.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.DigitalTwin.Workbench.PostedAlert.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.DigitalTwin.Workbench.PostedAlert",
+      "Summary": "<p sourcefile=\"api/Scaleout.DigitalTwin.Workbench.PostedAlert.yml\" sourcestartlinenumber=\"1\">An alert that was sent from a MessageProcessor using\n<xref href=\"Scaleout.Modules.DigitalTwin.Abstractions.ProcessingContext%601.SendAlertAsync(Scaleout.Modules.DigitalTwin.Abstractions.AlertMessage)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.DigitalTwin.Workbench.RealTimeWorkbench",
+      "Summary": "<p sourcefile=\"api/Scaleout.DigitalTwin.Workbench.RealTimeWorkbench.yml\" sourcestartlinenumber=\"1\">Workbench for real-time digital twin development.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.DigitalTwin.Workbench.SendToDataSourceEventArgs",
+      "Summary": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.DigitalTwin.Workbench.SimulationStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.DigitalTwin.Workbench.SimulationStatus.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.DigitalTwin.Workbench.SimulationStatus",
+      "Summary": "<p sourcefile=\"api/Scaleout.DigitalTwin.Workbench.SimulationStatus.yml\" sourcestartlinenumber=\"1\">Represents the status of a simulation running under a <xref href=\"Scaleout.DigitalTwin.Workbench.SimulationWorkbench\" data-throw-if-not-resolved=\"false\"></xref> instance.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.DigitalTwin.Workbench.SimulationWorkbench",
+      "Summary": "<p sourcefile=\"api/Scaleout.DigitalTwin.Workbench.SimulationWorkbench.yml\" sourcestartlinenumber=\"1\">Workbench for simulation development.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.DigitalTwin.Workbench.StepResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.DigitalTwin.Workbench.StepResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.DigitalTwin.Workbench.StepResult",
+      "Summary": "<p sourcefile=\"api/Scaleout.DigitalTwin.Workbench.StepResult.yml\" sourcestartlinenumber=\"1\">Execution result of a simulation time step.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.DigitalTwin.Workbench.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.DigitalTwin.Workbench.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.DigitalTwin.Workbench",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.AlertMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.AlertMessage.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.AlertMessage",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.AlertMessage.yml\" sourcestartlinenumber=\"1\">The AlertMessage objects contain all the data to send alerts to external services.\nThis includes properties such as title, message and severity. Finally, alerts can include snapshots of instance\nproperties along with the message.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.AlertSeverity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.AlertSeverity.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.AlertSeverity",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.AlertSeverity.yml\" sourcestartlinenumber=\"1\">Defines the severity levels for alert messages.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.CacheOperationStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.CacheOperationStatus.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.CacheOperationStatus",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.CacheOperationStatus.yml\" sourcestartlinenumber=\"1\">An enumeration that indicates the outcome of a cache operation.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.CreateResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.CreateResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.CreateResult",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.CreateResult.yml\" sourcestartlinenumber=\"1\">Result codes for <xref href=\"Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.CreateTwinAsync(System.String%2cSystem.Object)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.DeleteResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.DeleteResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.DeleteResult",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.DeleteResult.yml\" sourcestartlinenumber=\"1\">Result codes for <xref href=\"Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.DeleteTwinAsync(System.String)\" data-throw-if-not-resolved=\"false\"></xref> and\n<xref href=\"Scaleout.Modules.DigitalTwin.Abstractions.ProcessingContext%601.RemoveRealTimeTwinAsync(System.String%2cSystem.String)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.DigitalTwinBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.DigitalTwinBase-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.DigitalTwinBase<TDigitalTwin>",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.DigitalTwinBase-1.yml\" sourcestartlinenumber=\"1\">All digital twin objects must be subclassed from this\nabstract base class to be integrated into the ScaleOut Digital Twins message processing pipeline.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.DigitalTwinTimerMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.DigitalTwinTimerMessage.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.DigitalTwinTimerMessage",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.DigitalTwinTimerMessage.yml\" sourcestartlinenumber=\"1\">Defines a timer message for data exchange between the timer's object\nexpiration handler and the corresponding digital twin instance itself.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinConfigurationException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinConfigurationException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinConfigurationException",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinConfigurationException.yml\" sourcestartlinenumber=\"1\">Exception indicating that the configuration of a DigitalTwin model is incorrect.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinInstantiationException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinInstantiationException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinInstantiationException",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinInstantiationException.yml\" sourcestartlinenumber=\"1\">Exception indicating that a digital twin is unable to be instantiated by the\nDigitalTwin service.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinProcessingException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinProcessingException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinProcessingException",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinProcessingException.yml\" sourcestartlinenumber=\"1\">Exception that contains an error occured while processing messages by a digital twin.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ExecutionEnvironmentException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ExecutionEnvironmentException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ExecutionEnvironmentException",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ExecutionEnvironmentException.yml\" sourcestartlinenumber=\"1\">Exception indicating that an error occurred when establishing the execution environment.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.MessageInstantiationException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.MessageInstantiationException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.MessageInstantiationException",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.MessageInstantiationException.yml\" sourcestartlinenumber=\"1\">The MessageInstantiationException is used to detect if a Message is unable to be instantiated by the\nDigitalTwin service.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.MessageProcessorInstantiationException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.MessageProcessorInstantiationException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.MessageProcessorInstantiationException",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.MessageProcessorInstantiationException.yml\" sourcestartlinenumber=\"1\">The MessageProcessorInstantiationException is used to detect if a messages processor is unable to be instantiated by the\nDigitalTwin service.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException.yml\" sourcestartlinenumber=\"1\">The ModelSimulationException is raised when an error condition\nencountered while running the model simulation.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.PersistenceProviderException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.PersistenceProviderException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.PersistenceProviderException",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.PersistenceProviderException.yml\" sourcestartlinenumber=\"1\">An exception thrown by persistence providers.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.Exceptions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.IAnomalyDetectionProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.IAnomalyDetectionProvider.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.IAnomalyDetectionProvider",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.IAnomalyDetectionProvider.yml\" sourcestartlinenumber=\"1\">Encapsulates the capabilities of a ScaleOut real-time digital twin\nanomaly detection provider.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.IAzureDigitalTwinsProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.IAzureDigitalTwinsProvider.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.IAzureDigitalTwinsProvider",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.IAzureDigitalTwinsProvider.yml\" sourcestartlinenumber=\"1\">Defines the methods available to ScaleOut Digital Twins for interacting with\ncorresponding Azure Digital Twins (ADT) instances.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.ICacheResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.ICacheResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.ICacheResult",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.ICacheResult.yml\" sourcestartlinenumber=\"1\">Represents a response from an <xref href=\"Scaleout.Modules.DigitalTwin.Abstractions.ISharedData\" data-throw-if-not-resolved=\"false\"></xref> operation.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.yml\" sourcestartlinenumber=\"1\">Interface for use by client applications that send messages to digital twin instances.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.yml\" sourcestartlinenumber=\"1\">Encapsulates the capabilities of a third-party digital twin\npersistence provider.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.IMessageListFactory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.IMessageListFactory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.IMessageListFactory",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.IMessageListFactory.yml\" sourcestartlinenumber=\"1\">Creates collection of new messages received by a digital twin object.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.ISharedData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.ISharedData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.ISharedData",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.ISharedData.yml\" sourcestartlinenumber=\"1\">Provides access to objects that are shared between model instances.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.yml\" sourcestartlinenumber=\"1\">The methods of this interface allow user to control all aspects of\ndigital twin's model simulation process.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.InitContext-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.InitContext-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.InitContext<TDigitalTwin>",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.InitContext-1.yml\" sourcestartlinenumber=\"1\">Context object that provides operations that are available\nwhen a digital twin instance is being created.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.InitSimulationContext.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.InitSimulationContext.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.InitSimulationContext",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.InitSimulationContext.yml\" sourcestartlinenumber=\"1\">Context object that provides operations that are available\nwhen a new simulation starts</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.LogSeverity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.LogSeverity.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.LogSeverity",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.LogSeverity.yml\" sourcestartlinenumber=\"1\">Severity levels for logging messages to the ScaleOut UI.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.MessageProcessor-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.MessageProcessor-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.MessageProcessor<TDigitalTwin>",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.MessageProcessor-1.yml\" sourcestartlinenumber=\"1\">Abstract base class that must be subclassed to implement the message processor which\nprocesses incoming messages for a digital twin object.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.MessageProcessor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.MessageProcessor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.MessageProcessor",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.MessageProcessor.yml\" sourcestartlinenumber=\"1\">The top level abstract base class used by ScaleOut Digital Twin Library.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.ProcessingContext-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.ProcessingContext-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.ProcessingContext<TDigitalTwin>",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.ProcessingContext-1.yml\" sourcestartlinenumber=\"1\">Message processing context for currently processing messages.\nIt allows sending messages back to a data source where the messages\nare originated from.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.ProcessingResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.ProcessingResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.ProcessingResult",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.ProcessingResult.yml\" sourcestartlinenumber=\"1\">Specifies whether or not a Digital Twin should be updated after a call to a\n<xref href=\"Scaleout.Modules.DigitalTwin.Abstractions.MessageProcessor%601.ProcessMessageAsync(Scaleout.Modules.DigitalTwin.Abstractions.ProcessingContext%7b%600%7d%2c%600%2cSystem.Byte%5b%5d)\" data-throw-if-not-resolved=\"false\"></xref>\nimplementation has returned.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.SimulationProcessor-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.SimulationProcessor-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.SimulationProcessor<TDigitalTwin>",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.SimulationProcessor-1.yml\" sourcestartlinenumber=\"1\">Abstract base class for logic that gets triggered for every time interval in a simulation.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.SimulationProcessor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.SimulationProcessor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.SimulationProcessor",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.SimulationProcessor.yml\" sourcestartlinenumber=\"1\">Abstract base class used by ScaleOut Digital Twin Library infrastructure.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.TimerActionResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.TimerActionResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.TimerActionResult",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.TimerActionResult.yml\" sourcestartlinenumber=\"1\">Defines result codes for timer methods.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.TimerAsyncHandler-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.TimerAsyncHandler-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.TimerAsyncHandler<TDigitalTwin>",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.TimerAsyncHandler-1.yml\" sourcestartlinenumber=\"1\">Digital twin timer delegate. Must be assigned to either a public static method or a\nclass instance method.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.TimerMetadata-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.TimerMetadata-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.TimerMetadata<TDigitalTwin>",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.TimerMetadata-1.yml\" sourcestartlinenumber=\"1\">Used by the <xref href=\"Scaleout.Modules.DigitalTwin.Abstractions.DigitalTwinBase%601\" data-throw-if-not-resolved=\"false\"></xref> class to store\ninformation about a timer associated with a Digital Twin instance.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.TimerType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.TimerType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions.TimerType",
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.TimerType.yml\" sourcestartlinenumber=\"1\">Defines the type of timer that can be created by <xref href=\"Scaleout.Modules.DigitalTwin.Abstractions.ProcessingContext%601.StartTimerAsync(System.String%2cSystem.TimeSpan%2cScaleout.Modules.DigitalTwin.Abstractions.TimerType%2cScaleout.Modules.DigitalTwin.Abstractions.TimerAsyncHandler%7b%600%7d)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Scaleout.Modules.DigitalTwin.Abstractions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Scaleout.Modules.DigitalTwin.Abstractions",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html"
+        },
+        ".json": {
+          "relative_path": "articles/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/ScaleOutDigitalTwins-Logo.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/ScaleOutDigitalTwins-Logo.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "images/favicon.ico"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

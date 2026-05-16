@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Namespace Scaleout.Modules.DigitalTwin.Abstractions | ScaleOut Digital Twins&amp;trade; .NET API Reference </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Namespace Scaleout.Modules.DigitalTwin.Abstractions | ScaleOut Digital Twins&amp;trade; .NET API Reference ">
+      
+      
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/ScaleOutDigitalTwins-Logo.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Scaleout.Modules.DigitalTwin.Abstractions">
+
+  <h1 id="Scaleout_Modules_DigitalTwin_Abstractions" data-uid="Scaleout.Modules.DigitalTwin.Abstractions" class="text-break">Namespace Scaleout.Modules.DigitalTwin.Abstractions</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+
+    <h3 id="classes">
+Classes
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.AlertMessage.html">AlertMessage</a></dt>
+      <dd><p>The AlertMessage objects contain all the data to send alerts to external services.
+This includes properties such as title, message and severity. Finally, alerts can include snapshots of instance
+properties along with the message.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.DigitalTwinBase-1.html">DigitalTwinBase&lt;TDigitalTwin&gt;</a></dt>
+      <dd><p>All digital twin objects must be subclassed from this
+abstract base class to be integrated into the ScaleOut Digital Twins message processing pipeline.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.DigitalTwinTimerMessage.html">DigitalTwinTimerMessage</a></dt>
+      <dd><p>Defines a timer message for data exchange between the timer's object
+expiration handler and the corresponding digital twin instance itself.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.InitContext-1.html">InitContext&lt;TDigitalTwin&gt;</a></dt>
+      <dd><p>Context object that provides operations that are available
+when a digital twin instance is being created.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.InitSimulationContext.html">InitSimulationContext</a></dt>
+      <dd><p>Context object that provides operations that are available
+when a new simulation starts</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.MessageProcessor.html">MessageProcessor</a></dt>
+      <dd><p>The top level abstract base class used by ScaleOut Digital Twin Library.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.MessageProcessor-1.html">MessageProcessor&lt;TDigitalTwin&gt;</a></dt>
+      <dd><p>Abstract base class that must be subclassed to implement the message processor which
+processes incoming messages for a digital twin object.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.ProcessingContext-1.html">ProcessingContext&lt;TDigitalTwin&gt;</a></dt>
+      <dd><p>Message processing context for currently processing messages.
+It allows sending messages back to a data source where the messages
+are originated from.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.SimulationProcessor.html">SimulationProcessor</a></dt>
+      <dd><p>Abstract base class used by ScaleOut Digital Twin Library infrastructure.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.SimulationProcessor-1.html">SimulationProcessor&lt;TDigitalTwin&gt;</a></dt>
+      <dd><p>Abstract base class for logic that gets triggered for every time interval in a simulation.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.TimerMetadata-1.html">TimerMetadata&lt;TDigitalTwin&gt;</a></dt>
+      <dd><p>Used by the <a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.DigitalTwinBase-1.html">DigitalTwinBase&lt;TDigitalTwin&gt;</a> class to store
+information about a timer associated with a Digital Twin instance.</p>
+</dd>
+    </dl>
+    <h3 id="interfaces">
+Interfaces
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.IAnomalyDetectionProvider.html">IAnomalyDetectionProvider</a></dt>
+      <dd><p>Encapsulates the capabilities of a ScaleOut real-time digital twin
+anomaly detection provider.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.IAzureDigitalTwinsProvider.html">IAzureDigitalTwinsProvider</a></dt>
+      <dd><p>Defines the methods available to ScaleOut Digital Twins for interacting with
+corresponding Azure Digital Twins (ADT) instances.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.ICacheResult.html">ICacheResult</a></dt>
+      <dd><p>Represents a response from an <a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.ISharedData.html">ISharedData</a> operation.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.html">IDigitalTwinModelEndpoint</a></dt>
+      <dd><p>Interface for use by client applications that send messages to digital twin instances.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.html">IDigitalTwinModelProvider</a></dt>
+      <dd><p>Encapsulates the capabilities of a third-party digital twin
+persistence provider.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.IMessageListFactory.html">IMessageListFactory</a></dt>
+      <dd><p>Creates collection of new messages received by a digital twin object.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.ISharedData.html">ISharedData</a></dt>
+      <dd><p>Provides access to objects that are shared between model instances.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html">ISimulationController</a></dt>
+      <dd><p>The methods of this interface allow user to control all aspects of
+digital twin's model simulation process.</p>
+</dd>
+    </dl>
+    <h3 id="enums">
+Enums
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.AlertSeverity.html">AlertSeverity</a></dt>
+      <dd><p>Defines the severity levels for alert messages.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.CacheOperationStatus.html">CacheOperationStatus</a></dt>
+      <dd><p>An enumeration that indicates the outcome of a cache operation.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.CreateResult.html">CreateResult</a></dt>
+      <dd><p>Result codes for <a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.html#Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelEndpoint_CreateTwinAsync_System_String_System_Object_">CreateTwinAsync(string, object)</a>.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.DeleteResult.html">DeleteResult</a></dt>
+      <dd><p>Result codes for <a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.html#Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelEndpoint_DeleteTwinAsync_System_String_">DeleteTwinAsync(string)</a> and
+<a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.ProcessingContext-1.html#Scaleout_Modules_DigitalTwin_Abstractions_ProcessingContext_1_RemoveRealTimeTwinAsync_System_String_System_String_">RemoveRealTimeTwinAsync(string, string)</a>.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.LogSeverity.html">LogSeverity</a></dt>
+      <dd><p>Severity levels for logging messages to the ScaleOut UI.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.ProcessingResult.html">ProcessingResult</a></dt>
+      <dd><p>Specifies whether or not a Digital Twin should be updated after a call to a
+<a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.MessageProcessor-1.html#Scaleout_Modules_DigitalTwin_Abstractions_MessageProcessor_1_ProcessMessageAsync_Scaleout_Modules_DigitalTwin_Abstractions_ProcessingContext__0___0_System_Byte___">ProcessMessageAsync(ProcessingContext&lt;TDigitalTwin&gt;, TDigitalTwin, byte[])</a>
+implementation has returned.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.TimerActionResult.html">TimerActionResult</a></dt>
+      <dd><p>Defines result codes for timer methods.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.TimerType.html">TimerType</a></dt>
+      <dd><p>Defines the type of timer that can be created by <a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.ProcessingContext-1.html#Scaleout_Modules_DigitalTwin_Abstractions_ProcessingContext_1_StartTimerAsync_System_String_System_TimeSpan_Scaleout_Modules_DigitalTwin_Abstractions_TimerType_Scaleout_Modules_DigitalTwin_Abstractions_TimerAsyncHandler__0__">StartTimerAsync(string, TimeSpan, TimerType, TimerAsyncHandler&lt;TDigitalTwin&gt;)</a>.</p>
+</dd>
+    </dl>
+    <h3 id="delegates">
+Delegates
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.TimerAsyncHandler-1.html">TimerAsyncHandler&lt;TDigitalTwin&gt;</a></dt>
+      <dd><p>Digital twin timer delegate. Must be assigned to either a public static method or a
+class instance method.</p>
+</dd>
+    </dl>
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2024-2025 ScaleOut Software, Inc.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

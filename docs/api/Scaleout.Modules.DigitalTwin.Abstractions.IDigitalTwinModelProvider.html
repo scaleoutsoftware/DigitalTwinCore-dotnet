@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Interface IDigitalTwinModelProvider | ScaleOut Digital Twins&amp;trade; .NET API Reference </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Interface IDigitalTwinModelProvider | ScaleOut Digital Twins&amp;trade; .NET API Reference ">
+      
+      <meta name="description" content="Encapsulates the capabilities of a third-party digital twin persistence provider.">
+      <link rel="icon" href="../images/favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/new/master/apiSpec/new?filename=Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider.md&amp;value=---%0Auid%3A%20Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/ScaleOutDigitalTwins-Logo.png" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider">
+
+
+
+  <h1 id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider" class="text-break">
+Interface IDigitalTwinModelProvider  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelProvider.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Scaleout.html">Scaleout</a>.<a class="xref" href="Scaleout.Modules.html">Modules</a>.<a class="xref" href="Scaleout.Modules.DigitalTwin.html">DigitalTwin</a>.<a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.html">Abstractions</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Scaleout.Modules.DigitalTwin.Abstractions.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Encapsulates the capabilities of a third-party digital twin
+persistence provider.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IDigitalTwinModelProvider</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_IsActive_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.IsActive*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_IsActive" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.IsActive">
+  IsActive
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelProvider.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Indicates whether the persistence provider is active and can be used.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IsActive { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_ProviderType_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.ProviderType*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_ProviderType" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.ProviderType">
+  ProviderType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelProvider.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns type of persistence provider (&quot;AzureDigitalTwinsService&quot;, etc).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string ProviderType { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_GetInstance_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.GetInstance*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_GetInstance_System_String_System_String_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.GetInstance(System.String,System.String)">
+  GetInstance(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelProvider.cs/#L84"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the JSON-serialized object associated with an <code class="paramref">instanceId</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">string GetInstance(string containerName, string instanceId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>containerName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Name of the persistence container holding the object.</p>
+</dd>
+    <dt><code>instanceId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>ID of the persisted object.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>JSON-serialized object.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p><code class="paramref">containerName</code> or <code class="paramref">instanceId</code> is empty or null.</p>
+</dd>
+    <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.PersistenceProviderException.html">PersistenceProviderException</a></dt>
+    <dd><p>Failed to obtain the object instance
+for the specified <code class="paramref">containerName</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_GetInstanceAsync_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.GetInstanceAsync*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_GetInstanceAsync_System_String_System_String_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.GetInstanceAsync(System.String,System.String)">
+  GetInstanceAsync(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelProvider.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a JSON-serialized object associated with an <code class="paramref">instanceId</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;string&gt; GetInstanceAsync(string containerName, string instanceId)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>containerName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Name of the persistence container holding the object.</p>
+</dd>
+    <dt><code>instanceId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>ID of the persisted object.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>JSON-serialized object.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p><code class="paramref">containerName</code> or <code class="paramref">instanceId</code> is empty or null.</p>
+</dd>
+    <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.PersistenceProviderException.html">PersistenceProviderException</a></dt>
+    <dd><p>Failed to obtain the object instance
+for the specified <code class="paramref">containerName</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_GetInstanceIds_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.GetInstanceIds*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_GetInstanceIds_System_String_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.GetInstanceIds(System.String)">
+  GetInstanceIds(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelProvider.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the list of instance identifiers that are held in the specified <code class="paramref">containerName</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">List&lt;string&gt; GetInstanceIds(string containerName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>containerName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;</dt>
+    <dd><p>The list of object identifiers that are located in the specified <code class="paramref">containerName</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_GetInstanceIds_System_String__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>
+    For the relational database providers, a list containing primary key values is returned.
+    </p>
+<p>
+    For the Azure Digital Twins service, a list of digital twin instance identifiers is returned.
+    </p>
+<p>
+    For Azure Blob storage, a list of Blob names would be returned.
+    </p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p><code class="paramref">containerName</code> is empty or null.</p>
+</dd>
+    <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.PersistenceProviderException.html">PersistenceProviderException</a></dt>
+    <dd><p>Failed to obtain the list of object instance identifiers
+for the specified <code class="paramref">containerName</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_GetInstanceIdsAsync_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.GetInstanceIdsAsync*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_GetInstanceIdsAsync_System_String_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.GetInstanceIdsAsync(System.String)">
+  GetInstanceIdsAsync(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelProvider.cs/#L57"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the list of instance identifiers that are held in the specified <code class="paramref">containerName</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;List&lt;string&gt;&gt; GetInstanceIdsAsync(string containerName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>containerName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The name of the persistence container.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>&gt;&gt;</dt>
+    <dd><p>The list of object identifiers that are located in the specified <code class="paramref">containerName</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_GetInstanceIdsAsync_System_String__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>
+    For the relational database providers, a list containing primary key values is returned.
+    </p>
+<p>
+    For the Azure Digital Twins service, a list of digital twin instance identifiers is returned.
+    </p>
+<p>
+    For Azure Blob storage, a list of Blob names would be returned.
+    </p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p><code class="paramref">containerName</code> is empty or null.</p>
+</dd>
+    <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.PersistenceProviderException.html">PersistenceProviderException</a></dt>
+    <dd><p>Failed to obtain the list of object instance identifiers
+for the specified <code class="paramref">containerName</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_GetPropertyAsync_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.GetPropertyAsync*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_GetPropertyAsync__1_System_String_System_String_System_String_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.GetPropertyAsync``1(System.String,System.String,System.String)">
+  GetPropertyAsync&lt;T&gt;(string, string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelProvider.cs/#L168"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a property value on the specified persisted object located
+in the <code class="paramref">containerName</code> container.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;T&gt; GetPropertyAsync&lt;T&gt;(string containerName, string instanceId, string propertyName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>containerName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Name of the persistence container.</p>
+</dd>
+    <dt><code>instanceId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Persisted object's instance Id.</p>
+</dd>
+    <dt><code>propertyName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Name of the property.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;</dt>
+    <dd><p>The current property's value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>Type of the property.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_GetPropertyList_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.GetPropertyList*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_GetPropertyList_System_String_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.GetPropertyList(System.String)">
+  GetPropertyList(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelProvider.cs/#L115"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the properties on a persisted object. For the Azure Digital Twins service
+it is a list of digital twin's properties, for the Azure Blob storage it is a list of Blob's properties,
+and for the relational database providers it is a list of table's columns.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerable&lt;(string propertyName, string propertyType)&gt; GetPropertyList(string containerName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>containerName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The name of the persistence container.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.propertyname">propertyName</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.propertytype">propertyType</a>)&gt;</dt>
+    <dd><p>List of object's properties.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p><code class="paramref">containerName</code> is empty or null.</p>
+</dd>
+    <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.PersistenceProviderException.html">PersistenceProviderException</a></dt>
+    <dd><p>Failed to build the list of properties
+for the specified <code class="paramref">containerName</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_GetPropertyListAsync_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.GetPropertyListAsync*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_GetPropertyListAsync_System_String_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.GetPropertyListAsync(System.String)">
+  GetPropertyListAsync(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelProvider.cs/#L105"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns the properties on a persisted object. For the Azure Digital Twins service,
+this is a list of digital twin's properties, for the Azure Blob storage it is a list of Blob's properties,
+and for the relational database providers it is a list of table's columns.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;IEnumerable&lt;(string propertyName, string propertyType)&gt;&gt; GetPropertyListAsync(string containerName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>containerName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The name of the persistence container.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.propertyname">propertyName</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetuple-system.string,system.string-.propertytype">propertyType</a>)&gt;&gt;</dt>
+    <dd><p>List of object's properties.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p><code class="paramref">containerName</code> is empty or null.</p>
+</dd>
+    <dt><a class="xref" href="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.PersistenceProviderException.html">PersistenceProviderException</a></dt>
+    <dd><p>Failed to build the list of properties
+for the specified <code class="paramref">containerName</code>.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_GetProperty_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.GetProperty*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_GetProperty__1_System_String_System_String_System_String_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.GetProperty``1(System.String,System.String,System.String)">
+  GetProperty&lt;T&gt;(string, string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelProvider.cs/#L179"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a property value on the specified persisted object located
+in the <code class="paramref">containerName</code> container.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">T GetProperty&lt;T&gt;(string containerName, string instanceId, string propertyName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>containerName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Name of the persistence container.</p>
+</dd>
+    <dt><code>instanceId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Persisted object's instance Id.</p>
+</dd>
+    <dt><code>propertyName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Name of the property.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd><p>The current property's value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>Type of the property.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_GetRTDTPropertyAsync_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.GetRTDTPropertyAsync*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_GetRTDTPropertyAsync__1_System_String_System_String_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.GetRTDTPropertyAsync``1(System.String,System.String)">
+  GetRTDTPropertyAsync&lt;T&gt;(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelProvider.cs/#L189"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a property value on the specified persisted object <code class="paramref">instanceId</code> that is part of
+a ScaleOut component definition in the context of current real-time digital twin (RTDT) model.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;T&gt; GetRTDTPropertyAsync&lt;T&gt;(string instanceId, string propertyName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>instanceId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Persisted object's instance Id.</p>
+</dd>
+    <dt><code>propertyName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Name of the property.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;T&gt;</dt>
+    <dd><p>The current property's value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>Type of the property.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_GetRTDTProperty_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.GetRTDTProperty*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_GetRTDTProperty__1_System_String_System_String_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.GetRTDTProperty``1(System.String,System.String)">
+  GetRTDTProperty&lt;T&gt;(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelProvider.cs/#L199"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a property value on the specified persisted object <code class="paramref">instanceId</code> that is part of
+a ScaleOut component definition in the context of current real-time digital twin (RTDT) model.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">T GetRTDTProperty&lt;T&gt;(string instanceId, string propertyName)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>instanceId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Persisted object's instance Id.</p>
+</dd>
+    <dt><code>propertyName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Name of the property.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><span class="xref">T</span></dt>
+    <dd><p>The current property's value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>Type of the property.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_UpdatePropertyAsync_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.UpdatePropertyAsync*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_UpdatePropertyAsync__1_System_String_System_String_System_String___0_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.UpdatePropertyAsync``1(System.String,System.String,System.String,``0)">
+  UpdatePropertyAsync&lt;T&gt;(string, string, string, T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelProvider.cs/#L126"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates a property value on a specified persisted object,
+given an <code class="paramref">instanceId</code> and <code class="paramref">containerName</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task UpdatePropertyAsync&lt;T&gt;(string containerName, string instanceId, string propertyName, T propertyValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>containerName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Name of the persistence container.</p>
+</dd>
+    <dt><code>instanceId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Persisted object's instance Id.</p>
+</dd>
+    <dt><code>propertyName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Name of the property.</p>
+</dd>
+    <dt><code>propertyValue</code> <span class="xref">T</span></dt>
+    <dd><p>Property's new value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>Type of the property.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_UpdateProperty_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.UpdateProperty*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_UpdateProperty__1_System_String_System_String_System_String___0_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.UpdateProperty``1(System.String,System.String,System.String,``0)">
+  UpdateProperty&lt;T&gt;(string, string, string, T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelProvider.cs/#L137"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates a property value on a specified persisted object,
+given an <code class="paramref">instanceId</code> and <code class="paramref">containerName</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void UpdateProperty&lt;T&gt;(string containerName, string instanceId, string propertyName, T propertyValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>containerName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Name of the persistence container.</p>
+</dd>
+    <dt><code>instanceId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Persisted object's instance Id.</p>
+</dd>
+    <dt><code>propertyName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Name of the property.</p>
+</dd>
+    <dt><code>propertyValue</code> <span class="xref">T</span></dt>
+    <dd><p>Property's new value.</p>
+</dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>Type of the property.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_UpdateRTDTPropertyAsync_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.UpdateRTDTPropertyAsync*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_UpdateRTDTPropertyAsync__1_System_String_System_String___0_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.UpdateRTDTPropertyAsync``1(System.String,System.String,``0)">
+  UpdateRTDTPropertyAsync&lt;T&gt;(string, string, T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelProvider.cs/#L147"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates a property value of a persisted object that is part of
+a ScaleOut definition in the context of current real-time digital twin (RTDT) model.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task UpdateRTDTPropertyAsync&lt;T&gt;(string instanceId, string propertyName, T propertyValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>instanceId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Persisted object's instance Id.</p>
+</dd>
+    <dt><code>propertyName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Name of the property.</p>
+</dd>
+    <dt><code>propertyValue</code> <span class="xref">T</span></dt>
+    <dd><p>Property's new value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>Type of the property.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_UpdateRTDTProperty_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.UpdateRTDTProperty*"></a>
+
+  <h3 id="Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelProvider_UpdateRTDTProperty__1_System_String_System_String___0_" data-uid="Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelProvider.UpdateRTDTProperty``1(System.String,System.String,``0)">
+  UpdateRTDTProperty&lt;T&gt;(string, string, T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelProvider.cs/#L157"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Updates a property value of a persisted object that is part of
+a ScaleOut definition in the context of current real-time digital twin (RTDT) model.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void UpdateRTDTProperty&lt;T&gt;(string instanceId, string propertyName, T propertyValue)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>instanceId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Persisted object's instance Id.</p>
+</dd>
+    <dt><code>propertyName</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>Name of the property.</p>
+</dd>
+    <dt><code>propertyValue</code> <span class="xref">T</span></dt>
+    <dd><p>Property's new value.</p>
+</dd>
+  </dl>
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>Type of the property.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet/blob/master/src/Core/IDigitalTwinModelProvider.cs/#L32" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          Copyright &copy; 2024-2025 ScaleOut Software, Inc.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
