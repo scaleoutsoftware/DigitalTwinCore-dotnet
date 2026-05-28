@@ -93,43 +93,6 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         Task CreateTwinAsync(string modelName, string twinId, object newInstance);
 
         /// <summary>
-        /// Create a new digital twin instance of the specified simulation <paramref name="modelName"/>.
-        /// This method first tries to create a new twin instance from a persistence store if it is enabled.
-        /// If a persistence store is not enabled or if the twin instance is not found there, then the property values 
-        /// of the specified fallback <paramref name="defaultInstance"/> are used to create and initialize a new twin instance.
-        /// </summary>
-        /// <param name="modelName">Digital twin model name.</param>
-        /// <param name="twinId">Digital twin identifier.</param>
-        /// <param name="defaultInstance">Digital twin instance to create. It could an object of a real
-        /// digital twin model type or simply an anonymous object with a set of digital twin model's 
-        /// properties and their initial values.</param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException">
-        /// The exception is thrown if the current digital twin model does not support simulation.
-        /// </exception>
-        /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinInstantiationException">
-        /// An error occurred while creating a new digital twin instance.
-        /// </exception>
-        Task CreateTwinFromPersistenceStoreAsync(string modelName, string twinId, object defaultInstance);
-
-        /// <summary>
-        /// Create a new digital twin instance of the specified simulation <paramref name="modelName"/>.
-        /// This method assumes that persistence store is enabled for the <paramref name="modelName"/> and 
-        /// twin instance with the specified <paramref name="twinId"/> exists there. In this case,
-        /// a new twin instance is created and initialized from the persistence store.
-        /// </summary>
-        /// <param name="modelName">Digital twin model name.</param>
-        /// <param name="twinId">Digital twin identifier.</param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException">
-        /// The exception is thrown if the current digital twin model does not support simulation.
-        /// </exception>
-        /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinInstantiationException">
-        /// An error occurred while creating a new digital twin instance.
-        /// </exception>
-        Task CreateTwinFromPersistenceStoreAsync(string modelName, string twinId);
-
-        /// <summary>
         /// Delete a digital twin instance of the specified simulation <paramref name="modelName"/>.
         /// </summary>
 		/// <param name="modelName">Digital twin model name.</param>
