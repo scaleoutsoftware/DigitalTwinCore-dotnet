@@ -70,16 +70,6 @@ namespace Scaleout.DigitalTwin.Workbench
             }
         }
 
-        public Task<CreateResult> CreateTwinFromPersistenceStoreAsync(string digitalTwinId, object defaultValue)
-        {
-            throw new NotSupportedException();
-        }
-
-        public Task<CreateResult> CreateTwinFromPersistenceStoreAsync(string digitalTwinId)
-        {
-            throw new NotSupportedException();
-        }
-
         public Task<DeleteResult> DeleteTwinAsync(string digitalTwinId)
         {
             bool foundInstance = _modelInstances.TryRemove(digitalTwinId, out _);

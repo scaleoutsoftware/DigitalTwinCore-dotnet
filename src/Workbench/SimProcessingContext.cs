@@ -99,16 +99,6 @@ namespace Scaleout.DigitalTwin.Workbench
             return Task.CompletedTask;
         }
 
-        public Task CreateTwinFromPersistenceStoreAsync(string modelName, string twinId, object defaultInstance)
-        {
-            throw new NotSupportedException();
-        }
-
-        public Task CreateTwinFromPersistenceStoreAsync(string modelName, string twinId)
-        {
-            throw new NotSupportedException();
-        }
-
         public void Delay(TimeSpan delay)
         {
             this.RequestedSimulationCycleDelay = delay;
