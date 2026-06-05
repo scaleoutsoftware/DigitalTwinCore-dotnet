@@ -75,7 +75,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public InstanceRegistration<TDigitalTwin> InstanceRegistration { get; }
 
-        public Task CreateTwinAsync(string modelName, string twinId, object newInstance)
+        public Task CreateInstanceAsync(string modelName, string twinId, object newInstance)
         {
             if (string.IsNullOrWhiteSpace(modelName))
                 throw new ArgumentException("modelName cannot be null or whitespace");
@@ -109,7 +109,7 @@ namespace Scaleout.DigitalTwin.Workbench
             this.RequestedSimulationCycleDelay = TimeSpan.MaxValue;
         }
 
-        public Task DeleteThisTwinAsync()
+        public Task DeleteThisInstanceAsync()
         {
             DeleteRequested = true; // prevents simulation instance from being re-enqueued in the scheduler.
 
@@ -117,12 +117,12 @@ namespace Scaleout.DigitalTwin.Workbench
             return Task.CompletedTask;
         }
 
-        public void RunThisTwin()
+        public void RunThisInstance()
         {
             _env.EnqueueImmediate(this.InstanceRegistration);
         }
 
-        public Task DeleteTwinAsync(string modelName, string twinId)
+        public Task DeleteInstanceAsync(string modelName, string twinId)
         {
             _env.RemoveInstance(modelName, twinId);
             return Task.CompletedTask;

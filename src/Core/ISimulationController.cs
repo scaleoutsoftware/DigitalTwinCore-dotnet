@@ -22,13 +22,12 @@ using System.Threading.Tasks;
 namespace Scaleout.Modules.DigitalTwin.Abstractions
 {
     /// <summary>
-    /// The methods of this interface allow user to control all aspects of 
-    /// digital twin's model simulation process.
+    /// Represents the controller of a digital twin model simulation process.
     /// </summary>
     public interface ISimulationController
     {
         /// <summary>
-        /// Get a simulation time increment.
+        /// Gets the simulation's time increment.
         /// </summary>
         /// <returns><see cref="TimeSpan"/> for the simulation time increment.</returns>
         /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException">
@@ -37,7 +36,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         TimeSpan GetSimulationTimeIncrement();
 
         /// <summary>
-        /// Delays the wake-up for the current instance for the specified <paramref name="delay"/>.
+        /// Delays the scheduling of the current instance for the specified <paramref name="delay"/>.
         /// </summary>
         /// <param name="delay"><see cref="TimeSpan"/> for simulation time delay.</param>
         /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException">
@@ -48,7 +47,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <summary>
         /// Delays calling the <see cref="SimulationProcessor{TDigitalTwin}.ProcessModelAsync(ProcessingContext{TDigitalTwin}, TDigitalTwin, DateTimeOffset)"/>
         /// method for this instance forever. Users can interrupt this infinite delay later
-        /// by calling <see cref="ISimulationController.RunThisTwin"/> for this instance within the 
+        /// by calling <see cref="ISimulationController.RunThisInstance"/> for this instance within the 
         /// <see cref="MessageProcessor{TDigitalTwin}.ProcessMessageAsync(ProcessingContext{TDigitalTwin}, TDigitalTwin, byte[])"/> method call.
         /// </summary>
         /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException">
@@ -58,8 +57,9 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
 
         /// <summary>
         /// Sends a telemetry message to the corresponding real-time digital twin instance. 
-        /// The twin ids for both, sending digital twin in a simulation model and the receiving twin 
-        /// in the real-time model are the same.
+        /// The instance ID of the corresponding real-time digital twin is expected to be 
+        /// the same as the instance ID of the simulated digital twin instance that
+        /// emits the telemetry message. 
         /// </summary>
         /// <param name="modelName">Real-time digital twin model name.</param>
         /// <param name="message">The JSON-serialized message to send.</param>
@@ -75,13 +75,12 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
 
         /// <summary>
         /// Create a new digital twin instance of the specified simulation <paramref name="modelName"/>.
-        /// This method forces to use the specified object instance over the one that could be found
-        /// in the persistence store if it is enabled.
         /// </summary>
         /// <param name="modelName">Digital twin model name.</param>
         /// <param name="twinId">Digital twin identifier.</param>
-        /// <param name="newInstance">Digital twin instance to create. It could be an object of a real
-        /// digital twin model type or simply an anonymous object with a set of digital twin model's 
+        /// <param name="newInstance">Digital twin instance to create. This can an object of the actual class 
+        /// representing the digital twin model type or simply an anonymous object with a set of digital twin model's
+        /// digital twin model or simply an anonymous object with a set of the digital twin model's 
         /// properties and their initial values.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException">
@@ -90,7 +89,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.DigitalTwinInstantiationException">
         /// An error occurred while creating a new digital twin instance.
         /// </exception>
-        Task CreateTwinAsync(string modelName, string twinId, object newInstance);
+        Task CreateInstanceAsync(string modelName, string twinId, object newInstance);
 
         /// <summary>
         /// Delete a digital twin instance of the specified simulation <paramref name="modelName"/>.
@@ -101,26 +100,26 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException">
         /// The exception is thrown if the current digital twin model does not support simulation.
         /// </exception>
-        Task DeleteTwinAsync(string modelName, string twinId);
+        Task DeleteInstanceAsync(string modelName, string twinId);
 
         /// <summary>
-        /// Delete this simulation twin instance (itself).
+        /// Delete this simulation twin instance.
         /// </summary>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="Scaleout.Modules.DigitalTwin.Abstractions.Exceptions.ModelSimulationException">
         /// The exception is thrown if the current digital twin model does not support simulation.
         /// </exception>
-        Task DeleteThisTwinAsync();
+        Task DeleteThisInstanceAsync();
 
         /// <summary>
-        /// Adds this simulation twin instance (itself) to the end of the priority queue for
+        /// Adds this simulation twin instance to the end of the priority queue for
         /// running the <see cref="SimulationProcessor{TDigitalTwin}.ProcessModelAsync(ProcessingContext{TDigitalTwin}, TDigitalTwin, DateTimeOffset)"/> 
         /// method for it at the current simulation time.
         /// </summary>
-        void RunThisTwin();
+        void RunThisInstance();
 
         /// <summary>
-        /// Stop the currently running simulation.
+        /// Stop the currently running simulation after completing the current timestep.
         /// </summary>
         void StopSimulation();
 

@@ -221,7 +221,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
                 Assert.NotNull(statusMessage);
                 digitalTwin.Status = statusMessage.Payload;
                 if (statusMessage.Payload == "WakeUp!")
-                    context.SimulationController.RunThisTwin();
+                    context.SimulationController.RunThisInstance();
 
                 return Task.FromResult(ProcessingResult.DoUpdate);
             }

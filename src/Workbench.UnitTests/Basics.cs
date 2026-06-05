@@ -133,7 +133,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
                 digitalTwin.Speed = digitalTwin.Speed - 1;
                 if (digitalTwin.Speed == 0)
                 {
-                    await context.SimulationController.DeleteTwinAsync(nameof(SimulatedCar), "Car2");
+                    await context.SimulationController.DeleteInstanceAsync(nameof(SimulatedCar), "Car2");
                 }
                 return ProcessingResult.DoUpdate;
             }

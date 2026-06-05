@@ -80,7 +80,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar
     {
         public async override Task<ProcessingResult> ProcessModelAsync(ProcessingContext<SimulatedCarModel> context, SimulatedCarModel digitalTwin, DateTimeOffset currentTime)
         {
-            await context.SimulationController.DeleteThisTwinAsync();
+            await context.SimulationController.DeleteThisInstanceAsync();
             return ProcessingResult.DoUpdate;        }
     }
 
@@ -92,7 +92,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests.SimulatedCar
             digitalTwin.Speed = digitalTwin.Speed - 1;
             if (digitalTwin.Speed == 0) 
             {
-                await context.SimulationController.DeleteThisTwinAsync();
+                await context.SimulationController.DeleteThisInstanceAsync();
             }
             return ProcessingResult.DoUpdate;
         }
