@@ -49,14 +49,14 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// digital twin model type or simply an anonymous object with a set of digital twin model's 
         /// properties and their initial values.</param>
         /// <returns>The <see cref="CreateResult"/> indicating the result of the operation.</returns>
-        Task<CreateResult> CreateTwinAsync(string digitalTwinId, object digitalTwin);
+        Task<CreateResult> CreateInstanceAsync(string digitalTwinId, object digitalTwin);
 
         /// <summary>
         /// Delete a digital twin instance from the ScaleOut data grid.
         /// </summary>
 		/// <param name="digitalTwinId">Digital twin identifier.</param>
         /// <returns>The <see cref="DeleteResult"/> indicating the result of the operation.</returns>
-        Task<DeleteResult> DeleteTwinAsync(string digitalTwinId);
+        Task<DeleteResult> DeleteInstanceAsync(string digitalTwinId);
 
         /// <summary>
         /// Gets an <see cref="ISharedData"/> instance for accessing shared objects

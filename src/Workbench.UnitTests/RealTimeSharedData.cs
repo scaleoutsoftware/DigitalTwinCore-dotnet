@@ -133,7 +133,7 @@ namespace Scaleout.DigitalTwin.Workbench.UnitTests
             var endpoint = wb.AddRealTimeModel("RealTimeTrain", new TrainMessageProcessor());
 
             // Add object via endpoint
-            await endpoint.CreateTwinAsync("train1", new RealTimeTrainModel { Speed = 42 });
+            await endpoint.CreateInstanceAsync("train1", new RealTimeTrainModel { Speed = 42 });
 
             // The model's Init method should have incremented shared model
             // and global objects.

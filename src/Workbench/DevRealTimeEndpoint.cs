@@ -46,7 +46,7 @@ namespace Scaleout.DigitalTwin.Workbench
             _logger = logger;
         }
 
-        public async Task<CreateResult> CreateTwinAsync(string digitalTwinId, object digitalTwin)
+        public async Task<CreateResult> CreateInstanceAsync(string digitalTwinId, object digitalTwin)
         {
             if (digitalTwin == null)
                 throw new ArgumentNullException(nameof(digitalTwin));
@@ -70,7 +70,7 @@ namespace Scaleout.DigitalTwin.Workbench
             }
         }
 
-        public Task<DeleteResult> DeleteTwinAsync(string digitalTwinId)
+        public Task<DeleteResult> DeleteInstanceAsync(string digitalTwinId)
         {
             bool foundInstance = _modelInstances.TryRemove(digitalTwinId, out _);
             if (foundInstance)

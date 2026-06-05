@@ -63,7 +63,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             var endpoint = env.AddRealTimeModel(nameof(RealTimeCar), msgProcessor);
 
             var car1 = new RealTimeCarModel();
-            await endpoint.CreateTwinAsync("Car1", car1);
+            await endpoint.CreateInstanceAsync("Car1", car1);
 
             var msg = new CarMessage { Speed = 55 };
             // serialize to JSON
@@ -221,7 +221,7 @@ namespace Scaleout.DigitalTwin.DevEnv.Tests
             var endpoint = env.AddRealTimeModel(nameof(TimerTwin), msgProcessor);
 
             var twin1 = new TimerTwin();
-            await endpoint.CreateTwinAsync("Twin1", twin1);
+            await endpoint.CreateInstanceAsync("Twin1", twin1);
 
             await Task.Delay(5000);
 

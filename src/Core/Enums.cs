@@ -77,7 +77,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
 	}
 
     /// <summary>
-    /// Result codes for <see cref="IDigitalTwinModelEndpoint.CreateTwinAsync(string, object)"/>.
+    /// Result codes for <see cref="IDigitalTwinModelEndpoint.CreateInstanceAsync(string, object)"/>.
     /// </summary>
     public enum CreateResult
 	{
@@ -89,7 +89,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
     }
 
     /// <summary>
-    /// Result codes for <see cref="IDigitalTwinModelEndpoint.DeleteTwinAsync(string)"/> and
+    /// Result codes for <see cref="IDigitalTwinModelEndpoint.DeleteInstanceAsync(string)"/> and
 	/// <see cref="ProcessingContext{TDigitalTwin}.RemoveRealTimeTwinAsync(string, string)"/>.
     /// </summary>
     public enum DeleteResult
