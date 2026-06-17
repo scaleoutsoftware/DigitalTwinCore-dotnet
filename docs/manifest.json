@@ -190,7 +190,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Scaleout.Modules.DigitalTwin.Abstractions.CreateResult",
-      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.CreateResult.yml\" sourcestartlinenumber=\"1\">Result codes for <xref href=\"Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.CreateTwinAsync(System.String%2cSystem.Object)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.CreateResult.yml\" sourcestartlinenumber=\"1\">Result codes for <xref href=\"Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.CreateInstanceAsync(System.String%2cSystem.Object)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -204,7 +204,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Scaleout.Modules.DigitalTwin.Abstractions.DeleteResult",
-      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.DeleteResult.yml\" sourcestartlinenumber=\"1\">Result codes for <xref href=\"Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.DeleteTwinAsync(System.String)\" data-throw-if-not-resolved=\"false\"></xref> and\n<xref href=\"Scaleout.Modules.DigitalTwin.Abstractions.ProcessingContext%601.RemoveRealTimeTwinAsync(System.String%2cSystem.String)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.DeleteResult.yml\" sourcestartlinenumber=\"1\">Result codes for <xref href=\"Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.DeleteInstanceAsync(System.String)\" data-throw-if-not-resolved=\"false\"></xref> and\n<xref href=\"Scaleout.Modules.DigitalTwin.Abstractions.ProcessingContext%601.RemoveRealTimeTwinAsync(System.String%2cSystem.String)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -470,7 +470,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController",
-      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.yml\" sourcestartlinenumber=\"1\">The methods of this interface allow user to control all aspects of\ndigital twin's model simulation process.</p>\n"
+      "Summary": "<p sourcefile=\"api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.yml\" sourcestartlinenumber=\"1\">Represents the controller of a digital twin model simulation process.</p>\n"
     },
     {
       "type": "ManagedReference",

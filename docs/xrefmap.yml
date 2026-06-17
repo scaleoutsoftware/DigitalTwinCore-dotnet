@@ -1483,38 +1483,38 @@ references:
   commentId: T:Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint
   fullName: Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint
   nameWithType: IDigitalTwinModelEndpoint
-- uid: Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.CreateTwinAsync(System.String,System.Object)
-  name: CreateTwinAsync(string, object)
-  href: api/Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.html#Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelEndpoint_CreateTwinAsync_System_String_System_Object_
-  commentId: M:Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.CreateTwinAsync(System.String,System.Object)
-  name.vb: CreateTwinAsync(String, Object)
-  fullName: Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.CreateTwinAsync(string, object)
-  fullName.vb: Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.CreateTwinAsync(String, Object)
-  nameWithType: IDigitalTwinModelEndpoint.CreateTwinAsync(string, object)
-  nameWithType.vb: IDigitalTwinModelEndpoint.CreateTwinAsync(String, Object)
-- uid: Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.CreateTwinAsync*
-  name: CreateTwinAsync
-  href: api/Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.html#Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelEndpoint_CreateTwinAsync_
-  commentId: Overload:Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.CreateTwinAsync
+- uid: Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.CreateInstanceAsync(System.String,System.Object)
+  name: CreateInstanceAsync(string, object)
+  href: api/Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.html#Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelEndpoint_CreateInstanceAsync_System_String_System_Object_
+  commentId: M:Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.CreateInstanceAsync(System.String,System.Object)
+  name.vb: CreateInstanceAsync(String, Object)
+  fullName: Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.CreateInstanceAsync(string, object)
+  fullName.vb: Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.CreateInstanceAsync(String, Object)
+  nameWithType: IDigitalTwinModelEndpoint.CreateInstanceAsync(string, object)
+  nameWithType.vb: IDigitalTwinModelEndpoint.CreateInstanceAsync(String, Object)
+- uid: Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.CreateInstanceAsync*
+  name: CreateInstanceAsync
+  href: api/Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.html#Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelEndpoint_CreateInstanceAsync_
+  commentId: Overload:Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.CreateInstanceAsync
   isSpec: "True"
-  fullName: Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.CreateTwinAsync
-  nameWithType: IDigitalTwinModelEndpoint.CreateTwinAsync
-- uid: Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.DeleteTwinAsync(System.String)
-  name: DeleteTwinAsync(string)
-  href: api/Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.html#Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelEndpoint_DeleteTwinAsync_System_String_
-  commentId: M:Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.DeleteTwinAsync(System.String)
-  name.vb: DeleteTwinAsync(String)
-  fullName: Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.DeleteTwinAsync(string)
-  fullName.vb: Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.DeleteTwinAsync(String)
-  nameWithType: IDigitalTwinModelEndpoint.DeleteTwinAsync(string)
-  nameWithType.vb: IDigitalTwinModelEndpoint.DeleteTwinAsync(String)
-- uid: Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.DeleteTwinAsync*
-  name: DeleteTwinAsync
-  href: api/Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.html#Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelEndpoint_DeleteTwinAsync_
-  commentId: Overload:Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.DeleteTwinAsync
+  fullName: Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.CreateInstanceAsync
+  nameWithType: IDigitalTwinModelEndpoint.CreateInstanceAsync
+- uid: Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.DeleteInstanceAsync(System.String)
+  name: DeleteInstanceAsync(string)
+  href: api/Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.html#Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelEndpoint_DeleteInstanceAsync_System_String_
+  commentId: M:Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.DeleteInstanceAsync(System.String)
+  name.vb: DeleteInstanceAsync(String)
+  fullName: Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.DeleteInstanceAsync(string)
+  fullName.vb: Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.DeleteInstanceAsync(String)
+  nameWithType: IDigitalTwinModelEndpoint.DeleteInstanceAsync(string)
+  nameWithType.vb: IDigitalTwinModelEndpoint.DeleteInstanceAsync(String)
+- uid: Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.DeleteInstanceAsync*
+  name: DeleteInstanceAsync
+  href: api/Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.html#Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelEndpoint_DeleteInstanceAsync_
+  commentId: Overload:Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.DeleteInstanceAsync
   isSpec: "True"
-  fullName: Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.DeleteTwinAsync
-  nameWithType: IDigitalTwinModelEndpoint.DeleteTwinAsync
+  fullName: Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.DeleteInstanceAsync
+  nameWithType: IDigitalTwinModelEndpoint.DeleteInstanceAsync
 - uid: Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.SendAsync(System.String,System.Byte[])
   name: SendAsync(string, byte[])
   href: api/Scaleout.Modules.DigitalTwin.Abstractions.IDigitalTwinModelEndpoint.html#Scaleout_Modules_DigitalTwin_Abstractions_IDigitalTwinModelEndpoint_SendAsync_System_String_System_Byte___
@@ -1917,47 +1917,22 @@ references:
   commentId: T:Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController
   fullName: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController
   nameWithType: ISimulationController
-- uid: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateTwinAsync(System.String,System.String,System.Object)
-  name: CreateTwinAsync(string, string, object)
-  href: api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html#Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_CreateTwinAsync_System_String_System_String_System_Object_
-  commentId: M:Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateTwinAsync(System.String,System.String,System.Object)
-  name.vb: CreateTwinAsync(String, String, Object)
-  fullName: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateTwinAsync(string, string, object)
-  fullName.vb: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateTwinAsync(String, String, Object)
-  nameWithType: ISimulationController.CreateTwinAsync(string, string, object)
-  nameWithType.vb: ISimulationController.CreateTwinAsync(String, String, Object)
-- uid: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateTwinAsync*
-  name: CreateTwinAsync
-  href: api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html#Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_CreateTwinAsync_
-  commentId: Overload:Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateTwinAsync
+- uid: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateInstanceAsync(System.String,System.String,System.Object)
+  name: CreateInstanceAsync(string, string, object)
+  href: api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html#Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_CreateInstanceAsync_System_String_System_String_System_Object_
+  commentId: M:Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateInstanceAsync(System.String,System.String,System.Object)
+  name.vb: CreateInstanceAsync(String, String, Object)
+  fullName: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateInstanceAsync(string, string, object)
+  fullName.vb: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateInstanceAsync(String, String, Object)
+  nameWithType: ISimulationController.CreateInstanceAsync(string, string, object)
+  nameWithType.vb: ISimulationController.CreateInstanceAsync(String, String, Object)
+- uid: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateInstanceAsync*
+  name: CreateInstanceAsync
+  href: api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html#Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_CreateInstanceAsync_
+  commentId: Overload:Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateInstanceAsync
   isSpec: "True"
-  fullName: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateTwinAsync
-  nameWithType: ISimulationController.CreateTwinAsync
-- uid: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateTwinFromPersistenceStoreAsync(System.String,System.String)
-  name: CreateTwinFromPersistenceStoreAsync(string, string)
-  href: api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html#Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_CreateTwinFromPersistenceStoreAsync_System_String_System_String_
-  commentId: M:Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateTwinFromPersistenceStoreAsync(System.String,System.String)
-  name.vb: CreateTwinFromPersistenceStoreAsync(String, String)
-  fullName: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateTwinFromPersistenceStoreAsync(string, string)
-  fullName.vb: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateTwinFromPersistenceStoreAsync(String, String)
-  nameWithType: ISimulationController.CreateTwinFromPersistenceStoreAsync(string, string)
-  nameWithType.vb: ISimulationController.CreateTwinFromPersistenceStoreAsync(String, String)
-- uid: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateTwinFromPersistenceStoreAsync(System.String,System.String,System.Object)
-  name: CreateTwinFromPersistenceStoreAsync(string, string, object)
-  href: api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html#Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_CreateTwinFromPersistenceStoreAsync_System_String_System_String_System_Object_
-  commentId: M:Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateTwinFromPersistenceStoreAsync(System.String,System.String,System.Object)
-  name.vb: CreateTwinFromPersistenceStoreAsync(String, String, Object)
-  fullName: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateTwinFromPersistenceStoreAsync(string, string, object)
-  fullName.vb: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateTwinFromPersistenceStoreAsync(String, String, Object)
-  nameWithType: ISimulationController.CreateTwinFromPersistenceStoreAsync(string, string, object)
-  nameWithType.vb: ISimulationController.CreateTwinFromPersistenceStoreAsync(String, String, Object)
-- uid: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateTwinFromPersistenceStoreAsync*
-  name: CreateTwinFromPersistenceStoreAsync
-  href: api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html#Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_CreateTwinFromPersistenceStoreAsync_
-  commentId: Overload:Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateTwinFromPersistenceStoreAsync
-  isSpec: "True"
-  fullName: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateTwinFromPersistenceStoreAsync
-  nameWithType: ISimulationController.CreateTwinFromPersistenceStoreAsync
+  fullName: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.CreateInstanceAsync
+  nameWithType: ISimulationController.CreateInstanceAsync
 - uid: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.Delay(System.TimeSpan)
   name: Delay(TimeSpan)
   href: api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html#Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_Delay_System_TimeSpan_
@@ -1984,35 +1959,35 @@ references:
   isSpec: "True"
   fullName: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DelayIndefinitely
   nameWithType: ISimulationController.DelayIndefinitely
-- uid: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteThisTwinAsync
-  name: DeleteThisTwinAsync()
-  href: api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html#Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_DeleteThisTwinAsync
-  commentId: M:Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteThisTwinAsync
-  fullName: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteThisTwinAsync()
-  nameWithType: ISimulationController.DeleteThisTwinAsync()
-- uid: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteThisTwinAsync*
-  name: DeleteThisTwinAsync
-  href: api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html#Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_DeleteThisTwinAsync_
-  commentId: Overload:Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteThisTwinAsync
+- uid: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteInstanceAsync(System.String,System.String)
+  name: DeleteInstanceAsync(string, string)
+  href: api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html#Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_DeleteInstanceAsync_System_String_System_String_
+  commentId: M:Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteInstanceAsync(System.String,System.String)
+  name.vb: DeleteInstanceAsync(String, String)
+  fullName: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteInstanceAsync(string, string)
+  fullName.vb: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteInstanceAsync(String, String)
+  nameWithType: ISimulationController.DeleteInstanceAsync(string, string)
+  nameWithType.vb: ISimulationController.DeleteInstanceAsync(String, String)
+- uid: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteInstanceAsync*
+  name: DeleteInstanceAsync
+  href: api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html#Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_DeleteInstanceAsync_
+  commentId: Overload:Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteInstanceAsync
   isSpec: "True"
-  fullName: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteThisTwinAsync
-  nameWithType: ISimulationController.DeleteThisTwinAsync
-- uid: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteTwinAsync(System.String,System.String)
-  name: DeleteTwinAsync(string, string)
-  href: api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html#Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_DeleteTwinAsync_System_String_System_String_
-  commentId: M:Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteTwinAsync(System.String,System.String)
-  name.vb: DeleteTwinAsync(String, String)
-  fullName: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteTwinAsync(string, string)
-  fullName.vb: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteTwinAsync(String, String)
-  nameWithType: ISimulationController.DeleteTwinAsync(string, string)
-  nameWithType.vb: ISimulationController.DeleteTwinAsync(String, String)
-- uid: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteTwinAsync*
-  name: DeleteTwinAsync
-  href: api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html#Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_DeleteTwinAsync_
-  commentId: Overload:Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteTwinAsync
+  fullName: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteInstanceAsync
+  nameWithType: ISimulationController.DeleteInstanceAsync
+- uid: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteThisInstanceAsync
+  name: DeleteThisInstanceAsync()
+  href: api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html#Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_DeleteThisInstanceAsync
+  commentId: M:Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteThisInstanceAsync
+  fullName: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteThisInstanceAsync()
+  nameWithType: ISimulationController.DeleteThisInstanceAsync()
+- uid: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteThisInstanceAsync*
+  name: DeleteThisInstanceAsync
+  href: api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html#Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_DeleteThisInstanceAsync_
+  commentId: Overload:Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteThisInstanceAsync
   isSpec: "True"
-  fullName: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteTwinAsync
-  nameWithType: ISimulationController.DeleteTwinAsync
+  fullName: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.DeleteThisInstanceAsync
+  nameWithType: ISimulationController.DeleteThisInstanceAsync
 - uid: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.EmitTelemetryAsync(System.String,System.Byte[])
   name: EmitTelemetryAsync(string, byte[])
   href: api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html#Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_EmitTelemetryAsync_System_String_System_Byte___
@@ -2042,19 +2017,19 @@ references:
   isSpec: "True"
   fullName: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.GetSimulationTimeIncrement
   nameWithType: ISimulationController.GetSimulationTimeIncrement
-- uid: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.RunThisTwin
-  name: RunThisTwin()
-  href: api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html#Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_RunThisTwin
-  commentId: M:Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.RunThisTwin
-  fullName: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.RunThisTwin()
-  nameWithType: ISimulationController.RunThisTwin()
-- uid: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.RunThisTwin*
-  name: RunThisTwin
-  href: api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html#Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_RunThisTwin_
-  commentId: Overload:Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.RunThisTwin
+- uid: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.RunThisInstance
+  name: RunThisInstance()
+  href: api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html#Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_RunThisInstance
+  commentId: M:Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.RunThisInstance
+  fullName: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.RunThisInstance()
+  nameWithType: ISimulationController.RunThisInstance()
+- uid: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.RunThisInstance*
+  name: RunThisInstance
+  href: api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html#Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_RunThisInstance_
+  commentId: Overload:Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.RunThisInstance
   isSpec: "True"
-  fullName: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.RunThisTwin
-  nameWithType: ISimulationController.RunThisTwin
+  fullName: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.RunThisInstance
+  nameWithType: ISimulationController.RunThisInstance
 - uid: Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.SimulationStartTime
   name: SimulationStartTime
   href: api/Scaleout.Modules.DigitalTwin.Abstractions.ISimulationController.html#Scaleout_Modules_DigitalTwin_Abstractions_ISimulationController_SimulationStartTime
