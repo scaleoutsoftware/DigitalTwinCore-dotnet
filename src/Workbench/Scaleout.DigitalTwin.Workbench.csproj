@@ -18,7 +18,7 @@
     <PackageIcon>ScaleOutDigitalTwins-Logo-128x128@2x.png</PackageIcon>
     <RepositoryUrl>https://github.com/scaleoutsoftware/DigitalTwinCore-dotnet</RepositoryUrl>
     <PackageTags>scaleout dt digitaltwin digital twin workbench</PackageTags>
-    <PackageReleaseNotes>Adds suppport for 2026 release of ScaleOut Digital Twins and the base types defined in Scaleout.Modules.DigitalTwin.Abstractions.</PackageReleaseNotes>
+    <PackageReleaseNotes>Updated to reference latest Scaleout.Modules.DigitalTwin.Abstractions.</PackageReleaseNotes>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>

@@ -19,7 +19,7 @@
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageIcon>ScaleOutDigitalTwins-Logo-128x128@2x.png</PackageIcon>
     <PackageTags>scaleout digital twin core</PackageTags>
-    <PackageReleaseNotes>Initial release of ScaleOut Digital Twins support in ActiveCaching.</PackageReleaseNotes>
+    <PackageReleaseNotes>Adds support for ScaleOut Digital Twin simulations.</PackageReleaseNotes>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <Title>ScaleOut DigitalTwin Builder™ Core Types</Title>
     <PackageReadmeFile>README.md</PackageReadmeFile>
