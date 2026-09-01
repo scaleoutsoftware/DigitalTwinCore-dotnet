@@ -63,7 +63,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public override IAzureDigitalTwinsProvider AzureDigitalTwinsProvider => throw new NotSupportedException();
 
-        public override Dictionary<string, IAnomalyDetectionProvider> AnomalyDetectionProviders { get; }
+        public override IReadOnlyDictionary<string, IAnomalyDetectionProvider> AnomalyDetectionProviders { get; }
 
         public override ISimulationController? SimulationController => null;
 

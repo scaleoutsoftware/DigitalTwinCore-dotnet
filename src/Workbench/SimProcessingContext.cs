@@ -64,7 +64,7 @@ namespace Scaleout.DigitalTwin.Workbench
 
         public override IAzureDigitalTwinsProvider AzureDigitalTwinsProvider => throw new NotImplementedException();
 
-        public override Dictionary<string, IAnomalyDetectionProvider> AnomalyDetectionProviders => throw new NotImplementedException();
+        public override IReadOnlyDictionary<string, IAnomalyDetectionProvider> AnomalyDetectionProviders => throw new NotImplementedException();
 
 
         public override ISimulationController SimulationController => this as ISimulationController;

@@ -103,7 +103,7 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <summary>
         /// Returns the collection of registered anomaly detection providers the model has access to.
         /// </summary>
-        public abstract Dictionary<string, IAnomalyDetectionProvider> AnomalyDetectionProviders { get; }
+        public abstract IReadOnlyDictionary<string, IAnomalyDetectionProvider> AnomalyDetectionProviders { get; }
 
         /// <summary>
         /// Starts a new timer for the digital twin whose message is currently being processed.
