@@ -145,19 +145,20 @@ namespace Scaleout.DigitalTwin.Workbench
                 return modelRegistration.CreateNewInitializedInstanceAsync(InstanceId, dataSource: this.InstanceRegistration, _logger).GetAwaiter().GetResult();
             });
 
+            if (targetInstanceRegistration.DataSource == null)
+            {
+                // Fix up the target's data source in case the instance had been loaded before the simulation started.
+                targetInstanceRegistration.DataSource = this.InstanceRegistration;
+            }
+
             int nextMessageDepth = _messageDepth + 1;
             if (nextMessageDepth == MAX_MESSAGE_DEPTH)
                 throw new InvalidOperationException($"Max message depth of {MAX_MESSAGE_DEPTH} has been hit. Sending from {this.DigitalTwinModel}\\{InstanceId} to {modelName}\\{InstanceId}");
 
-            byte[][] messages = new byte[][] { message };
-            foreach (var msg in messages)
-            {
-                await targetInstanceRegistration.ModelRegistration.ProcessMessageAsync(targetInstanceRegistration,
-                                                                                       msg,
+            await targetInstanceRegistration.ModelRegistration.ProcessMessageAsync(targetInstanceRegistration,
+                                                                                       message,
                                                                                        nextMessageDepth,
                                                                                        _logger);
-            }
-
         }
 
         /// <inheritdoc/>
