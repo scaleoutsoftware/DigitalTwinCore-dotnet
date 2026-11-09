@@ -19,6 +19,7 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
@@ -56,6 +57,8 @@ namespace Scaleout.DigitalTwin.Workbench
         private WorkbenchSharedData _sharedGlobalData = new WorkbenchSharedData();
         private ILogger _logger;
         private SimulationState _simulationState = SimulationState.Initializing;
+        internal JsonObject? ScenarioParameters { get; set; } = null;
+        internal long ScenarioTimestampMs { get; set; } = -1;
 
         internal EventGenerator? EventGenerator {get; private set;}
 
@@ -611,6 +614,16 @@ namespace Scaleout.DigitalTwin.Workbench
                 throw new InvalidOperationException("Not debugging a simulation. Call Workbench.InitializeSimulation(startTime) before stepping.");
 
             EventGenerator.EnqueueEvent(instanceRegistration, EventGenerator.SimulationTime);
+        }
+
+        /// <summary>
+        /// Sets the scenario parameters that are available through <see cref="ProcessingContext{TDigitalTwin}.ScenarioParameters"/>
+        /// </summary>
+        /// <param name="scenarioParameters">JsonObject containing the scenario parameters.</param>
+        public void SetScenarioParameters(JsonObject? scenarioParameters)
+        {
+            ScenarioParameters = scenarioParameters;
+            ScenarioTimestampMs = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
         }
 
     }

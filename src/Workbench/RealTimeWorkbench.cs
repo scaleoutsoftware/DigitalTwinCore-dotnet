@@ -22,6 +22,7 @@ using Scaleout.Modules.DigitalTwin.Abstractions;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 
 namespace Scaleout.DigitalTwin.Workbench
@@ -38,6 +39,8 @@ namespace Scaleout.DigitalTwin.Workbench
         private ConcurrentDictionary<string, RealTimeTimer> _timers = new ConcurrentDictionary<string, RealTimeTimer>();
         private ILogger _logger;
         private bool _disposed;
+        internal JsonObject? ScenarioParameters { get; set; } = null;
+        internal long ScenarioTimestampMs { get; set; } = -1;
 
         /// <summary>
         /// Event raised when a message processor implementation sends a message back to its
@@ -213,6 +216,16 @@ namespace Scaleout.DigitalTwin.Workbench
         {
             SendToDataSourceEventArgs e = new SendToDataSourceEventArgs(digitalTwinId, modelName, message);
             OnDataSourceMessageReceived(e);
+        }
+
+        /// <summary>
+        /// Sets the scenario parameters that are available through <see cref="ProcessingContext{TDigitalTwin}.ScenarioParameters"/>
+        /// </summary>
+        /// <param name="scenarioParameters">JsonObject containing the scenario parameters.</param>
+        public void SetScenarioParameters(JsonObject? scenarioParameters)
+        {
+            ScenarioParameters = scenarioParameters;
+            ScenarioTimestampMs = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
         }
 
         /// <summary>

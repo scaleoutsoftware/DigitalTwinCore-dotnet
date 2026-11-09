@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 
 namespace Scaleout.Modules.DigitalTwin.Abstractions
@@ -162,5 +163,18 @@ namespace Scaleout.Modules.DigitalTwin.Abstractions
         /// <param name="targetTwinId">Digital twin identifier.</param>
         /// <returns><see cref="DeleteResult"/> indicating the result of the delete operation.</returns>
         public abstract Task<DeleteResult> RemoveRealTimeTwinAsync(string targetTwinModel, string targetTwinId);
+
+        /// <summary>
+        /// Gets scenario parameters as a <see cref="JsonObject"/>.
+        /// </summary>
+        public abstract JsonObject ScenarioParameters { get; }
+
+        /// <summary>
+        /// Timestamp for the version identifier, or -1 if a scenario has never been issued.
+        /// </summary>
+        /// <remarks>
+        /// The timestamp is measured in milliseconds since 00:00:00 UTC on 1 January 1970.
+        /// </remarks>
+        public abstract long ScenarioTimestampMs { get; }
     }
 }

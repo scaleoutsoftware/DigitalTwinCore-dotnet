@@ -24,6 +24,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 
 namespace Scaleout.DigitalTwin.Workbench
@@ -72,6 +73,10 @@ namespace Scaleout.DigitalTwin.Workbench
         public override ISharedData SharedModelData => InstanceRegistration.ModelRegistration.SharedModelData;
 
         public override ISharedData SharedGlobalData => _env.SharedGlobalData;
+
+        public override JsonObject? ScenarioParameters => _env.ScenarioParameters;
+
+        public override long ScenarioTimestampMs => _env.ScenarioTimestampMs;
 
         public InstanceRegistration<TDigitalTwin> InstanceRegistration { get; }
 
